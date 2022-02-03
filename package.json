@@ -1,0 +1,22 @@
+{
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client",
+    "e2e"
+  ],
+  "scripts": {
+    "build:client": "yarn workspace wood-project-client build",
+    "dev": "yarn workspace wood-project-server dev",
+    "dev:debug": "yarn workspace wood-project-server dev:debug",
+    "heroku-postbuild": "yarn workspace wood-project-client build",
+    "start": "yarn workspace wood-project-server start",
+    "dev:cypress": "yarn workspace wood-project-server dev:e2e",
+    "e2e:open": "yarn workspace wood-project-e2e e2e:open",
+    "e2e:run": "yarn workspace wood-project-e2e e2e:run"
+  },
+  "engines": {
+    "node": "^14.15"
+  }
+}
