@@ -1,7 +1,8 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
-// place global css here
+@import "./colors.scss";
+
 *,
 *::before,
 *::after {
@@ -11,4 +12,31 @@
 :root {
   -moz-tab-size: 4;
   tab-size: 4;
+}
+
+body {
+  background-color: $dark-gray;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+ul {
+  list-style: inside;
+}
+
+.app-container {
+  
+  max-width: 75%;
+  min-width: 300px;
+  margin: 2rem auto;
+  background-color: $medium-gray;
+  min-height: 600px;
+}
+
+.page-container {
+  text-align: center;
+  padding: 1rem;
+}
+
+#rilw-logo {
+  padding: 0;
 }

@@ -24,9 +24,18 @@ const TopBar = ({ user }) => {
     <div className="top-bar">
       <div className="top-bar-left">
         <ul className="menu">
-          <li className="menu-text">App</li>
+          <a href="https://www.rilocalwoodworks.com" target="_blank" id="rilw-logo">
+            <li className="top-bar-logo">
+              <img 
+                src="https://i.imgur.com/2j5LqFQ.jpg" 
+                alt="Company Logo" 
+                height="50px" 
+                width="50px">
+              </img>
+            </li>
+          </a>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">App Home</Link>
           </li>
         </ul>
       </div>
