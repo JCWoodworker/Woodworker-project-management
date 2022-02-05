@@ -15,7 +15,7 @@
 }
 
 body {
-  background-color: $dark-gray;
+  background-color: $medium-gray;
   font-family: 'Ubuntu', sans-serif;
 }
 
@@ -23,12 +23,23 @@ ul {
   list-style: inside;
 }
 
+a:link {
+  color:white
+}
+a:visited {
+  color: white;
+}
+a:hover {
+  color: $dark-gray
+}
+
 .app-container {
-  
+  color: $light-gray;
+  border-radius: 0.4rem;
   max-width: 75%;
   min-width: 300px;
   margin: 2rem auto;
-  background-color: $medium-gray;
+  background-color: $dark-gray;
   min-height: 600px;
 }
 
@@ -37,6 +48,28 @@ ul {
   padding: 1rem;
 }
 
-#rilw-logo {
-  padding: 0;
+.top-links {
+  color:white;
+  padding: 1rem
+}
+
+.top-links-list {
+  display: grid;
+  justify-content: right;
+  grid-auto-flow: column;
+  width: auto;
+  list-style-type: none;
+}
+
+.link-item {
+  padding: 0 1em;
+}
+
+.sponsor-tile {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.sponsor-logo {
+  border-radius: 0.4rem;
 }
