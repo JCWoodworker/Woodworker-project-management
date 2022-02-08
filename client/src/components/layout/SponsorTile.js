@@ -4,8 +4,8 @@ const SponsorTile = props => {
 
   return (
     <div className="sponsor-tile">
-      <h3>This App Is Sponsored By:</h3>
-      <a href="https://www.rilocalwoodworks.com">
+      <h3>Sponsored By:</h3>
+      <a href="https://www.rilocalwoodworks.com" target="_blank">
       <img
         className="sponsor-logo" 
         src="https://i.imgur.com/2j5LqFQ.jpg"

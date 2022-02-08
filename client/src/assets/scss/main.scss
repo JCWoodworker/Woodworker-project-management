@@ -15,7 +15,7 @@
 }
 
 body {
-  background-color: $medium-gray;
+  background-color: $dark-gray;
   font-family: 'Ubuntu', sans-serif;
 }
 
@@ -30,17 +30,17 @@ a:visited {
   color: white;
 }
 a:hover {
-  color: $dark-gray
+  color: $medium-gray
 }
 
 .app-container {
-  color: $light-gray;
+  color: rgb(73, 30, 10);
   border-radius: 0.4rem;
   max-width: 75%;
   min-width: 300px;
-  margin: 2rem auto;
-  background-color: $dark-gray;
-  min-height: 600px;
+  margin: 4rem auto;
+  background-color: $medium-gray;
+  min-height: 800px ;
 }
 
 .page-container {
@@ -72,4 +72,8 @@ a:hover {
 
 .sponsor-logo {
   border-radius: 0.4rem;
+}
+
+.complete {
+  text-decoration: line-through;
 }
