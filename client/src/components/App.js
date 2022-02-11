@@ -8,7 +8,6 @@ import RegistrationForm from "./registration/RegistrationForm"
 import SignInForm from "./authentication/SignInForm"
 import TopBar from "./layout/TopBar"
 import HomePage from "./layout/HomePage"
-import SponsorTile from "./layout/SponsorTile"
 import Weather from "./layout/Weather"
 
 const App = (props) => {
@@ -41,7 +40,8 @@ const App = (props) => {
       setForecast({
         city: body.city,
         temp: body.temp,
-        description: body.description
+        description: body.description,
+        icon: body.icon
       })
     } catch(error) {
       console.error(error)
@@ -55,6 +55,9 @@ const App = (props) => {
 
   return (
     <div>
+      <Weather
+        forecast={forecast}
+      />
       <div className="app-container">
         <Router>
           <TopBar 
@@ -67,9 +70,6 @@ const App = (props) => {
           </Switch>
         </Router>
       </div>
-      <Weather
-        forecast={forecast}
-      />
     </div>
   )
 

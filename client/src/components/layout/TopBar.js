@@ -23,7 +23,7 @@ const TopBar = ({ user }) => {
 
   let userName = null
   if (user) {
-    userName = <p className="greeting">Hello  {user.email}!</p>
+    userName = <p className="greeting"> - Hello  {user.email}!</p>
   }
   
   return (

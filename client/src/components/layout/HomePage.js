@@ -7,7 +7,9 @@ const HomePage = (props) => {
       <h3>Please sign in or sign up</h3>
       Upcoming Features:
       <p></p>
-      <p className="complete">Sign in and out</p>
+      <p className="complete">Sign in and out</p> 
+      <p className="complete">Display weather</p> 
+      <p className="complete">Display sponsor</p> 
       <p>Add new project</p>
       <p>View your working projects</p>
       <p>Add wood types and board-feet needed</p>

@@ -17,12 +17,8 @@
 }
 
 body {
-  background-color: $light-gray;
+  background-color: $dark-gray;
   font-family: 'Ubuntu', sans-serif;
-}
-
-ul {
-  list-style: inside;
 }
 
 a:link {
@@ -37,10 +33,10 @@ a:hover {
 
 .app-container {
   color: rgb(73, 30, 10);
-  border-radius: 0.4rem;
+  border-radius: 1rem;
   max-width: 75%;
   min-width: 300px;
-  margin: 4rem auto 0 auto;
+  margin: 0 auto;
   background-color: rgb(228, 228, 228);
   min-height: 800px ;
 }
@@ -52,5 +48,10 @@ a:hover {
 
 .complete {
   text-decoration: line-through;
+}
+
+.registration-form {
+  max-width: 40%;
+  margin: 0 auto;
 }
 
