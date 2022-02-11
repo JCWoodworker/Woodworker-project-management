@@ -10,6 +10,8 @@ const HomePage = (props) => {
         <li className="complete">Sign in and out</li>
         <li>Add new project</li>
         <li>View your working projects</li>
+        <li>Add wood types and board-feet needed</li>
+        <li>Do a barrel roll</li>
       </ul>
     </div>
   );

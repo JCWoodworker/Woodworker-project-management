@@ -29,7 +29,7 @@ const TopBar = ({ user }) => {
     <div className="top-links">
       <ul className="top-links-list">
         <li className="link-item">
-          <Link to="/">App Home</Link>
+          <Link to="/">Home</Link>
         </li>
         {userName}
         {user ? authenticatedListItems : unauthenticatedListItems}

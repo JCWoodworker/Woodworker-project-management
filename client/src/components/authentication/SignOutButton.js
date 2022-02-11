@@ -31,9 +31,9 @@ const SignOutButton = () => {
   }
 
   return (
-    <spread onClick={signOut}>
+    <button type="button" className="sign-out-button" onClick={signOut}>
       Sign Out
-    </spread>
+    </button>
   );
 };
 

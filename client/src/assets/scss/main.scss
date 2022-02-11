@@ -1,7 +1,8 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
-@import "./colors.scss";
+@import "../scss/scssComponents/colors.scss";
+@import "../scss/scssComponents/topLinks.scss";
 
 *,
 *::before,
@@ -15,7 +16,7 @@
 }
 
 body {
-  background-color: $dark-gray;
+  background-color: $light-gray;
   font-family: 'Ubuntu', sans-serif;
 }
 
@@ -24,13 +25,13 @@ ul {
 }
 
 a:link {
-  color:white
+  color:rgb(73, 30, 10);
 }
 a:visited {
-  color: white;
+  color: rgb(73, 30, 10);
 }
 a:hover {
-  color: $medium-gray
+  color: black
 }
 
 .app-container {
@@ -39,30 +40,13 @@ a:hover {
   max-width: 75%;
   min-width: 300px;
   margin: 4rem auto;
-  background-color: $medium-gray;
+  background-color: rgb(228, 228, 228);
   min-height: 800px ;
 }
 
 .page-container {
   text-align: center;
   padding: 1rem;
-}
-
-.top-links {
-  color:white;
-  padding: 1rem
-}
-
-.top-links-list {
-  display: grid;
-  justify-content: right;
-  grid-auto-flow: column;
-  width: auto;
-  list-style-type: none;
-}
-
-.link-item {
-  padding: 0 1em;
 }
 
 .sponsor-tile {

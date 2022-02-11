@@ -1,0 +1,16 @@
+.top-links {
+  color:rgb(73, 30, 10);
+  padding: 1rem
+}
+
+.top-links-list {
+  display: grid;
+  justify-content: right;
+  grid-auto-flow: column;
+  width: auto;
+  list-style-type: none;
+}
+
+.link-item {
+  padding: 0 1em;
+} 
