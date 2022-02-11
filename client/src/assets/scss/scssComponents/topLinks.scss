@@ -1,16 +1,33 @@
 .top-links {
   color:rgb(73, 30, 10);
+  display: flex;
+  justify-content: space-between;
   padding: 1rem
 }
 
-.top-links-list {
-  display: grid;
-  justify-content: right;
-  grid-auto-flow: column;
-  width: auto;
-  list-style-type: none;
+.top-links-right {
+  display: flex;
+  text-align: right;
+  align-items: center;
+
+}
+
+.top-links-left {
+  display: flex;
+  align-items: center;
 }
 
 .link-item {
-  padding: 0 1em;
+  padding: 0.5rem
 } 
+
+.sponsor-tile {
+  display: flex;
+  align-items: center;
+}
+
+.sponsor-logo {
+  border-radius: 50%;
+  max-width: 5rem;
+}
+

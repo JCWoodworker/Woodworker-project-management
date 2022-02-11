@@ -3,6 +3,7 @@
 @include foundation-everything;
 @import "../scss/scssComponents/colors.scss";
 @import "../scss/scssComponents/topLinks.scss";
+@import "../scss/scssComponents/weather.scss";
 
 *,
 *::before,
@@ -39,7 +40,7 @@ a:hover {
   border-radius: 0.4rem;
   max-width: 75%;
   min-width: 300px;
-  margin: 4rem auto;
+  margin: 4rem auto 0 auto;
   background-color: rgb(228, 228, 228);
   min-height: 800px ;
 }
@@ -49,15 +50,7 @@ a:hover {
   padding: 1rem;
 }
 
-.sponsor-tile {
-  text-align: center;
-  margin: 0 auto;
-}
-
-.sponsor-logo {
-  border-radius: 6rem;
-}
-
 .complete {
   text-decoration: line-through;
 }
+
