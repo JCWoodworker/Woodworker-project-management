@@ -1,6 +1,6 @@
 import React from "react"
 
-const Weather = (props) => {
+const Weather = props => {
   
   return (
     <div className="weather-block">

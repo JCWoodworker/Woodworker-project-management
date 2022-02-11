@@ -9,6 +9,7 @@ import SignInForm from "./authentication/SignInForm"
 import TopBar from "./layout/TopBar"
 import HomePage from "./layout/HomePage"
 import Weather from "./layout/Weather"
+import AuthenticatedHomePage from "./layout/AuthenticatedHomePage"
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined)
@@ -64,7 +65,10 @@ const App = (props) => {
             user={currentUser}
           />
           <Switch>
-            <Route exact path="/" component={HomePage} />
+            <Route 
+              exact path="/" 
+              component={currentUser? AuthenticatedHomePage : HomePage} 
+            />
             <Route exact path="/users/new" component={RegistrationForm} />
             <Route exact path="/user-sessions/new" component={SignInForm} />
           </Switch>

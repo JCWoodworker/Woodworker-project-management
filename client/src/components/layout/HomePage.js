@@ -1,19 +1,17 @@
 import React from "react"
 
-const HomePage = (props) => {
+const HomePage = props => {
   return (
     <div className="page-container">
-      <h1><strong>Woodworking Project Pricing App</strong></h1>
-      <h3>Please sign in or sign up</h3>
-      Upcoming Features:
+      <h1>Welcome to the Project Pricing App!</h1>
+      <h3>Upcoming Features:</h3>
       <p></p>
       <p className="complete">Sign in and out</p> 
-      <p className="complete">Display weather</p> 
-      <p className="complete">Display sponsor</p> 
-      <p>Add new project</p>
-      <p>View your working projects</p>
-      <p>Add wood types and board-feet needed</p>
-      <p>Do a barrel roll</p>
+      <p className="complete">Display your local weather</p> 
+      <p className="complete">Display sponsor with link to their website</p>
+      <p className="complete">Signed-in homepage</p>
+      <p>Intro Video</p>
+      <p>Sign up is free!</p>
     </div>
   )
 }
