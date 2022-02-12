@@ -7,7 +7,7 @@ const weatherRouter = new express.Router()
 
 weatherRouter.get('/:lat&:long', async (req, res) => {
   try {
-    const response = await got(`https://api.openweathermap.org/data/2.5/weather?lat=${req.params.lat}&lon=${req.params.long}&appid=d8e8742fa1b1aa5b85716c6144013e98`)
+    const response = await got(`https://api.openweathermap.org/data/2.5/weather?lat=${req.params.lat}&lon=${req.params.long}&appid=${weatherKey.weatherKey}`)
     const body = JSON.parse(response.body)
     const city = body.name
     const description = body.weather[0].description
