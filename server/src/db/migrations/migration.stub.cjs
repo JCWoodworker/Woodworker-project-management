@@ -5,9 +5,9 @@
 /**
  * @param {Knex} knex
  */
-exports.up = async (knex) => {}
+exports.up = async (knex) => {};
 
 /**
- * @param {Knex} knex
- */
-exports.down = (knex) => {}
+  * @param {Knex} knex
+  */
+exports.down = async (knex) => {};

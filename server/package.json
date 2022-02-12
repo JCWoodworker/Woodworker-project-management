@@ -57,7 +57,7 @@
     "got": "^11.8.0",
     "knex": "^1.0.2",
     "morgan": "^1.10.0",
-    "objection": "^3.0.1",
+    "objection": "^2.2.3",
     "objection-unique": "^1.2.2",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0",
