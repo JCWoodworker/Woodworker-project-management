@@ -10,7 +10,9 @@ const projectsRouter = new express.Router()
 projectsRouter.get('/', async (req, res) => {
   try {
     const projects = await Project.query()
-    const serializedProjects = await projects.map(project => ProjectSerializer.getSummary(project))
+    const serializedProjects = await projects.map(project => {
+      return ProjectSerializer.getSummary(project)
+    })
     return res.status(200).json({ projects: serializedProjects })
   } catch(error) {
     return res.status(500).json({ error: error })
