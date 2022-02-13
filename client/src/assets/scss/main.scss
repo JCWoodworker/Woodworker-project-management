@@ -23,32 +23,28 @@ body {
 }
 
 a:link {
-  color:$font-color;
+  color:$light-beige;
 }
 a:visited {
-  color: $font-color;
+  color: $light-beige;
 }
 a:hover {
   color: black
 }
 
 .app-container {
-  color: $font-color;
-  border-radius: 0.5rem;
+  color: $red-brown;
+  border-radius: 0.6rem;
   max-width: 75%;
   min-width: 300px;
   margin: 0 auto;
-  background-color: $app-background;
+  background-color: $light-beige;
   height: 800px ;
 }
 
-.page-container {
+.home-page-container {
   text-align: center;
   padding: 1rem;
-}
-
-.complete {
-  text-decoration: line-through;
 }
 
 .registration-form,

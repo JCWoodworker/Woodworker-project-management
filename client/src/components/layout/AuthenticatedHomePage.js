@@ -5,7 +5,7 @@ const AuthenticatedHomePage = ({ user }) => {
 
 
   return (
-    <div className="page-container">
+    <div className="home-page-container">
       <h1>Welcome!</h1>
       <p>Select an active project to edit</p>
       <ProjectsIndex />
