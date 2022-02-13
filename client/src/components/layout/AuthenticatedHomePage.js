@@ -1,4 +1,5 @@
 import React from "react"
+import ProjectsIndex from "./ProjectsIndex"
 
 const AuthenticatedHomePage = ({ user }) => {
 

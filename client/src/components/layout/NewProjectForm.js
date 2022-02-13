@@ -10,3 +10,5 @@ const NewProjectForm = props => {
     </div>
   )
 }
+
+export default NewProjectForm

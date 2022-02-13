@@ -9,3 +9,5 @@ const ProjectsIndex = props => {
     <h1>Choose a project to work on</h1>
   )
 }
+
+export default ProjectsIndex
