@@ -14,10 +14,6 @@ import AuthenticatedHomePage from "./layout/AuthenticatedHomePage"
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined)
   const [forecast, setForecast] = useState({})
-  const [currentLocation, setCurrentLocation] = useState({
-    latitude: "",  
-    longitude: ""
-  })
   
   const fetchCurrentUser = async () => {
     try {
@@ -27,16 +23,20 @@ const App = (props) => {
       setCurrentUser(null)
     }
   }
-
+  
   const getYourLocation = () => {
-    window.navigator.geolocation.getCurrentPosition(successfulLookup, unsuccessfulLookup)
+    window.navigator.geolocation.getCurrentPosition(successfulLookup, console.log)
   }
-
+  let locationConsent = true
   const successfulLookup = async yourLocation => {
-    const lat = yourLocation.coords.latitude
-    const long = yourLocation.coords.longitude
+    let latitude = 42.364758
+    let longitude = -71.067421
+    if (locationConsent) {
+      latitude = yourLocation.coords.latitude
+      longitude = yourLocation.coords.longitude
+    }
     try {
-      const response = await fetch (`/api/v1/weather/${lat}&${long}`)
+      const response = await fetch (`/api/v1/weather/${latitude}&${longitude}`)
       const body = await response.json()
       setForecast({
         city: body.city,
@@ -49,19 +49,14 @@ const App = (props) => {
     }
   }
 
-  const unsuccessfulLookup = () => {
-    console.log('Location blocked.  Please allow this site to use your location for local weather')
-  }
-
-  
   useEffect(() => {
     fetchCurrentUser()
     getYourLocation()
   }, [])
-  
+
   return (
     <div>
-      <Weather 
+      <Weather
         forecast={forecast}
       />
       <div className="app-container">
