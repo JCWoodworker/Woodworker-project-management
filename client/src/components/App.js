@@ -14,10 +14,6 @@ import AuthenticatedHomePage from "./layout/AuthenticatedHomePage"
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined)
   const [forecast, setForecast] = useState({})
-  const [currentLocation, setCurrentLocation] = useState({
-    latitude: "",  
-    longitude: ""
-  })
   
   const fetchCurrentUser = async () => {
     try {

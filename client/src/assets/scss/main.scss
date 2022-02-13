@@ -1,9 +1,10 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
-@import "../scss/scssComponents/colors.scss";
-@import "../scss/scssComponents/topLinks.scss";
-@import "../scss/scssComponents/weather.scss";
+@import "../scss/stylesheets/colors.scss";
+@import "../scss/stylesheets/topLinks.scss";
+@import "../scss/stylesheets/weather.scss";
+@import "../scss/stylesheets/projects.scss";
 
 *,
 *::before,
@@ -22,22 +23,22 @@ body {
 }
 
 a:link {
-  color:rgb(73, 30, 10);
+  color:$font-color;
 }
 a:visited {
-  color: rgb(73, 30, 10);
+  color: $font-color;
 }
 a:hover {
   color: black
 }
 
 .app-container {
-  color: rgb(73, 30, 10);
-  border-radius: 1rem;
+  color: $font-color;
+  border-radius: 0.5rem;
   max-width: 75%;
   min-width: 300px;
   margin: 0 auto;
-  background-color: rgb(228, 228, 228);
+  background-color: $app-background;
   min-height: 800px ;
 }
 
