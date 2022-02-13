@@ -11,7 +11,7 @@ rootRouter.use("/", clientRouter)
 rootRouter.use("/api/v1/user-sessions", userSessionsRouter)
 rootRouter.use("/api/v1/users", usersRouter)
 rootRouter.use("/api/v1/weather", weatherRouter)
-rootRouter.use("/projects", projectsRouter)
+rootRouter.use("/api/v1/projects", projectsRouter)
 
 
 export default rootRouter
