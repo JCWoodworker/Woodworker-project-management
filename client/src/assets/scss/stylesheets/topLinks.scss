@@ -1,13 +1,14 @@
+@import "./colors.scss";
 
 .top-links {
-  color:rgb(73, 30, 10);
+  color:$font-color;
   font-weight: bold;
-  background-color: rgb(120, 120, 120);
+  background-color: $medium-gray;
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 }
 
 .top-links-right {
