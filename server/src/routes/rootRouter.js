@@ -7,8 +7,8 @@ import projectsRouter from "./api/v1/projectsRouter.js"
 import hardwoodsRouter from "./api/v1/hardwoodsRouter.js"
 
 const rootRouter = new express.Router()
-rootRouter.use("/", clientRouter)
 
+rootRouter.use("/", clientRouter)
 rootRouter.use("/api/v1/user-sessions", userSessionsRouter)
 rootRouter.use("/api/v1/users", usersRouter)
 rootRouter.use("/api/v1/weather", weatherRouter)

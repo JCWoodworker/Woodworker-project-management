@@ -1,4 +1,4 @@
- import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import ProjectTile from "./ProjectTile"
 
 const ProjectsIndex = props => {

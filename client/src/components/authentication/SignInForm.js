@@ -71,7 +71,7 @@ const SignInForm = () => {
       <form>
         <div>
           <label>
-            User Name
+            Email
             <input type="text" name="email" value={userPayload.email} onChange={onInputChange} />
             <FormError error={errors.email} />
           </label>
