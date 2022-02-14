@@ -23,7 +23,13 @@ const TopBar = ({ user }) => {
 
   let userName = null
   if (user) {
-    userName = <p className="greeting"> - Hello  {user.email}!</p>
+    userName = 
+      <div className="logged-in-links">
+        <Link to="/">
+          <p className="logged-in">Active Projects</p>
+        </Link>
+        <p className="logged-in">Settings</p>
+      </div>  
   }
   
   return (

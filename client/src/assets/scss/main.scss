@@ -23,37 +23,50 @@ body {
 }
 
 a:link {
-  color:$font-color;
+  color:$medium-beige;
 }
 a:visited {
-  color: $font-color;
+  color: $medium-beige;
 }
 a:hover {
   color: black
 }
 
 .app-container {
-  color: $font-color;
-  border-radius: 0.5rem;
+  color: $red-brown;
+  border-radius: 0.6rem;
   max-width: 75%;
   min-width: 300px;
   margin: 0 auto;
-  background-color: $app-background;
+  margin-bottom: rem;
+  background-image: url('https://i.imgur.com/bwDuFOw.jpg');
+  background-size: cover;
   height: 800px ;
-}
+  box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 50px;
 
-.page-container {
+} 
+
+.home-page-container {
+  display: inline-block;
+  font-weight: bolder;
   text-align: center;
   padding: 1rem;
+  background-color: $transparent-background;
+  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  border-bottom-right-radius: 0.5rem;
 }
 
-.complete {
-  text-decoration: line-through;
+.auth-page-container {
+  text-align: center;
+  padding: 1rem;
 }
 
 .registration-form,
 .sign-in-form {
   max-width: 40%;
   margin: 4rem auto;
+  background-color: $transparent-background;
+  border-radius: 0.5rem;
+
 }
 

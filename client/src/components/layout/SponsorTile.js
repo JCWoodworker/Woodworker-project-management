@@ -12,9 +12,6 @@ const SponsorTile = props => {
         width="200px" 
       />
       </a>
-      <a href="https://www.rilocalwoodworks.com" target="_blank">
-        <p className="link-item">RI Local Woodworks</p>
-      </a>
     </div>
 
   )

@@ -1,13 +1,9 @@
 import React from "react"
 import ProjectsIndex from "./ProjectsIndex"
 
-const AuthenticatedHomePage = ({ user }) => {
-
-
+const AuthenticatedHomePage = props => {
   return (
-    <div className="page-container">
-      <h1>Welcome!</h1>
-      <p>Select an active project to edit</p>
+    <div className="auth-page-container">
       <ProjectsIndex />
     </div>
   )
