@@ -91,7 +91,7 @@ const RegistrationForm = () => {
       <form onSubmit={onSubmit}>
         <div>
           <label>
-            User Name
+            Email
             <input type="text" name="email" value={userPayload.email} onChange={onInputChange} />
             <FormError error={errors.email} />
           </label>

@@ -20,4 +20,15 @@ projectsRouter.get('/', async (req, res) => {
 
 })
 
+projectsRouter.get('/:id', async (req, res) => {
+  const id = req.params.id
+  try {
+    const project = await Project.query().findById(id)
+    return res.status(200).json({ project: project})
+  } catch (error) {
+    return res.status(404).json({ errors: error.data})
+  }
+
+})
+
 export default projectsRouter
