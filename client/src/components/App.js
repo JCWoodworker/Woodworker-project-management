@@ -70,6 +70,7 @@ const App = (props) => {
               exact path="/" 
               component={currentUser? AuthenticatedHomePage : HomePage} 
             />
+            <Route exact path="/projects" component={RegistrationForm} />
             <Route exact path="/users/new" component={RegistrationForm} />
             <Route exact path="/user-sessions/new" component={SignInForm} />
           </Switch>
