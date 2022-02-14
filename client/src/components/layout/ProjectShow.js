@@ -27,18 +27,22 @@ const ProjectShow = props => {
   }, [])
 
   return (
-    <div className="project-tile-container project-show">
-      <h1>{project.name}</h1>
-      <p>Customer: {project.customer}</p>
-      <p>Description: {project.description}</p>
-      <p>Order Quantity: {project.quantity}</p>
-      <p>COMING SOON ...</p>
-      <p>* Add Woods</p>
-      <p>* View Estimated Cost</p>
-      <p>* View Suggested Retail Pricing</p>
-      <p>* Edit Project</p>
-      <Link to='/' className="back-button">GO BACK TO ACTIVE PROJECTS</Link>
-    </div>
+    <>
+      <div className="project-tile-container project-show">
+        <h1>{project.name}</h1>
+        <p>Customer: {project.customer}</p>
+        <p>Description: {project.description}</p>
+        <p>Order Quantity: {project.quantity}</p>
+        <p>COMING SOON ...</p>
+        <p>* Add Woods</p>
+        <p>* View Estimated Cost</p>
+        <p>* View Suggested Retail Pricing</p>
+        <p>* Edit Project</p>
+      </div>
+      <div>
+        <Link to='/' className="back-button">GO BACK TO ACTIVE PROJECTS</Link>
+      </div>
+    </>
   )
 }
 
