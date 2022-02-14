@@ -4,7 +4,7 @@ import ProjectsIndex from "./ProjectsIndex"
 const AuthenticatedHomePage = ({ user }) => {
 
   return (
-    <div className="home-page-container">
+    <div className="auth-page-container">
       <ProjectsIndex />
     </div>
   )
