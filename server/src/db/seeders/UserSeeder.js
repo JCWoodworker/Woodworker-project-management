@@ -4,16 +4,16 @@ class UserSeeder {
   static async seed() {
     const userData = [
       {
-        email: "jamesWoodworker",
-        cryptedPassword: "123"
+        email: "testuser1@test.com",
+        cryptedPassword: "$2b$10$A3BT.uT3E0toGYCbbGs4oe2iEfK5.tqAbTb95VXnF1o5N/P7eW9.G"
       },
       {
-        email: "joeWoodworker",
-        cryptedPassword: "123"
+        email: "testuser2@test.com",
+        cryptedPassword: "$2b$10$A3BT.uT3E0toGYCbbGs4oe2iEfK5.tqAbTb95VXnF1o5N/P7eW9.G"
       },
       {
-        email: "connorWoodworker",
-        cryptedPassword: "123"
+        email: "testuser3@test.com",
+        cryptedPassword: "$2b$10$A3BT.uT3E0toGYCbbGs4oe2iEfK5.tqAbTb95VXnF1o5N/P7eW9.G"
       },
     ]
 
