@@ -4,7 +4,7 @@
   display: flex;
   padding: 0.2rem;
   justify-content: center;
-  max-height: 500px;
+  max-height: 650px;
   overflow-y: scroll;
 }
 
@@ -12,8 +12,10 @@
   margin: 1em;
   padding: 1em;
   border-radius: 0.5rem;
-  background-color: $red-brown;
-  color: $light-beige;
+  background-color: $transparent-background;
+  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  color: $red-brown;
+
 }
 
 .project-name {

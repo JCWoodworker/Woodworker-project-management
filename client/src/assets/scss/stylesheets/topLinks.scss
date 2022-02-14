@@ -1,12 +1,13 @@
 @import "./colors.scss";
 
 .top-links {
-  color:$light-beige;
+  color:$medium-beige;
   font-weight: bold;
   background-color: $red-brown;
   display: flex;
   justify-content: space-between;
   padding: 1rem;
+  padding-top: 1.4rem;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }
@@ -27,6 +28,14 @@
   padding: 0.5rem
 } 
 
+.logged-in-links {
+  display: flex;
+}
+
+.logged-in {
+  margin-left: 1rem;
+}
+
 .sponsor-tile {
   display: flex;
   align-items: center;
@@ -35,5 +44,10 @@
 .sponsor-logo {
   border-radius: 50%;
   max-width: 5rem;
+  margin-top: -0.7rem;
+}
+
+.greeting {
+  margin-left: 0.5rem;
 }
 
