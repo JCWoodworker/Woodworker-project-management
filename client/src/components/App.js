@@ -12,7 +12,7 @@ import Weather from "./layout/Weather"
 import AuthenticatedHomePage from "./layout/AuthenticatedHomePage"
 
 const App = (props) => {
-  const [currentUser, setCurrentUser] = useState(undefined)
+  const [currentUser, setCurrentUser] = useState(null)
   const [forecast, setForecast] = useState({})
   
   const fetchCurrentUser = async () => {
