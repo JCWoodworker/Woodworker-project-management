@@ -5,6 +5,10 @@ import SponsorTile from "./SponsorTile"
 
 const TopBar = ({ user }) => {
   const unauthenticatedListItems = [
+    
+    <Link to="/">
+      <p className="link-item home-linkt">Home</p>
+    </Link>,
     <p key="sign-in" className="link-item">
       <Link to="/user-sessions/new">Sign In</Link>
     </p>,
@@ -21,14 +25,17 @@ const TopBar = ({ user }) => {
     </p>,
   ]
 
-  let userName = null
+  let loggedInLinks = null
   if (user) {
-    userName = 
+    loggedInLinks = 
       <div className="logged-in-links">
         <Link to="/">
           <p className="logged-in">Active Projects</p>
         </Link>
-        <p className="logged-in">Settings</p>
+        <Link to="/wood-info">
+          <p className="logged-in">Wood Info</p>
+        </Link>
+        {/* <p className="logged-in">Settings</p> */}
       </div>  
   }
   
@@ -36,7 +43,7 @@ const TopBar = ({ user }) => {
     <div className="top-links">
       <div className="top-links-left">
         <SponsorTile />
-        {userName}
+        {loggedInLinks}
       </div>
       <div className="top-links-right">
         {user ? authenticatedListItems : unauthenticatedListItems}

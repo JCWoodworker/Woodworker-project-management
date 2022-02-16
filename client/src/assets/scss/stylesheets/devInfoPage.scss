@@ -1,0 +1,19 @@
+@import "./colors.scss";
+
+.dev-info-container {
+  display: flex;
+  justify-content: center;
+  gap: 8rem
+}
+
+.dev-image {
+  max-width: 400px;
+  border-radius: 50%;
+  border: 0.5rem solid $red-brown
+
+}
+
+.dev-details {
+  display: flex;
+  flex-direction: column;
+}

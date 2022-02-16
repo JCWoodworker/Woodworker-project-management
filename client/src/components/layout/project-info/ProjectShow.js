@@ -28,11 +28,16 @@ const ProjectShow = props => {
 
   return (
     <>
-      <div className="project-tile-container project-show">
-        <h1>{project.name}</h1>
-        <p>Customer: {project.customer}</p>
-        <p>Description: {project.description}</p>
-        <p>Order Quantity: {project.quantity}</p>
+      <div className="project-show">
+        <div className="project-show-headers">
+          <h1 className="page-heading">{project.name}</h1>
+          <div className="separator"></div>
+          <div className="customer-order">
+            <p>Customer: {project.customer}</p>
+            <p>Order Quantity: {project.quantity}</p>
+          </div>
+        </div>
+        <h4 className="project-description"><strong>Description: </strong>{project.description}</h4>
         <p>COMING SOON ...</p>
         <p>* Add Woods</p>
         <p>* View Estimated Cost</p>
