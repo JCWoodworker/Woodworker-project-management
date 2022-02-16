@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import ProjectTile from "./ProjectTile"
+import NewProjectForm from "./NewProjectForm"
 
 const ProjectsIndex = props => {
   
@@ -32,6 +33,9 @@ const ProjectsIndex = props => {
     <div className="projects-list-show-container">
       <div className="projects-index-container">
         {projectTiles}
+      </div>
+      <div className="projects-form-container">
+        <NewProjectForm />
       </div>
     </div>
   )
