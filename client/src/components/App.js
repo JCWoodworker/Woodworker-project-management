@@ -62,7 +62,7 @@ const App = (props) => {
     <div 
       className = "weather-block"
       forecast={forecast} >
-      <p classname="loading-weather">Loading Weather...</p>
+      <p className="loading-weather">Loading Weather...</p>
   </div>
   if (success) {
     weatherHeading = <Weather forecast={forecast} />
@@ -79,7 +79,7 @@ const App = (props) => {
           <Switch>
             <Route 
               exact path="/" 
-              component={currentUser? AuthenticatedHomePage : HomePage}> 
+              component={currentUser? AuthenticatedHomePage : HomePage}>
             </Route>
             <Route 
               exact path="/projects/:id"

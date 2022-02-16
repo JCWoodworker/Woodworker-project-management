@@ -9,6 +9,7 @@ const projectsRouter = new express.Router()
 
 projectsRouter.get('/', async (req, res) => {
   try {
+    
     const projects = await Project.query()
     const serializedProjects = await projects.map(project => {
       return ProjectSerializer.getSummary(project)
