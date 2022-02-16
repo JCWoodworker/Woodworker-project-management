@@ -67,7 +67,7 @@ const App = (props) => {
   if (success) {
     weatherHeading = <Weather forecast={forecast} />
   }
-  
+
   return (
     <div>
       {weatherHeading}
@@ -78,8 +78,8 @@ const App = (props) => {
           />
           <Switch>
             <Route 
-              exact path="/" 
-              component={currentUser? AuthenticatedHomePage : HomePage}>
+              exact path="/">
+                <HomePage user={currentUser} />
             </Route>
             <Route 
               exact path="/projects/:id"

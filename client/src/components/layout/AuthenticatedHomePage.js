@@ -5,7 +5,7 @@ const AuthenticatedHomePage = (props) => {
   
   return (
     <div className="auth-page-container">
-      <ProjectsIndex />
+      <ProjectsIndex user={props.user} />
     </div>
   )
 }
