@@ -25,9 +25,21 @@ a:visited {
   color: $medium-beige;
 }
 a:hover {
-  color: black
+  color: white
 }
 
 .page-heading {
   font-weight: bolder;
+}
+
+.home-link-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.home-page-link {
+  background-color: $red-brown;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
 }

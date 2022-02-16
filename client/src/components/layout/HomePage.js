@@ -11,12 +11,14 @@ const HomePage = props => {
       <p>"Woodworking Project Management and Cost Calculator"</p>
       <p>*** Currently under construction ***</p>
       <p>The app will be FREE to use!</p>
-      <Link to="/wood-info">
-        <p className = "home-page-link">Wood Info</p>
-      </Link>
-      <Link to="/dev-info">
-        <p className = "home-page-link">Developer Info</p>
-      </Link>
+      <div className="home-link-list">
+        <Link to="/wood-info">
+          <p className = "home-page-link">Wood Info</p>
+        </Link>
+        <Link to="/dev-info">
+          <p className = "home-page-link">Developer Info</p>
+        </Link>
+      </div>
     </div>
   )
 

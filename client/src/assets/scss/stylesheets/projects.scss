@@ -14,8 +14,8 @@
 
 .project-tile-container,
 .project-show {
-  margin: 1em;
-  padding: 1em;
+  margin: 1rem;
+  padding: 1rem;
   border-radius: 0.5rem;
   background-color: $transparent-background;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
@@ -51,11 +51,40 @@
 
 .project-show {
   margin: 1rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  // align-items: center;
   min-width: 90%;
   max-width: 90%;
   min-height: 82%;
   max-height: 82%;
-  
+}
+
+.project-show-headers {
+  display: flex;
+  justify-content: left;
+  gap: 3rem;
+  background-color: $red-brown;
+  color: $medium-beige;
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+  width: max-content
+}
+
+.separator {
+  border: 2px solid $medium-beige;
+}
+
+.customer-order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-description {
+  margin: 2rem 0;
 }
 
 .back-button {
