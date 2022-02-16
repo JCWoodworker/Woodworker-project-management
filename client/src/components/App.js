@@ -15,6 +15,7 @@ import ProjectShow from "./layout/ProjectShow"
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(null)
   const [forecast, setForecast] = useState({})
+  const [success, setSuccess] = useState(false)
   
   const fetchCurrentUser = async () => {
     try {
@@ -24,11 +25,11 @@ const App = (props) => {
       setCurrentUser(null)
     }
   }
-
+  
   const getYourLocation = () => {
     window.navigator.geolocation.getCurrentPosition(successfulLookup, unsuccessfulLookup)
   }
-
+  
   const successfulLookup = async yourLocation => {
     const lat = yourLocation.coords.latitude
     const long = yourLocation.coords.longitude
@@ -41,6 +42,7 @@ const App = (props) => {
         description: body.description,
         icon: body.icon
       })
+      setSuccess(true)
     } catch(error) {
       console.error(error)
     }
@@ -55,12 +57,20 @@ const App = (props) => {
     fetchCurrentUser()
     getYourLocation()
   }, [])
+
+  let weatherHeading = 
+    <div 
+      className = "weather-block"
+      forecast={forecast} >
+      <p classname="loading-weather">Loading Weather...</p>
+  </div>
+  if (success) {
+    weatherHeading = <Weather forecast={forecast} />
+  }
   
   return (
     <div>
-      <Weather 
-        forecast={forecast}
-      />
+      {weatherHeading}
       <div className="app-container">
         <Router>
           <TopBar 
