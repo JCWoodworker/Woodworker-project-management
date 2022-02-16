@@ -3,15 +3,17 @@ import Project from '../../../models/Project.js'
 import ProjectSerializer from '../../../../serializers/ProjectSerializer.js'
 import cleanUserInput from '../../../../services/cleanUserInput.js'
 import { ValidationError } from 'objection'
+import { User } from '../../../models/index.js'
 
 
 const projectsRouter = new express.Router()
 
-projectsRouter.get('/', async (req, res) => {
+projectsRouter.get('/users/:user', async (req, res) => {
   try {
-    
-    const projects = await Project.query()
-    const serializedProjects = await projects.map(project => {
+    const currentUser = req.params.user
+    const user = await User.query().findById(currentUser)
+    user.projects = await user.$relatedQuery("projects")
+    const serializedProjects = await user.projects.map(project => {
       return ProjectSerializer.getSummary(project)
     })
     return res.status(200).json({ projects: serializedProjects })
