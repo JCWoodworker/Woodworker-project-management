@@ -4,8 +4,8 @@ const NewProjectForm = props => {
 
   return (
     <>
-      <h3>Start A New Project:</h3>
-      <form>
+      <h3 className="new-project-heading">Start A New Project:</h3>
+      <form className="new-project-form">
         <label htmlFor="name">Name
           <input
             type="text"
@@ -41,15 +41,3 @@ const NewProjectForm = props => {
 }
 
 export default NewProjectForm
-
-{/* <form>
-      <label>
-        <input type="text" name="name">Name</input>
-      </label>
-      <label>
-        <input type="text" name="description">Description</input>
-      </label>
-      <label>
-        <input type="text" name="customer">Customer</input>
-      </label>
-    </form> */}

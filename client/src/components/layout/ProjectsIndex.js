@@ -30,7 +30,7 @@ const ProjectsIndex = props => {
   
 
   return (
-    <div className="projects-list-show-container">
+    <div className="projects-list-container">
       <div className="projects-index-container">
         {projectTiles}
       </div>

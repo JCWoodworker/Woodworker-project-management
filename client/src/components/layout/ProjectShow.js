@@ -28,7 +28,7 @@ const ProjectShow = props => {
 
   return (
     <>
-      <div className="project-tile-container project-show">
+      <div className="project-show">
         <h1>{project.name}</h1>
         <p>Customer: {project.customer}</p>
         <p>Description: {project.description}</p>
