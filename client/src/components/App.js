@@ -9,8 +9,9 @@ import SignInForm from "./authentication/SignInForm"
 import TopBar from "./layout/TopBar"
 import HomePage from "./layout/HomePage"
 import Weather from "./layout/Weather"
-import AuthenticatedHomePage from "./layout/AuthenticatedHomePage"
-import ProjectShow from "./layout/ProjectShow"
+import ProjectShow from "./layout/project-info/ProjectShow"
+import HardwoodsIndex from "./layout/wood-info/HardwoodsIndex"
+import DevInfoPage from "./layout/DevInfoPage"
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(null)
@@ -62,8 +63,8 @@ const App = (props) => {
     <div 
       className = "weather-block"
       forecast={forecast} >
-      <p className="loading-weather">Loading Weather...</p>
-  </div>
+      <p className="loading-weather loader">Loading Weather</p>
+      <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>  </div>
   if (success) {
     weatherHeading = <Weather forecast={forecast} />
   }
@@ -88,6 +89,8 @@ const App = (props) => {
             </Route>
             <Route exact path="/users/new" component={RegistrationForm} />
             <Route exact path="/user-sessions/new" component={SignInForm} />
+            <Route exact path="/wood-info" component={HardwoodsIndex} />
+            <Route exact path="/dev-info" component={DevInfoPage} />
           </Switch>
         </Router>
       </div>

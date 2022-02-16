@@ -16,7 +16,6 @@
   display: flex;
   text-align: right;
   align-items: center;
-
 }
 
 .top-links-left {
@@ -47,6 +46,7 @@
   margin-top: -0.7rem;
 }
 
-.greeting {
-  margin-left: 0.5rem;
+.home-link {
+  align-self: left;
 }
+

@@ -2,9 +2,11 @@
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
 @import "../scss/stylesheets/colors.scss";
+@import "../scss/stylesheets/homePages.scss";
 @import "../scss/stylesheets/topLinks.scss";
 @import "../scss/stylesheets/weather.scss";
 @import "../scss/stylesheets/projects.scss";
+@import "../scss//stylesheets/projectForm.scss";
 
 *,
 *::before,
@@ -22,16 +24,6 @@ body {
   font-family: 'Ubuntu', sans-serif;
 }
 
-a:link {
-  color:$medium-beige;
-}
-a:visited {
-  color: $medium-beige;
-}
-a:hover {
-  color: black
-}
-
 .app-container {
   color: $red-brown;
   border-radius: 0.6rem;
@@ -46,27 +38,13 @@ a:hover {
 
 } 
 
-.home-page-container {
-  display: inline-block;
-  font-weight: bolder;
-  text-align: center;
-  padding: 1rem;
-  background-color: $transparent-background;
-  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
-  border-bottom-right-radius: 0.5rem;
-}
-
-.auth-page-container {
-  text-align: center;
-  padding: 1rem;
-}
-
 .registration-form,
 .sign-in-form {
   max-width: 40%;
   margin: 4rem auto;
   background-color: $transparent-background;
   border-radius: 0.5rem;
-
 }
+
+
 

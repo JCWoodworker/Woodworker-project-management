@@ -1,5 +1,5 @@
 import React from "react"
-import ProjectsIndex from "./ProjectsIndex"
+import ProjectsIndex from "./project-info/ProjectsIndex"
 
 const AuthenticatedHomePage = (props) => {
   
