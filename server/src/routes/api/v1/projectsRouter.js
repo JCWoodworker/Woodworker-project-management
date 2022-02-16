@@ -8,9 +8,9 @@ import { User } from '../../../models/index.js'
 
 const projectsRouter = new express.Router()
 
-projectsRouter.get('/:user', async (req, res) => {
+projectsRouter.get('/users/:user', async (req, res) => {
   try {
-    let currentUser = req.params.user
+    const currentUser = req.params.user
     const user = await User.query().findById(currentUser)
     user.projects = await user.$relatedQuery("projects")
     const serializedProjects = await user.projects.map(project => {
