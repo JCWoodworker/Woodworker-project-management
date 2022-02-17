@@ -86,15 +86,17 @@
   margin: 2rem 0;
 }
 
+.back-button-container {
+  position: relative;
+  margin: 5rem;
+}
+
 .back-button {
   background-color: none;
   border: 3px solid $red-brown;
   border-radius: 1rem;
   padding: 0.5rem;
   box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 50px;
-  // position: absolute;
-  // margin: -5rem 5rem;
-  
 }
 
 a.back-button:link {
