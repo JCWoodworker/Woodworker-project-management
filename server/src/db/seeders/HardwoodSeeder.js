@@ -44,7 +44,35 @@ class HardwoodSeeder {
         region: "Central Africa",
         jankaHardness: 1450,
         imageUrl: "https://www.wood-database.com/wp-content/uploads/millettia-laurentii-225x450.jpg"
-      }
+      },
+      {
+        name: "Peruvian Walnut",
+        price: "10.95",
+        region: "Southern Mexico, Central and South America",
+        jankaHardness: 960,
+        imageUrl: "https://www.wood-database.com/wp-content/uploads/peruvian-walnut.jpg"
+      },
+      {
+        name: "Black Limba",
+        price: "12.95",
+        region: "Tropical Western Africa",
+        jankaHardness: 670,
+        imageUrl: "https://www.wood-database.com/wp-content/uploads/black-limba.jpg"
+      },
+      {
+        name: "Olivewood",  
+        price: "18.95",
+        region: "Europe and Eastern Africa",
+        jankaHardness: 2700,
+        imageUrl: "https://www.wood-database.com/wp-content/uploads/olive.jpg"
+      },
+      {
+        name: "Canarywood",  
+        price: "14.95",
+        region: "South America",
+        jankaHardness: 1520,
+        imageUrl: "https://www.wood-database.com/wp-content/uploads/canarywood-jh.jpg"
+      },
     ]
 
     for (const singleHardwood of hardwoodData) {
