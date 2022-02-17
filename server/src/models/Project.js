@@ -28,8 +28,8 @@ class Project extends Model {
         name: { type: "string" },
         description: { type: "text" },
         customer: { type: "string" },
-        quantity: { type: "integer" },
-        userId: { type: "integer" }
+        quantity: { type: ["integer", "string"] },
+        userId: { type: ["integer", "string"] }
       }
     }
   }
