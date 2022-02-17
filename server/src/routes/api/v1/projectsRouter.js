@@ -36,7 +36,7 @@ projectsRouter.post('/new-project/:user', async (req, res) => {
   const formInput = cleanUserInput(req.body)
   formInput.userId = req.params.user 
   try {
-    const newProject = await Project.query().insertAndFetch(formInput)
+    const newProject = await Project.query()
     return res.status(201).json({ project: newProject })
   } catch (error) {
     if (error instanceof ValidationError) {
