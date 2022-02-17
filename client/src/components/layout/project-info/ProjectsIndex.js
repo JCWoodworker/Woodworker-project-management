@@ -26,14 +26,14 @@ const ProjectsIndex = props => {
     fetchProjects()
   }, [])
 
-  const postNewProject = async newProjectdata => {
+  const postNewProject = async newProjectData => {
     try {
-      const response = await fetch(`/api/v1/projects/users/${userId}`, {
+      const response = await fetch(`/api/v1/projects/new-project/${userId}`, {
         method: "POST",
         headers: new Headers ({
           "Content-Type": "application/json"
         }),
-        body: JSON.stringify(newProjectdata)
+        body: JSON.stringify(newProjectData)
       })
       if (!response.ok) {
         if (response.status === 422) {
