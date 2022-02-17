@@ -4,7 +4,7 @@ class HardwoodSeeder {
   static async seed() {
     const hardwoodData = [
       {
-        name: "Hard Maple",
+        name: "Maple",
         price: "6.25",
         region: "Northeastern North America",
         jankaHardness: 1450,
@@ -72,6 +72,146 @@ class HardwoodSeeder {
         region: "South America",
         jankaHardness: 1520,
         imageUrl: "https://www.wood-database.com/wp-content/uploads/canarywood-jh.jpg"
+      },
+      {
+        name: "Osage Orange",  
+        price: "14.95",
+        region: "South-Central US",
+        jankaHardness: 2620,
+        imageUrl: "https://www.wood-database.com/wp-content/uploads/osage-orange.jpg"
+      },
+      {
+        name: "Maple (Curly)",  
+        price: "7.75",
+        region: "North America",
+        jankaHardness: 1000,
+        imageUrl: "https://www.wood-database.com/wp-content/uploads/acer-spp-curly.jpg"
+      },
+      {
+        name: "Maple (Birdseye)",  
+        price: "8.75",
+        region: "North America",
+        jankaHardness: 1000,
+        imageUrl: "https://www.wood-database.com/wp-content/uploads/acer-spp-birdseye.jpg"
+      },
+      {
+        name: "Maple (Ambrosia)",  
+        price: "4.75",
+        region: "North America",
+        jankaHardness: 800,
+        imageUrl: "https://www.wood-database.com/wp-content/uploads/acer-spp-ambrosia.jpg"
+      },
+      {
+        name: "White Oak",  
+        price: "8.95",
+        region: "Eastern US",
+        jankaHardness: 1350,
+        imageUrl: "https://www.wood-database.com/wp-content/uploads/quercus-rubra.jpg"
+      },
+      {
+        name: "Spanish Cedar",  
+        price: "8.95",
+        region: "Centran & South America, The Caribbean",
+        jankaHardness: 600,
+        imageUrl: "https://www.wood-database.com/wp-content/uploads/spanish-cedar.jpg"
+      },
+      {
+        name: "Aromatic Red Cedar",  
+        price: "",
+        region: "Eastern North America",
+        jankaHardness: 0,
+        imageUrl: "https://www.wood-database.com/wp-content/uploads/aromatic-red-cedar.jpg"
+      },
+      {
+        name: "Lacewood",  
+        price: "",
+        region: "Tropical South America",
+        jankaHardness: 840,
+        imageUrl: "https://www.wood-database.com/wp-content/uploads/brazilian-lacewood.jpg"
+      },
+      {
+        name: "Cumaru",  
+        price: "8.50",
+        region: "Northern South America",
+        jankaHardness: 3330,
+        imageUrl: "https://www.wood-database.com/wp-content/uploads/cumaru.jpg"
+      },
+      {
+        name: "Red Heart",  
+        price: "",
+        region: "",
+        jankaHardness: 0,
+        imageUrl: ""
+      },
+      {
+        name: "Yellow Heart",  
+        price: "",
+        region: "",
+        jankaHardness: 0,
+        imageUrl: ""
+      },
+      {
+        name: "Padauk",  
+        price: "",
+        region: "",
+        jankaHardness: 0,
+        imageUrl: ""
+      },
+      {
+        name: "Lati",  
+        price: "",
+        region: "",
+        jankaHardness: 0,
+        imageUrl: ""
+      },
+      {
+        name: "Teak",  
+        price: "",
+        region: "",
+        jankaHardness: 0,
+        imageUrl: ""
+      },
+      {
+        name: "Mahogany (Honduran)",  
+        price: "",
+        region: "",
+        jankaHardness: 0,
+        imageUrl: ""
+      },
+      {
+        name: "Sapele",  
+        price: "",
+        region: "",
+        jankaHardness: 0,
+        imageUrl: ""
+      },
+      {
+        name: "Bloodwood",  
+        price: "",
+        region: "",
+        jankaHardness: 0,
+        imageUrl: ""
+      },
+      {
+        name: "Cherry",  
+        price: "",
+        region: "",
+        jankaHardness: 0,
+        imageUrl: ""
+      },
+      {
+        name: "Goncalo Alves",  
+        price: "",
+        region: "",
+        jankaHardness: 0,
+        imageUrl: ""
+      },
+      {
+        name: "Leopardwood",  
+        price: "",
+        region: "",
+        jankaHardness: 0,
+        imageUrl: ""
       },
     ]
 
