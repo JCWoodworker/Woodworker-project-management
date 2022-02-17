@@ -23,8 +23,10 @@ const NewProjectForm = props => {
 
   const handleSubmit = async event => {
     event.preventDefault()
-    clearForm()
-    alert('You clicked submit, and nothing happened!!  No functionality is set up yet though ...')
+    const successfulPost = await props.postNewProject(newProject)
+    if (successfulPost) {
+      clearForm()
+    }
   }
 
   console.log(newProject)

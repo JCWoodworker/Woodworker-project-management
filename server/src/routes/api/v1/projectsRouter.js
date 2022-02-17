@@ -20,7 +20,6 @@ projectsRouter.get('/users/:user', async (req, res) => {
   } catch(error) {
     return res.status(500).json({ error: error })
   }
-
 })
 
 projectsRouter.get('/:id', async (req, res) => {
@@ -31,7 +30,22 @@ projectsRouter.get('/:id', async (req, res) => {
   } catch (error) {
     return res.status(404).json({ errors: error.data})
   }
+})
 
+projectsRouter.post('/', async (req, res) => {
+  const formInput = cleanUserInput(req.body)
+  formInput.userId = req.params.userId 
+  debugger
+  try {
+    const newProject = await Project.query().insertAndFetch(formInput)
+    debugger
+    return res.status(201).json({ project: newProject })
+  } catch (error) {
+    if (error instanceof ValidationError) {
+      return res.status(422).json({ errors: error.data })
+    }
+    return res.status(500).json({ errors: error })
+  }
 })
 
 export default projectsRouter

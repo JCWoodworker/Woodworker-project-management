@@ -3,11 +3,13 @@
 .dev-info-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 8rem
 }
 
 .dev-image {
-  max-width: 400px;
+  max-width: 300px;
+  min-width: 150px;
   border-radius: 50%;
   border: 0.5rem solid $red-brown
 

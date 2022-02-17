@@ -5,6 +5,7 @@
   padding: 0.2rem;
   justify-content: center;
   column-gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .projects-index-container {
@@ -30,7 +31,7 @@
 }
 .project-tile-container:hover {
   color: white;
-  background-color: $dark-gray;
+  background-color: $dark-gray-transparent;
 }
 
 .project-name {
@@ -52,20 +53,21 @@
 .project-show {
   margin: 1rem auto;
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-start;
-  // align-items: center;
   min-width: 90%;
   max-width: 90%;
   min-height: 82%;
   max-height: 82%;
+  overflow-y: scroll;
 }
 
 .project-show-headers {
   display: flex;
-  justify-content: left;
-  gap: 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
   background-color: $red-brown;
   color: $medium-beige;
   padding: 1rem 3rem;
@@ -73,13 +75,10 @@
   width:fit-content;
 }
 
-.separator {
-  border: 2px solid $medium-beige;
-}
-
 .customer-order {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -93,8 +92,8 @@
   border-radius: 1rem;
   padding: 0.5rem;
   box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 50px;
-  position: absolute;
-  margin: -5rem 5rem;
+  // position: absolute;
+  // margin: -5rem 5rem;
   
 }
 
@@ -106,5 +105,5 @@ a.back-button:visited {
 }
 a.back-button:hover {
   color: white;
-  background-color: $dark-gray;
+  background-color: $dark-gray-transparent;
 }
