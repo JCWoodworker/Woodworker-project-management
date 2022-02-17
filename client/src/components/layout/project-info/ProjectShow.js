@@ -43,9 +43,9 @@ const ProjectShow = props => {
         <p>* View Estimated Cost</p>
         <p>* View Suggested Retail Pricing</p>
         <p>* Edit Project</p>
-        <div>
-          <Link to='/' className="back-button">GO BACK</Link>
-        </div>
+      <div className="back-button=container">
+        <Link to='/' className="back-button">GO BACK</Link>
+      </div>
       </div>
     </>
   )
