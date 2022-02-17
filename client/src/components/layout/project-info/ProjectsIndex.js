@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react"
 import ProjectTile from "./ProjectTile"
 import NewProjectForm from "./NewProjectForm"
+import translateServerErrors from "../../../services/translateServerErrors"
 
 const ProjectsIndex = props => {
   
   const [projects, setProjects] = useState([])
+  const [errors, setErrors] = useState([])
 
+  const userId = props.user.id
   const fetchProjects = async () => {
-    let userId = props.user.id
     try {
       const response = await fetch(`/api/v1/projects/users/${userId}`)
       if (!response) {
@@ -24,6 +26,35 @@ const ProjectsIndex = props => {
     fetchProjects()
   }, [])
 
+  const postNewProject = async newProjectdata => {
+    try {
+      const response = await fetch(`/api/v1/projects/users/${userId}`, {
+        method: "POST",
+        headers: new Headers ({
+          "Content-Type": "application/json"
+        }),
+        body: JSON.stringify(newProjectdata)
+      })
+      if (!response.ok) {
+        if (response.status === 422) {
+          const body = await response.json()
+          const newErrors = translateServerErrors(body.errors)
+          setErrors(newErrors)
+        }
+        const errorMessage = `${response.status} (${response.statusText})`
+        const error = new Error(errorMessage)
+        throw error
+      } else {
+        const body = await response.json()
+        setErrors([])
+        setProjects([...projects, body.project])
+        return true
+      }
+    } catch (error) {
+      console.error(`Error in fetch: ${error.message}`)
+    }
+  }
+
   const projectTiles = projects.map((project) => {
     return <ProjectTile key={project.id} project={project} />
   })
@@ -35,7 +66,7 @@ const ProjectsIndex = props => {
         {projectTiles}
       </div>
       <div className="projects-form-container">
-        <NewProjectForm />
+        <NewProjectForm postNewProject={postNewProject} />
       </div>
     </div>
   )

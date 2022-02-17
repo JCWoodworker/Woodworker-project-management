@@ -23,12 +23,13 @@ class Project extends Model {
   static get jsonSchema() {
     return {
       type: "object",
-      required: ["name"],
+      required: ["name", "userId"],
       properties: {
         name: { type: "string" },
         description: { type: "text" },
         customer: { type: "string" },
         quantity: { type: "integer" },
+        userId: { type: "integer" }
       }
     }
   }
