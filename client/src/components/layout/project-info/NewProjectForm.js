@@ -1,6 +1,9 @@
 import React, { useState } from "react"
+import { Redirect } from "react-router-dom"
 
 const NewProjectForm = props => {
+  const [shouldRedirect, setShouldRedirect] = useState(false)
+  const [newProjectId, setNewProjectId] = useState(null)
   const [newProject, setNewProject] = useState({
     name: "",
     description: "",
@@ -24,12 +27,18 @@ const NewProjectForm = props => {
   const handleSubmit = async event => {
     event.preventDefault()
     const successfulPost = await props.postNewProject(newProject)
+    setNewProjectId(successfulPost.id)
     if (successfulPost) {
       clearForm()
+      setShouldRedirect(true)
     }
   }
 
-  console.log(newProject)
+  if (newProjectId) {
+    if (shouldRedirect) {
+      return <Redirect push to={`/projects/${newProjectId}`} />
+    }
+  }
 
   return (
     <>
