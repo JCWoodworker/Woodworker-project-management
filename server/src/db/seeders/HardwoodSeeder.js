@@ -48,7 +48,7 @@ class HardwoodSeeder {
       {
         name: "Peruvian Walnut",
         price: "10.95",
-        region: "Southern Mexico, Central and South America",
+        region: "Southern Mexico, Central & South America",
         jankaHardness: 960,
         imageUrl: "https://www.wood-database.com/wp-content/uploads/peruvian-walnut.jpg"
       },
@@ -62,7 +62,7 @@ class HardwoodSeeder {
       {
         name: "Olivewood",  
         price: "18.95",
-        region: "Europe and Eastern Africa",
+        region: "Europe & Eastern Africa",
         jankaHardness: 2700,
         imageUrl: "https://www.wood-database.com/wp-content/uploads/olive.jpg"
       },
@@ -76,7 +76,7 @@ class HardwoodSeeder {
       {
         name: "Osage Orange",  
         price: "14.95",
-        region: "South-Central US",
+        region: "South Central US",
         jankaHardness: 2620,
         imageUrl: "https://www.wood-database.com/wp-content/uploads/osage-orange.jpg"
       },
@@ -138,80 +138,73 @@ class HardwoodSeeder {
       },
       {
         name: "Red Heart",  
-        price: "",
-        region: "",
-        jankaHardness: 0,
-        imageUrl: ""
+        price: "18.95",
+        region: "Southern Mexico to Southern Brazil & Paraguay",
+        jankaHardness: 1210,
+        imageUrl: "https://www.wood-database.com/wp-content/uploads/redheart.jpg"
       },
       {
         name: "Yellow Heart",  
-        price: "",
-        region: "",
-        jankaHardness: 0,
-        imageUrl: ""
+        price: "10.50",
+        region: "Brazil",
+        jankaHardness: 1790,
+        imageUrl: "https://www.wood-database.com/wp-content/uploads/yellowheart.jpg"
       },
       {
         name: "Padauk",  
-        price: "",
-        region: "",
-        jankaHardness: 0,
-        imageUrl: ""
+        price: "10.95",
+        region: "Central & Tropical West Africa",
+        jankaHardness: 1970,
+        imageUrl: "https://www.wood-database.com/wp-content/uploads/padauk.jpg"
       },
       {
         name: "Lati",  
-        price: "",
-        region: "",
-        jankaHardness: 0,
-        imageUrl: ""
+        price: "9.75",
+        region: "Central & West Africa",
+        jankaHardness: 1200,
+        imageUrl: "https://www.wood-database.com/wp-content/uploads/amphimas-pterocarpoides.jpg"
       },
       {
         name: "Teak",  
-        price: "",
-        region: "",
-        jankaHardness: 0,
-        imageUrl: ""
+        price: "29.95",
+        region: "Southern Asia.  Also Grown in Tropical Regions of Africa, Asia, & Latin America",
+        jankaHardness: 1070,
+        imageUrl: "https://www.wood-database.com/wp-content/uploads/tectona-grandis.jpg"
       },
       {
         name: "Mahogany (Honduran)",  
-        price: "",
-        region: "",
-        jankaHardness: 0,
-        imageUrl: ""
+        price: "8.95",
+        region: "Southern Mexico to Central South America",
+        jankaHardness: 900,
+        imageUrl: "https://www.wood-database.com/wp-content/uploads/swietenia-macrophylla-fs.jpg"
       },
       {
         name: "Sapele",  
-        price: "",
-        region: "",
-        jankaHardness: 0,
-        imageUrl: ""
-      },
-      {
-        name: "Bloodwood",  
-        price: "",
-        region: "",
-        jankaHardness: 0,
-        imageUrl: ""
+        price: "8.75",
+        region: "Tropical Africa",
+        jankaHardness: 1410,
+        imageUrl: "https://www.wood-database.com/wp-content/uploads/sapele.jpg"
       },
       {
         name: "Cherry",  
-        price: "",
-        region: "",
-        jankaHardness: 0,
-        imageUrl: ""
+        price: "7.25",
+        region: "Eastern North America",
+        jankaHardness: 950,
+        imageUrl: "https://www.wood-database.com/wp-content/uploads/prunus-serotina.jpg"
       },
       {
         name: "Goncalo Alves",  
-        price: "",
-        region: "",
-        jankaHardness: 0,
-        imageUrl: ""
+        price: "14.95",
+        region: "Mexico to Brazil",
+        jankaHardness: 2170,
+        imageUrl: "https://www.wood-database.com/wp-content/uploads/goncalo-alves1.jpg"
       },
       {
         name: "Leopardwood",  
-        price: "",
-        region: "",
-        jankaHardness: 0,
-        imageUrl: ""
+        price: "14.95",
+        region: "Central & South America",
+        jankaHardness: 2150,
+        imageUrl: "https://www.wood-database.com/wp-content/uploads/leopardwood.jpg"
       },
     ]
 

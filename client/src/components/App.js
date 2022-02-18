@@ -94,6 +94,7 @@ const App = (props) => {
           </Switch>
         </Router>
       </div>
+      <div className="footer-container"></div>
     </div>
   )
 
