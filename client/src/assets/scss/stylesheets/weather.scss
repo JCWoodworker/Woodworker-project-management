@@ -1,12 +1,18 @@
 
 .weather-block {
   display: flex;
-  justify-content: left;
+  justify-content:space-between;
   align-items: flex-end;
+  flex-wrap: wrap;
   max-width: 75%;
-  margin: 1rem auto;
-  padding-top: 1.5srem;
-  color: rgb(120, 120, 120)
+  margin: 0 auto;
+  margin-top: 2rem;
+  color: rgb(120, 120, 120);  
+}
+
+.icon-temp {
+  display: flex;
+  align-items: flex-end;
 }
 
 .lds-ellipsis {
@@ -64,3 +70,4 @@
     transform: translate(24px, 0);
   }
 }
+
