@@ -19,14 +19,14 @@ class HardwoodSeeder {
       },
       {
         name: "Purple Heart",
-        price: "9.6",
+        price: "9.60",
         region: "Central & South America",
         jankaHardness: 2520,
         imageUrl: "https://www.wood-database.com/wp-content/uploads/purpleheart-three-weeks-200x200.jpg"
       },
       {
         name: "Zebrawood",
-        price: "17.5",
+        price: "17.50",
         region: "West Africa",
         jankaHardness: 1450,
         imageUrl: "https://www.wood-database.com/wp-content/uploads/zebrawood-200x200.jpg"
@@ -34,7 +34,7 @@ class HardwoodSeeder {
       {
         name: "Red Oak",
         price: "8.95",
-        region: "Northeastern US & Southeastern Canada",
+        region: "Northeastern US and Southeastern Canada",
         jankaHardness: 1450,
         imageUrl: "https://www.wood-database.com/wp-content/uploads/quercus-rubra-225x450.jpg"
       },
@@ -48,7 +48,7 @@ class HardwoodSeeder {
       {
         name: "Peruvian Walnut",
         price: "10.95",
-        region: "Southern Mexico, Central & South America",
+        region: "Southern Mexico, Central and South America",
         jankaHardness: 960,
         imageUrl: "https://www.wood-database.com/wp-content/uploads/peruvian-walnut.jpg"
       },
@@ -62,7 +62,7 @@ class HardwoodSeeder {
       {
         name: "Olivewood",  
         price: "18.95",
-        region: "Europe & Eastern Africa",
+        region: "Europe and Eastern Africa",
         jankaHardness: 2700,
         imageUrl: "https://www.wood-database.com/wp-content/uploads/olive.jpg"
       },
@@ -111,20 +111,20 @@ class HardwoodSeeder {
       {
         name: "Spanish Cedar",  
         price: "8.95",
-        region: "Centran & South America, The Caribbean",
+        region: "Centran and South America, The Caribbean",
         jankaHardness: 600,
         imageUrl: "https://www.wood-database.com/wp-content/uploads/spanish-cedar.jpg"
       },
       {
         name: "Aromatic Red Cedar",  
-        price: "",
+        price: "3.60",
         region: "Eastern North America",
         jankaHardness: 0,
         imageUrl: "https://www.wood-database.com/wp-content/uploads/aromatic-red-cedar.jpg"
       },
       {
         name: "Lacewood",  
-        price: "",
+        price: "16.95",
         region: "Tropical South America",
         jankaHardness: 840,
         imageUrl: "https://www.wood-database.com/wp-content/uploads/brazilian-lacewood.jpg"
@@ -139,7 +139,7 @@ class HardwoodSeeder {
       {
         name: "Red Heart",  
         price: "18.95",
-        region: "Southern Mexico to Southern Brazil & Paraguay",
+        region: "Southern Mexico to Southern Brazil and Paraguay",
         jankaHardness: 1210,
         imageUrl: "https://www.wood-database.com/wp-content/uploads/redheart.jpg"
       },
@@ -153,21 +153,21 @@ class HardwoodSeeder {
       {
         name: "Padauk",  
         price: "10.95",
-        region: "Central & Tropical West Africa",
+        region: "Central and Tropical West Africa",
         jankaHardness: 1970,
         imageUrl: "https://www.wood-database.com/wp-content/uploads/padauk.jpg"
       },
       {
         name: "Lati",  
         price: "9.75",
-        region: "Central & West Africa",
+        region: "Central and West Africa",
         jankaHardness: 1200,
         imageUrl: "https://www.wood-database.com/wp-content/uploads/amphimas-pterocarpoides.jpg"
       },
       {
         name: "Teak",  
         price: "29.95",
-        region: "Southern Asia.  Also Grown in Tropical Regions of Africa, Asia, & Latin America",
+        region: "Southern Asia.  Also Grown in Tropical Regions of Africa, Asia, and Latin America",
         jankaHardness: 1070,
         imageUrl: "https://www.wood-database.com/wp-content/uploads/tectona-grandis.jpg"
       },
@@ -202,10 +202,10 @@ class HardwoodSeeder {
       {
         name: "Leopardwood",  
         price: "14.95",
-        region: "Central & South America",
+        region: "Central and South America",
         jankaHardness: 2150,
         imageUrl: "https://www.wood-database.com/wp-content/uploads/leopardwood.jpg"
-      },
+      }
     ]
 
     for (const singleHardwood of hardwoodData) {
