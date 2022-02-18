@@ -12,8 +12,11 @@ const TopBar = ({ user }) => {
     <Link to="/users/new" key="sign-up" className="link-item">Sign Up</Link>
   ]
 
-  const authenticatedListItems =
+  const authenticatedListItems = [
+    <p key="sign-out">
       <SignOutButton />
+    </p>,
+  ]
 
   let loggedInLinks = null
   if (user) {
