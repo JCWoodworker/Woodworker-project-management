@@ -53,9 +53,9 @@
 .project-show {
   margin: 1rem auto;
   display: flex;
-  // flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
   min-width: 90%;
   max-width: 90%;
   min-height: 82%;
@@ -108,4 +108,61 @@ a.back-button:visited {
 a.back-button:hover {
   color: white;
   background-color: $dark-gray-transparent;
+}
+
+
+.woods-metrics-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  // border: 2px solid white;
+  padding: 2px;
+  margin-bottom: 2rem;
+}
+
+.show-metrics-container {
+  // border: 2px solid white;
+  padding: 2px;
+  width: 33%;
+  min-width:fit-content;
+}
+
+.add-woods-container {
+  // border: 2px solid white;
+  padding: 2px;
+  width: 33%;
+  min-width:fit-content;
+}
+
+.add-wood-button {
+  background-color: none;
+  border: 3px solid $red-brown;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 50px;
+}
+
+a.add-wood-button:link {
+  color: $red-brown;
+}
+a.add-wood-button:visited {
+  color: $red-brown;
+}
+a.add-wood-button:hover {
+  color: white;
+  background-color: $dark-gray-transparent;
+}
+
+#hardwood-list {
+  background-color: $dark-gray-transparent;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.selected-woods-container {
+  // border: 2px solid white;
+  padding: 2px;
+  width: 33%;
+  min-width:fit-content;
+
 }
