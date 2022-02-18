@@ -5,9 +5,9 @@
   font-weight: bold;
   background-color: $red-brown;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  padding-top: 1.4rem;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }
@@ -43,10 +43,16 @@
 .sponsor-logo {
   border-radius: 50%;
   max-width: 5rem;
-  margin-top: -0.7rem;
+  margin-top: -0.4rem;
 }
 
 .home-link {
   align-self: left;
 }
 
+.sign-out-button {
+  color: $red-brown;
+  background-color: $transparent-background;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
