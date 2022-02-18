@@ -5,22 +5,15 @@ import SponsorTile from "./SponsorTile"
 
 const TopBar = ({ user }) => {
   const unauthenticatedListItems = [
-    
-    <Link to="/">
-      <p className="link-item home-linkt">Home</p>
-    </Link>,
-    <p key="sign-in" className="link-item">
-      <Link to="/user-sessions/new">Sign In</Link>
-    </p>,
-    <p key="sign-up" className="link-item">
-      <Link to="/users/new">
-        Sign Up
-      </Link>
-    </p>,
+    <Link to="/" key="home" className="link-item home-link">Home</Link>,
+    <Link to="/wood-info" className="link-item">Wood Info</Link>,
+    <Link to="/dev-info" className="link-item">Dev Info</Link>,
+    <Link to="/user-sessions/new" key="sign-in" className="link-item">Sign In</Link>,
+    <Link to="/users/new" key="sign-up" className="link-item">Sign Up</Link>
   ]
 
   const authenticatedListItems = [
-    <p key="sign-out" className="link-item">
+    <p key="sign-out" className="sign-out-button">
       <SignOutButton />
     </p>,
   ]
@@ -29,13 +22,9 @@ const TopBar = ({ user }) => {
   if (user) {
     loggedInLinks = 
       <div className="logged-in-links">
-        <Link to="/">Active Projects
-          {/* <p className="logged-in">Active Projects</p> */}
-        </Link>
-        <Link to="/wood-info">
-          <p className="logged-in">Wood Info</p>
-        </Link>
-        {/* <p className="logged-in">Settings</p> */}
+        <Link to="/" className="logged-in">Active Projects</Link>
+        <Link to="/wood-info" className="logged-in">Wood Info</Link>
+        <Link to="/dev-info" className="logged-in">Dev Info</Link>
       </div>  
   }
   

@@ -28,7 +28,7 @@ a:link {
 a:visited {
   color: $medium-beige;
 }
-a:hover {
+a:hover::before {
   color: white
 }
 
@@ -46,4 +46,8 @@ a:hover {
   background-color: $red-brown;
   padding: 0.3rem;
   border-radius: 0.5rem;
+}
+
+.sign-out-button {
+  color: white
 }
