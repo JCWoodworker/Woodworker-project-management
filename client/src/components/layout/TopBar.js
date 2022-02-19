@@ -5,9 +5,9 @@ import SponsorTile from "./SponsorTile"
 
 const TopBar = ({ user }) => {
   const unauthenticatedListItems = [
-    <Link to="/" key="home" className="link-item home-link">Home</Link>,
-    <Link to="/wood-info" className="link-item">Wood Info</Link>,
-    <Link to="/dev-info" className="link-item">Dev Info</Link>,
+    <Link to="/" key="home" key="home" className="link-item home-link">Home</Link>,
+    <Link to="/wood-info" key="wood-info" className="link-item">Wood Info</Link>,
+    <Link to="/dev-info" key="dev-info" className="link-item">Dev Info</Link>,
     <Link to="/user-sessions/new" key="sign-in" className="link-item">Sign In</Link>,
     <Link to="/users/new" key="sign-up" className="link-item">Sign Up</Link>
   ]

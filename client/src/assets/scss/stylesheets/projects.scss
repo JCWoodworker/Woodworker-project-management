@@ -87,6 +87,7 @@
 }
 
 .back-button-container {
+  align-self: flex-start;
   position: relative;
   margin: 5rem;
 }
@@ -115,23 +116,52 @@ a.back-button:hover {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  // border: 2px solid white;
-  padding: 2px;
+  border: 2px solid rgb(154, 0, 0);
+  padding: 1rem;
   margin-bottom: 2rem;
+  min-width: 90%;
 }
 
 .show-metrics-container {
-  // border: 2px solid white;
+  border: 2px solid white;
   padding: 2px;
   width: 33%;
   min-width:fit-content;
 }
 
 .add-woods-container {
-  // border: 2px solid white;
+  border: 2px solid rgb(0, 138, 159);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 2px;
   width: 33%;
   min-width:fit-content;
+}
+
+#hardwood,
+#boardFeet {
+  border-radius: 0.5rem;
+  background-color: $dark-gray-transparent;
+  color: white;
+}
+
+#boardFeet {
+  width: 5rem;
+}
+
+.show-added-wood {
+  border: 2px solid rgb(23, 123, 0);
+  padding: 2px;
+  width: 33%;
+  min-width:fit-content;
+}
+
+.add-wood-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid rgb(16, 0, 96)
 }
 
 .add-wood-button {
@@ -140,6 +170,7 @@ a.back-button:hover {
   border-radius: 1rem;
   padding: 0.5rem;
   box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 50px;
+  max-width: fit-content;
 }
 
 a.add-wood-button:link {
@@ -157,12 +188,4 @@ a.add-wood-button:hover {
   background-color: $dark-gray-transparent;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
-}
-
-.selected-woods-container {
-  // border: 2px solid white;
-  padding: 2px;
-  width: 33%;
-  min-width:fit-content;
-
 }

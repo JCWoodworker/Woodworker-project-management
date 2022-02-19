@@ -38,7 +38,6 @@
     "react-dom": "~16.13",
     "react-hot-loader": "^4.12.21",
     "react-router-dom": "5.2",
-    "react-select": "^5.2.2",
     "redbox-react": "~1.6",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
