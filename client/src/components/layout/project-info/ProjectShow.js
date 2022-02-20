@@ -44,12 +44,7 @@ const ProjectShow = props => {
           <p>* View Suggested Retail Pricing</p>
           <p>* Edit Project</p>
         </div>
-        <div className="add-woods-container">
-          <AddWoodForm />
-        </div>
-        <div className="show-added-wood">
-          <p>Wood Added To Project:</p>
-        </div>
+        <AddWoodForm />
       </div>
       <div className="back-button=container">
         <Link to='/' className="back-button">GO BACK</Link>

@@ -1,0 +1,125 @@
+@import "./colors.scss";
+
+.woods-metrics-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  // border: 2px solid rgb(154, 0, 0);
+  padding: 1rem;
+  margin-bottom: 2rem;
+  min-width: 90%;
+}
+
+.show-metrics-container {
+  // border: 2px solid white;
+  padding: 2px;
+  width: 40%;
+  min-width:fit-content;
+}
+
+.add-woods-container {
+  // border: 2px solid rgb(0, 138, 159);
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2px;
+  width: 60%;
+  min-width:fit-content;
+}
+
+#hardwood,
+#boardFeet {
+  border-radius: 0.5rem;
+  background-color: $dark-gray-transparent;
+  color: white;
+}
+
+.show-added-wood {
+  // border: 2px solid rgb(23, 123, 0);
+  padding: 2px;
+  min-width:fit-content;
+}
+
+.add-wood-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // border: 2px solid rgb(16, 0, 96);
+}
+
+#boardFeet {
+  margin: 0 auto ;
+  margin-bottom: 1rem;
+  min-width: 3rem;
+  max-width: 5rem;
+}
+
+.add-selected-button {
+  background-color: none;
+  border: 3px solid $red-brown;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 50px;
+  max-width: fit-content;
+}
+
+.add-selected-button:link {
+  color: $red-brown;
+}
+.add-selected-button:visited {
+  color: $red-brown;
+}
+.add-selected-button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: $dark-gray-transparent;
+}
+
+.done-adding-button {
+  background-color: none;
+  border: 3px solid $red-brown;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 50px;
+  max-width: fit-content;
+}
+
+.done-adding-button:link {
+  color: $red-brown;
+}
+.done-adding-button:visited {
+  color: $red-brown;
+}
+.done-adding-button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: $dark-gray-transparent;
+}
+
+.toggle-add-wood-button {
+  background-color: none;
+  border: 3px solid $red-brown;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 50px;
+}
+
+.toggle-add-wood-button:link {
+  color: $red-brown;
+}
+.toggle-add-wood-button:visited {
+  color: $red-brown;
+}
+.toggle-add-wood-button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: $dark-gray-transparent;
+}
+
+#hardwood-list {
+  background-color: $dark-gray-transparent;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}

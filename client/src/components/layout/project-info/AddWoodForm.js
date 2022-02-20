@@ -1,28 +1,33 @@
 import React, { useState } from 'react'
+import Select from 'react-select'
+
+
+const woodOptionList = [
+  {name: "hardwood", value: "Hard Maple", label: 'Hard Maple'},
+  {name: "hardwood", value: "Black Walnut", label: 'Black Walnut'},
+  {name: "hardwood", value: "Purple Heart", label: 'Purple Heart'},
+  {name: "hardwood", value: "White Oak", label: 'White Oak'},
+]
+
 
 const AddWoodForm = props => {
   const [selectedWood, setSelectedWood] = useState({
     hardwood: "",
     boardFeet: ""
   })
-  const [hardwoods, setHardwoods] = useState ([])
+  const [hardwoods, setHardwoods] = useState([])
+  const [toggleAddHardwoods, setToggleAddHardwoods] = useState(false)
 
-  const woodOptionList = [
-    {value: "wood 1", label: 'Wood 1'},
-    {value: "wood 2", label: 'Wood 2'},
-    {value: "wood 3", label: 'Wood 3'},
-    {value: "wood 4", label: 'Wood 4'},
-  ]
-
-  let woodOptions = woodOptionList.map(wood => {
-    return (
-      <option
-        value={wood.value}
-        key={wood.value}>
-        {wood.label}
-      </option>
-    )
-  })
+  const customTheme = theme => {
+    return {
+      ...theme,
+      colors: {
+        ...theme.colors,
+        primary25: 'orange',
+        primary: 'green'
+      }
+    }
+  }
 
   const clearForm = () => {
     setSelectedWood ({
@@ -31,8 +36,14 @@ const AddWoodForm = props => {
     })
   }
 
-  const handleSelectionChange = event => {
+  const handleBoardFeetSelectionChange = event => {
     setSelectedWood({...selectedWood, [event.currentTarget.name]: event.currentTarget.value })
+  }
+  const handleHardwoodSelectionChange = selectedItem => {
+    setSelectedWood({...selectedWood, [selectedItem.name]: selectedItem.value })
+  }
+  const handleShowAddHardwoods = event => {
+    toggleAddHardwoods? setToggleAddHardwoods(false) : setToggleAddHardwoods(true)
   }
 
   const handleWoodSubmit = event => {
@@ -66,24 +77,22 @@ const AddWoodForm = props => {
     })
   }
 
-  console.log(selectedWood)
-  console.log(hardwoods)
-  
-  return (
+  let addWoodForm = (
     <div>
 
       <form onSubmit={handleWoodSubmit} className="add-wood-form">
         <label htmlFor="hardwood">
-          <select 
-            id="hardwood"
+          <Select 
+            // id="hardwood"
             name="hardwood"
-            value={selectedWood.hardwood}
-            onChange={handleSelectionChange}
-            required
-          >
-            <option name= {null} value={null}>Select A Wood</option>
-            {woodOptions}
-          </select>
+            // value={selectedWood.hardwood}
+            placeholder="Select Wood"
+            onChange={handleHardwoodSelectionChange}
+            theme={customTheme}
+            options={woodOptionList}
+            isSearchable
+            autoFocus
+          />
         </label>
         <label htmlFor="boardFeet">Board Feet Needed:
           <input 
@@ -91,19 +100,50 @@ const AddWoodForm = props => {
             id="boardFeet"
             name="boardFeet"
             value={selectedWood.boardFeet} 
-            onChange={handleSelectionChange} 
+            onChange={handleBoardFeetSelectionChange} 
           />
         </label>
         <button 
           type="button"
-          id="add-wood-button"
-          className="add-wood-button"
+          id="add-selected-button"
+          className="add-selected-button"
           onClick={handleWoodSubmit}
           >Add Selected
         </button>
+        <button 
+          type="button"
+          id="done-adding-button"
+          className="done-adding-button"
+          onClick={handleShowAddHardwoods}
+          >Done Adding
+        </button>
       </form>
-    
+
     </div>
+  )
+
+  if (!toggleAddHardwoods) {
+      addWoodForm = 
+        <button
+          className="toggle-add-wood-button"
+          onClick={handleShowAddHardwoods}>
+          Add Wood To Project
+        </button>
+  }
+
+  console.log(selectedWood)
+  console.log(hardwoods)
+  
+  return (
+    <div className="add-woods-container">
+      {addWoodForm}
+      <div className='show-added-wood'>
+        <ul>Wood Needed:
+          {yourWoodList}
+        </ul>
+      </div>
+    </div>
+
   )
 
 }

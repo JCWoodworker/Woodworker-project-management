@@ -11,7 +11,7 @@ const ProjectsIndex = props => {
   const userId = props.user.id
   const fetchProjects = async () => {
     try {
-      const response = await fetch(`/api/v1/projects/users/${userId}`)
+    const response = await fetch(`/api/v1/projects/users/${userId}`)
       if (!response) {
         throw new Error(`${response.status} (${response.statusText})`)
       }
@@ -28,7 +28,7 @@ const ProjectsIndex = props => {
 
   const postNewProject = async newProjectData => {
     try {
-      const response = await fetch(`/api/v1/projects/new-project/${userId}`, {
+      const response = await fetch(`/api/v1/projects/new-project`, {
         method: "POST",
         headers: new Headers ({
           "Content-Type": "application/json"

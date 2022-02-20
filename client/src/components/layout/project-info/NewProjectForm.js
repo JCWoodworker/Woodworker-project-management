@@ -8,7 +8,8 @@ const NewProjectForm = props => {
     name: "",
     description: "",
     customer: "",
-    quantity: ""
+    quantity: "",
+    userId: props.userId
   })
 
   const handleInputChange = event => {
@@ -20,9 +21,12 @@ const NewProjectForm = props => {
       name: "",
       description: "",
       customer: "",
-      quantity: ""
+      quantity: "",
+      userId: ""
     })
   }
+
+  console.log(newProject)
 
   const handleSubmit = async event => {
     event.preventDefault()
