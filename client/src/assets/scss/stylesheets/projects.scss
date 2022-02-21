@@ -30,6 +30,7 @@
   color: $red-brown;
 }
 .project-tile-container:hover {
+  cursor: pointer;
   color: white;
   background-color: $dark-gray-transparent;
 }
@@ -53,9 +54,9 @@
 .project-show {
   margin: 1rem auto;
   display: flex;
-  // flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
   min-width: 90%;
   max-width: 90%;
   min-height: 82%;
@@ -87,6 +88,7 @@
 }
 
 .back-button-container {
+  align-self: flex-start;
   position: relative;
   margin: 5rem;
 }

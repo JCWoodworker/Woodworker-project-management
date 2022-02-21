@@ -1,0 +1,40 @@
+@import "../stylesheets/colors.scss";
+
+h4 {
+  font-weight: bold;
+}
+
+.hardwoods-index {
+  height: 650px;
+  overflow-y: scroll;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  gap: 0.5rem
+}
+
+.hardwood-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $dark-gray-transparent;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  padding: 0.25rem;
+  width:20%;
+  height: 15%;
+  overflow-x: scroll;
+}
+
+.hardwood-tile:link {
+  color: $red-brown;
+}
+.hardwood-tile:visited {
+  color: $red-brown;
+}
+.hardwood-tile:hover {
+  cursor: pointer;
+  color: white;
+  background-color: $dark-gray-transparent;
+}
