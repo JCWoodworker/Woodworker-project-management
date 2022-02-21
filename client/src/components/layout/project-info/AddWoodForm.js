@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Select from 'react-select'
-
 
 const woodOptionList = [
   {name: "hardwood", value: "Hard Maple", label: 'Hard Maple'},
@@ -9,7 +8,6 @@ const woodOptionList = [
   {name: "hardwood", value: "White Oak", label: 'White Oak'},
 ]
 
-
 const AddWoodForm = props => {
   const [selectedWood, setSelectedWood] = useState({
     hardwood: "",
@@ -17,6 +15,24 @@ const AddWoodForm = props => {
   })
   const [hardwoods, setHardwoods] = useState([])
   const [toggleAddHardwoods, setToggleAddHardwoods] = useState(false)
+  const [hardwoodDatabase, setHardwoodDatabase] = useState([])
+
+  const fetchHardwoods = async () => {
+    try {
+      const response = await fetch("/api/v1/hardwoods")
+      if (!response) {
+        throw new Error(`${response.status} (${response.statusText})`)
+      }
+      const body = await response.json()
+      setHardwoodDatabase(body.hardwoods)
+    } catch (error) {
+      return console.error(`Error in fetch: ${error.message}`)
+    }
+  }
+
+  useEffect(() => {
+    fetchHardwoods()
+  }, [])
 
   const customTheme = theme => {
     return {
@@ -77,6 +93,8 @@ const AddWoodForm = props => {
     })
   }
 
+  console.log(hardwoodDatabase)
+
   let addWoodForm = (
     <div>
 
@@ -131,9 +149,6 @@ const AddWoodForm = props => {
         </button>
   }
 
-  console.log(selectedWood)
-  console.log(hardwoods)
-  
   return (
     <div className="add-woods-container">
       {addWoodForm}
