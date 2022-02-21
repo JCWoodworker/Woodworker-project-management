@@ -29,7 +29,8 @@ const AddWoodForm = props => {
           id: wood.id,
           name: "hardwood",
           value: wood.name,
-          label: wood.name
+          label: wood.name,
+          price: wood.price
         }
       }
       )
