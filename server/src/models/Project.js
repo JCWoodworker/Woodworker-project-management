@@ -7,6 +7,8 @@ class Project extends Model {
   
   static get relationMappings() {
     const User = require('./User')
+    const Hardwood = require('./Hardwood')
+    const ProjectWood = require('./ProjectWood')
 
     return {
       user: {
@@ -15,6 +17,26 @@ class Project extends Model {
         join: {
           from: 'projects.userId',
           to: 'users.id'
+        }
+      },
+      hardwoods: {
+        relation: Model.ManyToManyRelation,
+        modelClass: Hardwood,
+        join: {
+          from: "projects.id",
+          through: {
+            from: "projectWoods.projectId",
+            to: "projectWoods.hardwoodId"
+          },
+          to: "hardwoods.id"
+        },
+      },
+      projectWoods: {
+        relation: Model.HasManyRelation,
+        modelClass: ProjectWood,
+        join: {
+          from: "projects.id",
+          to: "projectWoods.projectId"
         }
       }
     }
