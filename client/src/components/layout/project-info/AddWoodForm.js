@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Select from 'react-select'
 
-const woodOptionList = [
-  {name: "hardwood", value: "Hard Maple", label: 'Hard Maple'},
-  {name: "hardwood", value: "Black Walnut", label: 'Black Walnut'},
-  {name: "hardwood", value: "Purple Heart", label: 'Purple Heart'},
-  {name: "hardwood", value: "White Oak", label: 'White Oak'},
-]
+// const woodOptionList = [
+//   {name: "hardwood", value: "Hard Maple", label: 'Hard Maple', price: 6.95},
+//   {name: "hardwood", value: "Black Walnut", label: 'Black Walnut', price: 14.95},
+//   {name: "hardwood", value: "Purple Heart", label: 'Purple Heart', price: 8.95},
+//   {name: "hardwood", value: "White Oak", label: 'White Oak', price: 7.95},
+// ]
 
 const AddWoodForm = props => {
   const [selectedWood, setSelectedWood] = useState({
@@ -15,7 +15,7 @@ const AddWoodForm = props => {
   })
   const [hardwoods, setHardwoods] = useState([])
   const [toggleAddHardwoods, setToggleAddHardwoods] = useState(false)
-  const [hardwoodDatabase, setHardwoodDatabase] = useState([])
+  const [woodOptionList, setWoodOptionList] = useState([])
 
   const fetchHardwoods = async () => {
     try {
@@ -24,7 +24,16 @@ const AddWoodForm = props => {
         throw new Error(`${response.status} (${response.statusText})`)
       }
       const body = await response.json()
-      setHardwoodDatabase(body.hardwoods)
+      const updatedList = body.hardwoods.map(wood => {
+        return {
+          id: wood.id,
+          name: "hardwood",
+          value: wood.name,
+          label: wood.name
+        }
+      }
+      )
+      setWoodOptionList(updatedList)
     } catch (error) {
       return console.error(`Error in fetch: ${error.message}`)
     }
@@ -33,6 +42,8 @@ const AddWoodForm = props => {
   useEffect(() => {
     fetchHardwoods()
   }, [])
+
+  console.log(woodOptionList)
 
   const customTheme = theme => {
     return {
@@ -93,17 +104,13 @@ const AddWoodForm = props => {
     })
   }
 
-  console.log(hardwoodDatabase)
-
   let addWoodForm = (
     <div>
 
       <form onSubmit={handleWoodSubmit} className="add-wood-form">
         <label htmlFor="hardwood">
           <Select 
-            // id="hardwood"
             name="hardwood"
-            // value={selectedWood.hardwood}
             placeholder="Select Wood"
             onChange={handleHardwoodSelectionChange}
             theme={customTheme}
@@ -148,6 +155,8 @@ const AddWoodForm = props => {
           Add Wood To Project
         </button>
   }
+  
+  console.log(selectedWood)
 
   return (
     <div className="add-woods-container">
