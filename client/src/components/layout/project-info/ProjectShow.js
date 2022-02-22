@@ -4,8 +4,6 @@ import AddWoodForm from "./AddWoodForm"
 import AddedWoodTile from "./AddedWoodTile"
 
 const ProjectShow = props => {
-  const [totalProjectcost, setTotalProjectCost] = useState(null)
-  const [projectWoodList, setProjectWoodList] = useState([])
   const [project, setProject] = useState ({
     name: "",
     customer: "",
@@ -31,7 +29,32 @@ const ProjectShow = props => {
     getProject()
   }, [])
 
-  
+  const postWoodsToProject = async addWoodData => {
+    try {
+      const response = await fetch(`/api/v1/projects/add-woods`, {
+        method: "POST",
+        headers: new Headers ({
+          "Content-Type": "application/json",
+        }),
+        body: JSON.stringify(addWoodData)
+      })
+      if (!response.ok) {
+        if (response.status === 422) {
+          const body = await response.json()
+          const newErrors = translateServerErrors(body.errors)
+          setErrors(newErrors)
+        }
+        const errorMessage = `${response.status} (${response.statusText})`
+        const error = new Error(errorMessage)
+        throw error
+      }
+        const body = await response.json()
+        setProject({...project, selectedWoods: body.project.selectedWoods})
+    } catch (error) {
+      console.error(`Error in fetch ${error.message}`)
+    }
+  }
+
   let totalWoodCost = 0.00
   const selectedWoodList = project.selectedWoods.map(wood => {
     let woodCost = (wood.bf * wood.price).toFixed(2)
@@ -42,6 +65,8 @@ const ProjectShow = props => {
     )
   })
   totalWoodCost = totalWoodCost.toFixed(2)
+
+  console.log(project.selectedWoods)
 
   return (
     <div className="project-show">
@@ -64,6 +89,7 @@ const ProjectShow = props => {
         <AddWoodForm 
           projectId={props.match.params.id} 
           selectedWoodArray={project.selectedWoods}
+          postWoodsToProject={postWoodsToProject}
         />
       </div>
       <h3>Woods Needed for Project</h3>

@@ -68,7 +68,7 @@ const AddWoodForm = props => {
     setSelectedWood({ ...selectedWood, hardwoodId: selectedItem.id })
   }
   const handleSaveHardwoods = event => {
-    postWoodsToProject(hardwoods)
+    props.postWoodsToProject(hardwoods)
     clearSelectedWoodsList()
   }
 
@@ -118,31 +118,61 @@ const AddWoodForm = props => {
     })
   }
 
-  const postWoodsToProject = async addWoodData => {
+  // const postWoodsToProject = async addWoodData => {
+  //   try {
+  //     const response = await fetch(`/api/v1/projects/add-woods`, {
+  //       method: "POST",
+  //       headers: new Headers ({
+  //         "Content-Type": "application/json",
+  //       }),
+  //       body: JSON.stringify(hardwoods)
+  //     })
+  //     if (!response.ok) {
+  //       if (response.status === 422) {
+  //         const body = await response.json()
+  //         const newErrors = translateServerErrors(body.errors)
+  //         setErrors(newErrors)
+  //       }
+  //       const errorMessage = `${response.status} (${response.statusText})`
+  //       const error = new Error(errorMessage)
+  //       throw error
+  //     }
+  //       const body = await response.json()
+  //       return true
+  //       setErrors([])
+  //   } catch (error) {
+  //     console.error(`Error in fetch ${error.message}`)
+  //   }
+  // }
+
+  const deleteWoodFromProject = async hardwoodId => {
     try {
-      const response = await fetch(`/api/v1/projects/add-woods`, {
-        method: "POST",
-        headers: new Headers ({
-          "Content-Type": "application/json",
+      const response = await fetch(`api/v1/projects/delete-woods`, {
+        method: "DELETE",
+        headers: new Headers({
+          "Content-Type": "application/json"
         }),
-        body: JSON.stringify(hardwoods)
+        body: JSON.stringify({ hardwoodId })
       })
       if (!response.ok) {
         if (response.status === 422) {
           const body = await response.json()
-          const newErrors = translateServerErrors(body.errors)
-          setErrors(newErrors)
+          alert(body.message)
         }
         const errorMessage = `${response.status} (${response.statusText})`
         const error = new Error(errorMessage)
-        throw error
-      } else {
-        const body = await response.json()
-        setErrors([])
+        throw (error)
       }
+      const updatedWoods = hardwoods.filter(wood => {
+        debugger
+        hardwoodId != wood.hardwoodId
+      })
+      debugger
+      setHardwoods({...hardwoods, updatedWoods})
     } catch (error) {
-      console.error(`Error in fetch ${error.message}`)
+      return console.error(`Error in fetch: ${error.message}`)
     }
+
   }
   
   return (
