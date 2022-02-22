@@ -5,8 +5,10 @@ import { User } from '../../../models/index.js'
 
 import Project from '../../../models/Project.js'
 import ProjectSerializer from '../../../../serializers/ProjectSerializer.js'
+import ProjectWood from '../../../models/ProjectWood.js'
 
 const projectsRouter = new express.Router()
+
 
 projectsRouter.get('/users/:user', async (req, res) => {
   try {
@@ -26,10 +28,11 @@ projectsRouter.get('/users/:user', async (req, res) => {
 
 projectsRouter.get('/:id', async (req, res) => {
   const id = req.params.id
-  debugger
   try {
     const project = await Project.query().findById(id)
-    return res.status(200).json({ project: project})
+    let projectWithBoardFeet = await project.$relatedQuery("projectWoods")
+    const serializedProject = await ProjectSerializer.getSummary(project)
+    return res.status(200).json({ project: serializedProject})
   } catch (error) {
     return res.status(404).json({ errors: error.data})
   }
@@ -44,6 +47,18 @@ projectsRouter.post('/new-project/', async (req, res) => {
     if (error instanceof ValidationError) {
       return res.status(422).json({ errors: error.data })
     }
+    return res.status(500).json({ errors: error })
+  }
+})
+  
+projectsRouter.post('/add-woods', async (req, res) => {
+  try {
+    const allAddedWoods = await Promise.all(
+      req.body.map( async (wood) => {
+        await ProjectWood.query().insertAndFetch(wood)
+      })
+    )
+  } catch (error) {
     return res.status(500).json({ errors: error })
   }
 })

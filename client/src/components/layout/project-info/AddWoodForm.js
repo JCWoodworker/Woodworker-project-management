@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Select from 'react-select'
-
-// const woodOptionList = [
-//   {name: "hardwood", value: "Hard Maple", label: 'Hard Maple', price: 6.95},
-//   {name: "hardwood", value: "Black Walnut", label: 'Black Walnut', price: 14.95},
-//   {name: "hardwood", value: "Purple Heart", label: 'Purple Heart', price: 8.95},
-//   {name: "hardwood", value: "White Oak", label: 'White Oak', price: 7.95},
-// ]
+import translateServerErrors from '../../../services/translateServerErrors'
 
 const AddWoodForm = props => {
   const [selectedWood, setSelectedWood] = useState({
-    hardwood: "",
-    boardFeet: ""
+    projectId: props.projectId,
+    boardFeet: "",
+    hardwoodId: ""
   })
   const [hardwoods, setHardwoods] = useState([])
   const [toggleAddHardwoods, setToggleAddHardwoods] = useState(false)
@@ -44,8 +39,6 @@ const AddWoodForm = props => {
     fetchHardwoods()
   }, [])
 
-  console.log(woodOptionList)
-
   const customTheme = theme => {
     return {
       ...theme,
@@ -59,8 +52,9 @@ const AddWoodForm = props => {
 
   const clearForm = () => {
     setSelectedWood ({
-      hardwood: "",
-      boardFeet: ""
+      projectId: props.projectId,
+      boardFeet: "",
+      hardwoodId: ""
     })
   }
 
@@ -68,9 +62,14 @@ const AddWoodForm = props => {
     setSelectedWood({...selectedWood, [event.currentTarget.name]: event.currentTarget.value })
   }
   const handleHardwoodSelectionChange = selectedItem => {
-    setSelectedWood({...selectedWood, [selectedItem.name]: selectedItem.value })
+    setSelectedWood({ ...selectedWood, hardwoodId: selectedItem.id })
   }
   const handleShowAddHardwoods = event => {
+    event.preventDefault()
+    toggleAddHardwoods? setToggleAddHardwoods(false) : setToggleAddHardwoods(true)
+  }
+  const handleSaveHardwoods = event => {
+    postWoodsToProject(hardwoods)
     toggleAddHardwoods? setToggleAddHardwoods(false) : setToggleAddHardwoods(true)
   }
 
@@ -78,19 +77,19 @@ const AddWoodForm = props => {
     event.preventDefault()
     let duplicateWood = false
     hardwoods.forEach(wood => {
-      if (wood.hardwood === selectedWood.hardwood) {
+      if (wood.hardwoodId === selectedWood.hardwoodId) {
         return duplicateWood = true
       }
     })
     if (!duplicateWood) {
-      if (selectedWood.hardwood && selectedWood.boardFeet) {
+      if (selectedWood.hardwoodId && selectedWood.boardFeet) {
         setHardwoods(hardwoods.concat(selectedWood))
         clearForm()
       } else {
         alert(`Please fill out both fields`)
       }
     } else {
-      alert(`You've already selected ${selectedWood.hardwood}!`)
+      alert(`You've already selected ${selectedWood.hardwoodId}!`)
     }
   }
 
@@ -105,10 +104,38 @@ const AddWoodForm = props => {
     })
   }
 
-  let addWoodForm = (
-    <div>
+  const postWoodsToProject = async addWoodData => {
+    try {
+      const response = await fetch(`/api/v1/projects/add-woods`, {
+        method: "POST",
+        headers: new Headers ({
+          "Content-Type": "application/json",
+        }),
+        body: JSON.stringify(hardwoods)
+      })
+      if (!response.ok) {
+        if (response.status === 422) {
+          const body = await response.json()
+          const newErrors = translateServerErrors(body.errors)
+          setErrors(newErrors)
+        }
+        const errorMessage = `${response.status} (${response.statusText})`
+        const error = new Error(errorMessage)
+        throw error
+      } else {
+        const body = await response.json()
+        setErrors([])
+      }
+    } catch (error) {
+      console.error(`Error in fetch ${error.message}`)
+    }
+  }
+  
+  return (
+    <div className="add-woods-container">
 
       <form onSubmit={handleWoodSubmit} className="add-wood-form">
+
         <label htmlFor="hardwood">
           <Select 
             name="hardwood"
@@ -120,6 +147,7 @@ const AddWoodForm = props => {
             autoFocus
           />
         </label>
+
         <label htmlFor="boardFeet">Board Feet Needed:
           <input 
             type="number" 
@@ -129,6 +157,7 @@ const AddWoodForm = props => {
             onChange={handleBoardFeetSelectionChange} 
           />
         </label>
+
         <button 
           type="button"
           id="add-selected-button"
@@ -136,37 +165,23 @@ const AddWoodForm = props => {
           onClick={handleWoodSubmit}
           >Add Selected
         </button>
+
         <button 
           type="button"
           id="done-adding-button"
           className="done-adding-button"
-          onClick={handleShowAddHardwoods}
-          >Done Adding
+          onClick={handleSaveHardwoods}
+          >Save List To Project
         </button>
+
       </form>
 
-    </div>
-  )
-
-  if (!toggleAddHardwoods) {
-      addWoodForm = 
-        <button
-          className="toggle-add-wood-button"
-          onClick={handleShowAddHardwoods}>
-          Add Wood To Project
-        </button>
-  }
-  
-  console.log(selectedWood)
-
-  return (
-    <div className="add-woods-container">
-      {addWoodForm}
       <div className='show-added-wood'>
-        <ul>Wood Needed:
+        <ul>Selected Woods To Be Added:
           {yourWoodList}
         </ul>
       </div>
+      
     </div>
 
   )

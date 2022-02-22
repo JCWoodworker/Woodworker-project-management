@@ -17,7 +17,7 @@ class Hardwood extends Model {
           from: "hardwoods.id",
           through: {
             from: "projectWoods.hardwoodId",
-            to: "projectWoods.projectId"
+            to: "projectWoods.projectId",
           },
           to: "projects.id"
         }
@@ -27,7 +27,10 @@ class Hardwood extends Model {
         modelClass: ProjectWood,
         join: {
           from: "hardwoods.id",
-          to: "projectWoods.hardwoodId"
+          to: "projectWoods.hardwoodId",
+          extra: {
+            bf: "boardFeet"
+          }
         }
       }
     }

@@ -26,7 +26,10 @@ class Project extends Model {
           from: "projects.id",
           through: {
             from: "projectWoods.projectId",
-            to: "projectWoods.hardwoodId"
+            to: "projectWoods.hardwoodId",
+            extra: {
+              bf: "boardFeet"
+            }
           },
           to: "hardwoods.id"
         },
