@@ -53,14 +53,30 @@ projectsRouter.post('/new-project/', async (req, res) => {
 projectsRouter.post('/add-woods', async (req, res) => {
   try {
     const allAddedWoods = await Promise.all(
-      req.body.map( async (wood) => {
-        return await ProjectWood.query().insertAndFetch(wood)
-      })
+      req.body.map(async (wood) => {
+        const newWood = await ProjectWood.query().insert(wood)
+        return newWood
+      }) 
     )
-    return res.status(201).json({ projects: allAddedWoods })
+    const project = await Project.query().findById(allAddedWoods[0].projectId)
+    const serializedProject = await ProjectSerializer.getSummary(project)
+    return res.status(201).json({ project: serializedProject })
   } catch (error) {
     return res.status(500).json({ errors: error })
   }
 })
+
+// projectsRouter.delete('/delete-woods', async (req, res) => {
+//   try {
+//     const allAddedWoods = await Promise.all(
+//       req.body.map( async (wood) => {
+//         return await ProjectWood.query().insertAndFetch(wood)
+//       })
+//     )
+//     return res.status(201).json({ projects: allAddedWoods })
+//   } catch (error) {
+//     return res.status(500).json({ errors: error })
+//   }
+// })
 
 export default projectsRouter

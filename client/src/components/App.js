@@ -15,7 +15,12 @@ import DevInfoPage from "./layout/DevInfoPage"
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(null)
-  const [forecast, setForecast] = useState({})
+  const [forecast, setForecast] = useState({
+      city: "",
+      temp: "",
+      description: "",
+      icon: ""
+  })
   const [success, setSuccess] = useState(false)
   
   const fetchCurrentUser = async () => {

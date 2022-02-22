@@ -4,9 +4,11 @@ const AddedWoodTile = props => {
   
   return (
     <div className="added-wood-tile">
-      <p>{props.wood.name}</p>
-      <p>Board-Ft: {props.wood.bf}</p>
-      <p>Cost: ${props.woodCost}</p>
+      <h5 id="wood-name">{props.wood.name}:</h5>
+      <ul>
+      <li id="wood-tile-p">Bdft: {props.wood.bf}</li>
+      <li id="wood-tile-p">${props.woodCost}</li>
+      </ul>
     </div>
   )
 }

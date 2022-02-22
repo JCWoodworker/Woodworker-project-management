@@ -24,7 +24,7 @@
   min-width:70%;
   background-color: $dark-gray-transparent;
   border-radius: 0.5rem;
-  box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 50px;
+  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
 
 }
 
@@ -111,14 +111,29 @@
   justify-content: center;
   flex-flow: row wrap;
   gap: 0.75rem;
-  margin-bottom: 2rem 
+  margin-bottom: 2rem;
+  
 }
 
 .added-wood-tile {
-  background-color: $dark-gray-transparent;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  // background-color: $dark-gray-transparent;
   border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
-  padding: 0.5rem;
-  min-width:10%;
-  min-height: 15%;
+  padding: 1rem;
+  width: 200px;
+  height: 160px
+}
+
+#wood-name {
+  font-weight: bolder;
+  width: 90%
+}
+
+#wood-tile-p {
+  font-weight: bold;
 }
