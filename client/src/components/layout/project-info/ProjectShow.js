@@ -61,7 +61,10 @@ const ProjectShow = props => {
           <p>* View Suggested Retail Pricing</p>
           <p>* Edit Project and Delete Woods</p>
         </div>
-        <AddWoodForm projectId={props.match.params.id} selectedWoodArray={project.selectedWoods} />
+        <AddWoodForm 
+          projectId={props.match.params.id} 
+          selectedWoodArray={project.selectedWoods}
+        />
       </div>
       <h3>Woods Needed for Project</h3>
       <div className="added-wood-tile-container">

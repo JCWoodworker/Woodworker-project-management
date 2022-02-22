@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import ProjectTile from "./ProjectTile"
 import NewProjectForm from "./NewProjectForm"
 import translateServerErrors from "../../../services/translateServerErrors"
+import ErrorList from "../ErrorList"
 
 const ProjectsIndex = props => {
   
@@ -66,6 +67,7 @@ const ProjectsIndex = props => {
         {projectTiles}
       </div>
       <div className="projects-form-container">
+        <ErrorList errors={errors} />
         <NewProjectForm 
           postNewProject={postNewProject} 
           userId={userId}

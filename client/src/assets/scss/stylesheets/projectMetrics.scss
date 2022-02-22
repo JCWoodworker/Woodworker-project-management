@@ -28,16 +28,23 @@
 
 }
 
-#hardwood,
+#hardwood {
+  min-width:max-content;
+  width: 10rem;
+  margin-bottom: 1rem;
+}
+
 #boardFeet {
   border-radius: 0.5rem;
   background-color: $dark-gray-transparent;
   color: white;
+  margin:0 auto;
+  margin-bottom: 1rem;
+  width: 80px;
 }
 
 .show-added-wood {
   padding: 2px;
-  min-width:fit-content;
 }
 
 .add-wood-form {
@@ -47,20 +54,15 @@
   align-items: center;
 }
 
-#boardFeet {
-  margin: 0 auto ;
-  margin-bottom: 1rem;
-  min-width: 3rem;
-  max-width: 5rem;
-}
-
 .add-selected-button {
   background-color: none;
   border: 3px solid $red-brown;
   border-radius: 1rem;
   padding: 0.5rem;
   box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 50px;
-  max-width: fit-content;
+  width: 150px;
+  height: 50px;
+  margin-bottom: 1rem;
 }
 
 .add-selected-button:link {
@@ -81,7 +83,8 @@
   border-radius: 1rem;
   padding: 0.5rem;
   box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 50px;
-  max-width: fit-content;
+  width: 150px;
+  height: 50px;
 }
 
 .save-button:link {
@@ -100,4 +103,22 @@
   background-color: $dark-gray-transparent;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
+}
+
+
+.added-wood-tile-container {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem 
+}
+
+.added-wood-tile {
+  background-color: $dark-gray-transparent;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  padding: 0.5rem;
+  min-width:10%;
+  min-height: 15%;
 }
