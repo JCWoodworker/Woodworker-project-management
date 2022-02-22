@@ -95,9 +95,13 @@ const AddWoodForm = props => {
   let yourWoodList = <p>Select Some Wood!</p>
   if (hardwoods) {
     yourWoodList = hardwoods.map(wood => {
+      let woodName = woodOptionList.find(item => {
+        return item.id === wood.hardwoodId
+      })
+      
       return (
-        <li key={wood.hardwood}>
-          {`${wood.hardwood}: ${wood.boardFeet} board-ft`}
+        <li key={woodName.value}>
+          {`${woodName.value}: ${wood.boardFeet} board-ft`}
         </li>
       )
     })
@@ -131,6 +135,7 @@ const AddWoodForm = props => {
   }
   
   return (
+
     <div className="add-woods-container">
 
       <form onSubmit={handleWoodSubmit} className="add-wood-form">
