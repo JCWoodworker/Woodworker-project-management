@@ -30,7 +30,6 @@ projectsRouter.get('/:id', async (req, res) => {
   const id = req.params.id
   try {
     const project = await Project.query().findById(id)
-    let projectWithBoardFeet = await project.$relatedQuery("projectWoods")
     const serializedProject = await ProjectSerializer.getSummary(project)
     return res.status(200).json({ project: serializedProject})
   } catch (error) {
