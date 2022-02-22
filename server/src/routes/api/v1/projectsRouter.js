@@ -55,9 +55,10 @@ projectsRouter.post('/add-woods', async (req, res) => {
   try {
     const allAddedWoods = await Promise.all(
       req.body.map( async (wood) => {
-        await ProjectWood.query().insertAndFetch(wood)
+        return await ProjectWood.query().insertAndFetch(wood)
       })
     )
+    return res.status(201).json({ projects: allAddedWoods })
   } catch (error) {
     return res.status(500).json({ errors: error })
   }

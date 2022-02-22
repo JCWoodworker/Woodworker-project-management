@@ -9,8 +9,9 @@ const AddWoodForm = props => {
     hardwoodId: ""
   })
   const [hardwoods, setHardwoods] = useState([])
-  const [toggleAddHardwoods, setToggleAddHardwoods] = useState(false)
   const [woodOptionList, setWoodOptionList] = useState([])
+  const [errors, setErrors] = useState([])
+  // const [savedWoodsForProject, setSavedWoodsForProject] = useState([])
 
   const fetchHardwoods = async () => {
     try {
@@ -57,6 +58,9 @@ const AddWoodForm = props => {
       hardwoodId: ""
     })
   }
+  const clearSelectedWoodsList = () => {
+    setHardwoods([])
+  }
 
   const handleBoardFeetSelectionChange = event => {
     setSelectedWood({...selectedWood, [event.currentTarget.name]: event.currentTarget.value })
@@ -64,13 +68,9 @@ const AddWoodForm = props => {
   const handleHardwoodSelectionChange = selectedItem => {
     setSelectedWood({ ...selectedWood, hardwoodId: selectedItem.id })
   }
-  const handleShowAddHardwoods = event => {
-    event.preventDefault()
-    toggleAddHardwoods? setToggleAddHardwoods(false) : setToggleAddHardwoods(true)
-  }
   const handleSaveHardwoods = event => {
     postWoodsToProject(hardwoods)
-    toggleAddHardwoods? setToggleAddHardwoods(false) : setToggleAddHardwoods(true)
+    clearSelectedWoodsList()
   }
 
   const handleWoodSubmit = event => {
@@ -168,8 +168,8 @@ const AddWoodForm = props => {
 
         <button 
           type="button"
-          id="done-adding-button"
-          className="done-adding-button"
+          id="save-button"
+          className="save-button"
           onClick={handleSaveHardwoods}
           >Save List To Project
         </button>

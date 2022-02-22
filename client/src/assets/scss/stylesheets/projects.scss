@@ -18,7 +18,7 @@
   margin: 1rem;
   padding: 1rem;
   border-radius: 0.5rem;
-  background-color: $transparent-background;
+  background-color: $beige-transparent;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
   color: $red-brown;
 }
@@ -110,4 +110,21 @@ a.back-button:visited {
 a.back-button:hover {
   color: white;
   background-color: $dark-gray-transparent;
+}
+
+.added-wood-tile-container {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem 
+}
+
+.added-wood-tile {
+  background-color: $dark-gray-transparent;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  padding: 0.5rem;
+  min-width:10%;
+  min-height: 15%;
 }

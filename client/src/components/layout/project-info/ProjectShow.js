@@ -54,17 +54,16 @@ const ProjectShow = props => {
       <h4 className="project-description"><strong>Description: </strong>{project.description}</h4>
       <div className="woods-metrics-container">
         <div className="show-metrics-container">
-          <p>Project Metrics</p>
-          <p>Wood Cost: ${totalWoodCost}</p>
+          <p>WOOD COST: ${totalWoodCost}</p>
           <p>COMING SOON:</p>
-          <p>* Add Estimated labor Hours</p>
-          <p>* View Estimated Cost including labor</p>
+          <p>* Add Estimated labor Hours and View Estimated Cost including labor</p>
           <p>* View Suggested Retail Pricing</p>
           <p>* Edit Project and Delete Woods</p>
         </div>
         <AddWoodForm projectId={props.match.params.id}/>
       </div>
-      <div className="added-wood-tiles">
+      <h3>Woods Needed for Project</h3>
+      <div className="added-wood-tile-container">
         {selectedWoodList}
       </div>
       <div className="back-button=container">
