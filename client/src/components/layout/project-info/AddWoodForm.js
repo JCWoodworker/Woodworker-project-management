@@ -74,13 +74,21 @@ const AddWoodForm = props => {
 
   const handleWoodSubmit = event => {
     event.preventDefault()
+
+    let duplicatePersistedWood = false
+    props.selectedWoodArray.forEach(wood => {
+      if (wood.id === selectedWood.hardwoodId) {
+        return duplicatePersistedWood = true
+      }
+    })
+
     let duplicateWood = false
     hardwoods.forEach(wood => {
       if (wood.hardwoodId === selectedWood.hardwoodId) {
         return duplicateWood = true
       }
     })
-    if (!duplicateWood) {
+    if (!duplicateWood && !duplicatePersistedWood) {
       if (selectedWood.hardwoodId && selectedWood.boardFeet) {
         setHardwoods(hardwoods.concat(selectedWood))
         clearForm()
@@ -88,16 +96,23 @@ const AddWoodForm = props => {
         alert(`Please fill out both fields`)
       }
     } else {
-      alert(`You've already selected ${selectedWood.hardwoodId}!`)
+      let woodName = woodOptionList.find(item => {
+        return item.id === selectedWood.hardwoodId
+      })
+      alert(`You've already added ${woodName.value}!`)
     }
   }
 
   let yourWoodList = <p>Select Some Wood!</p>
   if (hardwoods) {
     yourWoodList = hardwoods.map(wood => {
+      let woodName = woodOptionList.find(item => {
+        return item.id === wood.hardwoodId
+      })
+      
       return (
-        <li key={wood.hardwood}>
-          {`${wood.hardwood}: ${wood.boardFeet} board-ft`}
+        <li key={woodName.value}>
+          {`${woodName.value}: ${wood.boardFeet} board-ft`}
         </li>
       )
     })
@@ -131,6 +146,7 @@ const AddWoodForm = props => {
   }
   
   return (
+
     <div className="add-woods-container">
 
       <form onSubmit={handleWoodSubmit} className="add-wood-form">
