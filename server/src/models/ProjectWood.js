@@ -34,7 +34,7 @@ class ProjectWood extends Model {
       type: "object",
       required: ["hardwoodId", "projectId", "boardFeet"],
       properties: {
-        hardwoodId: { type: ["integer", "string"] },
+        hardwoodId: { type: ["decimal(7,2),string"] },
         projectId: { type: ["integer", "string"] },
         boardFeet: { type: ["integer", "string"] }
       }

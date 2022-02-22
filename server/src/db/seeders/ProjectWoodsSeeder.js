@@ -8,12 +8,12 @@ class ProjectWoodsSeeder {
       projectWoodsData.push({
         hardwoodId: i,
         projectId: i,
-        boardFeet: 1
+        boardFeet: "1.2"
       })
       projectWoodsData.push({
         hardwoodId: i + 1,
         projectId: i,
-        boardFeet: 2
+        boardFeet: "2.25"
       })
     }
 

@@ -8,7 +8,7 @@
 exports.up = async (knex) => {
   return knex.schema.createTable("projectWoods", t => {
     t.bigIncrements('id').notNullable()
-    t.integer('boardFeet').notNullable()
+    t.decimal('boardFeet',7,2).notNullable()
     t
       .bigInteger("hardwoodId")
       .notNullable()
