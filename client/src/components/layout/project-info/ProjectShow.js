@@ -32,22 +32,24 @@ const ProjectShow = props => {
   }, [])
 
   
-  let totalWoodCost = 0
+  let totalWoodCost = 0.00
   const selectedWoodList = project.selectedWoods.map(wood => {
+    
     let woodCost = (wood.bf * wood.price).toFixed(2)
-    totalWoodCost += parseInt(woodCost)
-
+    
+    totalWoodCost += parseFloat(woodCost)
     return (
       <AddedWoodTile key={wood.name} woodCost={woodCost} wood={wood} />
     )
   })
+  totalWoodCost = totalWoodCost.toFixed(2)
 
   return (
     <div className="project-show">
       <div className="project-show-headers">
         <h1 className="page-heading">{project.name}</h1>
         <div className="customer-order">
-          <p>Customer: {project.customer}</p>
+          <p>Destination: {project.customer}</p>
           <p>Order Quantity: {project.quantity}</p>
         </div>
       </div>

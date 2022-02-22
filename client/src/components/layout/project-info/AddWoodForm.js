@@ -11,7 +11,6 @@ const AddWoodForm = props => {
   const [hardwoods, setHardwoods] = useState([])
   const [woodOptionList, setWoodOptionList] = useState([])
   const [errors, setErrors] = useState([])
-  // const [savedWoodsForProject, setSavedWoodsForProject] = useState([])
 
   const fetchHardwoods = async () => {
     try {
