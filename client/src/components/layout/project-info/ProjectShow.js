@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import AddWoodForm from "./AddWoodForm"
+import AddedWoodTile from "./AddedWoodTile"
 
 const ProjectShow = props => {
+  const [totalProjectcost, setTotalProjectCost] = useState(null)
+  const [projectWoodList, setProjectWoodList] = useState([])
   const [project, setProject] = useState ({
     name: "",
     customer: "",
     description: "",
-    quantity: ""
+    quantity: "",
+    selectedWoods: []
   })
 
   const getProject = async () => {
@@ -27,6 +31,17 @@ const ProjectShow = props => {
     getProject()
   }, [])
 
+  
+  let totalWoodCost = 0
+  const selectedWoodList = project.selectedWoods.map(wood => {
+    let woodCost = (wood.bf * wood.price).toFixed(2)
+    totalWoodCost += parseInt(woodCost)
+
+    return (
+      <AddedWoodTile key={wood.name} woodCost={woodCost} wood={wood} />
+    )
+  })
+
   return (
     <div className="project-show">
       <div className="project-show-headers">
@@ -39,12 +54,17 @@ const ProjectShow = props => {
       <h4 className="project-description"><strong>Description: </strong>{project.description}</h4>
       <div className="woods-metrics-container">
         <div className="show-metrics-container">
-          <p>COMING SOON ...</p>
-          <p>* View Estimated Cost</p>
+          <p>WOOD COST: ${totalWoodCost}</p>
+          <p>COMING SOON:</p>
+          <p>* Add Estimated labor Hours and View Estimated Cost including labor</p>
           <p>* View Suggested Retail Pricing</p>
-          <p>* Edit Project</p>
+          <p>* Edit Project and Delete Woods</p>
         </div>
-        <AddWoodForm />
+        <AddWoodForm projectId={props.match.params.id}/>
+      </div>
+      <h3>Woods Needed for Project</h3>
+      <div className="added-wood-tile-container">
+        {selectedWoodList}
       </div>
       <div className="back-button=container">
         <Link to='/' className="back-button">GO BACK</Link>

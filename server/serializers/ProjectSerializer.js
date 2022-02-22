@@ -1,11 +1,14 @@
 class ProjectSerializer {
-  static getSummary(project) {
+  static async getSummary(project) {
     const allowedAttributes = ['id', 'name', 'description', 'customer', 'quantity', 'userId']
 
     let serializedProject = {}
     for (const attribute of allowedAttributes) {
       serializedProject[attribute] = project[attribute]
     }
+
+    serializedProject.selectedWoods = await project.$relatedQuery("hardwoods")
+    
 
     return serializedProject
   }

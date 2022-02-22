@@ -26,8 +26,6 @@ const NewProjectForm = props => {
     })
   }
 
-  console.log(newProject)
-
   const handleSubmit = async event => {
     event.preventDefault()
     const successfulPost = await props.postNewProject(newProject)

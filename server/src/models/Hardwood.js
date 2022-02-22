@@ -5,6 +5,37 @@ class Hardwood extends Model {
     return "hardwoods"
   }
 
+  static get relationMapping() {
+    const Project = require('./Project')
+    const ProjectWood = require('./ProjectWood')
+
+    return {
+      projects: {
+        relation: Model.ManyToManyRelation,
+        modelClass: Project,
+        join: {
+          from: "hardwoods.id",
+          through: {
+            from: "projectWoods.hardwoodId",
+            to: "projectWoods.projectId",
+          },
+          to: "projects.id"
+        }
+      },
+      projectWoods: {
+        relation: Model.HasManyRelation,
+        modelClass: ProjectWood,
+        join: {
+          from: "hardwoods.id",
+          to: "projectWoods.hardwoodId",
+          extra: {
+            bf: "boardFeet"
+          }
+        }
+      }
+    }
+  }
+
   static get jsonSchema() {
     return {
       type: "object",
