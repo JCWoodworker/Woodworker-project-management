@@ -153,6 +153,7 @@ const AddWoodForm = props => {
 
         <label htmlFor="hardwood">
           <Select 
+            id="hardwood"
             name="hardwood"
             placeholder="Select Wood"
             onChange={handleHardwoodSelectionChange}
@@ -163,9 +164,9 @@ const AddWoodForm = props => {
           />
         </label>
 
-        <label htmlFor="boardFeet">Board Feet Needed:
+        <label htmlFor="boardFeet">Board-ft Needed:
           <input 
-            type="number" 
+            type="number" min="0.01" max="999"
             id="boardFeet"
             name="boardFeet"
             value={selectedWood.boardFeet} 
@@ -196,7 +197,7 @@ const AddWoodForm = props => {
           {yourWoodList}
         </ul>
       </div>
-      
+            
     </div>
 
   )

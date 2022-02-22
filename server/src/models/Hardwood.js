@@ -41,7 +41,7 @@ class Hardwood extends Model {
       type: "object",
       required: ["name"],
       properties: {
-        name: { type: "string" },
+        name: { type: "string", minLength: 1, maxLength: 30 },
         price: { type: "float" },
         region: { type: "string" },
         jankaHardness: { type: "integer" },

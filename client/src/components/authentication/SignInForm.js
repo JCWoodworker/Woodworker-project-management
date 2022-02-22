@@ -67,6 +67,7 @@ const SignInForm = () => {
 
   return (
     <div className="grid-container sign-in-form" onSubmit={onSubmit}>
+
       <h1>Sign In</h1>
       <form>
         <div>
@@ -92,6 +93,7 @@ const SignInForm = () => {
           <input type="submit" className="button" value="Sign In" />
         </div>
       </form>
+
     </div>
   );
 };

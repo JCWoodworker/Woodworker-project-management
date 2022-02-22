@@ -50,8 +50,8 @@ class Project extends Model {
       type: "object",
       required: ["name", "userId"],
       properties: {
-        name: { type: "string" },
-        description: { type: "text" },
+        name: { type: "string", minLength: 1, maxLength: 50 },
+        description: { type: "text", maxLength: 500 },
         customer: { type: "string" },
         quantity: { type: ["integer", "string"] },
         userId: { type: ["integer", "string"] }
