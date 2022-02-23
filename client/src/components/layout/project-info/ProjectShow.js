@@ -58,7 +58,7 @@ const ProjectShow = props => {
   let totalWoodCost = 0.00
   const selectedWoodList = project.selectedWoods.map(wood => {
     let woodCost = (wood.bf * wood.price).toFixed(2)
-    totalWoodCost += parseFloat(woodCost) * 1.3
+    totalWoodCost += parseFloat(woodCost)
 
     return (
       <AddedWoodTile key={wood.name} woodCost={woodCost} wood={wood} />
