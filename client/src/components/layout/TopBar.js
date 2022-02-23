@@ -2,8 +2,10 @@ import React from "react"
 import { Link } from "react-router-dom"
 import SignOutButton from "../authentication/SignOutButton"
 import SponsorTile from "./SponsorTile"
+import { Popup } from "semantic-ui-react"
 
 const TopBar = ({ user }) => {
+
   const unauthenticatedListItems = [
     <Link to="/" key="home" key="home" className="link-item home-link">Home</Link>,
     <Link to="/wood-info" key="wood-info" className="link-item">Wood Info</Link>,
