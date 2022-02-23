@@ -27,7 +27,7 @@ const ScrapedData = props => {
     fetchScrapedData()
   }, [])
 
-  let showScrapedData = <p>Unable to scrape data - GFY</p>
+  let showScrapedData = <p>Unable to scrape data 😞</p>
   if (scraped) {
     showScrapedData = 
       <div className="scraper">
