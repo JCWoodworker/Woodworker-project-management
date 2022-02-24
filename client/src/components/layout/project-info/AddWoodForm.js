@@ -103,16 +103,29 @@ const AddWoodForm = props => {
     }
   }
 
-  let yourWoodList = <p>Select Some Wood!</p>
-  if (hardwoods) {
+  const removeStagedWood = event => {
+    setHardwoods(hardwoods.filter(wood => {
+      return wood.hardwoodId != event.currentTarget.value
+    }))
+  }
+  
+  let yourWoodList = <p>Add some wood!</p>
+
+  if (hardwoods.length > 0) {
     yourWoodList = hardwoods.map(wood => {
       let woodName = woodOptionList.find(item => {
         return item.id === wood.hardwoodId
       })
       
       return (
-        <li key={woodName.value}>
+        <li key={woodName.value} id="added-wood-list-item">
           {`${woodName.value}: ${wood.boardFeet} board-ft`}
+          <button 
+            className="remove-wood-x"
+            value={wood.hardwoodId}
+            onClick={removeStagedWood}>
+              x
+          </button>
         </li>
       )
     })
@@ -167,14 +180,17 @@ const AddWoodForm = props => {
           />
         </label>
 
-        <label htmlFor="boardFeet">Board-ft Needed:
-          <input 
-            type="number" min="0.01" max="999"
-            id="boardFeet"
-            name="boardFeet"
-            value={selectedWood.boardFeet} 
-            onChange={handleBoardFeetSelectionChange} 
-          />
+        <label 
+          htmlFor="boardFeet" 
+          className="boardFeet-label-container">
+            <h5 id="boardFeet-heading"><strong>Bdft Needed:</strong></h5>
+            <input 
+              inputmode="numeric" min="0.01" max="999"
+              id="boardFeet-input"
+              name="boardFeet"
+              value={selectedWood.boardFeet} 
+              onChange={handleBoardFeetSelectionChange} 
+            />
         </label>
 
         <button 
@@ -185,20 +201,24 @@ const AddWoodForm = props => {
           >{`Add Selected-->`}
         </button>
 
-        <button 
-          type="button"
-          id="save-button"
-          className="save-button"
-          onClick={handleSaveHardwoods}
-          >Save List To Project
-        </button>
-
       </form>
 
       <div className='show-added-wood'>
-        <ul>Selected Woods To Be Added:
+
+        <ul className="staged-woods">
+          <h4><strong>
+            To Be Added:
+          </strong></h4>
           {yourWoodList}
+          <button 
+            type="button"
+            id="save-button"
+            className="save-button"
+            onClick={handleSaveHardwoods}
+            >Save List To Project
+          </button>
         </ul>
+
       </div>
             
     </div>

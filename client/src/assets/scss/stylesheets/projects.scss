@@ -1,5 +1,7 @@
 @import "./colors.scss";
 
+//PROJECT LIST AND NEW PROJECT FORM CONTAINER
+
 .projects-list-container {
   display: flex;
   padding: 0.2rem;
@@ -13,14 +15,23 @@
   overflow-y: scroll;
 }
 
-.project-tile-container,
-.project-show {
+// PROJECT TILES
+
+.project-tile-container {
   margin: 1rem;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 0.5rem;
-  background-color: $beige-transparent;
+  background-color: $dark-gray;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
-  color: $red-brown;
+  color: $medium-beige;
+}
+
+.project-name-underline {
+  border-bottom: 2px solid $beige-transparent;
+  max-width: 50%;
+  margin: 0 auto;
+  margin-bottom: 0.3rem;
+  background-color: $red-brown;
 }
 
 .project-tile-container:link {
@@ -39,37 +50,35 @@
   font-weight: bold;
 }
 
-.project-name-underline {
-  border-bottom: 2px solid black;
-  max-width: 50%;
-  margin: 0 auto;
-  margin-bottom: 0.3rem;
-}
-
 .tile-info {
   margin: 0.2rem;
   padding: 0.1rem
 }
 
+// PROJECT SHOW PAGE
+
 .project-show {
-  margin: 1rem auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  min-width: 90%;
-  max-width: 90%;
-  min-height: 82%;
-  max-height: 82%;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  color: $medium-beige;
+  width: 90%;
+  width: 90%;
+  height: 82%;
+  height: 82%;
   overflow-y: scroll;
 }
 
 .project-show-headers {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
   gap: 1rem;
-  background-color: $red-brown;
+  background-color: $dark-gray;
   color: $medium-beige;
   padding: 1rem 3rem;
   border-radius: 0.5rem;
@@ -85,6 +94,9 @@
 
 .project-description {
   margin: 2rem 0;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: $dark-gray-transparent;
 }
 
 .back-button-container {
@@ -101,13 +113,13 @@
   box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 50px;
 }
 
-a.back-button:link {
+.back-button:link {
   color: $red-brown;
 }
-a.back-button:visited {
+.back-button:visited {
   color: $red-brown;
 }
-a.back-button:hover {
+.back-button:hover {
   color: white;
   background-color: $dark-gray-transparent;
 }
