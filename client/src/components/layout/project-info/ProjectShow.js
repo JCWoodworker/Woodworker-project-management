@@ -88,6 +88,7 @@ const ProjectShow = props => {
   }
 
   let totalWoodCost = 0.00
+  let suggestedRetailPrice = 0.00
   const selectedWoodList = project.selectedWoods.map(wood => {
     let woodCost = (wood.bf * wood.price).toFixed(2)
     totalWoodCost += parseFloat(woodCost)
@@ -102,9 +103,11 @@ const ProjectShow = props => {
     )
   })
   totalWoodCost = totalWoodCost.toFixed(2)
+  suggestedRetailPrice = (totalWoodCost * 1.8).toFixed(2)
 
   return (
     <div className="project-show">
+
       <div className="project-show-headers">
         <h1 className="page-heading">{project.name}</h1>
         <div className="customer-order">
@@ -112,28 +115,35 @@ const ProjectShow = props => {
           <p>Order Quantity: {project.quantity}</p>
         </div>
       </div>
-      <h4 className="project-description">{project.description}</h4>
+
+      <h3 className="project-description">{project.description}</h3>
+
       <div className="woods-metrics-container">
+
         <div className="show-metrics-container">
+          <p><strong>METRICS:</strong></p>
           <p>WOOD COST: ${totalWoodCost}</p>
-          <p>COMING SOON:</p>
-          <p>* Add Estimated labor Hours and View Estimated Cost including labor</p>
-          <p>* View Suggested Retail Pricing</p>
-          <p>* Edit Project and Delete Woods</p>
+          <p>SUGGESTED SALE PRICE: ${suggestedRetailPrice}</p>
+          <p>* Suggested sale price does not include labor yet</p>
+          <p>* Add hardwoods in the container below</p>
         </div>
-        <AddWoodForm 
-          projectId={props.match.params.id} 
-          selectedWoodArray={project.selectedWoods}
-          postWoodsToProject={postWoodsToProject}
-        />
+
+        <div className="added-wood-tile-container">
+          {selectedWoodList}
+        </div>
+
       </div>
-      <h3 className="h3-woods-needed">Wood Needed for Project</h3>
-      <div className="added-wood-tile-container">
-        {selectedWoodList}
-      </div>
+
+      <AddWoodForm 
+        projectId={props.match.params.id} 
+        selectedWoodArray={project.selectedWoods}
+        postWoodsToProject={postWoodsToProject}
+      />
+
       <div className="back-button=container">
         <Link to='/' className="back-button">GO BACK</Link>
       </div>
+
     </div>
   )
 }

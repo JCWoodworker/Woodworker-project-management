@@ -124,7 +124,7 @@ const AddWoodForm = props => {
             className="remove-wood-x"
             value={wood.hardwoodId}
             onClick={removeStagedWood}>
-              x
+              ✖️
           </button>
         </li>
       )

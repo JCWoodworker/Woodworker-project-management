@@ -8,7 +8,7 @@ const AddedWoodTile = props => {
   
   return (
     <div className="added-wood-tile">
-      <h5 id="wood-name">{props.wood.name}:</h5>
+      <p id="wood-name">{props.wood.name}:</p>
       <ul>
         <li id="wood-tile-p">Bdft: {props.wood.bf}</li>
         <li id="wood-tile-p">${props.woodCost}</li>
@@ -16,7 +16,7 @@ const AddedWoodTile = props => {
       <button 
         id="delete-persisted-wood-button"
         onClick={handleClickDeleteWood}>
-          x
+          ✖️
       </button>
     </div>
   )
