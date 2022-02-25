@@ -40,8 +40,8 @@
 }
 
 .home-page-link {
-  background-color: $beige-transparent;
-  color: $red-brown;
+  background-color: $dark-gray;
+  color: $medium-beige;
   padding: 0.5rem;
   width: 150px;
   border: 2px solid $medium-beige;
@@ -55,7 +55,8 @@
   color: $medium-beige;
 }
 .home-page-link:hover {
-  color: white
+  color: $red-brown;
+  background-color: $beige-transparent;
 }
 
 ul {

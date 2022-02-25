@@ -36,9 +36,7 @@
 #quantity,
 #project-form-submit {
   border-radius: 0.5rem;
-  background-color: $red-brown;
-  color: $medium-beige;
-  border: 1px solid $medium-beige;
+  border: 2px solid $medium-beige;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
 }
 
@@ -46,8 +44,8 @@
   height: 50px;
   width: 200px;
   cursor: pointer;
-  color: $dark-gray;
-  background-color: $medium-beige;
+  color: $medium-beige;
+  background-color: $dark-gray;
   font-weight: bolder;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
   margin: 1.5rem
@@ -60,6 +58,6 @@
   color: $red-brown;
 }
 #project-form-submit:hover {
-  color: white;
-  background-color: $dark-gray-transparent;
+  color: $red-brown;
+  background-color: $beige-transparent;
 }

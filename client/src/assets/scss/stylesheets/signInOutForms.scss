@@ -26,8 +26,6 @@
 #auth-password,
 #auth-button {
   border-radius: 0.5rem;
-  background-color: $red-brown;
-  color: $medium-beige;
   border: 1.5px solid $medium-beige;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
 }
@@ -51,5 +49,5 @@
 }
 #auth-button:hover {
   color: $red-brown;
-  background-color: $medium-beige;
+  background-color: $beige-transparent;
 }
