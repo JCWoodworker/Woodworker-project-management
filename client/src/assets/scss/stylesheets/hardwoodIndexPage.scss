@@ -22,10 +22,23 @@ h4 {
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
   background-color: $dark-gray;
   color: $medium-beige;
-  padding: 0.25rem;
-  width: 180px;
-  height: 15%;
-  overflow-x: scroll;
+  padding: 1rem;
+  width: 280px;
+  height: 150px;
+  gap: 0.5rem
+}
+
+.hardwood-tile-wood-name {
+  width: 60%;
+}
+
+.hardwood-tile-wood-image {
+  width: 40%
+}
+#hardwood-tile-wood-image {
+  height:120px;
+  width: 120px;
+  border-radius: 0.5rem;
 }
 
 .hardwood-tile:link {

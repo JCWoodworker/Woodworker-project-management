@@ -28,6 +28,7 @@ const ScrapedData = props => {
   }, [])
 
   let showScrapedData = <p>Unable to scrape data 😞</p>
+
   if (scraped) {
     showScrapedData = 
       <div className="scraper">
