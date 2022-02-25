@@ -55,18 +55,53 @@ const ProjectShow = props => {
     }
   }
 
+  const deleteWoodFromProject = async hardwoodId => {
+    const dataToSend = {
+      hardwoodId: hardwoodId,
+      projectId: project.id
+    }
+    try {
+      const response = await fetch(`/api/v1/projects/delete-woods`, {
+        method: "DELETE",
+        headers: new Headers({
+          "Content-Type": "application/json"
+        }),
+        body: JSON.stringify( dataToSend )
+      })
+      if (!response.ok) {
+        if (response.status === 422) {
+          const body = await response.json()
+          alert(body.message)
+        }
+        const errorMessage = `${response.status} (${response.statusText})`
+        const error = new Error(errorMessage)
+        throw (error)
+      }
+      const newSelectedWoods = project.selectedWoods.filter(wood => {
+        return wood.id != hardwoodId
+      })
+      setProject({...project, selectedWoods: newSelectedWoods})
+    } catch (error) {
+      return console.error(`Error in fetch: ${error.message}`)
+    }
+
+  }
+
   let totalWoodCost = 0.00
   const selectedWoodList = project.selectedWoods.map(wood => {
     let woodCost = (wood.bf * wood.price).toFixed(2)
     totalWoodCost += parseFloat(woodCost)
-
+    
     return (
-      <AddedWoodTile key={wood.name} woodCost={woodCost} wood={wood} />
+      <AddedWoodTile 
+        key={wood.name} 
+        woodCost={woodCost} 
+        wood={wood} 
+        deleteWoodFromProject={deleteWoodFromProject}
+      />
     )
   })
   totalWoodCost = totalWoodCost.toFixed(2)
-
-  console.log(project.selectedWoods)
 
   return (
     <div className="project-show">

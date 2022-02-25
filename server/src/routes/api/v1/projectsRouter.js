@@ -66,17 +66,16 @@ projectsRouter.post('/add-woods', async (req, res) => {
   }
 })
 
-// projectsRouter.delete('/delete-woods', async (req, res) => {
-//   try {
-//     const allAddedWoods = await Promise.all(
-//       req.body.map( async (wood) => {
-//         return await ProjectWood.query().insertAndFetch(wood)
-//       })
-//     )
-//     return res.status(201).json({ projects: allAddedWoods })
-//   } catch (error) {
-//     return res.status(500).json({ errors: error })
-//   }
-// })
+projectsRouter.delete('/delete-woods', async (req, res) => {
+  try {
+    await ProjectWood.query().findOne({
+      hardwoodId:req.body.hardwoodId,
+      projectId: req.body.projectId
+    }).delete()
+    return res.status(201).json({ message: 'Successfully Deleted' })
+  } catch (error) {
+    return res.status(500).json({ errors: error })
+  }
+})
 
 export default projectsRouter
