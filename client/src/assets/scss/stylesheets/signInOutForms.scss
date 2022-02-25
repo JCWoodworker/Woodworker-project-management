@@ -1,0 +1,55 @@
+@import "./colors.scss";
+
+
+.registration-form,
+.sign-in-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem auto;
+  padding: 2rem;
+  max-width: 35%;
+  color: $medium-beige;
+  background-color: $dark-gray;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+}
+
+.auth-email,
+.auth-password {
+  color: $medium-beige;
+  font-size: 1.1rem;
+}
+
+#auth-email,
+#auth-password,
+#auth-button {
+  border-radius: 0.5rem;
+  background-color: $red-brown;
+  color: $medium-beige;
+  border: 1.5px solid $medium-beige;
+  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+}
+
+#auth-button {
+  height: 50px;
+  width: 200px;
+  cursor: pointer;
+  color: $medium-beige;
+  background-color: $dark-gray;
+  font-weight: bolder;
+  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  margin: 1.5rem
+}
+
+#auth-button:link {
+  color: $red-brown;
+}
+#auth-button:visited {
+  color: $red-brown;
+}
+#auth-button:hover {
+  color: $red-brown;
+  background-color: $medium-beige;
+}

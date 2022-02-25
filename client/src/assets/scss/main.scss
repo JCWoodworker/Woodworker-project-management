@@ -11,6 +11,7 @@
 @import "../scss/stylesheets/devInfoPage.scss";
 @import "../scss/stylesheets/hardwoodIndexPage.scss";
 @import "../scss/stylesheets/popups.scss";
+@import "../scss/stylesheets/signInOutForms.scss";
 
 *,
 *::before,
@@ -41,14 +42,6 @@ body {
   box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 30px;
 
 } 
-
-.registration-form,
-.sign-in-form {
-  max-width: 40%;
-  margin: 4rem auto;
-  background-color: $beige-transparent;
-  border-radius: 0.5rem;
-}
 
 .footer-container {
   margin-top: 3rem;
