@@ -2,10 +2,10 @@ import React from "react"
 
 const AddedWoodTile = props => {
   
-  const handleClickedBullshit = () => {
-    alert("fuck off")
+  const handleClickDeleteWood = () => {
+    props.deleteWoodFromProject(props.wood.id)
   }
-
+  
   return (
     <div className="added-wood-tile">
       <h5 id="wood-name">{props.wood.name}:</h5>
@@ -15,7 +15,7 @@ const AddedWoodTile = props => {
       </ul>
       <button 
         id="delete-persisted-wood-button"
-        onClick={handleClickedBullshit}>
+        onClick={handleClickDeleteWood}>
           x
       </button>
     </div>

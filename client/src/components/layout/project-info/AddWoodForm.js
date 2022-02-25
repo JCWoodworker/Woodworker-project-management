@@ -130,36 +130,6 @@ const AddWoodForm = props => {
       )
     })
   }
-
-  const deleteWoodFromProject = async hardwoodId => {
-    try {
-      const response = await fetch(`api/v1/projects/delete-woods`, {
-        method: "DELETE",
-        headers: new Headers({
-          "Content-Type": "application/json"
-        }),
-        body: JSON.stringify({ hardwoodId })
-      })
-      if (!response.ok) {
-        if (response.status === 422) {
-          const body = await response.json()
-          alert(body.message)
-        }
-        const errorMessage = `${response.status} (${response.statusText})`
-        const error = new Error(errorMessage)
-        throw (error)
-      }
-      const updatedWoods = hardwoods.filter(wood => {
-        debugger
-        hardwoodId != wood.hardwoodId
-      })
-      debugger
-      setHardwoods({...hardwoods, updatedWoods})
-    } catch (error) {
-      return console.error(`Error in fetch: ${error.message}`)
-    }
-
-  }
   
   return (
 
@@ -185,7 +155,7 @@ const AddWoodForm = props => {
           className="boardFeet-label-container">
             <h5 id="boardFeet-heading"><strong>Bdft Needed:</strong></h5>
             <input 
-              inputmode="numeric" min="0.01" max="999"
+              type="number" min="0" max="999" step="0.25"
               id="boardFeet-input"
               name="boardFeet"
               value={selectedWood.boardFeet} 
