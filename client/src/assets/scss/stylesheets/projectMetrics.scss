@@ -14,7 +14,7 @@
   padding: 2rem;
   border-radius: 0.5rem;;
   min-width: 10%;
-  background-color: $dark-gray-transparent;
+  color: $dark-gray;
 }
 
 .add-woods-container {
@@ -123,12 +123,6 @@
   cursor: pointer;
   color: $red-brown;
   background-color: $beige-transparent;
-}
-
-#hardwood-list {
-  background-color: $dark-gray-transparent;
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
 }
 
 #added-wood-list-item {

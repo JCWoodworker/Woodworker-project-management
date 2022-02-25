@@ -77,7 +77,7 @@ const ProjectShow = props => {
           <p>Order Quantity: {project.quantity}</p>
         </div>
       </div>
-      <h4 className="project-description"><strong>Description: </strong>{project.description}</h4>
+      <h4 className="project-description">{project.description}</h4>
       <div className="woods-metrics-container">
         <div className="show-metrics-container">
           <p>WOOD COST: ${totalWoodCost}</p>
@@ -92,7 +92,7 @@ const ProjectShow = props => {
           postWoodsToProject={postWoodsToProject}
         />
       </div>
-      <h3>Woods Needed for Project</h3>
+      <h3 className="h3-woods-needed">Wood Needed for Project</h3>
       <div className="added-wood-tile-container">
         {selectedWoodList}
       </div>

@@ -66,9 +66,9 @@
   padding: 1.5rem;
   border-radius: 0.5rem;
   color: $medium-beige;
-  width: 90%;
-  width: 90%;
-  height: 82%;
+  background-color: $beige-transparent;
+  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  width: 95%;
   height: 82%;
   overflow-y: scroll;
 }
@@ -93,10 +93,16 @@
 }
 
 .project-description {
+  font-weight: bolder;
   margin: 2rem 0;
   padding: 2rem;
   border-radius: 0.5rem;
-  background-color: $dark-gray-transparent;
+  color: $dark-gray;
+}
+
+.h3-woods-needed {
+  color: $dark-gray;
+  font-weight: bold;
 }
 
 .back-button-container {
@@ -107,17 +113,17 @@
 
 .back-button {
   background-color: none;
-  border: 3px solid $red-brown;
+  border: 3px solid $dark-gray;
   border-radius: 1rem;
   padding: 0.5rem;
   box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 50px;
 }
 
 .back-button:link {
-  color: $red-brown;
+  color: $dark-gray;
 }
 .back-button:visited {
-  color: $red-brown;
+  color: $dark-gray;
 }
 .back-button:hover {
   color: white;

@@ -1,21 +1,27 @@
 @import "./colors.scss";
 
 .dev-info-container {
+  height: 650px;
+  overflow-y: scroll;
   display: flex;
+  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem
+  flex-flow: row wrap;
+  gap: 0.5rem
 }
 
 .dev-image {
   max-width: 300px;
   min-width: 150px;
   border-radius: 50%;
-  border: 0.5rem solid $red-brown
-
+  border: 0.5rem solid $red-brown;
 }
 
 .dev-details {
   display: flex;
   flex-direction: column;
+  background-color: $dark-gray;
+  color: $medium-beige;
+  padding: 2rem;
+  border-radius: 0.5rem;
 }
