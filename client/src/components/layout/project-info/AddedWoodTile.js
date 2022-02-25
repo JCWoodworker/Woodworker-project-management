@@ -14,10 +14,10 @@ const AddedWoodTile = props => {
         <li id="wood-tile-p">${props.woodCost}</li>
       </ul>
       <button 
-        id="delete-persisted-wood-button"
-        onClick={handleClickDeleteWood}>
-          ✖️
-      </button>
+          id="delete-persisted-wood-button"
+          onClick={handleClickDeleteWood}>
+            x
+        </button>
     </div>
   )
 }

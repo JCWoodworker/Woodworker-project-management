@@ -42,8 +42,10 @@
   padding: 0.5rem 1rem;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
   border-radius: 0.5rem;
-  width: 45%;
+  width: 48%;
   min-width: 240px;
+  max-height: 150px;
+  
 }
 
 #wood-name {
@@ -54,7 +56,7 @@
   font-weight: bold;
 }
 
-#delete-persisted-wood-button { 
+#delete-persisted-wood-button {
   color: $medium-beige;
   border-radius: 0.5rem;
   padding: 0.18rem;
@@ -70,7 +72,6 @@
 #delete-persisted-wood-button:hover {
   cursor: pointer;
   background-color: $medium-beige;
-  color: red;
 }
 
 .add-woods-container {

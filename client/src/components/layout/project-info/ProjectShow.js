@@ -4,6 +4,7 @@ import AddWoodForm from "./AddWoodForm"
 import AddedWoodTile from "./AddedWoodTile"
 
 const ProjectShow = props => {
+
   const [project, setProject] = useState ({
     name: "",
     customer: "",

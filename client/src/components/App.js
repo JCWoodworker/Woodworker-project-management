@@ -85,7 +85,10 @@ const App = (props) => {
           <Switch>
             <Route 
               exact path="/">
-                <HomePage user={currentUser} />
+                <HomePage 
+                  user={currentUser} 
+                  onUpdate={() => window.scrollTo(0, 0)} 
+                />
             </Route>
             <Route 
               exact path="/projects/:id"
