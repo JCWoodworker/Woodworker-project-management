@@ -10,8 +10,11 @@
 }
 
 .show-metrics-container {
-  padding: 2px;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border-radius: 0.5rem;;
   min-width: 10%;
+  color: $dark-gray;
 }
 
 .add-woods-container {
@@ -22,29 +25,10 @@
   align-items: center;
   padding: 2rem;
   min-width:70%;
-  background-color: $dark-gray-transparent;
+  background-color: $dark-gray;
   border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
-
-}
-
-#hardwood {
-  min-width:max-content;
-  width: 10rem;
-  margin-bottom: 1rem;
-}
-
-#boardFeet {
-  border-radius: 0.5rem;
-  background-color: $dark-gray-transparent;
-  color: white;
-  margin:0 auto;
-  margin-bottom: 1rem;
-  width: 80px;
-}
-
-.show-added-wood {
-  padding: 2px;
+  color: $medium-beige;
 }
 
 .add-wood-form {
@@ -52,57 +36,119 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: $medium-beige
+}
+
+#hardwood {
+  min-width:max-content;
+  width: 280px;
+  margin-bottom: 1rem;
+}
+
+.boardFeet-label-container {
+  display: flex;
+  align-items: center;
+  color: $medium-beige;
+  padding: 1rem;
+}
+
+#boardFeet-heading {
+  margin-right: 1rem;;
+}
+
+#boardFeet-input {
+  border: 0.2rem solid $medium-beige;
+  background-color: $dark-gray;
+  color: white;
+  border-radius: 0.5rem;
+  width: 80px;
+  height: 30px;
+}
+
+.show-added-wood {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+}
+
+.staged-woods {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .add-selected-button {
   background-color: none;
-  border: 3px solid $red-brown;
+  color: $medium-beige;
+  border: 3px solid $medium-beige;
   border-radius: 1rem;
   padding: 0.5rem;
-  box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 50px;
   width: 150px;
-  height: 50px;
+  height: 55px;
   margin-bottom: 1rem;
 }
 
 .add-selected-button:link {
-  color: $red-brown;
+  color: white;
 }
 .add-selected-button:visited {
-  color: $red-brown;
+  color: white;
 }
 .add-selected-button:hover {
   cursor: pointer;
-  color: white;
-  background-color: $dark-gray-transparent;
+  color: $red-brown;
+  background-color: $beige-transparent;
 }
 
 .save-button {
   background-color: none;
-  border: 3px solid $red-brown;
+  color: $medium-beige;
+  border: 3px solid $medium-beige;
   border-radius: 1rem;
+  margin-top: 1rem;
   padding: 0.5rem;
-  box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 50px;
   width: 150px;
-  height: 50px;
+  height: 55px;
 }
 
 .save-button:link {
-  color: $red-brown;
+  color: $medium-beige;
 }
 .save-button:visited {
-  color: $red-brown;
+  color: $medium-beige;
 }
 .save-button:hover {
   cursor: pointer;
-  color: white;
-  background-color: $dark-gray-transparent;
+  color: $red-brown;
+  background-color: $beige-transparent;
 }
 
-#hardwood-list {
-  background-color: $dark-gray-transparent;
+#added-wood-list-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;;
+}
+
+.remove-wood-x { 
+  border: 2px solid $medium-beige;
+  color: $medium-beige;
   border-radius: 0.5rem;
-  margin-bottom: 1rem;
+  padding: 0.18rem;
+  margin-left: 1.5rem;
+}
+
+.remove-wood-x:link {
+  color: $medium-beige;
+}
+.remove-wood-x:visited {
+  color: $medium-beige;
+}
+.remove-wood-x:hover {
+  cursor: pointer;
+  background-color: $medium-beige;
+  color: red;
 }
 
 
@@ -111,8 +157,7 @@
   justify-content: center;
   flex-flow: row wrap;
   gap: 0.75rem;
-  margin-bottom: 2rem;
-  
+  margin-bottom: 2rem; 
 }
 
 .added-wood-tile {
@@ -120,10 +165,10 @@
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  // background-color: $dark-gray-transparent;
   border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  background-color: $dark-gray;
+  color: $medium-beige;
   padding: 1rem;
   width: 200px;
   height: 160px
@@ -136,4 +181,24 @@
 
 #wood-tile-p {
   font-weight: bold;
+}
+
+#delete-persisted-wood-button { 
+  border: 2px solid $medium-beige;
+  color: $medium-beige;
+  border-radius: 0.5rem;
+  padding: 0.18rem;
+  margin-left: 1.5rem;
+}
+
+#delete-persisted-wood-button:link {
+  color: $medium-beige;
+}
+#delete-persisted-wood-button:visited {
+  color: $medium-beige;
+}
+#delete-persisted-wood-button:hover {
+  cursor: pointer;
+  background-color: $medium-beige;
+  color: red;
 }

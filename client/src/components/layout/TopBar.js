@@ -24,9 +24,9 @@ const TopBar = ({ user }) => {
   if (user) {
     loggedInLinks = 
       <div className="logged-in-links">
-        <Link to="/" className="logged-in">Active Projects</Link>
-        <Link to="/wood-info" className="logged-in">Wood Info</Link>
-        <Link to="/dev-info" className="logged-in">Dev Info</Link>
+        <Link to="/" className="logged-in link-item">Active Projects</Link>
+        <Link to="/wood-info" className="logged-in link-item">Wood Info</Link>
+        <Link to="/dev-info" className="logged-in link-item">Dev Info</Link>
       </div>  
   }
   

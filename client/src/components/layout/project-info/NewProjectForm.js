@@ -44,9 +44,9 @@ const NewProjectForm = props => {
 
   return (
     <>
-      <h3 className="new-project-heading">Start A New Project:</h3>
+      <h3 className="start-new-project-heading">Start A New Project:</h3>
       <form className="new-project-form" onSubmit={handleSubmit}>
-        <label htmlFor="name">Name
+        <label htmlFor="name" className="name">Name
           <input
             type="text"
             id="name"
@@ -55,7 +55,7 @@ const NewProjectForm = props => {
             value={newProject.name}
           />
         </label>
-        <label htmlFor="description">Description
+        <label htmlFor="description" className="description">Description
           <input
             type="text"
             id="description"
@@ -64,7 +64,7 @@ const NewProjectForm = props => {
             value={newProject.description}
           />
         </label>
-        <label htmlFor="customer">Customer
+        <label htmlFor="customer" className="customer">Customer
           <input
             type="text"
             id="customer"
@@ -73,7 +73,7 @@ const NewProjectForm = props => {
             value={newProject.customer}
           />
         </label>
-        <label htmlFor="quantity">Quantity
+        <label htmlFor="quantity" className="quantity">Quantity
           <input
             type="number" min="1" max="100"
             id="quantity"
@@ -82,7 +82,11 @@ const NewProjectForm = props => {
             value={newProject.quantity}
           />
         </label>
-        <input className="submit-button" type="submit"></input>
+        <input 
+          className="project-form-submit" 
+          id="project-form-submit"
+          type="submit">
+        </input>
       </form>
     </>
   )

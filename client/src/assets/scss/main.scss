@@ -24,7 +24,7 @@
 }
 
 body {
-  background-color: $dark-gray;
+  background-color: black;
   font-family: 'Ubuntu', sans-serif;
 }
 
@@ -34,11 +34,11 @@ body {
   max-width: 75%;
   min-width: 300px;
   margin: 0 auto;
-  margin-bottom: rem;
+  margin-bottom: 3rem;
   background-image: url('https://i.imgur.com/bwDuFOw.jpg');
   background-size: cover;
-  height: 800px ;
-  box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 50px;
+  height: 820px ;
+  box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 30px;
 
 } 
 

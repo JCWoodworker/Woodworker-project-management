@@ -3,15 +3,21 @@
 .home-page-container {
   display: flex;
   flex-direction: column;
+  color: $medium-beige;
+  width:max-content;
   max-width: 75%;
   margin: 1rem auto;
-  font-weight: bolder;
+  font-weight: bold;
   text-align: center;
-  padding: 1rem;
-  background-color: $beige-transparent;
-  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  padding: 2rem;
   border-radius: 0.5rem;
 }
+
+.unauthenticated-home-page {
+  background-color: $dark-gray;
+  box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 50px;
+}
+
 
 .auth-page-container {
   display: flex;
@@ -22,28 +28,36 @@
   overflow-y: scroll;
 }
 
-a:link {
-  color: $medium-beige;
-}
-a:visited {
-  color: $medium-beige;
-}
-a:hover {
-  color: white
-}
-
 .page-heading {
   font-weight: bolder;
 }
 
 .home-link-list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
 }
 
 .home-page-link {
-  background-color: $red-brown;
-  padding: 0.3rem;
+  background-color: $beige-transparent;
+  color: $red-brown;
+  padding: 0.5rem;
+  width: 150px;
+  border: 2px solid $medium-beige;
   border-radius: 0.5rem;
+}
+
+.home-page-link:link {
+  color: $medium-beige;
+}
+.home-page-link:visited {
+  color: $medium-beige;
+}
+.home-page-link:hover {
+  color: white
+}
+
+ul {
+  list-style-position: inside;
 }

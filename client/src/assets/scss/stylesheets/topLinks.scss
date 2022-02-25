@@ -3,7 +3,7 @@
 .top-links {
   color:$medium-beige;
   font-weight: bold;
-  background-color: $red-brown;
+  background-color: $dark-gray;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -26,6 +26,17 @@
 .link-item {
   padding: 0.5rem
 } 
+
+  .link-item:link {
+    color: $medium-beige;
+  }
+  .link-item:visited {
+    color: $medium-beige;
+  }
+  .link-item:hover {
+    cursor: pointer;
+    color: white;
+  }
 
 .logged-in-links {
   display: flex;
@@ -51,8 +62,21 @@
 }
 
 .sign-out-button {
-  color: $red-brown;
-  background-color: $beige-transparent;
-  padding: 0.25rem;
+  display: flex;
+  color: $medium-beige;
+  border: 2px solid $medium-beige;
+  padding: 0.25rem 1rem;
   border-radius: 0.5rem;
 }
+  .sign-out-button:link {
+    color: $medium-beige;
+  }
+  .sign-out-button:visited {
+    color: $medium-beige;
+  }
+  .sign-out-button:hover {
+    cursor: pointer;
+    color: $red-brown;
+    background-color: $beige-transparent;
+  }
+
