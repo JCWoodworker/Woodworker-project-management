@@ -155,7 +155,7 @@ const AddWoodForm = props => {
           className="boardFeet-label-container">
             <h5 id="boardFeet-heading"><strong>Bdft Needed:</strong></h5>
             <input 
-              inputmode="numeric" min="0.01" max="999"
+              type="number" min="0" max="999" step="0.25"
               id="boardFeet-input"
               name="boardFeet"
               value={selectedWood.boardFeet} 
