@@ -44,8 +44,19 @@ const AddWoodForm = props => {
       ...theme,
       colors: {
         ...theme.colors,
-        primary25: 'orange',
-        primary: 'green'
+        primary: 'rgb(255, 190, 141)',
+        primary25: 'green',
+        neutral0: 'rgb(35, 34, 34)',
+        neutral5: 'rgb(255, 190, 141)',
+        neutral10: 'rgb(255, 190, 141)',
+        neutral20: 'rgb(255, 190, 141)',
+        neutral30: 'rgb(255, 190, 141)',
+        neutral40: 'rgb(255, 190, 141)',
+        neutral50: 'rgb(255, 190, 141)',
+        neutral60: 'rgb(255, 190, 141)',
+        neutral70: 'rgb(255, 190, 141)',
+        neutral80: 'rgb(255, 190, 141)',
+        neutral90: 'rgb(255, 190, 141)',
       }
     }
   }
@@ -146,7 +157,6 @@ const AddWoodForm = props => {
             theme={customTheme}
             options={woodOptionList}
             isSearchable
-            autoFocus
           />
         </label>
 

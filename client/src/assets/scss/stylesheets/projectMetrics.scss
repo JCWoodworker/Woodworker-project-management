@@ -33,32 +33,25 @@
 
 .added-wood-tile {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background-color: $dark-gray;
   color: $medium-beige;
   margin: 0.25rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
   border-radius: 0.5rem;
-  width: 48%;
-  min-width: 240px;
-  max-height: 150px;
-  
-}
-
-#wood-name {
-  font-weight: bolder;
-}
-
-#wood-tile-p {
+  width: 30%;
+  min-width: 200px;
+  max-height: min-content ;
   font-weight: bold;
+  
 }
 
 #delete-persisted-wood-button {
   color: $medium-beige;
-  border-radius: 0.5rem;
+  border-radius: 50%;
   padding: 0.18rem;
   margin-left: 1.5rem;
 }

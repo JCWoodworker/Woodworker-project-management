@@ -4,7 +4,6 @@ import AddWoodForm from "./AddWoodForm"
 import AddedWoodTile from "./AddedWoodTile"
 
 const ProjectShow = props => {
-
   const [project, setProject] = useState ({
     name: "",
     customer: "",
@@ -89,7 +88,7 @@ const ProjectShow = props => {
   }
 
   let totalWoodCost = 0.00
-  let suggestedRetailPrice = 0.00
+  
   const selectedWoodList = project.selectedWoods.map(wood => {
     let woodCost = (wood.bf * wood.price).toFixed(2)
     totalWoodCost += parseFloat(woodCost)
@@ -104,7 +103,6 @@ const ProjectShow = props => {
     )
   })
   totalWoodCost = totalWoodCost.toFixed(2)
-  suggestedRetailPrice = (totalWoodCost * 1.8).toFixed(2)
 
   return (
     <div className="project-show">
@@ -124,7 +122,7 @@ const ProjectShow = props => {
         <div className="show-metrics-container">
           <p><strong>METRICS:</strong></p>
           <p>WOOD COST: ${totalWoodCost}</p>
-          <p>SUGGESTED SALE PRICE: ${suggestedRetailPrice}</p>
+          {/* <p>SUGGESTED SALE PRICE: ${suggestedRetailPrice}</p> */}
           <p>* Suggested sale price does not include labor yet</p>
           <p>* Add hardwoods in the container below</p>
         </div>
