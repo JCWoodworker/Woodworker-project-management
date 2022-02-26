@@ -27,16 +27,16 @@
   padding: 0.5rem
 } 
 
-  .link-item:link {
-    color: $medium-beige;
-  }
-  .link-item:visited {
-    color: $medium-beige;
-  }
-  .link-item:hover {
-    cursor: pointer;
-    color: white;
-  }
+.link-item:link {
+  color: $medium-beige;
+}
+.link-item:visited {
+  color: $medium-beige;
+}
+.link-item:hover {
+  cursor: pointer;
+  color: white;
+}
 
 .logged-in-links {
   display: flex;
