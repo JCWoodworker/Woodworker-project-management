@@ -49,7 +49,7 @@ const ProjectsIndex = props => {
         const body = await response.json()
         setErrors([])
         setProjects([...projects, body.project])
-        return body.project
+        return true
       }
     } catch (error) {
       console.error(`Error in fetch: ${error.message}`)
@@ -60,7 +60,6 @@ const ProjectsIndex = props => {
     return <ProjectTile key={project.id} project={project} />
   })
   
-
   return (
     <div className="projects-list-container">
       <div className="projects-index-container">

@@ -9,7 +9,7 @@ exports.up = async (knex) => {
   return knex.schema.createTable('hardwoods', t => {
     t.bigIncrements('id')
     t.string('name').notNullable()
-    t.float('price')
+    t.decimal('price',7,2).notNullable()
     t.string('region')
     t.integer('jankaHardness')
     t.string('imageUrl')
