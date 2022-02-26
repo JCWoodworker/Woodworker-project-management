@@ -21,7 +21,7 @@
   margin: 1rem;
   padding: 1.5rem;
   border-radius: 0.5rem;
-  background-color: $dark-gray;
+  background-color: $dark-gray-transparent-9;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
   color: $medium-beige;
 }
@@ -68,8 +68,8 @@
   color: $medium-beige;
   background-color: $beige-transparent;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
-  width: 95%;
-  height: 82%;
+  width: 97%;
+  height: 83%;
   overflow-y: scroll;
 }
 
@@ -78,7 +78,7 @@
   justify-content: center;
   flex-flow: column wrap;
   gap: 1rem;
-  background-color: $dark-gray;
+  background-color: $dark-gray-transparent-9;
   color: $medium-beige;
   padding: 1rem 3rem;
   border-radius: 0.5rem;
@@ -107,20 +107,20 @@
 }
 
 .back-button {
-  background-color: none;
+  background-color: $dark-gray-transparent-9;
   border: 3px solid $dark-gray;
+  color: $medium-beige;
   border-radius: 1rem;
   padding: 0.5rem;
   box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 50px;
 }
 
 .back-button:link {
-  color: $dark-gray;
+  color: $medium-beige;
 }
 .back-button:visited {
-  color: $dark-gray;
+  color: $medium-beige;
 }
 .back-button:hover {
-  color: white;
   background-color: $dark-gray-transparent;
 }

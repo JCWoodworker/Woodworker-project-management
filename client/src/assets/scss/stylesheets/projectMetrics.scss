@@ -36,7 +36,7 @@
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  background-color: $dark-gray;
+  background-color: $dark-gray-transparent-9;
   color: $medium-beige;
   margin: 0.25rem;
   padding: 0.5rem;
@@ -76,7 +76,7 @@
   margin-bottom: 2rem;
   padding: 2rem;
   min-width:70%;
-  background-color: $dark-gray;
+  background-color: $dark-gray-transparent-9;
   border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
   color: $medium-beige;
@@ -134,6 +134,7 @@
   background-color: none;
   color: $medium-beige;
   border: 3px solid $medium-beige;
+  background-color: $dark-gray;
   border-radius: 1rem;
   padding: 0.5rem;
   width: 150px;
@@ -157,6 +158,7 @@
   background-color: none;
   color: $medium-beige;
   border: 3px solid $medium-beige;
+  background-color: $dark-gray;
   border-radius: 1rem;
   margin-top: 1rem;
   padding: 0.5rem;
