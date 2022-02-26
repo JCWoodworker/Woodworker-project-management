@@ -1,11 +1,9 @@
 import express from 'express'
 import cleanUserInput from '../../../../services/cleanUserInput.js'
 import { ValidationError } from 'objection'
-import { User } from '../../../models/index.js'
+import { User, ProjectWood, Project } from '../../../models/index.js'
 
-import Project from '../../../models/Project.js'
 import ProjectSerializer from '../../../../serializers/ProjectSerializer.js'
-import ProjectWood from '../../../models/ProjectWood.js'
 
 const projectsRouter = new express.Router()
 
