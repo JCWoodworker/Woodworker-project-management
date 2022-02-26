@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 import AuthenticatedHomePage from "../layout/AuthenticatedHomePage"
+import AdminHome from "./adminPages/adminHome"
 
 const HomePage = props => {
 
@@ -28,8 +29,13 @@ const HomePage = props => {
   )
 
   if (props.user) {
-    display = 
+    if(props.user.admin) {
+      display = 
+        <AdminHome user={props.user} />
+    } else {
+    display =  
       <AuthenticatedHomePage user={props.user} />
+    }
   }
 
   return (

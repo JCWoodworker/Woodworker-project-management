@@ -7,6 +7,7 @@ const RegistrationForm = () => {
     email: "",
     password: "",
     passwordConfirmation: "",
+    admin: false
   });
 
   const [errors, setErrors] = useState({});
@@ -98,12 +99,12 @@ const RegistrationForm = () => {
         <div>
           <label className="auth-email">
             Email
-            <input 
+            <input
               id="auth-email"
-              type="text" 
-              name="email" 
-              value={userPayload.email} 
-              onChange={onInputChange} 
+              type="text"
+              name="email"
+              value={userPayload.email}
+              onChange={onInputChange}
             />
             <FormError error={errors.email} />
           </label>

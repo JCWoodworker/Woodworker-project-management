@@ -87,7 +87,6 @@ const App = (props) => {
               exact path="/">
                 <HomePage 
                   user={currentUser} 
-                  onUpdate={() => window.scrollTo(0, 0)} 
                 />
             </Route>
             <Route 
