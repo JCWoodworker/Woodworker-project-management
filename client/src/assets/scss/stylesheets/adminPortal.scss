@@ -16,8 +16,18 @@
   overflow-y: scroll;
 }
 
+.wood-price-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
 
 .wood-price-item {
-  
   display: flex;
+  gap: 1rem
+}
+
+.edited-hardwood-form {
+  display: flex;
+  justify-content: space-between;
 }

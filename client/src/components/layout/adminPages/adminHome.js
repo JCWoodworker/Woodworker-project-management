@@ -55,6 +55,35 @@ const AdminHome = props => {
     }
   }
 
+  const submitEditHardwood = async addHardwoodData => {
+    debugger
+    try {
+      const response = await fetch(`/api/v1/hardwoods`, {
+        method: "POST",
+        headers: new Headers ({
+          "Content-Type": "application/json",
+        }),
+        body: JSON.stringify(addHardwoodData)
+      })
+      if (!response.ok) {
+        if (response.status === 422) {
+          const body = await response.json()
+          const newErrors = translateServerErrors(body.errors)
+          setErrors(newErrors)
+        }
+        const errorMessage = `${response.status} (${response.statusText})`
+        const error = new Error(errorMessage)
+        throw error
+      } else {
+        const body = await response.json()
+        setErrors([])
+        setHardwoodData([...hardwoodData, body.hardwood])
+      }
+    } catch (error) {
+      console.error(`Error in fetch ${error.message}`)
+    }
+  }
+
   const deleteHardwoodFromDatabase = async hardwoodId => {
     try {
       const response = await fetch(`/api/v1/hardwoods`, {
@@ -89,17 +118,16 @@ const AdminHome = props => {
       <WoodPriceTile key={wood.id}
         wood={wood} 
         deleteHardwoodFromDatabase={deleteHardwoodFromDatabase}
+        submitEditHardwood={submitEditHardwood}
       />
     )
   })
-
 
   return (
     <div className="admin-page-container">
       <h1>Welcome to the Admin Portal</h1>
       <p>COMING SOON:</p>
-      <p>* Add/Delete Hardwoods</p>
-      <p>* Edit Hardwood Pricing</p>
+      <p>* Edit Hardwoods Pricing</p>
       <ul>* View Metrics including:
         <li key="x1x">Number of Users</li>
         <li key="x2x">Number of Active Projects</li>
@@ -109,7 +137,7 @@ const AdminHome = props => {
       <AddHardwoodForm
         addHardwoodToDatabase={addHardwoodToDatabase}
       />
-      <ul className="wood-price-listss">
+      <ul className="wood-price-list">
         {listAllHardwoods}
       </ul>
       
