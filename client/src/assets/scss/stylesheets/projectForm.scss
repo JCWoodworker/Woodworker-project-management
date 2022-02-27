@@ -27,7 +27,9 @@
 .description,
 .customer,
 .quantity,
-.price {
+.price,
+.admin-button,
+.edit-hardwood-form-submit {
   color: $medium-beige;
   font-size: 1.1rem;
 }
@@ -38,7 +40,9 @@
 #quantity,
 #project-form-submit,
 #price,
-#new-hardwood-form-submit {
+#new-hardwood-form-submit,
+#admin-button,
+#edit-hardwood-form-submit {
   border-radius: 0.5rem;
   border: 2px solid $medium-beige;
   background-color: $dark-gray;
@@ -47,7 +51,8 @@
 }
 
 #project-form-submit,
-#new-hardwood-form-submit {
+#new-hardwood-form-submit,
+#admin-button {
   height: 50px;
   width: 200px;
   cursor: pointer;
@@ -59,15 +64,18 @@
 }
 
 #project-form-submit:link,
-#new-hardwood-form-submit:link {
+#new-hardwood-form-submit:link,
+#admin-button:link {
   color: $red-brown;
 }
 #project-form-submit:visited,
-#new-hardwood-form-submit:visited {
+#new-hardwood-form-submit:visited,
+#admin-button:visited {
   color: $red-brown;
 }
 #project-form-submit:hover,
-#new-hardwood-form-submit:hover {
+#new-hardwood-form-submit:hover,
+#admin-button:hover {
   color: $red-brown;
   background-color: $beige-transparent;
 }

@@ -7,11 +7,11 @@ const WoodPriceTile = props => {
 
   const handleClickDelete = () => {
     confirm(`
-    Option to delete is in progress.  
-    This will only delete a hardwood if ZERO projects are using it!!
+    This will only delete a hardwood if NONE of your 
+    customers have added it to their project!!
     `)? 
       props.deleteHardwoodFromDatabase(props.wood.id)
-      : alert('cancelled')
+      : console.log('cancelled')
   }
 
   const handleClickEdit = () => {
@@ -20,8 +20,8 @@ const WoodPriceTile = props => {
 
   !showEditForm? editFormContainer = null
     : editFormContainer =
-      <div>
-        <p>Edit {props.wood.name}'s Price</p>
+      <div className="edit-form-container">
+        <p>Edit {props.wood.name}</p>
         <EditHardwoodForm
           submitEditHardwood={props.submitEditHardwood}
           handleClickEdit={handleClickEdit}  
@@ -30,16 +30,22 @@ const WoodPriceTile = props => {
       </div>
 
   return (
-    <li className="wood-price-item">
-      <p 
-        onClick={handleClickDelete}
-        className="remove-wood-x">
-        ✖️</p>
-      <p>{props.wood.name}</p>
-      <p>${props.wood.price}</p>
-      <p onClick={handleClickEdit}>EDIT</p>
+    <div className="wood-price-tile-container">
+      <div className="wood-price-item">
+        <p 
+          onClick={handleClickDelete}
+          className="remove-wood-x">
+          ✖️</p>
+        <p 
+          className="edit-button"
+          onClick={handleClickEdit}>
+            Edit
+        </p>
+        <p>{props.wood.name}</p>
+        <p>${props.wood.price}</p>
+      </div>
       {editFormContainer}
-    </li>
+    </div>
   )
 }
 

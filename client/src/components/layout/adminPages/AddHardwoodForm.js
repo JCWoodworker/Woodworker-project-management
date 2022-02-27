@@ -9,6 +9,8 @@ const AddHardwoodForm = props => {
     imageUrl: ""
   })
 
+  let printAddedWood = null
+
   const handleInputChange = event => {
     setNewHardwood({
         ...newHardwood, 
@@ -16,6 +18,7 @@ const AddHardwoodForm = props => {
     })
   }
   const handleSubmit = async event => {
+    printAddedWood = <p>{newHardwood.name} added to database!</p>
     event.preventDefault()
     props.addHardwoodToDatabase(newHardwood)
     clearForm()
@@ -31,31 +34,36 @@ const AddHardwoodForm = props => {
   }
 
   return (
-  <form onSubmit={handleSubmit} className="new-hardwood-form">
+  <form onSubmit={handleSubmit} className="add-hardwood-form">
 
-    <label htmlFor="name" className="name">Name
-      <input
-        type="text"
-        id="name"
-        name="name"
-        onChange={handleInputChange}
-        value={newHardwood.name}
-      />
-    </label>
-    <label htmlFor="price" className="price">Price per boardfoot
-      <input
-        type="number" min="0" step="0.01"
-        id="price"
-        name="price"
-        onChange={handleInputChange}
-        value={newHardwood.price}
-      />
-    </label>
+    <div className="add-hardwood-labels">
+      <label htmlFor="name" className="name">Name
+        <input
+          type="text"
+          id="name"
+          name="name"
+          onChange={handleInputChange}
+          value={newHardwood.name}
+        />
+      </label>
+      <label htmlFor="price" className="price">Price
+        <input
+          type="number" min="0" step="0.01"
+          id="price"
+          name="price"
+          onChange={handleInputChange}
+          value={newHardwood.price}
+        />
+      </label>
+    </div>
+
     <input 
       className="new-hardwood-form-submit" 
       id="new-hardwood-form-submit"
       type="submit">
     </input>
+
+    {printAddedWood}
 
     </form>
   )

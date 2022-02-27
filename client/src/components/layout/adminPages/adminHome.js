@@ -9,6 +9,11 @@ import AddHardwoodForm from "./AddHardwoodForm"
 const AdminHome = props => {
   const [hardwoodData, setHardwoodData] = useState([])
   const [errors, setErrors] = useState([])
+  const [showAddWood, setShowAddWood] = useState(false)
+  const [showEditWood, setShowEditWood] = useState(false)
+  const [showMetrics, setShowMetrics] = useState(false)
+
+  let editFormContainer = null
 
   const getAllHardwoods = async () => {
     try {
@@ -122,23 +127,87 @@ const AdminHome = props => {
     )
   })
 
-  return (
-    <div className="admin-page-container">
-      <h1>Welcome to the Admin Portal</h1>
-      <p>COMING SOON:</p>
-      <p>* Edit Hardwoods Pricing</p>
-      <ul>* View Metrics including:
-        <li key="x1x">Number of Users</li>
-        <li key="x2x">Number of Active Projects</li>
-        <li key="x3x">Top Woods Needed - by the boardfoot</li>
-      </ul>
+  const handleAddClick = () => {
+    setShowAddWood(true)
+    setShowEditWood(false)
+    setShowMetrics(false)
+  }
+  const handleEditClick = () => {
+    setShowAddWood(false)
+    setShowEditWood(true)
+    setShowMetrics(false)
+  }
+  const handleMetricsClick = () => {
+    setShowAddWood(false)
+    setShowEditWood(false)
+    setShowMetrics(true)
+  }
+
+  let adminFeatureSection = null
+
+  if (showAddWood) { 
+    adminFeatureSection =
+    <div className="add-a-new-hardwood-container">
+      <h3>Add A New Hardwood</h3>
       <ErrorList errors={errors} />
       <AddHardwoodForm
         addHardwoodToDatabase={addHardwoodToDatabase}
       />
-      <ul className="wood-price-list">
-        {listAllHardwoods}
-      </ul>
+    </div>
+  } else if (showEditWood) {
+    adminFeatureSection =
+    <ul className="wood-price-list">
+      {listAllHardwoods}
+    </ul>
+  } else if (showMetrics) {
+    adminFeatureSection = 
+    <>
+      <h4>Show Metrics</h4>
+      <p>Users: </p>
+      <p>Active projects: </p>
+      <p>Top Woods Needed: </p>
+    </>
+  }
+  
+
+
+  return (
+    <div className="admin-page-container">
+
+      <h1>Welcome to the Admin Portal</h1>
+
+      <div className="admin-option-buttons">
+
+        <label className="admin-button">
+          <button
+            onClick={handleAddClick}
+            id="admin-button"
+            type="button">
+              Add/Delete Wood
+          </button>
+        </label>
+        <label className="admin-button">
+          <button
+            onClick={handleEditClick}
+            id="admin-button"
+            type="button">
+              Edit Pricing
+          </button>
+        </label>
+        <label className="admin-button">
+          <button
+            onClick={handleMetricsClick}
+            id="admin-button"
+            type="button">
+              Show Metrics
+          </button>
+        </label>
+
+      </div>
+
+      <div className="admin-feature-section">
+        {adminFeatureSection}
+      </div>
       
     </div>
   )

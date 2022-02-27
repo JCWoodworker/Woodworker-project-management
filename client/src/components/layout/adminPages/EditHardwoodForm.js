@@ -34,20 +34,20 @@ const EditHardwoodForm = props => {
   return (
     <form onSubmit={handleEditSubmit} className="edited-hardwood-form">
 
-      <label htmlFor="name" className="name">Name
+      <label htmlFor="name" className="edit-wood-name">Name
         <input
           type="text"
-          id="name"
+          id="edit-wood-name"
           name="name"
           onChange={handleInputChange}
           value={editedHardwood.name}
         />
       </label>
 
-      <label htmlFor="price" className="price">Price per boardfoot
+      <label htmlFor="price" className="edit-wood-price">Price per boardfoot
         <input
           type="number" min="0" step="0.01"
-          id="price"
+          id="edit-wood-price"
           name="price"
           onChange={handleInputChange}
           value={editedHardwood.price}
