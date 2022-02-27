@@ -12,8 +12,10 @@ const AdminHome = props => {
   const [showAddWood, setShowAddWood] = useState(false)
   const [showEditWood, setShowEditWood] = useState(false)
   const [showMetrics, setShowMetrics] = useState(false)
-
-  let editFormContainer = null
+  // const [showAdminUpdateContainer, setAdminUpdateContainer] = useState(true)
+  const [adminUpdateContainer, setAdminUpdateContainer] = useState({
+    message: "Select a button above to make changes"
+  })
 
   const getAllHardwoods = async () => {
     try {
@@ -54,6 +56,9 @@ const AdminHome = props => {
         const body = await response.json()
         setErrors([])
         setHardwoodData([...hardwoodData, body.hardwood])
+        setAdminUpdateContainer({message: `${body.hardwood.name} added to database`})
+        setShowAddWood(false)
+
       }
     } catch (error) {
       console.error(`Error in fetch ${error.message}`)
@@ -81,6 +86,9 @@ const AdminHome = props => {
       } else {
         const body = await response.json()
         setErrors([])
+        setShowEditWood(false)
+        setAdminUpdateContainer({message: `Hardwood database has been updated.  Please refresh your browser.`})
+
         // setHardwoodData(...hardwoodData, body.hardwood)
       }
     } catch (error) {
@@ -167,6 +175,8 @@ const AdminHome = props => {
       <p>Active projects: </p>
       <p>Top Woods Needed: </p>
     </>
+  } else {
+    adminFeatureSection = <p>{adminUpdateContainer.message}</p>
   }
   
 
