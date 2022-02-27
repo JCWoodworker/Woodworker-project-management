@@ -28,13 +28,27 @@ const WoodPriceTile = props => {
           wood={props.wood}   
         />
       </div>
+  let imageContainer = 
+    <img 
+      src="https://i.imgur.com/PVxUhDT.jpg" 
+      className="tiny-image"
+    />
+  if (props.wood.imageUrl) {
+    imageContainer = 
+    <img 
+      src={props.wood.imageUrl} 
+      className="tiny-image"
+    />
+  }
+  
 
   return (
     <div className="wood-price-tile-container">
       <div className="wood-price-item">
+        {imageContainer}
         <p 
           onClick={handleClickDelete}
-          className="remove-wood-x">
+          className="admin-remove-wood-x">
           ✖️</p>
         <p 
           className="edit-button"
