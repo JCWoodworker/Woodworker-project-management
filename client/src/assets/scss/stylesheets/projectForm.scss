@@ -11,7 +11,8 @@
   height: fit-content;
 }
 
-.new-project-form {
+.new-project-form,
+.new-hardwood-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,7 +26,8 @@
 .name,
 .description,
 .customer,
-.quantity {
+.quantity,
+.price {
   color: $medium-beige;
   font-size: 1.1rem;
 }
@@ -34,7 +36,9 @@
 #description,
 #customer,
 #quantity,
-#project-form-submit {
+#project-form-submit,
+#price,
+#new-hardwood-form-submit {
   border-radius: 0.5rem;
   border: 2px solid $medium-beige;
   background-color: $dark-gray;
@@ -42,7 +46,8 @@
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
 }
 
-#project-form-submit {
+#project-form-submit,
+#new-hardwood-form-submit {
   height: 50px;
   width: 200px;
   cursor: pointer;
@@ -53,13 +58,16 @@
   margin: 1.5rem
 }
 
-#project-form-submit:link {
+#project-form-submit:link,
+#new-hardwood-form-submit:link {
   color: $red-brown;
 }
-#project-form-submit:visited {
+#project-form-submit:visited,
+#new-hardwood-form-submit:visited {
   color: $red-brown;
 }
-#project-form-submit:hover {
+#project-form-submit:hover,
+#new-hardwood-form-submit:hover {
   color: $red-brown;
   background-color: $beige-transparent;
 }

@@ -3,8 +3,9 @@
   flex-direction: column;
   color: $medium-beige;
   width:max-content;
-  max-width: 90%;
-  margin: 1rem auto;
+  max-width: 95%;
+  max-height: 81%;
+  margin: 0 auto;
   font-weight: bold;
   text-align: center;
   padding: 2rem;
@@ -12,4 +13,21 @@
   margin-top: 2rem;
   background-color: $dark-gray-transparent-9;
   box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 50px;
+  overflow-y: scroll;
+}
+
+.wood-price-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.wood-price-item {
+  display: flex;
+  gap: 1rem
+}
+
+.edited-hardwood-form {
+  display: flex;
+  justify-content: space-between;
 }

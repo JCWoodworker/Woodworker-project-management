@@ -39,10 +39,10 @@ class Hardwood extends Model {
   static get jsonSchema() {
     return {
       type: "object",
-      required: ["name"],
+      required: ["name", "price"],
       properties: {
         name: { type: "string", minLength: 1, maxLength: 30 },
-        price: { type: "float" },
+        price: { type: ["integer", "string"] },
         region: { type: "string" },
         jankaHardness: { type: "integer" },
         imageUrl: { type: "string" },

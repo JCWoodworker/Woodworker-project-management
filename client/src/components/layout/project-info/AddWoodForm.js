@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Select from 'react-select'
-import translateServerErrors from '../../../services/translateServerErrors'
 
 const AddWoodForm = props => {
   const [selectedWood, setSelectedWood] = useState({
@@ -10,7 +9,6 @@ const AddWoodForm = props => {
   })
   const [hardwoods, setHardwoods] = useState([])
   const [woodOptionList, setWoodOptionList] = useState([])
-  const [errors, setErrors] = useState([])
 
   const fetchHardwoods = async () => {
     try {
