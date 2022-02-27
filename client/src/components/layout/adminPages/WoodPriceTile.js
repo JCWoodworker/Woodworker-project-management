@@ -24,7 +24,8 @@ const WoodPriceTile = props => {
         <p>Edit {props.wood.name}'s Price</p>
         <EditHardwoodForm
           submitEditHardwood={props.submitEditHardwood}
-          handleClickEdit={handleClickEdit}     
+          handleClickEdit={handleClickEdit}  
+          wood={props.wood}   
         />
       </div>
 

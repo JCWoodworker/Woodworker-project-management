@@ -55,15 +55,14 @@ const AdminHome = props => {
     }
   }
 
-  const submitEditHardwood = async addHardwoodData => {
-    debugger
+  const submitEditHardwood = async editHardwoodData => {
     try {
-      const response = await fetch(`/api/v1/hardwoods`, {
+      const response = await fetch(`/api/v1/hardwoods/edit`, {
         method: "POST",
         headers: new Headers ({
           "Content-Type": "application/json",
         }),
-        body: JSON.stringify(addHardwoodData)
+        body: JSON.stringify(editHardwoodData)
       })
       if (!response.ok) {
         if (response.status === 422) {
@@ -76,8 +75,9 @@ const AdminHome = props => {
         throw error
       } else {
         const body = await response.json()
+        debugger
         setErrors([])
-        setHardwoodData([...hardwoodData, body.hardwood])
+        setHardwoodData(...hardwoodData, body.hardwood)
       }
     } catch (error) {
       console.error(`Error in fetch ${error.message}`)

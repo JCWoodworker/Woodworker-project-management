@@ -32,6 +32,29 @@ hardwoodsRouter.post('/', async (req, res) => {
   }
 })
 
+hardwoodsRouter.post('/edit', async (req, res) => {
+  const formInput = cleanUserInput(req.body)
+  const { id, name, price} = formInput
+  try {
+    const updatedHardwood = 
+      await Hardwood
+        .query()
+        .patchAndFetchById(
+          id, {
+            name: name,
+            price: price
+          })
+    const serializedUpdatedHardwood = await HardwoodSerializer.getSummary(updatedHardwood)
+    debugger
+    return res.status(201).json({ hardwood: serializedUpdatedHardwood})
+  } catch (error) {
+    if (error instanceof ValidationError) {
+      return res.status(422).json({ errors: error.data })
+    }
+    return res.status(500).json({ errors: error })
+  }
+})
+
 hardwoodsRouter.delete('/', async (req, res) => {
   const { hardwoodId } = req.body
   debugger

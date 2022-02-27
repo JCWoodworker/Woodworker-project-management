@@ -2,8 +2,9 @@ import React, { useState } from "react"
 
 const EditHardwoodForm = props => {
   const [editedHardwood, setEditedHardwood] = useState ({
-    name: "",
-    price: ""
+    id: props.wood.id,
+    name: props.wood.name,
+    price: props.wood.price
   })
 
   const handleInputChange = event => {
@@ -14,9 +15,8 @@ const EditHardwoodForm = props => {
   }
 
   const handleEditSubmit = async event => {
-    debugger
     event.preventDefault()
-    props.submitEditHardwood()
+    props.submitEditHardwood(editedHardwood)
     props.handleClickEdit()
     clearForm()
   }
