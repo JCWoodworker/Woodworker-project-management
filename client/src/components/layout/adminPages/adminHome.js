@@ -183,7 +183,7 @@ const AdminHome = props => {
             onClick={handleAddClick}
             id="admin-button"
             type="button">
-              Add/Delete Wood
+              Add Wood
           </button>
         </label>
         <label className="admin-button">
@@ -191,7 +191,7 @@ const AdminHome = props => {
             onClick={handleEditClick}
             id="admin-button"
             type="button">
-              Edit Pricing
+              Edit/Delete Wood
           </button>
         </label>
         <label className="admin-button">
