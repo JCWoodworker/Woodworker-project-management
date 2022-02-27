@@ -75,9 +75,8 @@ const AdminHome = props => {
         throw error
       } else {
         const body = await response.json()
-        debugger
         setErrors([])
-        setHardwoodData(...hardwoodData, body.hardwood)
+        // setHardwoodData(...hardwoodData, body.hardwood)
       }
     } catch (error) {
       console.error(`Error in fetch ${error.message}`)
