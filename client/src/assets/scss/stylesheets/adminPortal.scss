@@ -167,8 +167,11 @@
   border-radius: 0.5rem;
 }
 
+
+
 #hardwoodChart {
   border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
-
+  min-width: 200px;
+  max-width: 600px;
 }
