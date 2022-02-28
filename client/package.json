@@ -27,7 +27,7 @@
     "@babel/runtime": "^7.6.2",
     "@types/react-router-dom": "^5.3.3",
     "babel-loader": "~8.1",
-    "chart.js": "^3.7.1",
+    "chart.js": "^3.0.0",
     "css-loader": "^5.0.0",
     "file-loader": "^6.2.0",
     "foundation-sites": "^6.7.4",

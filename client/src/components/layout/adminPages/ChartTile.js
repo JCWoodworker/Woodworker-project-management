@@ -1,55 +1,26 @@
 import React from "react"
-// import { Chart } from 'chart.js/auto'
-// import { Pie } from 'react-chartjs-2'
+import { Chart, registerables, ArcElement } from 'chart.js'
+import { Doughnut } from 'react-chartjs-2'
 
 const ChartTile = props => {
 
-// const data = {
-//   labels: ['label1', 'label2'],
-//   datasets: [
-//     {
-//       label: 'These are things',
-//       backgroundColor: ['#46bfbd', '#f746a4'],
-//       borderWidth: 1,
-//       data: props.woodDta
-//     }
-//   ]
-// }
+Chart.register(...registerables)
+Chart.register(ArcElement)
 
-// const options = {
-//   title: {text: "title text", display: true},
-//   legend: {display: true}
-// }
+const data = {
+  labels: ['Purple Heart', 'Black Walnut', 'White Oak'],
+  datasets: [{
+    data: [50, 28, 19],
+    backgroundColor: ['purple', 'blue', 'green']
+  }]
+}
 
   return (
     <div id="hardwoodChart">
-      {/* <Pie data={data} /> */}
+      <h3>Top Woods In Active Projects</h3>
+      <Doughnut data={data}/>
     </div>
   )
 }
 
 export default ChartTile
-
-
-// google.charts.load('current', {'packages':['corechart']})
-// google.charts.setOnLoadCallback(drawChart)
-
-// function drawChart() {
-  
-//   var data = new google.visualization.DataTable()
-//   data.addColumn('string', 'Hardwood')
-//   data.addColumn('number', 'BoardFeet')
-//   data.addRows(props.woodData)
-
-
-//   var options = {
-//     'title': `Top Woods by the boardfoot in customers' projects`,
-//     'legend': 'bottom',
-//     'width': 500,
-//     'height': 600,
-//   }
-
-//   var chart = new google.visualization.BarChart(document.getElementById('hardwoodChart'))
-//   chart.draw(data, options)
-
-// }
