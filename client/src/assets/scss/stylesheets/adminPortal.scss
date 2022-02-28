@@ -20,6 +20,11 @@
 
 .admin-option-buttons {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 90%;
+  margin-bottom: 1rem
 }
 
 .add-a-new-hardwood-container {
@@ -43,25 +48,36 @@
   display: flex;
   gap: 1rem;
 }
+
+.admin-feature-section {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
 .wood-price-list {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  flex-flow: column wrap;
+  justify-content: center;
 }
 
 .wood-price-tile-container {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
 }
 
 .wood-price-item {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   border-radius: 0.5rem;
   gap: 0.75rem;
-  width: 350px;
+  min-width: 285px;
   min-height: 50px;
 }
 
@@ -72,7 +88,9 @@
   align-items: center;
   border: 3px solid $medium-beige;
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 285px;
     
 }
 

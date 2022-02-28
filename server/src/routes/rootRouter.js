@@ -6,6 +6,7 @@ import weatherRouter from "./api/v1/weatherRouter.js"
 import projectsRouter from "./api/v1/projectsRouter.js"
 import hardwoodsRouter from "./api/v1/hardwoodsRouter.js"
 import scraperRouter from "./api/v1/scraperRouter.js"
+import adminRouter from "./api/v1/adminRouter.js"
 
 const rootRouter = new express.Router()
 
@@ -16,5 +17,6 @@ rootRouter.use("/api/v1/weather", weatherRouter)
 rootRouter.use("/api/v1/projects", projectsRouter)
 rootRouter.use("/api/v1/hardwoods", hardwoodsRouter)
 rootRouter.use("/api/v1/scraper", scraperRouter)
+rootRouter.use("/api/v1/admin", adminRouter)
 
 export default rootRouter
