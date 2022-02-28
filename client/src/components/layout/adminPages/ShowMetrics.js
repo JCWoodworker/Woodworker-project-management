@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react"
 const ShowMetrics = props => {
   const [anonymousUserData, setAnonymousUserData] = useState([])
   const [anonymousProjectData, setAnonymousProjectData] = useState([])
+  const [anonymousWoodData, setAnonymousWoodData] = useState([])
 
   const getAnonymousUserData = async () => {
     try {
@@ -30,10 +31,27 @@ const ShowMetrics = props => {
     }
   }
 
+  const getAnonymousWoodData = async () => {
+    try {
+      const response = await fetch(`/api/v1/admin/woodData`)
+      if (!response.ok) {
+        throw new Error(`${response.status} (${response.statusText})`)
+      }
+      const body = await response.json()
+      debugger
+      setAnonymousWoodData(body.woodData)
+    } catch (error) {
+      console.error(`Error in fetch: ${error}`)
+    }
+  }
+
   useEffect(() => {
     getAnonymousUserData()
     getAnonymousProjectData()
+    getAnonymousWoodData()
   }, [])
+
+  console.log(anonymousWoodData)
 
   return (
     <>

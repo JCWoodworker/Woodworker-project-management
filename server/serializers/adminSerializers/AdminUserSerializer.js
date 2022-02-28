@@ -1,4 +1,4 @@
-class UserSerializer {
+class AdminUserSerializer {
   static async getSummary(user) {
     const allowedAttributes = ['email', 'admin']
     
@@ -11,4 +11,4 @@ class UserSerializer {
 
 }
 
-export default UserSerializer
+export default AdminUserSerializer
