@@ -33,12 +33,14 @@ const ShowMetrics = props => {
   }
 
   const getAnonymousWoodData = async () => {
+    debugger
     try {
       const response = await fetch(`/api/v1/admin/woodData`)
       if (!response.ok) {
         throw new Error(`${response.status} (${response.statusText})`)
       }
       const body = await response.json()
+      debugger
       setAnonymousWoodData(body.woodData)
     } catch (error) {
       console.error(`Error in fetch: ${error}`)

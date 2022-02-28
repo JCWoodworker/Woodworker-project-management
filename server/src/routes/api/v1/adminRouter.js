@@ -39,6 +39,7 @@ adminRouter.get("/projectData", async (req, res) => {
 
 adminRouter.get("/woodData", async (req, res) => {
   try {
+    
     const woodData = 
       await ProjectWood
         .query()
@@ -46,6 +47,7 @@ adminRouter.get("/woodData", async (req, res) => {
         .joinRelated('hardwood')
     const summedWoodData = sumIndividualWoods(woodData)
     const summedWoodDataDataVisualization = summedWoodData.map(data => Array.from(Object.values(data)))
+    
     return res.status(200).json({ woodData: summedWoodDataDataVisualization })
   } catch (error) {
     return res.status(500).json({ error: error })

@@ -4,21 +4,29 @@ import { Doughnut } from 'react-chartjs-2'
 
 const ChartTile = props => {
 
+// let labels = []
+// let data = []
+
+// props.woodData.foreach(woodObject => {
+//   labels.push(woodObject.name)
+//   data.push(woodObject.boardFeet)
+// })
+
 Chart.register(...registerables)
 Chart.register(ArcElement)
 
-const data = {
-  labels: ['Purple Heart', 'Black Walnut', 'White Oak'],
+const chartData = {
+  labels: labels,
   datasets: [{
-    data: [50, 28, 19],
-    backgroundColor: ['purple', 'blue', 'green']
+    data: data
+    // backgroundColor: ['purple', 'blue', 'green']
   }]
 }
 
   return (
     <div id="hardwoodChart">
       <h3>Top Woods In Active Projects</h3>
-      <Doughnut data={data}/>
+      <Doughnut data={chartData}/>
     </div>
   )
 }
