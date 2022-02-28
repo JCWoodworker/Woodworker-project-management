@@ -1,6 +1,6 @@
 class AdminProjectWoodSerializer {
   static async getSummary(projectWood) {
-    const allowedAttributes = ['hardwood', 'boardFeet']
+    const allowedAttributes = [ 'hardwoodId', 'boardFeet', 'hardwood' ]
 
     let serializedProjectWood = {}
     for (const attribute of allowedAttributes) {

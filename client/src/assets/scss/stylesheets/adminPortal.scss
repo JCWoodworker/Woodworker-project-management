@@ -37,6 +37,7 @@
   margin: 2rem;
   padding: 1rem;
   border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
 }
 .add-hardwood-form {
   display: flex;
@@ -51,9 +52,10 @@
 
 .admin-feature-section {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  gap: 2rem
 }
 .wood-price-list {
   display: flex;
@@ -163,4 +165,11 @@
   cursor: pointer;
   background-color: $medium-beige;
   border-radius: 0.5rem;
+}
+
+#hardwoodChart {
+  // border: 1rem solid $dark-gray;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+
 }
