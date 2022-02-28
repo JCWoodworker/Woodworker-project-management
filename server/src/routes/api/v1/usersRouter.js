@@ -1,4 +1,4 @@
-import express from "express";
+import express, { response } from "express";
 import passport from "passport";
 import { User } from "../../../models/index.js";
 
@@ -15,6 +15,6 @@ usersRouter.post("/", async (req, res) => {
     console.log(error);
     return res.status(422).json({ errors: error });
   }
-});
+})
 
 export default usersRouter;

@@ -27,14 +27,14 @@ const WoodPriceTile = props => {
           handleClickEdit={handleClickEdit}  
           wood={props.wood}   
         />
-      </div>
+      </div> 
 
   return (
     <div className="wood-price-tile-container">
       <div className="wood-price-item">
         <p 
           onClick={handleClickDelete}
-          className="remove-wood-x">
+          className="admin-remove-wood-x">
           ✖️</p>
         <p 
           className="edit-button"

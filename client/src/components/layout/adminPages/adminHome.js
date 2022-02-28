@@ -5,6 +5,7 @@ import ErrorList from "../ErrorList"
 
 import WoodPriceTile from "./WoodPriceTile"
 import AddHardwoodForm from "./AddHardwoodForm"
+import ShowMetrics from "./ShowMetrics"
 
 const AdminHome = props => {
   const [hardwoodData, setHardwoodData] = useState([])
@@ -87,7 +88,7 @@ const AdminHome = props => {
         const body = await response.json()
         setErrors([])
         setShowEditWood(false)
-        setAdminUpdateContainer({message: `Hardwood database has been updated.  Please refresh your browser.`})
+        setAdminUpdateContainer({message: `Hardwood database has been updated.  Please refresh your browser`})
 
         // setHardwoodData(...hardwoodData, body.hardwood)
       }
@@ -169,12 +170,7 @@ const AdminHome = props => {
     </ul>
   } else if (showMetrics) {
     adminFeatureSection = 
-    <>
-      <h4>Show Metrics</h4>
-      <p>Users: </p>
-      <p>Active projects: </p>
-      <p>Top Woods Needed: </p>
-    </>
+      <ShowMetrics />
   } else {
     adminFeatureSection = <p>{adminUpdateContainer.message}</p>
   }

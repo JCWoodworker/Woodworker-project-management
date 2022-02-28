@@ -6,9 +6,7 @@ class ProjectSerializer {
     for (const attribute of allowedAttributes) {
       serializedProject[attribute] = project[attribute]
     }
-
     serializedProject.selectedWoods = await project.$relatedQuery("hardwoods")
-    
 
     return serializedProject
   }
