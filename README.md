@@ -15,6 +15,10 @@ Lets get started ...
   username:  user2@test.com -- password: test
   username:  user3@test.com -- password: test
 
+  *** There is also an admin login:
+  *** username:  admin@test.com -- password: test
+  *** (skip to step 11 for admin user information)
+
 5.  If using a test user login you will be taken to a page to view their active projects.  There is a form on the same page that can be used to add a new project.  The only required field is "Project Name".
 
 6.  You can click on an active project to go to its "show page".  There you will see more detailed information about the project.  If you scroll down you'll find a gray box with the ability to add woods to the project:
@@ -23,18 +27,42 @@ Lets get started ...
 
   * Clicking "Add Selected" moves the wood and its board-feet over to the "Selected Woods To Be Added List" on the right (or below if on a mobile screen).
   * This is sort of like a staging list before you decide to save them to the project.
-  * You can keep adding as many woods as you like, but DO NOT leave the page yet!!  You MUST click "Save List To Project" when you are ready to save the woods you added.  For now there is no option to delete individual woods from the list in state or the actual database.
+  * You can keep adding as many woods as you like, but DO NOT leave the page yet!!  You MUST click "Save List To Project" when you are ready to save the woods you added.  You can click the "x" to the left of each wood you added to remove it from the staging list
   * The app shows your additions immediately.
   * The wood list will now update below the gray "Add Woods" box.  Each individual wood will show the name of the wood, how many board-feet you selected, and how much that material will cost.  There is now an updated "Wood Cost" higher up the screen under the "Description" heading.
+  * Each wood tile with have a gray "x" that can be clicked to delete that wood from the project.
   * Users cannot add the same wood twice to either the persisted database or the staging list.
   * You can click "Go Back" at very bottom of the page or "Active Projects" in the top-left in order to go back to your list of active projects
 
 7. There are links for "Wood Info" and "Dev Info" available whether or not a user is signed in.
 
-8. "Wood Info" shows a list of all the available hardwoods, and hovering over one will display a popup with detailed information on that specific wood.  This feature uses the wood's name to scrape another website and retrieve that wood's information.  If the scrape is unsuccessful you'll instead see a message saying "unable to scrape wood".
+8. "Wood Info" shows a list of all the available hardwoods, and hovering over one will display a popup with detailed information on that specific wood.  This feature uses the wood's name to scrape another website and retrieve that wood's information.  If the scrape is unsuccessful you'll instead see a message saying "unable to scrape wood".  Currently only Cherry and Cumaru seem to be able to get data.
 
 9. "Dev Info" has my picture, a heading, and some basic info about me.
 
 10. From here you can sign out, and sign back in under another test user to see different projects for that specific user (or sign up for yourself and start adding your projects!!)
 
+11.  You can now sign in as an admin!  The admin screen has buttons labeled
+      - Add Wood
+      - Edit/Delete Wood
+      - Show Metrics
 
+      11.a => Add Wood
+        - When admin clicks "Add Wood" a box appears below with options to type a wood name and price.  Price is per boardfoot (ex .. entering "12.95"  would set the price at $12.95 per boardfoot)
+        - Upon submitting the box disappears and a message appears telling you that you've successfully added the wood, and to refresh the screen.  Some refactoring is still needed until a refresh will not be necessary.
+      11.b => Edit/Delete Wood
+        - When admin clicks "Edit/Delete Wood" a list of all woods in the hardwood database appears below
+        - Each wood has a gray "x" and an "Edit" button to the left of the wood name
+        - Clicking the "x" will cause a confirm box to pop up stating that you cannot delete woods that have been added to active projects by users.
+          - If you click confirm the wood will either be deleted, or another pop up will tell you that it cannot be deleted since it is part of an active project
+          - (This is in place so customer's won't just randomly lose woods they've added to their projects.  There will be a future feature that allows the mark these woods as "unavailable" instead)
+        - Clicking "Edit" will open a form below that wood pre-filled with the name and price.
+          - Admin can now edit either the name or the price of the wood.
+          - Clicking "submit" instantly adds that wood to the end of the list (it does not re-alphabetize the list yet, but a refresh will re-fetch an ordered list)
+      11.c => Show Metrics
+        - When admin clicks "Show Metrics" a list of metrics will appear below.
+          - "Non-Admin Users" =  this number represents the total number of users who have signed up and have admin set to false
+            - All users who sign up automatically have admin set to false.  Dev must designate a user as admin for now.
+          - "Active Projects" = This number represents the total number of active projects between all users
+          - "Top Woods Needed" = This feature is not visible yet, but all logic is in place and working.  Currently working on building chart with that data to display.  This takes all the woods that have been added to projects and adds up the total boardfeet needed for each type of hardwood.  A chart will give the admin a visualization of what woods their customers need most, and can be used when deciding what to order.  Another future feature will include weekly charts so admins can see how customers' needs are changing week to week!
+        
