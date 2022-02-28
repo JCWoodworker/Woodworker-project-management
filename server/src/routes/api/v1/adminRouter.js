@@ -1,7 +1,7 @@
 import express from "express"
 import AdminUserSerializer from "../../../../serializers/adminSerializers/AdminUserSerializer.js"
 import AdminProjectSerializer from "../../../../serializers/adminSerializers/AdminProjectSerializer.js"
-import AdminProjectWoodSerializer from "../../../../serializers/adminSerializers/AdminProjectWoodSerializer.js"
+import sumIndividualWoods from "../../../../services/sumIndividualWoods.js"
 
 import { User, Project, ProjectWood } from "../../../models/index.js"
 
@@ -39,13 +39,14 @@ adminRouter.get("/projectData", async (req, res) => {
 
 adminRouter.get("/woodData", async (req, res) => {
   try {
-    const woodData = await ProjectWood.query().withGraphFetched('hardwood')
-    const serializedProjectWoodData = await Promise.all(
-      woodData.map(async (project) => {
-        return await AdminProjectWoodSerializer.getSummary(project)
-      })
-    )
-    return res.status(200).json({ woodData: serializedProjectWoodData })
+    const woodData = 
+      await ProjectWood
+        .query()
+        .select("name", "boardFeet", "hardwoodId")
+        .joinRelated('hardwood')
+    const summedWoodData = sumIndividualWoods(woodData)
+    const summedWoodDataDataVisualization = summedWoodData.map(data => Array.from(Object.values(data)))
+    return res.status(200).json({ woodData: summedWoodDataDataVisualization })
   } catch (error) {
     return res.status(500).json({ error: error })
   }

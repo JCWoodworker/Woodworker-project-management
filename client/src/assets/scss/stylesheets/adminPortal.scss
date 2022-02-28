@@ -59,7 +59,7 @@
 }
 .wood-price-list {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
   justify-content: center;
 }
 
@@ -168,7 +168,6 @@
 }
 
 #hardwoodChart {
-  // border: 1rem solid $dark-gray;
   border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
 

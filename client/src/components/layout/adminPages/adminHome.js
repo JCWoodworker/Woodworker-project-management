@@ -180,7 +180,7 @@ const AdminHome = props => {
   return (
     <div className="admin-page-container">
 
-      <h1>Welcome to the Admin Portal</h1>
+      <h1>Welcome, RI Local Woodworks!</h1>
 
       <div className="admin-option-buttons">
 

@@ -59,7 +59,9 @@ const ShowMetrics = props => {
       <p>Active projects: {anonymousProjectData.length}</p>
       </div>
       <>
-      <ChartTile />
+      <ChartTile
+        woodData={anonymousWoodData} 
+      />
       </>
     </>
   )

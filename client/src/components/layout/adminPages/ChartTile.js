@@ -10,20 +10,14 @@ const ChartTile = props => {
     var data = new google.visualization.DataTable()
     data.addColumn('string', 'Hardwood')
     data.addColumn('number', 'BoardFeet')
-    data.addRows([
-      ['Purple Heart', 58],
-      ['Black Walnut', 41],
-      ['Maple', 28],
-      ['Wenge', 23],
-      ['Others', 1]
-    ])
+    data.addRows(props.woodData)
+
 
     var options = {
-      'title': 'Top Woods Your Customers Need',
+      'title': `Top Woods by the boardfoot in customers' projects`,
       'legend': 'bottom',
-      'is3d': true,
       'width': 500,
-      'height': 300,
+      'height': 600,
     }
 
     var chart = new google.visualization.BarChart(document.getElementById('hardwoodChart'))
