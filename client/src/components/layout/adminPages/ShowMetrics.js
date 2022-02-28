@@ -33,14 +33,12 @@ const ShowMetrics = props => {
   }
 
   const getAnonymousWoodData = async () => {
-    debugger
     try {
       const response = await fetch(`/api/v1/admin/woodData`)
       if (!response.ok) {
         throw new Error(`${response.status} (${response.statusText})`)
       }
       const body = await response.json()
-      debugger
       setAnonymousWoodData(body.woodData)
     } catch (error) {
       console.error(`Error in fetch: ${error}`)
@@ -53,6 +51,17 @@ const ShowMetrics = props => {
     getAnonymousWoodData()
   }, [])
 
+  let labels = []
+  let values = []
+
+  if (anonymousWoodData.length > 0) {
+    for (let i = 0; i < 7; i++) {
+      labels.push(anonymousWoodData[i].name)
+      values.push(anonymousWoodData[i].boardFeet)
+    }
+  }
+
+
   return (
     <>
       <div>
@@ -62,7 +71,8 @@ const ShowMetrics = props => {
       </div>
       <>
       <ChartTile
-        woodData={anonymousWoodData} 
+        labels={labels} 
+        values={values} 
       />
       </>
     </>

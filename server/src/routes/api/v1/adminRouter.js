@@ -46,9 +46,8 @@ adminRouter.get("/woodData", async (req, res) => {
         .select("name", "boardFeet", "hardwoodId")
         .joinRelated('hardwood')
     const summedWoodData = sumIndividualWoods(woodData)
-    const summedWoodDataDataVisualization = summedWoodData.map(data => Array.from(Object.values(data)))
-    
-    return res.status(200).json({ woodData: summedWoodDataDataVisualization })
+    // const summedWoodDataDataVisualization = summedWoodData.map(data => Array.from(Object.values(data)))
+    return res.status(200).json({ woodData: summedWoodData })
   } catch (error) {
     return res.status(500).json({ error: error })
   }
