@@ -104,6 +104,11 @@ const ProjectShow = props => {
   })
   totalWoodCost = totalWoodCost.toFixed(2)
 
+  const getRetailPrice = (woodCost) => {
+    const retailPrice = totalWoodCost * 1.8
+    return retailPrice
+  }
+
   return (
     <div className="project-show">
 
@@ -122,7 +127,7 @@ const ProjectShow = props => {
         <div className="show-metrics-container">
           <p><strong>METRICS:</strong></p>
           <p>WOOD COST: ${totalWoodCost}</p>
-          {/* <p>SUGGESTED SALE PRICE: ${suggestedRetailPrice}</p> */}
+          <p>SUGGESTED SALE PRICE: ${getRetailPrice(totalWoodCost)}</p>
           <p>* Suggested sale price does not include labor yet</p>
           <p>* Add hardwoods in the container below</p>
         </div>
