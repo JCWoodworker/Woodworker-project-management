@@ -106,7 +106,7 @@ const ProjectShow = props => {
 
   const getRetailPrice = (woodCost) => {
     const retailPrice = totalWoodCost * 1.8
-    return retailPrice
+    return retailPrice.toFixed(2)
   }
 
   return (
