@@ -1,6 +1,6 @@
 import React from "react"
 import { Chart, registerables, ArcElement } from 'chart.js'
-import { Doughnut } from 'react-chartjs-2'
+import { Pie } from 'react-chartjs-2'
 
 const ChartTile = props => {
 
@@ -28,7 +28,7 @@ const chartData = {
   return (
     <div id="hardwoodChart">
       <h3>Top Woods In Active Projects</h3>
-      <Doughnut data={chartData}/>
+      <Pie data={chartData}/>
     </div>
   )
 }
