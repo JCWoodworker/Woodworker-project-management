@@ -5,13 +5,13 @@ import { Pie } from 'react-chartjs-2'
 const ChartTile = props => {
 
 const backgroundColors = [
-  'rgb(255, 190, 141)',
-  'rgb(135, 135, 135)',
-  'rgb(35, 34, 34, 1)',
   'yellow',
   'blue',
   'purple',
-  'green'
+  'green',
+  'rgb(135, 135, 135)',
+  'rgb(35, 34, 34, 1)',
+  'rgb(255, 190, 141)'
 ]
 
 Chart.register(...registerables)
