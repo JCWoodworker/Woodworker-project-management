@@ -75,6 +75,10 @@ const App = (props) => {
     weatherHeading = <Weather forecast={forecast} />
   }
 
+  const userSettingsSelector = () => {
+    
+  }
+
   return (
     <div>
       {weatherHeading}
@@ -101,7 +105,7 @@ const App = (props) => {
             <Route exact path="/dev-info" component={DevInfoPage} />
             <Route 
               exact path="/settings" 
-              component={currentUser? UserSettings : SignInForm} 
+              component={currentUser? UserSettings : SignInForm}
             />
           </Switch>
         </Router>

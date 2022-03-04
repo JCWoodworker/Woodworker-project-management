@@ -14,8 +14,6 @@ const UserSettingsForm = props => {
     })
   }
 
-  console.log(userSettings)
-
   return (
     <>
 
