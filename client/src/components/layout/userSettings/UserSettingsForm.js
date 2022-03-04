@@ -1,59 +1,63 @@
 import React, { useState } from 'react'
 
 const UserSettingsForm = props => {
-  const [userSettings, setUserSettings] = useState({
-    woodWaste: "",
-    markup: "",
-    laborRate: ""
+  const [tempUserSettings, setTempUserSettings] = useState({
+    woodWaste: props.user.woodWaste,
+    markup: props.user.markup,
+    laborRate: props.user.laborRate
   })
 
   const handleInputChange = event => {
-    setUserSettings({
-      ...userSettings, 
+    setTempUserSettings({
+      ...tempUserSettings, 
       [event.currentTarget.name]: event.currentTarget.value
     })
   }
-
+  
   return (
-    <>
+    <div>
 
-      <form>
+      <form className="user-settings-form">
 
-        <label htmlFor="woodWaste">Wood Waste %
+        <label htmlFor="woodWaste" className="woodWaste">Wood Waste %
           <input 
             type="number" 
             min="0" 
             id="woodWaste"
             name="woodWaste"
-            value={userSettings.woodWaste}
+            value={tempUserSettings.woodWaste}
             onChange={handleInputChange}>
           </input>
         </label>
-        <label htmlFor="markup"> Retail Markup %
+        <label htmlFor="markup" className="markup"> Retail Markup %
           <input 
             type="number" 
             min="0" 
             id="markup"
             name="markup"
-            value={userSettings.markup}
+            value={tempUserSettings.markup}
             onChange={handleInputChange}>
           </input>
         </label>
-        <label htmlFor="laborRate">Hourly Labor Rate
+        <label htmlFor="laborRate" className="laborRate">Hourly Labor Rate
           <input 
             type="number" 
             min="0" 
             id="laborRate"
             name="laborRate"
-            value={userSettings.laborRate}
+            value={tempUserSettings.laborRate}
             onChange={handleInputChange}>
           </input>
         </label>
-        <button type="submit">Update Settings</button>
+        <button
+          type="submit"
+          id="user-settings-submit">
+            Update Settings
+        </button>
 
       </form>
 
-    </>
+    </div>
   )
 }
 

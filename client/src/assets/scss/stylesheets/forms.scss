@@ -1,4 +1,5 @@
-.projects-form-container {
+.projects-form-container,
+.user-settings-container {
   align-self: center;
   display: flex;
   flex-direction: column;
@@ -12,7 +13,9 @@
 }
 
 .new-project-form,
-.new-hardwood-form {
+.new-hardwood-form,
+.user-settings-form,
+.user-settings-heading {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,7 +32,11 @@
 .quantity,
 .price,
 .admin-button,
-.edit-hardwood-form-submit {
+.edit-hardwood-form-submit,
+.markup,
+.laborRate,
+.woodWaste,
+.showUserSettingsFormButton {
   color: $medium-beige;
   font-size: 1.1rem;
 }
@@ -42,7 +49,12 @@
 #price,
 #new-hardwood-form-submit,
 #admin-button,
-#edit-hardwood-form-submit {
+#edit-hardwood-form-submit,
+#markup,
+#laborRate,
+#woodWaste,
+#user-settings-submit,
+#showUserSettingsFormButton {
   border-radius: 0.5rem;
   border: 2px solid $medium-beige;
   background-color: $dark-gray;
@@ -52,7 +64,9 @@
 
 #project-form-submit,
 #new-hardwood-form-submit,
-#admin-button {
+#admin-button,
+#user-settings-submit,
+#showUserSettingsFormButton {
   height: 50px;
   width: 200px;
   cursor: pointer;
@@ -63,19 +77,26 @@
   margin: 1.5rem
 }
 
+
 #project-form-submit:link,
 #new-hardwood-form-submit:link,
-#admin-button:link {
+#admin-button:link,
+#user-settings-submit:link,
+#showUserSettingsFormButton:link {
   color: $red-brown;
 }
 #project-form-submit:visited,
 #new-hardwood-form-submit:visited,
-#admin-button:visited {
+#admin-button:visited,
+#user-settings-submit:visited,
+#showUserSettingsFormButton:visited {
   color: $red-brown;
 }
 #project-form-submit:hover,
 #new-hardwood-form-submit:hover,
-#admin-button:hover {
+#admin-button:hover,
+#user-settings-submit:hover,
+#showUserSettingsFormButton:hover {
   color: $red-brown;
   background-color: $beige-transparent;
 }
