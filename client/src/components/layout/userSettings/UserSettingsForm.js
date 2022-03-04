@@ -17,7 +17,7 @@ const UserSettingsForm = props => {
   return (
     <>
 
-      <form className="new-project-form">
+      <form>
 
         <label htmlFor="woodWaste">Wood Waste %
           <input 
