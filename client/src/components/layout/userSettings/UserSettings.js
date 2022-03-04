@@ -8,35 +8,48 @@ const UserSettings = ({ user }) => {
     markup: user.markup,
     laborRate: user.laborRate
   })
-
-  let showSettingsForm = <UserSettingsForm user={user} />
+  const [toggleShowEditForm, setToggleShowEditForm] = useState(false)
+  
   const handleShowFormButtonClick = () => {
-    alert("you clicked edit")
+    toggleShowEditForm? setToggleShowEditForm(false) : setToggleShowEditForm(true)
+  }
+
+  let showSettingsForm = null
+  if (toggleShowEditForm) {
+    showSettingsForm = 
+      <UserSettingsForm 
+        user={user}
+        handleShowFormButtonClick={handleShowFormButtonClick}
+      />
   }
   
   let showUserSettings = <SignInForm />
   if (user) {
     showUserSettings = 
-    <div className="user-settings-container">
-        <h1 className="user-settings-heading">User Settings</h1>
-        <p>Your Wood Waste Percentage = {savedUserSettings.woodWaste}%</p>
-        <p>Your Labor Rate = ${savedUserSettings.laborRate}/hr</p>
-        <p>Your Markup Percentage = {savedUserSettings.markup}%</p>
-        <button
-          id="showUserSettingsFormButton"
-          className="showUserSettingsFormButton"
-          onClick={handleShowFormButtonClick}
-        >
-            Edit Settings
-        </button>
-        {showSettingsForm}
-      </div>
+    <div>
+      <h1 className="user-settings-heading">User Settings</h1>
+      <p>Your Wood Waste Percentage = {savedUserSettings.woodWaste}%</p>
+      <p>Your Labor Rate = ${savedUserSettings.laborRate}/hr</p>
+      <p>Your Markup Percentage = {savedUserSettings.markup}%</p>
+      <button
+        id="showUserSettingsFormButton"
+        className="showUserSettingsFormButton"
+        onClick={handleShowFormButtonClick}
+      >
+          Edit Settings
+      </button>
+    </div>
   }
   
   return (
-    <>
-      {showUserSettings}
-    </>
+    <div className="user-settings-container">
+      <div>
+        {showUserSettings}
+      </div>
+      <div>
+        {showSettingsForm}
+      </div>
+    </div>
   )
 }
 

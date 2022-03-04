@@ -13,11 +13,20 @@ const UserSettingsForm = props => {
       [event.currentTarget.name]: event.currentTarget.value
     })
   }
+
+  const handleSubmit = event => {
+    event.preventDefault()
+    alert("testing submit button")
+    props.handleShowFormButtonClick()
+  }
   
   return (
     <div>
 
-      <form className="user-settings-form">
+      <form 
+        className="user-settings-form"
+        onSubmit={handleSubmit}
+      >
 
         <label htmlFor="woodWaste" className="woodWaste">Wood Waste %
           <input 
