@@ -12,6 +12,7 @@ import Weather from "./layout/Weather"
 import ProjectShow from "./layout/project-info/ProjectShow"
 import HardwoodsIndex from "./layout/wood-info/HardwoodsIndex"
 import DevInfoPage from "./layout/DevInfoPage"
+import UserSettings from "./layout/userSettings/UserSettings"
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(null)
@@ -98,6 +99,10 @@ const App = (props) => {
             <Route exact path="/user-sessions/new" component={SignInForm} />
             <Route exact path="/wood-info" component={HardwoodsIndex} />
             <Route exact path="/dev-info" component={DevInfoPage} />
+            <Route 
+              exact path="/settings" 
+              component={currentUser? UserSettings : SignInForm} 
+            />
           </Switch>
         </Router>
       </div>

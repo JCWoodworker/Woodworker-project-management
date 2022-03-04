@@ -32,8 +32,10 @@ const TopBar = ({ user }) => {
     loggedInLinks = 
       <ul className="logged-in-links">
         <li><Link to="/" className="logged-in link-item">Active Projects</Link></li>
+        <li><Link to="/settings" className="logged-in link-item">Settings</Link></li>
         <li><Link to="/wood-info" className="logged-in link-item">Wood Info</Link></li>
         <li><Link to="/dev-info" className="logged-in link-item">Dev Info</Link></li>
+
       </ul>
     }  
   }
