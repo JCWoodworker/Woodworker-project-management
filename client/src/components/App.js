@@ -103,10 +103,11 @@ const App = (props) => {
             <Route exact path="/user-sessions/new" component={SignInForm} />
             <Route exact path="/wood-info" component={HardwoodsIndex} />
             <Route exact path="/dev-info" component={DevInfoPage} />
-            <Route 
-              exact path="/settings" 
-              component={currentUser? UserSettings : SignInForm}
-            />
+            <Route exact path="/settings"> 
+              <UserSettings
+                user={currentUser}
+              />
+            </Route>
           </Switch>
         </Router>
       </div>
