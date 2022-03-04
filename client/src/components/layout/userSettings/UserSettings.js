@@ -14,12 +14,36 @@ const UserSettings = ({ user }) => {
     toggleShowEditForm? setToggleShowEditForm(false) : setToggleShowEditForm(true)
   }
 
+  const handleUpdateUserSettingsOnSubmit = async (newSettings) => {
+    setSavedUserSettings(newSettings)
+    try {
+    const response = await fetch("/api/v1/users/edit", { 
+      method: "POST",
+      headers: new headers ({
+        'Content-Type': 'application/json"'
+      }),
+      body: JSON.stringify(newSettings)
+    })
+    if (!response.ok) {
+      const errorMessage = `${resonse.status} (${response.statusText})`
+      const error = new Error(errorMessage)
+      throw error
+    } else {
+      const body = await response.json()
+      debugger
+    }
+    } catch (error) {
+      console.error(`Error in fetch ${error.message}`)
+    }
+  }
+
   let showSettingsForm = null
   if (toggleShowEditForm) {
     showSettingsForm = 
       <UserSettingsForm 
         user={user}
         handleShowFormButtonClick={handleShowFormButtonClick}
+        handleUpdateUserSettingsOnSubmit={handleUpdateUserSettingsOnSubmit}
       />
   }
   
