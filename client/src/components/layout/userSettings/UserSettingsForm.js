@@ -16,7 +16,7 @@ const UserSettingsForm = props => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    props.handleUpdateUserSettingsOnSubmit(tempUserSettings)
+    // props.handleUpdateUserSettingsOnSubmit(tempUserSettings)
     props.handleShowFormButtonClick()
   }
   
