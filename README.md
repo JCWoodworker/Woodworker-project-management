@@ -66,3 +66,20 @@ Lets get started ...
           - "Active Projects" = This number represents the total number of active projects between all users
           - "Top Woods Needed" = This feature is not visible yet, but all logic is in place and working.  Currently working on building chart with that data to display.  This takes all the woods that have been added to projects and adds up the total boardfeet needed for each type of hardwood.  A chart will give the admin a visualization of what woods their customers need most, and can be used when deciding what to order.  Another future feature will include weekly charts so admins can see how customers' needs are changing week to week!
         
+
+        UPCOMING FEATURES!!!
+
+        * Users will be able to edit their settings for wood waste, labor rate, and markup.
+          - Wood waste is a percentage.  It tells the app to add that to the total boardfeet they need every time they add wood to a project.  Typical wood waste is 30%, so if they add 1 boardfoot of Maple it will persist as 1.3 boardfeet.  This is necessary because wood is milled and cut over and over when making projects, and will give a more accurate dollar output for wood cost.
+          - Labor rate is an hourly rate charged by a woodworker.  It factors into the projects hours it will take to complete a project.
+          - Markup is a percentage attached to the overall cost of a project after wood and labor costs are factored in.
+        * Admin will be able to do the following:
+          - View a weekly chart of woods added to projects to better predict ordering needs (rather than the current chart which shows woods added from all-time data)
+          - Use an email campaign API for mass marketing to all users
+          - Instant message with online users who have questions
+          - Post messages to their users' home page.  This can be used for updated on pricing, deliveries, events, etc...
+        
+          
+
+
+
