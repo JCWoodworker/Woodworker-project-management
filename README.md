@@ -64,7 +64,7 @@ Lets get started ...
           - "Non-Admin Users" =  this number represents the total number of users who have signed up and have admin set to false
             - All users who sign up automatically have admin set to false.  Dev must designate a user as admin for now.
           - "Active Projects" = This number represents the total number of active projects between all users
-          - "Top Woods Needed" = This feature is not visible yet, but all logic is in place and working.  Currently working on building chart with that data to display.  This takes all the woods that have been added to projects and adds up the total boardfeet needed for each type of hardwood.  A chart will give the admin a visualization of what woods their customers need most, and can be used when deciding what to order.  Another future feature will include weekly charts so admins can see how customers' needs are changing week to week!
+          - "Top Woods Needed" = This shows a chart with that takes all the woods that have been added to projects and adds up the total boardfeet needed for each type of hardwood.  Admin now has a visualization of what woods their customers need most, and can be use it when deciding what to order.  Another future feature will include weekly charts so admins can see how customers' needs are changing week to week!
         
 
         UPCOMING FEATURES!!!
