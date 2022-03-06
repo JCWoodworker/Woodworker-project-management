@@ -14,8 +14,9 @@ import HardwoodsIndex from "./layout/wood-info/HardwoodsIndex"
 import DevInfoPage from "./layout/DevInfoPage"
 import UserSettings from "./layout/userSettings/UserSettings"
 
-const App = (props) => {
+const App = props => {
   const [currentUser, setCurrentUser] = useState(null)
+  const [userSettings, setUserSettings] = useState(null)
   const [forecast, setForecast] = useState({
       city: "",
       temp: "",
@@ -28,6 +29,12 @@ const App = (props) => {
     try {
       const user = await getCurrentUser()
       setCurrentUser(user)
+      setUserSettings({
+        id: user.id,
+        woodWaste: user.woodWaste,
+        markup: user.markup,
+        laborRate: user.laborRate
+      })
     } catch(err) {
       setCurrentUser(null)
     }
@@ -75,10 +82,6 @@ const App = (props) => {
     weatherHeading = <Weather forecast={forecast} />
   }
 
-  const userSettingsSelector = () => {
-    
-  }
-
   return (
     <div>
       {weatherHeading}
@@ -104,7 +107,7 @@ const App = (props) => {
             <Route exact path="/wood-info" component={HardwoodsIndex} />
             <Route exact path="/dev-info" component={DevInfoPage} />
             <Route exact path="/settings"> 
-              <UserSettings user={currentUser} />
+              <UserSettings userSettings={userSettings} />
             </Route>
           </Switch>
         </Router>

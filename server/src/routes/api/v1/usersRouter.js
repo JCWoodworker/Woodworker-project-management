@@ -17,14 +17,22 @@ usersRouter.post("/", async (req, res) => {
   }
 })
 
-// usersRouter.post('/edit', async (req, res) => {
-//   debugger
-//   const formInput = cleanUserInput(req.body)
-//   try {
-//   } catch (error) {
-//     return res.status(500).json({ errors: error })
-//   }
-// })
-
+usersRouter.post("/edit", async (req, res) => {
+  const { id, woodWaste, markup, laborRate } = req.body
+  try {
+    const newUserSettings = 
+      await User
+        .query()
+        .patchAndFetchById(id, {
+          woodWaste: woodWaste,
+          markup: markup,
+          laborRate: laborRate
+        })
+    debugger
+    return res.status(201).json({ user: newUserSettings })
+  } catch(error) {
+    return res.status(500).json({ errors: error })
+  }
+})
 
 export default usersRouter;

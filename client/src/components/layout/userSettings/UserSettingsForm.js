@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 
 const UserSettingsForm = props => {
   const [tempUserSettings, setTempUserSettings] = useState({
-    woodWaste: props.user.woodWaste,
-    markup: props.user.markup,
-    laborRate: props.user.laborRate
+    id: props.userSettings.id,
+    woodWaste: props.userSettings.woodWaste,
+    laborRate: props.userSettings.laborRate,
+    markup: props.userSettings.markup
   })
 
   const handleInputChange = event => {
@@ -16,7 +17,7 @@ const UserSettingsForm = props => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    // props.handleUpdateUserSettingsOnSubmit(tempUserSettings)
+    props.handleUserSettingsFormSubmit(tempUserSettings)
     props.handleShowFormButtonClick()
   }
   
