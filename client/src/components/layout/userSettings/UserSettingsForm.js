@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 
 const UserSettingsForm = props => {
   const [tempUserSettings, setTempUserSettings] = useState({
-    id: props.userSettings.id,
-    woodWaste: props.userSettings.woodWaste,
-    laborRate: props.userSettings.laborRate,
-    markup: props.userSettings.markup
+    id: props.userId,
+    woodWaste: props.savedUserSettings.woodWaste,
+    laborRate: props.savedUserSettings.laborRate,
+    markup: props.savedUserSettings.markup
   })
 
   const handleInputChange = event => {

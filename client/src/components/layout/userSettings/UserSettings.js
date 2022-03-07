@@ -4,6 +4,12 @@ import SignInForm from "../../authentication/SignInForm"
 
 const UserSettings = ({ userSettings }) => {
   const [toggleShowEditForm, setToggleShowEditForm] = useState(false)
+  const [savedUserSettings, setSavedUserSettings] = useState({
+    id: userSettings.id,
+    wood: userSettings.woodWaste,
+    labor: userSettings.laborRate,
+    markup: userSettings.markup
+  })
   
   const handleShowFormButtonClick = () => {
     toggleShowEditForm? setToggleShowEditForm(false) : setToggleShowEditForm(true)
@@ -26,7 +32,11 @@ const UserSettings = ({ userSettings }) => {
     } else {
       const body = await response.json()
       debugger
-      setSavedUserSettings(newSettings)
+      setSavedUserSettings({...savedUserSettings}, {
+        wood: body.user.woodWaste,
+        labor: body.user.laborRate,
+        markup: body.user.markup
+      })
     }
     } catch (error) {
       console.error(`Error in fetch ${error.message}`)
@@ -36,8 +46,9 @@ const UserSettings = ({ userSettings }) => {
   let showSettingsForm = null
   if (toggleShowEditForm) {
     showSettingsForm = 
-      <UserSettingsForm 
-        userSettings={userSettings}
+      <UserSettingsForm
+        userId={userSettings.id} 
+        savedUserSettings={savedUserSettings}
         handleShowFormButtonClick={handleShowFormButtonClick}
         handleUserSettingsFormSubmit={handleUserSettingsFormSubmit}
       />
@@ -48,9 +59,9 @@ const UserSettings = ({ userSettings }) => {
     showUserSettings = 
     <div>
       <h1 className="user-settings-heading">User Settings</h1>
-      <p>Your Wood Waste Percentage = {userSettings.woodWaste}%</p>
-      <p>Your Labor Rate = ${userSettings.laborRate}/hr</p>
-      <p>Your Markup Percentage = {userSettings.markup}%</p>
+      <p>Your Wood Waste Percentage = {savedUserSettings.wood}%</p>
+      <p>Your Markup Percentage = {savedUserSettings.markup}%</p>
+      <p>Your Labor Rate = ${savedUserSettings.labor}/hr</p>
       <button
         id="showUserSettingsFormButton"
         className="showUserSettingsFormButton"

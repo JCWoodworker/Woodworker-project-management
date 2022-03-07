@@ -20,10 +20,11 @@ usersRouter.post("/", async (req, res) => {
 usersRouter.post("/edit", async (req, res) => {
   const { id, woodWaste, markup, laborRate } = req.body
   try {
+    const user = await User.query().findById(id)
     const newUserSettings = 
-      await User
-        .query()
-        .patchAndFetchById(id, {
+      await user
+        .$query()
+        .patchAndFetch({
           woodWaste: woodWaste,
           markup: markup,
           laborRate: laborRate
