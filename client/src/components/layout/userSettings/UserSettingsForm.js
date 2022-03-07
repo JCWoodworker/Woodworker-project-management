@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 const UserSettingsForm = props => {
   const [tempUserSettings, setTempUserSettings] = useState({
     id: props.userId,
-    woodWaste: props.savedUserSettings.woodWaste,
-    laborRate: props.savedUserSettings.laborRate,
+    woodWaste: props.savedUserSettings.wood,
+    laborRate: props.savedUserSettings.labor,
     markup: props.savedUserSettings.markup
   })
 

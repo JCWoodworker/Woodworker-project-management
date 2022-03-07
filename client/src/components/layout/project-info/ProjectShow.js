@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import AddWoodForm from "./AddWoodForm"
 import AddedWoodTile from "./AddedWoodTile"
+import { calculationTest } from "../../../services/projectCalculations.js"
 
 const ProjectShow = props => {
   const [project, setProject] = useState ({

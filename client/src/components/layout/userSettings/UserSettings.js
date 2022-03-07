@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import UserSettingsForm from './UserSettingsForm'
 import SignInForm from "../../authentication/SignInForm"
+import { calculationTest, calculationTest2 } from "../../../services/projectCalculations.js"
 
 const UserSettings = ({ userSettings }) => {
   const [toggleShowEditForm, setToggleShowEditForm] = useState(false)
@@ -17,7 +18,6 @@ const UserSettings = ({ userSettings }) => {
 
   const handleUserSettingsFormSubmit = async newSettings => {
     try {
-      debugger
       const response = await fetch(`/api/v1/users/edit`, {
         method: "POST",
         headers: new Headers ({
@@ -31,8 +31,7 @@ const UserSettings = ({ userSettings }) => {
       throw error
     } else {
       const body = await response.json()
-      debugger
-      setSavedUserSettings({...savedUserSettings}, {
+      setSavedUserSettings({
         wood: body.user.woodWaste,
         labor: body.user.laborRate,
         markup: body.user.markup
@@ -53,7 +52,6 @@ const UserSettings = ({ userSettings }) => {
         handleUserSettingsFormSubmit={handleUserSettingsFormSubmit}
       />
   }
-  
   let showUserSettings = <SignInForm />
   if (userSettings) {
     showUserSettings = 
