@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import UserSettingsForm from './UserSettingsForm'
 import SignInForm from "../../authentication/SignInForm"
-import { calculationTest, calculationTest2 } from "../../../services/projectCalculations.js"
 
 const UserSettings = ({ userSettings }) => {
   const [toggleShowEditForm, setToggleShowEditForm] = useState(false)
