@@ -10,10 +10,11 @@ import ShowMetrics from "./ShowMetrics"
 const AdminHome = props => {
   const [hardwoodData, setHardwoodData] = useState([])
   const [errors, setErrors] = useState([])
+
   const [showAddWood, setShowAddWood] = useState(false)
   const [showEditWood, setShowEditWood] = useState(false)
   const [showMetrics, setShowMetrics] = useState(false)
-  // const [showAdminUpdateContainer, setAdminUpdateContainer] = useState(true)
+  
   const [adminUpdateContainer, setAdminUpdateContainer] = useState({
     message: "Select a button above to make changes"
   })

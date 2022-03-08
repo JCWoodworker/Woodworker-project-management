@@ -93,13 +93,11 @@ const App = props => {
           <Switch>
             <Route 
               exact path="/">
-                <HomePage 
-                  user={currentUser} 
-                />
+                  <HomePage user={currentUser} />
             </Route>
             <Route 
               exact path="/projects/:id"
-              component={currentUser? ProjectShow : HomePage }
+              component={ currentUser? ProjectShow : HomePage }
               >
             </Route>
             <Route exact path="/users/new" component={RegistrationForm} />

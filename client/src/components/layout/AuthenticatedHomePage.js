@@ -1,7 +1,7 @@
 import React from "react"
 import ProjectsIndex from "./project-info/ProjectsIndex"
 
-const AuthenticatedHomePage = (props) => {
+const AuthenticatedHomePage = props => {
   
   return (
     <div className="auth-page-container" >

@@ -6,6 +6,8 @@ const ShowMetrics = props => {
   const [anonymousProjectData, setAnonymousProjectData] = useState([])
   const [anonymousWoodData, setAnonymousWoodData] = useState([])
 
+  const [values] = useState([])
+
   const getAnonymousUserData = async () => {
     try {
       const response = await fetch(`/api/v1/admin/userData`)
