@@ -57,7 +57,7 @@ const ProjectsIndex = props => {
   }
 
   const projectTiles = projects.map((project) => {
-    return <ProjectTile key={project.id} project={project} />
+    return <ProjectTile key={project.id} project={project} user={props.user} />
   })
   
   return (

@@ -17,4 +17,23 @@ usersRouter.post("/", async (req, res) => {
   }
 })
 
+usersRouter.post("/edit", async (req, res) => {
+  const { id, woodWaste, markup, laborRate } = req.body
+  try {
+    const user = await User.query().findById(id)
+    const newUserSettings = 
+      await user
+        .$query()
+        .patchAndFetch({
+          woodWaste: woodWaste,
+          markup: markup,
+          laborRate: laborRate
+        })
+    debugger
+    return res.status(201).json({ user: newUserSettings })
+  } catch(error) {
+    return res.status(500).json({ errors: error })
+  }
+})
+
 export default usersRouter;

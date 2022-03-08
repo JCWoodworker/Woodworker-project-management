@@ -46,7 +46,10 @@ class User extends uniqueFunc(Model) {
       properties: {
         email: { type: "string", format: "email" },
         cryptedPassword: { type: "string" },
-        admin: { type: "boolean"}
+        admin: { type: "boolean"},
+        woodWaste: { type: ["integer", "string"] },
+        markup: { type: ["integer", "string"] },
+        laborRate: { type: ["integer", "string"] },
       },
     }
 

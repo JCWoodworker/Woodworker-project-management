@@ -12,9 +12,11 @@ import Weather from "./layout/Weather"
 import ProjectShow from "./layout/project-info/ProjectShow"
 import HardwoodsIndex from "./layout/wood-info/HardwoodsIndex"
 import DevInfoPage from "./layout/DevInfoPage"
+import UserSettings from "./layout/userSettings/UserSettings"
 
-const App = (props) => {
+const App = props => {
   const [currentUser, setCurrentUser] = useState(null)
+  const [userSettings, setUserSettings] = useState(null)
   const [forecast, setForecast] = useState({
       city: "",
       temp: "",
@@ -27,6 +29,12 @@ const App = (props) => {
     try {
       const user = await getCurrentUser()
       setCurrentUser(user)
+      setUserSettings({
+        id: user.id,
+        woodWaste: user.woodWaste,
+        markup: user.markup,
+        laborRate: user.laborRate
+      })
     } catch(err) {
       setCurrentUser(null)
     }
@@ -72,7 +80,7 @@ const App = (props) => {
       <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>  </div>
   if (success) {
     weatherHeading = <Weather forecast={forecast} />
-  }
+  } 
 
   return (
     <div>
@@ -85,19 +93,20 @@ const App = (props) => {
           <Switch>
             <Route 
               exact path="/">
-                <HomePage 
-                  user={currentUser} 
-                />
+                  <HomePage user={currentUser} />
             </Route>
             <Route 
               exact path="/projects/:id"
-              component={currentUser? ProjectShow : HomePage }
+              component={ currentUser? ProjectShow : HomePage }
               >
             </Route>
             <Route exact path="/users/new" component={RegistrationForm} />
             <Route exact path="/user-sessions/new" component={SignInForm} />
             <Route exact path="/wood-info" component={HardwoodsIndex} />
             <Route exact path="/dev-info" component={DevInfoPage} />
+            <Route exact path="/settings"> 
+              <UserSettings userSettings={userSettings} />
+            </Route>
           </Switch>
         </Router>
       </div>
