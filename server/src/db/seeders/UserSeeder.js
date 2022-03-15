@@ -7,27 +7,16 @@ class UserSeeder {
         email: "user1@test.com",
         cryptedPassword: "$2b$10$1mZuD.3ac8rDukajr54TzeyQXriKC7berLu/nOuu4MKzQ10heRfn6",
         admin: false,
-        woodWaste: 30,
-        markup: 50,
-        laborRate: 40
       },
       {
         email: "user2@test.com",
         cryptedPassword: "$2b$10$1mZuD.3ac8rDukajr54TzeyQXriKC7berLu/nOuu4MKzQ10heRfn6",
         admin: false,
-        woodWaste: 30,
-        markup: 50,
-        laborRate: 40
-
       },
       {
         email: "user3@test.com",
         cryptedPassword: "$2b$10$1mZuD.3ac8rDukajr54TzeyQXriKC7berLu/nOuu4MKzQ10heRfn6",
         admin: false,
-        woodWaste: 30,
-        markup: 50,
-        laborRate: 40
-
       },
       {
         email: "admin@test.com",
