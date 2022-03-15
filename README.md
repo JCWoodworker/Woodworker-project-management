@@ -34,23 +34,29 @@ Lets get started ...
   * Users cannot add the same wood twice to either the persisted database or the staging list.
   * You can click "Go Back" at very bottom of the page or "Active Projects" in the top-left in order to go back to your list of active projects
 
-7. There are links for "Wood Info" and "Dev Info" available whether or not a user is signed in.
+7. When you click on "settings" in the top bar you'll be taken to a page to view your wood waste, labor rate, and markup.  From here you can update any or all of them, and all calculations in your project will be instantly updated.
+  - Wood waste is a percentage.  It tells the app to add that to the total boardfeet they need every time they add wood to a project.  Typical wood waste is 30%, so if they add 1 boardfoot of Maple it will persist as 1.3 boardfeet.  This is necessary because wood is milled and cut over and over when making projects, and will give a more accurate dollar output for wood cost.
+  - Labor rate is an hourly rate charged by a woodworker.  Labor cost is found by multiplying your labor rate by the estimated project hours.
+  - Markup is used to increase your wood cost before adding labor.
+  - Every user is automatically has wood waste at 30%, labor at $40, and markup at 80% when they sign up.
 
-8. "Wood Info" shows a list of all the available hardwoods, and hovering over one will display a popup with detailed information on that specific wood.  This feature uses the wood's name to scrape another website and retrieve that wood's information.  If the scrape is unsuccessful you'll instead see a message saying "unable to scrape wood".  Currently only Cherry and Cumaru seem to be able to get data.
+8. There are links for "Wood Info" and "Dev Info" available whether or not a user is signed in.
 
-9. "Dev Info" has my picture, a heading, and some basic info about me.
+9. "Wood Info" shows a list of all the available hardwoods, and hovering over one will display a popup with detailed information on that specific wood.  This feature uses the wood's name to scrape another website and retrieve that wood's information.  If the scrape is unsuccessful you'll instead see a message saying "unable to scrape wood".  Currently only Cherry and Cumaru seem to be able to get data.
 
-10. From here you can sign out, and sign back in under another test user to see different projects for that specific user (or sign up for yourself and start adding your projects!!)
+10. "Dev Info" has my picture, a heading, and some basic info about me.
 
-11.  You can now sign in as an admin!  The admin screen has buttons labeled
+11. From here you can sign out, and sign back in under another test user to see different projects for that specific user (or sign up for yourself and start adding your projects!!)
+
+12.  You can now sign in as an admin!  The admin screen has buttons labeled
       - Add Wood
       - Edit/Delete Wood
       - Show Metrics
 
-      11.a => Add Wood
+      12.a => Add Wood
         - When admin clicks "Add Wood" a box appears below with options to type a wood name and price.  Price is per boardfoot (ex .. entering "12.95"  would set the price at $12.95 per boardfoot)
         - Upon submitting the box disappears and a message appears telling you that you've successfully added the wood, and to refresh the screen.  Some refactoring is still needed until a refresh will not be necessary.
-      11.b => Edit/Delete Wood
+      12.b => Edit/Delete Wood
         - When admin clicks "Edit/Delete Wood" a list of all woods in the hardwood database appears below
         - Each wood has a gray "x" and an "Edit" button to the left of the wood name
         - Clicking the "x" will cause a confirm box to pop up stating that you cannot delete woods that have been added to active projects by users.
@@ -59,7 +65,7 @@ Lets get started ...
         - Clicking "Edit" will open a form below that wood pre-filled with the name and price.
           - Admin can now edit either the name or the price of the wood.
           - Clicking "submit" instantly adds that wood to the end of the list (it does not re-alphabetize the list yet, but a refresh will re-fetch an ordered list)
-      11.c => Show Metrics
+      12.c => Show Metrics
         - When admin clicks "Show Metrics" a list of metrics will appear below.
           - "Non-Admin Users" =  this number represents the total number of users who have signed up and have admin set to false
             - All users who sign up automatically have admin set to false.  Dev must designate a user as admin for now.
@@ -68,11 +74,6 @@ Lets get started ...
         
 
         UPCOMING FEATURES!!!
-
-        * Users will be able to edit their settings for wood waste, labor rate, and markup.
-          - Wood waste is a percentage.  It tells the app to add that to the total boardfeet they need every time they add wood to a project.  Typical wood waste is 30%, so if they add 1 boardfoot of Maple it will persist as 1.3 boardfeet.  This is necessary because wood is milled and cut over and over when making projects, and will give a more accurate dollar output for wood cost.
-          - Labor rate is an hourly rate charged by a woodworker.  It factors into the projects hours it will take to complete a project.
-          - Markup is a percentage attached to the overall cost of a project after wood and labor costs are factored in.
         * Admin will be able to do the following:
           - View a weekly chart of woods added to projects to better predict ordering needs (rather than the current chart which shows woods added from all-time data)
           - Use an email campaign API for mass marketing to all users

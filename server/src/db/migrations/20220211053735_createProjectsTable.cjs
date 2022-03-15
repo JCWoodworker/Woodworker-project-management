@@ -12,6 +12,7 @@ exports.up = async (knex) => {
     t.text('description')
     t.string('customer')
     t.integer('quantity')
+    t.integer('hours').notNullable()
     t.bigInteger('userId')
       .notNullable()
       .unsigned()

@@ -48,12 +48,13 @@ class Project extends Model {
   static get jsonSchema() {
     return {
       type: "object",
-      required: ["name", "userId"],
+      required: ["name", "userId", "hours"],
       properties: {
         name: { type: "string", minLength: 1, maxLength: 50 },
         description: { type: "text", maxLength: 500 },
         customer: { type: "string" },
         quantity: { type: ["integer", "string"] },
+        hours: { type: ["integer", "string"] },
         userId: { type: ["integer", "string"] }
       }
     }
