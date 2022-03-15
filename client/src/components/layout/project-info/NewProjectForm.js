@@ -9,6 +9,7 @@ const NewProjectForm = props => {
     description: "",
     customer: "",
     quantity: "",
+    hours: "",
     userId: props.userId
   })
 
@@ -22,7 +23,8 @@ const NewProjectForm = props => {
       description: "",
       customer: "",
       quantity: "",
-      userId: ""
+      userId: "",
+      hours: ""
     })
   }
 
@@ -75,11 +77,20 @@ const NewProjectForm = props => {
         </label>
         <label htmlFor="quantity" className="quantity">Quantity
           <input
-            type="number" min="1" max="100"
+            type="number" min="1" max="999"
             id="quantity"
             name="quantity"
             onChange={handleInputChange}
             value={newProject.quantity}
+          />
+        </label>
+        <label htmlFor="hours" className="hours">Estimated Hours
+          <input
+            type="number" min="1" max="999"
+            id="hours"
+            name="hours"
+            onChange={handleInputChange}
+            value={newProject.hours}
           />
         </label>
         <input 

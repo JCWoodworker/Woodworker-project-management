@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import { withRouter } from "react-router"
 import AddWoodForm from "./AddWoodForm"
 import AddedWoodTile from "./AddedWoodTile"
-import { calculations } from "../../../services/projectCalculations.js"
 
 const ProjectShow = props => {
   const [project, setProject] = useState ({
@@ -10,6 +10,7 @@ const ProjectShow = props => {
     customer: "",
     description: "",
     quantity: "",
+    hours: "",
     selectedWoods: []
   })
 
@@ -91,22 +92,26 @@ const ProjectShow = props => {
   let totalWoodCost = 0.00
   
   const selectedWoodList = project.selectedWoods.map(wood => {
-    let woodCost = (wood.bf * wood.price).toFixed(2)
+    const adjustedBoardfeet = (wood.bf * ((props.userSettings.woodWaste / 100) + 1)).toFixed(1)
+    const woodCost = ((adjustedBoardfeet * wood.price)).toFixed(2)
     totalWoodCost += parseFloat(woodCost)
     
     return (
       <AddedWoodTile 
         key={wood.name} 
+        adjustedBoardfeet={adjustedBoardfeet}
         woodCost={woodCost} 
         wood={wood} 
         deleteWoodFromProject={deleteWoodFromProject}
       />
     )
   })
+
   totalWoodCost = totalWoodCost.toFixed(2)
 
   const getRetailPrice = (woodCost) => {
-    const retailPrice = totalWoodCost * 1.8
+    const woodAndMarkup = totalWoodCost * ((props.userSettings.markup / 100) + 1)
+    const retailPrice = woodAndMarkup + parseFloat(props.userSettings.laborRate * project.hours)
     return retailPrice.toFixed(2)
   }
 
@@ -128,9 +133,10 @@ const ProjectShow = props => {
         <div className="show-metrics-container">
           <p><strong>METRICS:</strong></p>
           <p>WOOD COST: ${totalWoodCost}</p>
-          <p>SUGGESTED SALE PRICE: ${getRetailPrice(totalWoodCost)}</p>
-          <p>* Suggested sale price does not include labor yet</p>
-          <p>* Add hardwoods in the container below</p>
+          <p>LABOR COST: {project.hours} Hours @ ${props.userSettings.laborRate}/hr</p>
+          <p>SUGGESTED SALE PRICE: ${getRetailPrice()}</p>
+          <p>* When saving woods to your project your boardfoot selections will automatically be adjusted based on your wood waste setting</p>
+          <p>* Suggested sale price is WOOD COST x MARKUP + LABOR COST</p>
         </div>
 
         <div className="added-wood-tile-container">
@@ -143,6 +149,7 @@ const ProjectShow = props => {
         projectId={props.match.params.id} 
         selectedWoodArray={project.selectedWoods}
         postWoodsToProject={postWoodsToProject}
+        woodWastePercentage={props.userSettings.woodWaste}
       />
 
       <div className="back-button=container">
@@ -153,4 +160,4 @@ const ProjectShow = props => {
   )
 }
 
-export default ProjectShow
+export default withRouter(ProjectShow)

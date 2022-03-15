@@ -1,6 +1,6 @@
 class ProjectSerializer {
   static async getSummary(project) {
-    const allowedAttributes = ['id', 'name', 'description', 'customer', 'quantity', 'userId']
+    const allowedAttributes = ['id', 'name', 'description', 'customer', 'quantity', 'hours', 'userId']
 
     let serializedProject = {}
     for (const attribute of allowedAttributes) {

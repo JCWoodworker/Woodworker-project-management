@@ -29,7 +29,6 @@ usersRouter.post("/edit", async (req, res) => {
           markup: markup,
           laborRate: laborRate
         })
-    debugger
     return res.status(201).json({ user: newUserSettings })
   } catch(error) {
     return res.status(500).json({ errors: error })

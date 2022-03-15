@@ -11,7 +11,7 @@ const AddedWoodTile = props => {
       
       <p id="wood-name">{props.wood.name}:</p>     
       <ul className="persisted-woods-list">
-        <li id="wood-tile-p">Bdft: {props.wood.bf}</li>
+        <li id="wood-tile-p">Bdft: {props.adjustedBoardfeet}</li>
         <li id="wood-tile-p">${props.woodCost}</li>
       </ul>
       <button 

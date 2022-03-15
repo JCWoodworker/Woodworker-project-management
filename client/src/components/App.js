@@ -63,7 +63,7 @@ const App = props => {
   }
 
   const unsuccessfulLookup = () => {
-    console.log('Location blocked.  Please allow this site to use your location for local weather')
+    console.log('Cannot show weather ... location may be blocked, turned off, or you may not have access to the internet')
   }
 
   
@@ -82,6 +82,44 @@ const App = props => {
     weatherHeading = <Weather forecast={forecast} />
   } 
 
+  const handleUserSettingsFormSubmit = async newSettings => {
+    try {
+      const response = await fetch(`/api/v1/users/edit`, {
+        method: "POST",
+        headers: new Headers ({
+          "Content-Type": "application/json",
+        }),
+        body: JSON.stringify(newSettings)
+    })
+    if (!response.ok) {
+      const errorMessage = `${response.status} (${response.statusText})`
+      const error = new Error(errorMessage)
+      throw error
+    } else {
+      const body = await response.json()
+      setUserSettings({
+        id: body.user.id,
+        woodWaste: body.user.woodWaste,
+        markup: body.user.markup,
+        laborRate: body.user.laborRate
+      })
+    }
+    } catch (error) {
+      console.error(`Error in fetch ${error.message}`)
+    }
+  }
+
+  const showUserPage = () => {
+    if (userSettings) {
+      return (
+        <ProjectShow
+          userSettings={userSettings}
+        />
+      )
+    }
+    return <HomePage />
+  }
+
   return (
     <div>
       {weatherHeading}
@@ -95,17 +133,18 @@ const App = props => {
               exact path="/">
                   <HomePage user={currentUser} />
             </Route>
-            <Route 
-              exact path="/projects/:id"
-              component={ currentUser? ProjectShow : HomePage }
-              >
+            <Route exact path="/projects/:id">
+              {showUserPage}
             </Route>
             <Route exact path="/users/new" component={RegistrationForm} />
             <Route exact path="/user-sessions/new" component={SignInForm} />
             <Route exact path="/wood-info" component={HardwoodsIndex} />
             <Route exact path="/dev-info" component={DevInfoPage} />
             <Route exact path="/settings"> 
-              <UserSettings userSettings={userSettings} />
+              <UserSettings 
+                userSettings={userSettings} 
+                handleUserSettingsFormSubmit={handleUserSettingsFormSubmit}
+              />
             </Route>
           </Switch>
         </Router>
