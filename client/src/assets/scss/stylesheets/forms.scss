@@ -36,7 +36,9 @@
 .laborRate,
 .woodWaste,
 .showUserSettingsFormButton,
-.hours {
+.hours,
+.message,
+.subject {
   color: $medium-beige;
   font-size: 1.1rem;
 }
@@ -55,7 +57,9 @@
 #woodWaste,
 #user-settings-submit,
 #showUserSettingsFormButton,
-#hours {
+#hours,
+#message,
+#subject {
   border-radius: 0.5rem;
   border: 2px solid $medium-beige;
   background-color: $dark-gray;
@@ -100,4 +104,13 @@
 #showUserSettingsFormButton:hover {
   color: $red-brown;
   background-color: $beige-transparent;
+}
+
+#subject {
+  min-width: 330px
+}
+
+#message {
+  min-width: 330px;
+  min-height: 250px;
 }
