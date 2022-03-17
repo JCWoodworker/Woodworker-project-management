@@ -37,7 +37,6 @@ const EmailCampaignIndex = props => {
 
   const sendEmail = event => {
     event.preventDefault()
-    debugger
     emailjs.sendForm('service_7r3ncp8', 'template_37h3218', event.target, '2Ju9HvBwIm4I6dtY0')
       .then((res) => {
         alert("Your email was sent successfully!")
