@@ -19,5 +19,8 @@
   "engines": {
     "node": "^14.15",
     "yarn": "^1.22.10"
+  },
+  "dependencies": {
+    "emailjs-com": "^3.2.0"
   }
 }

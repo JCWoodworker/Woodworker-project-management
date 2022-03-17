@@ -6,14 +6,17 @@ import ErrorList from "../ErrorList"
 import WoodPriceTile from "./WoodPriceTile"
 import AddHardwoodForm from "./AddHardwoodForm"
 import ShowMetrics from "./ShowMetrics"
+import EmailCampaignIndex from "./emailAPI/EmailCampaignIndex"
 
 const AdminHome = props => {
-  const [hardwoodData, setHardwoodData] = useState([])
   const [errors, setErrors] = useState([])
-
+  
+  const [hardwoodData, setHardwoodData] = useState([])
   const [showAddWood, setShowAddWood] = useState(false)
   const [showEditWood, setShowEditWood] = useState(false)
+
   const [showMetrics, setShowMetrics] = useState(false)
+  const [showEmail, setShowEmail] = useState(false)
   
   const [adminUpdateContainer, setAdminUpdateContainer] = useState({
     message: "Select a button above to make changes"
@@ -141,16 +144,25 @@ const AdminHome = props => {
     setShowAddWood(true)
     setShowEditWood(false)
     setShowMetrics(false)
+    setShowEmail(false)
   }
   const handleEditClick = () => {
     setShowAddWood(false)
     setShowEditWood(true)
     setShowMetrics(false)
+    setShowEmail(false)
   }
   const handleMetricsClick = () => {
     setShowAddWood(false)
     setShowEditWood(false)
     setShowMetrics(true)
+    setShowEmail(false)
+  }
+  const handleEmailClick = () => {
+    setShowAddWood(false)
+    setShowEditWood(false)
+    setShowMetrics(false)
+    setShowEmail(true)
   }
 
   let adminFeatureSection = null
@@ -172,16 +184,18 @@ const AdminHome = props => {
   } else if (showMetrics) {
     adminFeatureSection = 
       <ShowMetrics />
+  } else if (showEmail) {
+    adminFeatureSection = 
+      <EmailCampaignIndex />
   } else {
-    adminFeatureSection = <p>{adminUpdateContainer.message}</p>
+    adminFeatureSection = 
+      <p>{adminUpdateContainer.message}</p>
   }
-  
-
 
   return (
     <div className="admin-page-container">
 
-      <h1>Welcome, Carlin Lumber</h1>
+      <h1>Welcome, XYZ Lumber</h1>
 
       <div className="admin-option-buttons">
 
@@ -207,6 +221,14 @@ const AdminHome = props => {
             id="admin-button"
             type="button">
               Show Metrics
+          </button>
+        </label>
+        <label className="admin-button">
+          <button
+            onClick={handleEmailClick}
+            id="admin-button"
+            type="button">
+              Email Campaigns
           </button>
         </label>
 
