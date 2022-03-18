@@ -23,7 +23,7 @@
 
 .added-wood-tile-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-flow: row wrap;
   color: $medium-beige;
   border-radius: 0.5rem;
@@ -33,18 +33,18 @@
 
 .added-wood-tile {
   display: flex;
-  flex-flow: column;
+  flex-flow: row-wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background-color: $dark-gray-transparent-9;
   color: $medium-beige;
   margin: 0.25rem;
-  padding: 0.5rem;
+  padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
   border-radius: 0.5rem;
-  width: 30%;
-  min-width: 200px;
-  max-height: min-content ;
+  width: 40%;
+  min-width: 280px;
+  max-height: 120px;
   font-weight: bold;
   
 }

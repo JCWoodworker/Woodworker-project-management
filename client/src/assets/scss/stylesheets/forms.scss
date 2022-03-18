@@ -1,4 +1,6 @@
-.projects-form-container {
+.projects-form-container,
+.sign-in-form-container,
+.registration-form-container {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -9,12 +11,16 @@
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
   padding: 1.5rem;
   height: fit-content;
+  width: fit-content;
+  margin: 1rem auto
 }
 
 .new-project-form,
 .new-hardwood-form,
 .user-settings-form,
-.user-settings-heading {
+.user-settings-heading,
+.sign-in-form,
+.registration-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,7 +44,9 @@
 .showUserSettingsFormButton,
 .hours,
 .message,
-.subject {
+.subject,
+.auth-email,
+.auth-password {
   color: $medium-beige;
   font-size: 1.1rem;
 }
@@ -59,7 +67,10 @@
 #showUserSettingsFormButton,
 #hours,
 #message,
-#subject {
+#subject,
+#auth-email,
+#auth-password,
+#auth-button {
   border-radius: 0.5rem;
   border: 2px solid $medium-beige;
   background-color: $dark-gray;
@@ -71,7 +82,8 @@
 #new-hardwood-form-submit,
 #admin-button,
 #user-settings-submit,
-#showUserSettingsFormButton {
+#showUserSettingsFormButton,
+#auth-button {
   height: 50px;
   width: 200px;
   cursor: pointer;
@@ -87,21 +99,24 @@
 #new-hardwood-form-submit:link,
 #admin-button:link,
 #user-settings-submit:link,
-#showUserSettingsFormButton:link {
+#showUserSettingsFormButton:link,
+#auth-button:link {
   color: $red-brown;
 }
 #project-form-submit:visited,
 #new-hardwood-form-submit:visited,
 #admin-button:visited,
 #user-settings-submit:visited,
-#showUserSettingsFormButton:visited {
+#showUserSettingsFormButton:visited,
+#auth-button:visited {
   color: $red-brown;
 }
 #project-form-submit:hover,
 #new-hardwood-form-submit:hover,
 #admin-button:hover,
 #user-settings-submit:hover,
-#showUserSettingsFormButton:hover {
+#showUserSettingsFormButton:hover,
+#auth-button:hover {
   color: $red-brown;
   background-color: $beige-transparent;
 }
