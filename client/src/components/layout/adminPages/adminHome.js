@@ -81,7 +81,6 @@ const AdminHome = props => {
       })
       if (!response.ok) {
         if (response.status === 422) {
-          const body = await response.json()
           const newErrors = translateServerErrors(body.errors)
           setErrors(newErrors)
         }
@@ -90,11 +89,12 @@ const AdminHome = props => {
         throw error
       } else {
         const body = await response.json()
+        
         setErrors([])
         setShowEditWood(false)
+        console.log(body.hardwood)
+        
         setAdminUpdateContainer({message: `Hardwood database has been updated.  Please refresh your browser`})
-
-        // setHardwoodData(...hardwoodData, body.hardwood)
       }
     } catch (error) {
       console.error(`Error in fetch ${error.message}`)
@@ -195,7 +195,7 @@ const AdminHome = props => {
   return (
     <div className="admin-page-container">
 
-      <h1>Welcome, XYZ Lumber</h1>
+      <h1>Welcome, RI Local Woodworks</h1>
 
       <div className="admin-option-buttons">
 

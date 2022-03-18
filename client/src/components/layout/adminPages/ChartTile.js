@@ -1,34 +1,52 @@
 import React from "react"
 import { Chart, registerables, ArcElement } from 'chart.js'
-import { Pie } from 'react-chartjs-2'
+import { Bar } from 'react-chartjs-2'
 
 const ChartTile = props => {
-
-const backgroundColors = [
-  'yellow',
-  'blue',
-  'purple',
-  'green',
-  'rgb(135, 135, 135)',
-  'rgb(35, 34, 34, 1)',
-  'rgb(255, 190, 141)'
-]
-
+  
 Chart.register(...registerables)
 Chart.register(ArcElement)
+
+const backgroundColors = [
+  'rgb(255, 167, 99)',
+  'rgb(94, 161, 85)',
+  'rgb(128, 124, 122)',
+  'rgb(133, 82, 44)',
+  'rgb(53, 92, 48)',
+  'rgb(77, 77, 77)',
+  'rgb(69, 30, 0)',
+  'rgb(6, 51, 0)',
+  'rgb(48, 48, 48)',
+  'rgb(33, 33, 33)',
+]
+
+const options = {
+  scales: {
+    y:
+      {
+        min: 0,
+        max: props.values[0]
+      }
+  }
+}
 
 const chartData = {
   labels: props.labels,
   datasets: [{
+    label: "Board Feet",
     data: props.values,
-    backgroundColor: backgroundColors
+    backgroundColor: backgroundColors,
+    borderWidth: 0
   }]
 }
 
   return (
     <div id="hardwoodChart">
       <h3>Top Woods In Active Projects</h3>
-      <Pie data={chartData}/>
+      <Bar 
+        data={chartData}
+        options={options}
+      />
     </div>
   )
 }

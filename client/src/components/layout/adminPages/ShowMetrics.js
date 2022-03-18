@@ -2,79 +2,75 @@ import React, { useState, useEffect } from "react"
 import ChartTile from "./ChartTile"
 
 const ShowMetrics = props => {
-  const [anonymousUserData, setAnonymousUserData] = useState([])
-  const [anonymousProjectData, setAnonymousProjectData] = useState([])
-  const [anonymousWoodData, setAnonymousWoodData] = useState([])
+  const [userData, setUserData] = useState([])
+  const [projectData, setProjectData] = useState([])
 
-  // const [values] = useState()
+  const [values, setValues] = useState([])
+  const [labels, setLabels] = useState([])
 
-  const getAnonymousUserData = async () => {
+  const getUserData = async () => {
     try {
       const response = await fetch(`/api/v1/admin/userData`)
       if (!response.ok) {
         throw new Error(`${response.status} (${response.statusText})`)
       }
       const body = await response.json()
-      setAnonymousUserData(body.userData)
+      setUserData(body.userData)
     } catch (error) {
       console.error(`Error in fetch: ${error}`)
     }
   }
   
-  const getAnonymousProjectData = async () => {
+  const getProjectData = async () => {
     try {
       const response = await fetch(`/api/v1/admin/projectData`)
       if (!response.ok) {
         throw new Error(`${response.status} (${response.statusText})`)
       }
       const body = await response.json()
-      setAnonymousProjectData(body.projectData)
+      setProjectData(body.projectData)
     } catch (error) {
       console.error(`Error in fetch: ${error}`)
     }
   }
 
-  const getAnonymousWoodData = async () => {
+  const getWoodData = async () => {
     try {
       const response = await fetch(`/api/v1/admin/woodData`)
       if (!response.ok) {
         throw new Error(`${response.status} (${response.statusText})`)
       }
       const body = await response.json()
-      setAnonymousWoodData(body.woodData)
+      const sortedBodyData = body.woodData?.sort((a, b) => (a.boardFeet > b.boardFeet ? -1 : 1))
+      let labelData = []
+      let valueData = []
+      for (let i=0; i<10; i++) {
+        labelData.push(sortedBodyData[i].name)
+        valueData.push(sortedBodyData[i].boardFeet)
+      }
+      setLabels(labelData)
+      setValues(valueData)
     } catch (error) {
       console.error(`Error in fetch: ${error}`)
     }
   }
 
   useEffect(() => {
-    getAnonymousUserData()
-    getAnonymousProjectData()
-    getAnonymousWoodData()
+    getUserData()
+    getProjectData()
+    getWoodData()
   }, [])
-
-  let labels = []
-  let values = []
-
-  if (anonymousWoodData.length > 0) {
-    for (let i = 0; i < 7; i++) {
-      labels.push(anonymousWoodData[i].name)
-      values.push(anonymousWoodData[i].boardFeet)
-    }
-  }
-
 
   return (
     <>
       <div>
-      <h4>Customer Metrics</h4>
-      <p>Non-Admin Users: {anonymousUserData.length}</p>
-      <p>Active projects: {anonymousProjectData.length}</p>
+      <h4>Non-Admin Users: {userData.length}</h4>
+      <h4>Active projects: {projectData.length}</h4>
       </div>
       <>
       <ChartTile
         labels={labels} 
-        values={values} 
+        values={values}
       />
       </>
     </>

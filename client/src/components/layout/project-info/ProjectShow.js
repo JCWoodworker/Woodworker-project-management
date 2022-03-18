@@ -108,10 +108,16 @@ const ProjectShow = props => {
   })
 
   totalWoodCost = totalWoodCost.toFixed(2)
+  
+  let theWordEach = null
 
   const getRetailPrice = (woodCost) => {
     const woodAndMarkup = totalWoodCost * ((props.userSettings.markup / 100) + 1)
     const retailPrice = woodAndMarkup + parseFloat(props.userSettings.laborRate * project.hours)
+    if (project.quantity > 1) {
+      theWordEach = "each"
+      return (retailPrice/project.quantity).toFixed(2)
+    }
     return retailPrice.toFixed(2)
   }
 
@@ -131,10 +137,10 @@ const ProjectShow = props => {
       <div className="woods-metrics-container">
 
         <div className="show-metrics-container">
-          <p><strong>METRICS:</strong></p>
-          <p>WOOD COST: ${totalWoodCost}</p>
-          <p>LABOR COST: {project.hours} Hours @ ${props.userSettings.laborRate}/hr</p>
-          <p>SUGGESTED SALE PRICE: ${getRetailPrice()}</p>
+          <h4><strong>METRICS:</strong></h4>
+          <p>TOTAL WOOD COST: ${totalWoodCost}</p>
+          <p>TOTAL LABOR COST: {project.hours} Hours @ ${props.userSettings.laborRate}/hr</p>
+          <p>SUGGESTED SALE PRICE: ${getRetailPrice()} {theWordEach}</p>
           <p>* When saving woods to your project your boardfoot selections will automatically be adjusted based on your wood waste setting</p>
           <p>* Suggested sale price is WOOD COST x MARKUP + LABOR COST</p>
         </div>
