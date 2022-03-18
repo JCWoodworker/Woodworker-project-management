@@ -7,11 +7,9 @@ const TopBar = ({ user }) => {
 
   const unauthenticatedListItems =
     <ul className="top-links-right">
-      <li><Link to="/" key="home" key="home" className="link-item home-link">Home</Link></li>
-      <li><Link to="/wood-info" key="wood-info" className="link-item">Wood Info</Link></li>
-      <li><Link to="/dev-info" key="dev-info" className="link-item">Dev Info</Link></li>
-      <li><Link to="/user-sessions/new" key="sign-in" className="link-item">Sign In</Link></li>
-      <li><Link to="/users/new" key="sign-up" className="link-item">Sign Up</Link></li>
+      <li><Link to="/" key="home" className="link-item home-link">Home</Link></li>
+      <li><Link to="/user-sessions/new" key="sign-in" className="link-item">Login</Link></li>
+      <li><Link to="/users/new" key="sign-up" className="link-item">Register</Link></li>
     </ul>
 
   const authenticatedListItems = [
@@ -25,17 +23,14 @@ const TopBar = ({ user }) => {
     if (user.admin) {
       loggedInLinks = 
         <ul className="logged-in-links">
-          <li><Link to="/" key="home" key="home" className="link-item home-link">Admin Home</Link></li>
+          <li><Link to="/" key="home" className="link-item home-link">Admin Home</Link></li>
           <li><Link to="/dev-info" className="logged-in link-item">Dev Info</Link></li>
         </ul>
     } else {
     loggedInLinks = 
       <ul className="logged-in-links">
-        <li><Link to="/" className="logged-in link-item">Active Projects</Link></li>
+        <li><Link to="/" className="logged-in link-item">Projects</Link></li>
         <li><Link to="/settings" className="logged-in link-item">Settings</Link></li>
-        <li><Link to="/wood-info" className="logged-in link-item">Wood Info</Link></li>
-        <li><Link to="/dev-info" className="logged-in link-item">Dev Info</Link></li>
-
       </ul>
     }  
   }

@@ -9,6 +9,8 @@ const ProjectsIndex = props => {
   const [projects, setProjects] = useState([])
   const [errors, setErrors] = useState([])
 
+  const [showNewProjectForm, setShowNewProjectForm] = useState(false)
+
   const userId = props.user.id
   const fetchProjects = async () => {
     try {
@@ -59,6 +61,40 @@ const ProjectsIndex = props => {
   const projectTiles = projects.map((project) => {
     return <ProjectTile key={project.id} project={project} user={props.user} />
   })
+
+  const toggleShowNewProjectForm = (event) => {
+    !showNewProjectForm? setShowNewProjectForm(true) : setShowNewProjectForm(false)
+  }
+  const toggleShowUserSettingsForm = (event) => {
+    !showNewProjectForm? setShowNewProjectForm(true) : setShowNewProjectForm(false)
+  }
+
+  let newProjectForm = 
+    <>
+      <button 
+        id="all-buttons"
+        onClick={toggleShowNewProjectForm}>
+        New Project
+      </button>
+      {/* <button 
+        id="all-buttons"
+        onClick={toggleShowUserSettingsForm}>
+        User Settings
+      </button> */}
+    </>
+
+  if (showNewProjectForm) {
+    newProjectForm =
+    <> 
+        <ErrorList errors={errors} />
+        <NewProjectForm 
+          postNewProject={postNewProject} 
+          userId={userId}
+          toggleShowNewProjectForm={toggleShowNewProjectForm}
+        />
+      </>
+    
+  }
   
   return (
     <div className="projects-list-container">
@@ -66,11 +102,7 @@ const ProjectsIndex = props => {
         {projectTiles}
       </div>
       <div className="projects-form-container">
-        <ErrorList errors={errors} />
-        <NewProjectForm 
-          postNewProject={postNewProject} 
-          userId={userId}
-        />
+        {newProjectForm}
       </div>
     </div>
   )

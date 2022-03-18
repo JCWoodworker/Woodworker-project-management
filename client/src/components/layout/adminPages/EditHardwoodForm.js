@@ -56,8 +56,8 @@ const EditHardwoodForm = props => {
       </label>
 
       <input 
-        className="edit-hardwood-form-submit" 
-        id="edit-hardwood-form-submit"
+        className="all-buttons" 
+        id="all-buttons"
         type="submit">
       </input>
 

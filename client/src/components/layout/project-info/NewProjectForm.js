@@ -94,10 +94,15 @@ const NewProjectForm = props => {
           />
         </label>
         <input 
-          className="project-form-submit" 
-          id="project-form-submit"
+          className="all-buttons" 
+          id="all-buttons"
           type="submit">
         </input>
+        <button 
+        id="all-buttons"
+        onClick={props.toggleShowNewProjectForm}>
+          Go Back
+      </button>
       </form>
     </>
   )

@@ -61,7 +61,7 @@ const UserSettingsForm = props => {
         </label>
         <button
           type="submit"
-          id="user-settings-submit">
+          id="all-buttons">
             Update Settings
         </button>
 

@@ -34,13 +34,13 @@ body {
 .app-container {
   color: $red-brown;
   border-radius: 0.6rem;
-  max-width: 75%;
+  max-width: 98%;
   min-width: 300px;
   margin: 0 auto;
   margin-bottom: 3rem;
   background-image: url('https://i.imgur.com/bwDuFOw.jpg');
   background-size: cover;
-  height: 820px ;
+  min-height: 820px;
   box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 30px;
 
 } 

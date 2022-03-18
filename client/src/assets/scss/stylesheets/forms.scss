@@ -37,11 +37,9 @@
 .quantity,
 .price,
 .admin-button,
-.edit-hardwood-form-submit,
 .markup,
 .laborRate,
 .woodWaste,
-.showUserSettingsFormButton,
 .hours,
 .message,
 .subject,
@@ -55,35 +53,30 @@
 #description,
 #customer,
 #quantity,
-#project-form-submit,
 #price,
 #new-hardwood-form-submit,
-#admin-button,
 #edit-hardwood-form-submit,
 #markup,
 #laborRate,
 #woodWaste,
-#user-settings-submit,
-#showUserSettingsFormButton,
 #hours,
 #message,
 #subject,
 #auth-email,
 #auth-password,
-#auth-button {
+#auth-button,
+#all-buttons {
   border-radius: 0.5rem;
   border: 2px solid $medium-beige;
   background-color: $dark-gray;
   color: $medium-beige;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  font-size: 1.1rem;
 }
 
-#project-form-submit,
 #new-hardwood-form-submit,
-#admin-button,
-#user-settings-submit,
-#showUserSettingsFormButton,
-#auth-button {
+#auth-button,
+#all-buttons {
   height: 50px;
   width: 200px;
   cursor: pointer;
@@ -95,28 +88,19 @@
 }
 
 
-#project-form-submit:link,
 #new-hardwood-form-submit:link,
-#admin-button:link,
-#user-settings-submit:link,
-#showUserSettingsFormButton:link,
-#auth-button:link {
+#auth-button:link,
+#all-buttons:link {
   color: $red-brown;
 }
-#project-form-submit:visited,
 #new-hardwood-form-submit:visited,
-#admin-button:visited,
-#user-settings-submit:visited,
-#showUserSettingsFormButton:visited,
-#auth-button:visited {
+#auth-button:visited,
+#all-buttons:visited {
   color: $red-brown;
 }
-#project-form-submit:hover,
 #new-hardwood-form-submit:hover,
-#admin-button:hover,
-#user-settings-submit:hover,
-#showUserSettingsFormButton:hover,
-#auth-button:hover {
+#auth-button:hover,
+#all-buttons:hover {
   color: $red-brown;
   background-color: $beige-transparent;
 }
