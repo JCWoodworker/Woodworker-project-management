@@ -23,8 +23,6 @@ const TopBar = ({ user }) => {
     if (user.admin) {
       loggedInLinks = 
         <ul className="logged-in-links">
-          <li><Link to="/" key="home" className="link-item home-link">Admin Home</Link></li>
-          <li><Link to="/dev-info" className="logged-in link-item">Dev Info</Link></li>
         </ul>
     } else {
     loggedInLinks = 
