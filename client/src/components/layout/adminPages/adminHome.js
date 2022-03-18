@@ -199,34 +199,34 @@ const AdminHome = props => {
 
       <div className="admin-option-buttons">
 
-        <label className="admin-button">
+        <label className="all-buttons">
           <button
             onClick={handleAddClick}
-            id="admin-button"
+            id="all-buttons"
             type="button">
               Add Wood
           </button>
         </label>
-        <label className="admin-button">
+        <label className="all-buttons">
           <button
             onClick={handleEditClick}
-            id="admin-button"
+            id="all-buttons"
             type="button">
               Edit/Delete Wood
           </button>
         </label>
-        <label className="admin-button">
+        <label className="all-buttons">
           <button
             onClick={handleMetricsClick}
-            id="admin-button"
+            id="all-buttons"
             type="button">
               Show Metrics
           </button>
         </label>
-        <label className="admin-button">
+        <label className="all-buttons">
           <button
             onClick={handleEmailClick}
-            id="admin-button"
+            id="all-buttons"
             type="button">
               Email Campaigns
           </button>
