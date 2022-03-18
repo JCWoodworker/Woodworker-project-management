@@ -6,7 +6,7 @@ import ErrorList from "../ErrorList"
 import WoodPriceTile from "./WoodPriceTile"
 import AddHardwoodForm from "./AddHardwoodForm"
 import ShowMetrics from "./ShowMetrics"
-import EmailCampaignIndex from "./emailAPI/EmailCampaignIndex"
+import EmailCampaignIndex from "./EmailCampaignIndex"
 
 const AdminHome = props => {
   const [errors, setErrors] = useState([])
