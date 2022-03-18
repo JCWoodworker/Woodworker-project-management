@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import emailjs from "emailjs-com"
-import { Formik, Field, Form } from "formik"
 
 const EmailCampaignIndex = props => {
   const [userData, setUserData] = useState(null)
@@ -12,13 +11,7 @@ const EmailCampaignIndex = props => {
         throw new Error(`${response.status} (${response.statusText})`)
       }
       const body = await response.json()
-      const emailListData = body.userData.map(user => {
-        return {
-          email: user.email,
-          isChecked: true
-        }
-      })
-      setUserData(emailListData)
+      setUserData(body.userData)
     } catch (error) {
       console.error(`Error in fetch: ${error}`)
     }
