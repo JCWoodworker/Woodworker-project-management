@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const DevInfoPage = props => {
 
@@ -15,6 +16,12 @@ const DevInfoPage = props => {
             <li>Always the go-to tech guy in every job no matter what the industry</li>
             <li>Owner/Maker at RI Local Woodworks, LLC</li>
             <li>Excited to put the creative and problem-solving halves of my brain together with a career in software development!</li>
+            <Link to='/'>
+              <button 
+                id="all-buttons">
+                Back To Projects
+              </button>
+            </Link>
         </div>
       </div>
     </div>

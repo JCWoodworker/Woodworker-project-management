@@ -6,6 +6,7 @@ const SignInForm = () => {
   const [userPayload, setUserPayload] = useState({ email: "", password: "" });
   const [shouldRedirect, setShouldRedirect] = useState(false);
   const [errors, setErrors] = useState({});
+  const [invalidSignIn, setInvalidSignIn] = useState(null)
 
   const validateInput = (payload) => {
     setErrors({});
@@ -42,6 +43,13 @@ const SignInForm = () => {
           })
         })
         if(!response.ok) {
+          if (response.status === 401) {
+            setInvalidSignIn (
+              <div className="errors">
+                <p>Invalid Credentials</p>
+              </div>
+            )
+          }
           const errorMessage = `${response.status} (${response.statusText})`
           const error = new Error(errorMessage)
           throw(error)
@@ -69,6 +77,7 @@ const SignInForm = () => {
     <div className="sign-in-form-container" onSubmit={onSubmit}>
 
       <form className="sign-in-form">
+      {invalidSignIn}
       <h1>Sign In</h1>
         <div>
           <label className="auth-email">

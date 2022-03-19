@@ -87,6 +87,18 @@ const ProjectsIndex = props => {
           User Settings
         </button>
       </Link>
+      <Link to='/wood-info'>
+        <button 
+          id="all-buttons">
+          Hardwood Info
+        </button>
+      </Link>
+      <Link to='/dev-info'>
+        <button 
+          id="all-buttons">
+          Developer Info
+        </button>
+      </Link>
     </>
 
   if (showNewProjectForm) {

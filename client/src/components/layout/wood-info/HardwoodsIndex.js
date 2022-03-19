@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 import HardwoodTile from "./HardwoodTile"
 
@@ -29,6 +30,12 @@ const HardwoodsIndex = props => {
   return (
     <div className="home-page-container hardwoods-index">
       {hardwoodTiles}
+      <Link to='/'>
+        <button 
+          id="all-buttons">
+          Back To Projects
+        </button>
+      </Link>
     </div>
   )
 }
