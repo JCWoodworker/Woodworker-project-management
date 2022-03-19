@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import UserSettingsForm from './UserSettingsForm'
 import SignInForm from "../../authentication/SignInForm"
 
@@ -18,11 +19,13 @@ const UserSettings = props => {
         handleShowFormButtonClick={handleShowFormButtonClick}
         handleUserSettingsFormSubmit={props.handleUserSettingsFormSubmit}
       />
+    
   }
+  
   let showUserSettings = <SignInForm />
   if (props.userSettings) {
     showUserSettings = 
-    <div>
+    <div className='main-user-settings'>
       <h1 className="user-settings-heading">User Settings</h1>
       <p>Your Wood Waste Percentage = {props.userSettings.woodWaste}%</p>
       <p>Your Markup Percentage = {props.userSettings.markup}%</p>
@@ -34,6 +37,12 @@ const UserSettings = props => {
       >
           Edit Settings
       </button>
+      <Link to='/'>
+        <button 
+          id="all-buttons">
+          Back To Projects
+        </button>
+      </Link>
     </div>
   }
   

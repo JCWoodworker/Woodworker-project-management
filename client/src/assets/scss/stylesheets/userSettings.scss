@@ -11,5 +11,18 @@
   width: fit-content;
   height: fit-content;
   margin: 2rem auto;
-  gap: 2rem
+}
+
+.user-settings-form-container,
+.main-user-settings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem
+}
+
+.user-settings-heading {
+  font-weight: bold;
+  margin-bottom: 1.5rem;
 }

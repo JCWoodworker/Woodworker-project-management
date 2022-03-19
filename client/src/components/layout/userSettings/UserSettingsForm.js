@@ -22,7 +22,7 @@ const UserSettingsForm = props => {
   }
   
   return (
-    <div>
+    <div className='user-settings-form-container'>
 
       <form 
         className="user-settings-form"

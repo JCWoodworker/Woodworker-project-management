@@ -1,11 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-const ProjectTile = ({ project, deleteProject }) => {
-
-  const handleButtonClick = () => {
-    deleteProject(project.id)
-  }
+const ProjectTile = ({ project }) => {
 
   return (
     <>
@@ -17,10 +13,6 @@ const ProjectTile = ({ project, deleteProject }) => {
           <p className="tile-info">Quantity: {project.quantity}</p>
         </div>
       </Link>
-        <button 
-          id="all-buttons"
-          onClick={handleButtonClick}
-        >X</button>
     </>
   )
 }

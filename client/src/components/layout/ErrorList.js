@@ -8,12 +8,12 @@ const ErrorList = props => {
       index++
       return (
         <li key={index}>
-          {field} {props.errors[field]}
+          {`${field} = required field`} 
         </li>
       )
     })
     return (
-      <div className="callout alert">
+      <div className="errors">
         <ul>{listItems}</ul>
       </div>
     )

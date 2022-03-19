@@ -113,3 +113,15 @@
   min-width: 330px;
   min-height: 250px;
 }
+
+.errors {
+  border: 3px solid red;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 0, 0, 0.07);
+  text-align: center;
+}
+.errors ul {
+  display: inline-block;
+  margin: 0;
+  padding: 1rem;
+}

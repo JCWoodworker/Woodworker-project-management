@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import ProjectTile from "./ProjectTile"
-import NewProjectForm from "./NewProjectForm"
 import translateServerErrors from "../../../services/translateServerErrors"
 import ErrorList from "../ErrorList"
+
+import NewProjectForm from "./NewProjectForm"
 
 const ProjectsIndex = props => {
   
@@ -40,6 +42,7 @@ const ProjectsIndex = props => {
       })
       if (!response.ok) {
         if (response.status === 422) {
+          const body = await response.json()
           const newErrors = translateServerErrors(body.errors)
           setErrors(newErrors)
         }
@@ -57,35 +60,12 @@ const ProjectsIndex = props => {
     }
   }
 
-  const deleteProject = async (projectId) => {    
-    try {
-      const response = await fetch(`/api/v1/projects`, {
-        method: "DELETE",
-        headers: new Headers ({
-          "Content-Type": "application/json"
-        }),
-        body: JSON.stringify({projectId: projectId})
-      })
-      if (!response.ok) {
-        const errorMessage = `${response.status} (${response.statusText})`
-        const error = new Error(errorMessage)
-        throw error
-      } else {
-        const body = await response.json()
-        debugger
-      }
-    } catch (error) {
-      console.error(`Error in DELETE: ${error.message}`)
-    }
-  }
-
   const projectTiles = projects.map((project) => {
     return (
       <ProjectTile 
         key={project.id} 
         project={project} 
         user={props.user} 
-        deleteProject={deleteProject}
       />
     )
   })
@@ -93,34 +73,32 @@ const ProjectsIndex = props => {
   const toggleShowNewProjectForm = (event) => {
     !showNewProjectForm? setShowNewProjectForm(true) : setShowNewProjectForm(false)
   }
-  const toggleShowUserSettingsForm = (event) => {
-    !showNewProjectForm? setShowNewProjectForm(true) : setShowNewProjectForm(false)
-  }
 
-  let newProjectForm = 
+  let userNavigationSection = 
     <>
       <button 
         id="all-buttons"
         onClick={toggleShowNewProjectForm}>
         New Project
       </button>
-      {/* <button 
-        id="all-buttons"
-        onClick={toggleShowUserSettingsForm}>
-        User Settings
-      </button> */}
+      <Link to='/settings'>
+        <button 
+          id="all-buttons">
+          User Settings
+        </button>
+      </Link>
     </>
 
   if (showNewProjectForm) {
-    newProjectForm =
+    userNavigationSection =
     <> 
-        <ErrorList errors={errors} />
-        <NewProjectForm 
-          postNewProject={postNewProject} 
-          userId={userId}
-          toggleShowNewProjectForm={toggleShowNewProjectForm}
-        />
-      </>
+      <ErrorList errors={errors} />
+      <NewProjectForm 
+        postNewProject={postNewProject} 
+        userId={userId}
+        toggleShowNewProjectForm={toggleShowNewProjectForm}
+      />
+    </>
   }
   
   return (
@@ -129,7 +107,7 @@ const ProjectsIndex = props => {
         {projectTiles}
       </div>
       <div className="projects-form-container">
-        {newProjectForm}
+        {userNavigationSection}
       </div>
     </div>
   )
