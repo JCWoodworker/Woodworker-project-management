@@ -1,6 +1,6 @@
 @import "./colors.scss";
 
-//PROJECT LIST AND NEW PROJECT FORM CONTAINER
+//PROJECT LIST/FORM CONTAINER
 
 .projects-list-container {
   display: flex;
@@ -100,27 +100,8 @@
   color: $dark-gray;
 }
 
-.back-button-container {
-  align-self: flex-start;
-  position: relative;
-  margin: 5rem;
-}
-
-.back-button {
-  background-color: $dark-gray-transparent-9;
-  border: 3px solid $dark-gray;
-  color: $medium-beige;
-  border-radius: 1rem;
-  padding: 0.5rem;
-  box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 50px;
-}
-
-.back-button:link {
-  color: $medium-beige;
-}
-.back-button:visited {
-  color: $medium-beige;
-}
-.back-button:hover {
-  background-color: $dark-gray-transparent;
+.bottom-links {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto
 }

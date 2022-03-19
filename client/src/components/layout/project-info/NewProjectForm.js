@@ -23,8 +23,8 @@ const NewProjectForm = props => {
       description: "",
       customer: "",
       quantity: "",
-      userId: "",
-      hours: ""
+      hours: "",
+      userId: ""
     })
   }
 
@@ -94,15 +94,14 @@ const NewProjectForm = props => {
           />
         </label>
         <input 
-          className="all-buttons" 
           id="all-buttons"
           type="submit">
         </input>
         <button 
-        id="all-buttons"
-        onClick={props.toggleShowNewProjectForm}>
-          Go Back
-      </button>
+          id="all-buttons"
+          onClick={props.toggleShowNewProjectForm}>
+            Cancel
+        </button>
       </form>
     </>
   )

@@ -169,7 +169,7 @@ const AddWoodForm = props => {
           id="add-selected-button"
           className="add-selected-button"
           onClick={handleWoodSubmit}
-          >{`Add Selected-->`}
+          >{`Add Selected ->`}
         </button>
 
       </form>

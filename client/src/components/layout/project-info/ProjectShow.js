@@ -89,6 +89,35 @@ const ProjectShow = props => {
 
   }
 
+  const deleteProject = async (projectId) => {    
+    try {
+      const response = await fetch(`/api/v1/projects`, {
+        method: "DELETE",
+        headers: new Headers ({
+          "Content-Type": "application/json"
+        }),
+        body: JSON.stringify({projectId: projectId})
+      })
+      if (!response.ok) {
+        const errorMessage = `${response.status} (${response.statusText})`
+        const error = new Error(errorMessage)
+        throw error
+      } else {
+        console.log(`Project "${project.name}" deleted!`)
+      }
+    } catch (error) {
+      console.error(`Error in DELETE: ${error.message}`)
+    }
+  }
+
+  const handleDeleteButtonClick = event => {
+    if (!confirm('Are you sure you want to delete this project??  This cannot be undone!')) {
+      event.preventDefault()
+    } else {
+      deleteProject(props.match.params.id)
+    }
+  }
+
   let totalWoodCost = 0.00
   
   const selectedWoodList = project.selectedWoods.map(wood => {
@@ -135,7 +164,6 @@ const ProjectShow = props => {
       <h3 className="project-description">{project.description}</h3>
 
       <div className="woods-metrics-container">
-
         <div className="show-metrics-container">
           <h4><strong>METRICS:</strong></h4>
           <p>TOTAL WOOD COST: ${totalWoodCost}</p>
@@ -144,11 +172,9 @@ const ProjectShow = props => {
           <p>* When saving woods to your project your boardfoot selections will automatically be adjusted based on your wood waste setting</p>
           <p>* Suggested sale price is WOOD COST x MARKUP + LABOR COST</p>
         </div>
-
         <div className="added-wood-tile-container">
           {selectedWoodList}
         </div>
-
       </div>
 
       <AddWoodForm 
@@ -158,8 +184,19 @@ const ProjectShow = props => {
         woodWastePercentage={props.userSettings.woodWaste}
       />
 
-      <div className="back-button=container">
-        <Link to='/' className="back-button">GO BACK</Link>
+      <div className="bottom-links">
+        <Link to='/'> 
+          <button id="all-buttons">
+              Back to Projects
+          </button>
+        </Link>
+        <Link to='/'> 
+          <button 
+            id="all-buttons"
+            onClick={handleDeleteButtonClick}>
+              Delete This Project
+          </button>
+        </Link>
       </div>
 
     </div>
