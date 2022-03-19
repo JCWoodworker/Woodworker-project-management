@@ -27,9 +27,9 @@ const UserSettings = props => {
     showUserSettings = 
     <div className='main-user-settings'>
       <h1 className="user-settings-heading">User Settings</h1>
-      <p>Your Wood Waste Percentage = {props.userSettings.woodWaste}%</p>
-      <p>Your Markup Percentage = {props.userSettings.markup}%</p>
-      <p>Your Labor Rate = ${props.userSettings.laborRate}/hr</p>
+      <p>Wood Waste = {props.userSettings.woodWaste}%</p>
+      <p>Retail Markup = {props.userSettings.markup}%</p>
+      <p>Labor Rate = ${props.userSettings.laborRate}/hr</p>
       <button
         id="all-buttons"
         className="all-buttons"
