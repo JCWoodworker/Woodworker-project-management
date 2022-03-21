@@ -103,7 +103,7 @@ const ProjectImageIndex = props => {
             <section >
               <div {...getRootProps()} id="all-buttons" className="dropzone-button">
                 <input {...getInputProps()} />
-                <p>Click here to upload image</p>
+                <p>Click here to add an image</p>
               </div>
             </section>
           )}
@@ -111,7 +111,7 @@ const ProjectImageIndex = props => {
 
         <p>{imageAddedToUpload}</p>
 
-        <input className="button" type="submit" value="Add Image" />
+        <input className="button" type="submit" value="Upload to Project" />
       </form>
       </div>
       
