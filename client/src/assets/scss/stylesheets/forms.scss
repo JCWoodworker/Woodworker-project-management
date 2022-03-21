@@ -15,6 +15,7 @@
   margin: 1rem auto
 }
 
+.dropzone-form,
 .new-project-form,
 .new-hardwood-form,
 .user-settings-form,
@@ -31,6 +32,7 @@
   font-weight: bold;
 }
 
+.title,
 .name,
 .description,
 .customer,
@@ -49,6 +51,7 @@
   font-size: 1.1rem;
 }
 
+#title,
 #name,
 #description,
 #customer,
@@ -125,4 +128,20 @@
   display: inline-block;
   margin: 0;
   padding: 1rem;
+}
+
+.dropzone-button {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#title {
+  height: 35px;
+}
+
+.button {
+  border-radius: 0.5rem;
 }

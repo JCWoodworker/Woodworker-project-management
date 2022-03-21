@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { withRouter } from "react-router"
 import AddWoodForm from "./AddWoodForm"
 import AddedWoodTile from "./AddedWoodTile"
+import ProjectImageIndex from "./imageUploading/projectImageIndex"
 
 const ProjectShow = props => {
   const [project, setProject] = useState ({
@@ -166,8 +167,8 @@ const ProjectShow = props => {
       <div className="woods-metrics-container">
         <div className="show-metrics-container">
           <h4><strong>METRICS:</strong></h4>
-          <p>TOTAL WOOD COST: ${totalWoodCost}</p>
-          <p>TOTAL LABOR COST: {project.hours} Hours @ ${props.userSettings.laborRate}/hr</p>
+          <p>WOOD COST: ${totalWoodCost}</p>
+          <p>LABOR: {project.hours} Hours @ ${props.userSettings.laborRate}/hr</p>
           <p>SUGGESTED SALE PRICE: ${getRetailPrice()} {theWordEach}</p>
           <p>* When saving woods to your project your boardfoot selections will automatically be adjusted based on your wood waste setting</p>
           <p>* Suggested sale price is WOOD COST x MARKUP + LABOR COST</p>
@@ -182,6 +183,10 @@ const ProjectShow = props => {
         selectedWoodArray={project.selectedWoods}
         postWoodsToProject={postWoodsToProject}
         woodWastePercentage={props.userSettings.woodWaste}
+      />
+      
+      <ProjectImageIndex
+        projectId={props.match.params.id} 
       />
 
       <div className="bottom-links">

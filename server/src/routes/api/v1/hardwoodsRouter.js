@@ -45,7 +45,6 @@ hardwoodsRouter.post('/edit', async (req, res) => {
             price: price
           })
     const serializedUpdatedHardwood = await HardwoodSerializer.getSummary(updatedHardwood)
-    debugger
     return res.status(201).json({ hardwood: serializedUpdatedHardwood})
   } catch (error) {
     if (error instanceof ValidationError) {
@@ -57,7 +56,6 @@ hardwoodsRouter.post('/edit', async (req, res) => {
 
 hardwoodsRouter.delete('/', async (req, res) => {
   const { hardwoodId } = req.body
-  debugger
   try {
     await Hardwood.query().findById(hardwoodId).delete()
     return res.status(201).json({ message: 'Successfully Deleted' })
