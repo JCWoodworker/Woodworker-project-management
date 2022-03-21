@@ -9,6 +9,7 @@ const ProjectImageIndex = props => {
     title: "",
     image: {}
   })
+  const [imageAddedToUpload, setImageAddedToUpload] = useState("no image added yet")
   
   const getProjectImages = async () => {
     try {
@@ -45,6 +46,7 @@ const ProjectImageIndex = props => {
   }
 
   const handleImageUpload = (acceptedImage) => {
+    setImageAddedToUpload("image loaded")
     setnewProjectImageData({
       ...newProjectImageData,
       image: acceptedImage[0]
@@ -73,6 +75,7 @@ const ProjectImageIndex = props => {
         ...projectImages,
         body.projectImage
       ])
+      setImageAddedToUpload("ready to add another image")
     } catch (error) {
       console.error(`Error in addProjectImage Fetch: ${error.message}`)
     }
@@ -83,27 +86,29 @@ const ProjectImageIndex = props => {
       <h1>Project Images</h1>
       
       <div className="dropzone-drop-container">
-      <form onSubmit={addProjectImage}>
-        <div>
-          <label htmlFor="title"> Title </label>
+      <form onSubmit={addProjectImage} className="dropzone-form">
+        <label htmlFor="title" className="title">Image Caption:</label>
           <input 
             id="title"
             name="title"
             value={newProjectImageData.title}
             onChange={handleInputChange}
           />
-        </div>
+        
 
         <Dropzone onDrop={handleImageUpload} >
           {({getRootProps, getInputProps}) => (
-            <section>
-              <div {...getRootProps()}>
+            <section >
+              <div {...getRootProps()} id="all-buttons" className="dropzone-button">
                 <input {...getInputProps()} />
-                <p>Drag 'n' drop or click to upload</p>
+                <p>Click here to upload image</p>
+                
               </div>
             </section>
           )}
         </Dropzone>
+
+        <p>{imageAddedToUpload}</p>
 
         <input className="button" type="submit" value="Add Image" />
       </form>
