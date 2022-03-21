@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { withRouter } from "react-router"
 import AddWoodForm from "./AddWoodForm"
 import AddedWoodTile from "./AddedWoodTile"
-import ImageUploader from "../imageUploadTesting/ImageUploader"
+import ImageUploader from "../imageUploadTesting/projectImageIndex"
 
 const ProjectShow = props => {
   const [project, setProject] = useState ({

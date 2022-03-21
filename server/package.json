@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.74",
+    "aws-sdk": "^2.1096.0",
     "axios": "^0.25.0",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.1",
@@ -60,6 +61,8 @@
     "got": "^11.8.0",
     "knex": "^0.21.12",
     "morgan": "^1.10.0",
+    "multer": "^1.4.4",
+    "multer-s3": "^2.10.0",
     "objection": "^2.2.3",
     "objection-unique": "^1.2.2",
     "passport": "^0.5.2",
