@@ -5,7 +5,7 @@ import ProjectImageTile from "./ProjectImageTile"
 
 const ProjectImageIndex = props => {
   const [projectImages, setProjectImages] = useState([])
-  const [newProjectImageData, setnewProjectImageData] = useState({
+  const [newProjectImageData, setNewProjectImageData] = useState({
     title: "",
     projectId: props.projectId, 
     image: {}
@@ -25,22 +25,21 @@ const ProjectImageIndex = props => {
     }
   }
 
+  const clearForm = () => {
+    setNewProjectImageData({
+      title: "",
+      projectId: props.projectId, 
+      image: {}
+    })
+  }
+
   useEffect(() => {
     getProjectImages()
   }, [])
   
-  const projectImageTiles = projectImages.map(image => {
-    return (
-      <ProjectImageTile
-        key={image.id}
-        image={image}
-      />
-    )
-  })
-
   const handleInputChange = (event) => {
     event.preventDefault()
-    setnewProjectImageData({
+    setNewProjectImageData({
       ...newProjectImageData,
       [event.currentTarget.name]: event.currentTarget.value
     })
@@ -48,7 +47,7 @@ const ProjectImageIndex = props => {
 
   const handleImageUpload = (acceptedImage) => {
     setImageAddedToUpload("image loaded")
-    setnewProjectImageData({
+    setNewProjectImageData({
       ...newProjectImageData,
       image: acceptedImage[0]
     })
@@ -77,11 +76,43 @@ const ProjectImageIndex = props => {
         ...projectImages,
         body.projectImage
       ])
+      clearForm()
       setImageAddedToUpload("ready to add another image")
     } catch (error) {
       console.error(`Error in addProjectImage Fetch: ${error.message}`)
     }
   }
+
+  const deleteProjectImage = async (imageIdToDelete) => {
+    try {
+      const response = await fetch("/api/v1/projectImages", {
+        method: "DELETE",
+        headers: new Headers ({
+          "Content-Type": "application/json"
+        }),
+        body: JSON.stringify({imageId: imageIdToDelete})
+      })
+      if (!response.ok) {
+        throw new Error(`${response.status} (${response.statusText})`)
+      }
+      const newProjectImageArray = projectImages.filter((image) => {
+        return image.id != imageIdToDelete
+      })
+      setProjectImages(newProjectImageArray)
+    } catch (error) {
+      console.error(`Error in addProjectImage Fetch: ${error.message}`)
+    }
+  }
+
+  const projectImageTiles = projectImages.map(image => {
+    return (
+      <ProjectImageTile
+        key={image.id}
+        image={image}
+        deleteProjectImage={deleteProjectImage}
+      />
+    )
+  })
 
   return (
     <div className="image-uploader-container">

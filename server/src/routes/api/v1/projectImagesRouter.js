@@ -32,4 +32,14 @@ projectImagesRouter.post("/", uploadImage.single("image"), async (req, res) => {
   }
 })
 
+projectImagesRouter.delete("/", async (req, res) => {
+  try {
+    const imageId = req.body.imageId
+    await ProjectImage.query().deleteById(imageId)
+    return res.status(201).json( "image deleted" )
+  } catch (error) {
+    return res.status(500).json({ errors: error })
+  }
+})
+
 export default projectImagesRouter

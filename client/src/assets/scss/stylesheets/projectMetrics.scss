@@ -49,20 +49,24 @@
   
 }
 
-#delete-persisted-wood-button {
+#delete-persisted-wood-button,
+#delete-image-button {
   color: $medium-beige;
   border-radius: 50%;
   padding: 0.18rem;
   margin-left: 1.5rem;
 }
 
-#delete-persisted-wood-button:link {
+#delete-persisted-wood-button:link,
+#delete-image-button:link {
   color: $medium-beige;
 }
-#delete-persisted-wood-button:visited {
+#delete-persisted-wood-button:visited,
+#delete-image-button:visited {
   color: $medium-beige;
 }
-#delete-persisted-wood-button:hover {
+#delete-persisted-wood-button:hover,
+#delete-image-button:hover {
   cursor: pointer;
   background-color: $medium-beige;
 }
