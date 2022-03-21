@@ -102,7 +102,6 @@ const ProjectImageIndex = props => {
               <div {...getRootProps()} id="all-buttons" className="dropzone-button">
                 <input {...getInputProps()} />
                 <p>Click here to upload image</p>
-                
               </div>
             </section>
           )}
