@@ -9,6 +9,7 @@ class Project extends Model {
     const User = require('./User')
     const Hardwood = require('./Hardwood')
     const ProjectWood = require('./ProjectWood')
+    const ProjectImage = require('./ProjectImage')
 
     return {
       user: {
@@ -40,6 +41,14 @@ class Project extends Model {
         join: {
           from: "projects.id",
           to: "projectWoods.projectId"
+        }
+      },
+      projectImages: {
+        relation: Model.HasManyRelation,
+        modelClass: ProjectImage,
+        join: {
+          from: "projects.id",
+          to: "projectImages.projectId"
         }
       }
     }

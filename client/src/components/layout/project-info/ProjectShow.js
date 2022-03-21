@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { withRouter } from "react-router"
 import AddWoodForm from "./AddWoodForm"
 import AddedWoodTile from "./AddedWoodTile"
-import ImageUploader from "../imageUploadTesting/projectImageIndex"
+import ProjectImageIndex from "./imageUploading/projectImageIndex"
 
 const ProjectShow = props => {
   const [project, setProject] = useState ({
@@ -185,7 +185,9 @@ const ProjectShow = props => {
         woodWastePercentage={props.userSettings.woodWaste}
       />
       
-      <ImageUploader />
+      <ProjectImageIndex
+        projectId={props.match.params.id} 
+      />
 
       <div className="bottom-links">
         <Link to='/'> 

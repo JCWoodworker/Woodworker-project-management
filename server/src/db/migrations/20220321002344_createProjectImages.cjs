@@ -6,13 +6,17 @@
  * @param {Knex} knex
  */
 exports.up = async (knex) => {
-  return knex.schema.createTable("projectImages", table => {
-    table.bigIncrements("id").primary()
-    table.string("title").notNullable()
-    table.string("image").notNullable()
-    
-    table.timestamp("createdAt").notNullable().defaultTo(knex.fn.now())
-    table.timestamp("updatedAt").notNullable().defaultTo(knex.fn.now())
+  return knex.schema.createTable("projectImages", t => {
+    t.bigIncrements("id").primary()
+    t.string("title").notNullable()
+    t.string("image").notNullable()
+    t.bigInteger("projectId")
+      .notNullable()
+      .unsigned()
+      .index()
+      .references("projects.id")
+    t.timestamp("createdAt").notNullable().defaultTo(knex.fn.now())
+    t.timestamp("updatedAt").notNullable().defaultTo(knex.fn.now())
   })
 }
 

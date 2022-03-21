@@ -7,13 +7,14 @@ const ProjectImageIndex = props => {
   const [projectImages, setProjectImages] = useState([])
   const [newProjectImageData, setnewProjectImageData] = useState({
     title: "",
+    projectId: props.projectId, 
     image: {}
   })
   const [imageAddedToUpload, setImageAddedToUpload] = useState("no image added yet")
   
   const getProjectImages = async () => {
     try {
-      const response = await fetch("/api/v1/projectImages")
+      const response = await fetch(`/api/v1/projectImages/${props.projectId}`)
       if (!response.ok) {
         throw new Error(`${response.status} (${response.statusText})`)
       }
@@ -57,6 +58,7 @@ const ProjectImageIndex = props => {
     event.preventDefault()
     const newProjectImageBody = new FormData()
     newProjectImageBody.append("title", newProjectImageData.title)
+    newProjectImageBody.append("projectId", newProjectImageData.projectId)
     newProjectImageBody.append("image", newProjectImageData.image)
       
     try {
