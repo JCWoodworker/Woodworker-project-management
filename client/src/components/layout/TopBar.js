@@ -26,10 +26,13 @@ const TopBar = ({ user }) => {
         </ul>
     } else {
     loggedInLinks = 
-      <ul className="logged-in-links">
-        <li><Link to="/" className="logged-in link-item">Projects</Link></li>
-        <li><Link to="/settings" className="logged-in link-item">Settings</Link></li>
-      </ul>
+      <div className="logged-in-links-top">
+        <ul className="logged-in-links">
+          <li><Link to="/" className="logged-in link-item">Projects</Link></li>
+          <li><Link to="/settings" className="logged-in link-item">Settings</Link></li>
+        </ul>
+        <SignOutButton />
+      </div>
     }  
   }
   
@@ -38,9 +41,6 @@ const TopBar = ({ user }) => {
       <div className="top-links-left">
         <SponsorTile />
         {loggedInLinks}
-      </div>
-      <div className="top-links-right">
-        {user ? authenticatedListItems : unauthenticatedListItems}
       </div>
     </div>
   )

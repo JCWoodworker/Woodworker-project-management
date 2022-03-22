@@ -64,23 +64,3 @@ ul {
 .home-link {
   align-self: left;
 }
-
-.sign-out-button {
-  display: flex;
-  color: $medium-beige;
-  border: 2px solid $medium-beige;
-  padding: 0.25rem 1rem;
-  border-radius: 0.5rem;
-}
-  .sign-out-button:link {
-    color: $medium-beige;
-  }
-  .sign-out-button:visited {
-    color: $medium-beige;
-  }
-  .sign-out-button:hover {
-    cursor: pointer;
-    color: $red-brown;
-    background-color: $beige-transparent;
-  }
-
