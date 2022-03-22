@@ -10,7 +10,11 @@ const ProjectImageIndex = props => {
     projectId: props.projectId, 
     image: {}
   })
-  const [imageAddedToUpload, setImageAddedToUpload] = useState("no image added yet")
+  const [imageAddedToUpload, setImageAddedToUpload] = useState({
+    message: "no added image",
+    added: false,
+    jsx: null
+  })
   
   const getProjectImages = async () => {
     try {
@@ -46,7 +50,10 @@ const ProjectImageIndex = props => {
   }
 
   const handleImageUpload = (acceptedImage) => {
-    setImageAddedToUpload("image loaded")
+    setImageAddedToUpload({
+      message: "image loaded",
+      added: true
+    })
     setNewProjectImageData({
       ...newProjectImageData,
       image: acceptedImage[0]
@@ -77,7 +84,11 @@ const ProjectImageIndex = props => {
         body.projectImage
       ])
       clearForm()
-      setImageAddedToUpload("ready to add another image")
+      setImageAddedToUpload({
+        message: "no added image",
+        added: false,
+        jsx: null
+      })
     } catch (error) {
       console.error(`Error in addProjectImage Fetch: ${error.message}`)
     }
@@ -114,41 +125,48 @@ const ProjectImageIndex = props => {
     )
   })
 
-  return (
-    <div className="image-uploader-container">
-      <h1>Project Images</h1>
-      
-      <div className="dropzone-drop-container">
+  if (imageAddedToUpload.added) {
+    imageAddedToUpload.jsx = 
       <form onSubmit={addProjectImage} className="dropzone-form">
-        <label htmlFor="title" className="title">Image Caption:</label>
+        <div className="label-input-submit">
+          <label htmlFor="title" className="title">Image Caption:</label>
           <input 
             id="title"
             name="title"
             value={newProjectImageData.title}
             onChange={handleInputChange}
           />
-        
-
-        <Dropzone onDrop={handleImageUpload} >
-          {({getRootProps, getInputProps}) => (
-            <section >
-              <div {...getRootProps()} id="all-buttons" className="dropzone-button">
-                <input {...getInputProps()} />
-                <p>Click here to add an image</p>
-              </div>
-            </section>
-          )}
-        </Dropzone>
-
-        <p>{imageAddedToUpload}</p>
-
-        <input className="button" type="submit" value="Upload to Project" />
+          <input 
+            className="button" 
+            type="submit" 
+            value="Upload to Project" 
+          />
+        </div>
       </form>
-      </div>
+  }
+
+  return (
+    <div className="image-uploader-container">
+      <h1>Project Images</h1>
       
+      <div className="dropzone-drop-container">
+        <div className="drop-button-and-message">
+          <Dropzone onDrop={handleImageUpload} >
+            {({getRootProps, getInputProps}) => (
+                <button {...getRootProps()} id="all-buttons" className="dropzone-button">
+                  <input {...getInputProps()} />
+                  Click here to add an image
+                </button>
+            )}
+          </Dropzone>
+          <p>{imageAddedToUpload.message}</p>
+        </div>
+        {imageAddedToUpload.jsx}
+      </div>
       <div className="dropzone-images-container">
         {projectImageTiles}
       </div>
+
     </div>
   )
 }
