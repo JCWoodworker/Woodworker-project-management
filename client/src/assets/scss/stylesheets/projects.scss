@@ -101,6 +101,8 @@
   color: $dark-gray;
 }
 
+// IMAGE UPLOAD ELEMENTS
+
 .image-uploader-container {
   display: flex;
   flex-flow: column wrap;
@@ -108,7 +110,7 @@
   align-items: center;
   margin-bottom: 2rem;
   padding: 2rem;
-  min-width:70%;
+  min-width:90%;
   background-color: $dark-gray-transparent-9;
   border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
@@ -117,15 +119,46 @@
 
 .dropzone-drop-container {
   display: flex;
-  flex-direction: column;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   border: 2px solid $medium-beige;
   height: auto;
-  width: 360px;
+  min-width: 360px;
   margin: 1rem;
-  padding: 1rem;
+  margin-bottom: 2rem;
+  padding: 0.5rem;
   border-radius: 0.5rem;
+}
+
+.drop-button-and-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropzone-button {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.dropzone-form {
+  display: flex;
+  flex-direction: row wrap;
+  align-items: center;
+  gap: 2rem;
+  color: $medium-beige;
+}
+
+.label-input-submit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem
 }
 
 .dropzone-images-container {
@@ -144,17 +177,19 @@
   align-items: center;
 }
 
-.dropzone-image:hover {
-  height: 400px;
-  width: 400px;
-}
-
 .dropzone-image {
-  height: 200px;
+  height: auto;
   width: 200px;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
   border-radius: 0.5rem;
 }
+
+.dropzone-image:hover {
+  height: auto;
+  width: 400px;
+}
+
+// "BACK TO PROJECTS" and "DELETE THIS PROJECT"
 
 .bottom-links {
   display: flex;
