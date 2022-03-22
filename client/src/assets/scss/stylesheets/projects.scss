@@ -144,9 +144,14 @@
   align-items: center;
 }
 
+.dropzone-image:hover {
+  height: 400px;
+  width: 400px;
+}
+
 .dropzone-image {
-  max-height: 200px;
-  max-width: 200px;
+  height: 200px;
+  width: 200px;
   border-radius: 0.5rem;
 }
 
