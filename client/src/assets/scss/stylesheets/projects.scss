@@ -134,7 +134,7 @@
   justify-content: center;
   align-items: center;
   flex-flow: row wrap;
-  gap: 1rem
+  gap: 2rem
 }
 
 .dropzone-image-block {
@@ -152,6 +152,7 @@
 .dropzone-image {
   height: 200px;
   width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
   border-radius: 0.5rem;
 }
 
