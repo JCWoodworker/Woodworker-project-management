@@ -48,9 +48,6 @@ projectsRouter.delete('/', async (req, res) => {
   }
 })
 
-
-
-
 projectsRouter.post('/new-project/', async (req, res) => {
   const formInput = cleanUserInput(req.body) 
   try {
@@ -91,5 +88,31 @@ projectsRouter.delete('/delete-woods', async (req, res) => {
     return res.status(500).json({ errors: error })
   }
 })
+
+projectsRouter.post('/edit-project', async (req, res) => {
+  const { name, description, customer, hours, quantity, id} = req.body
+  try {
+    debugger
+    const projectToEdit = 
+      await Project
+        .query()
+          .patchAndFetchById(
+            id, {
+              name: name,
+              description: description,
+              customer: customer,
+              hours: hours,
+              quantity: quantity
+            })
+    debugger
+    return res.status(201).json({ project: projectToEdit })
+  } catch (error) {
+    if (error instanceof ValidationError) {
+      return res.status(422).json({ errors: error.data })
+    }
+    return res.status(500).json({ errors: error })
+  }
+})
+
 
 export default projectsRouter

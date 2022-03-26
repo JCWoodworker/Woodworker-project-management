@@ -5,6 +5,7 @@ import { withRouter } from "react-router"
 import AddWoodForm from "./AddWoodForm"
 import AddedWoodTile from "./AddedWoodTile"
 import ProjectImageIndex from "./imageUploading/ProjectImageIndex"
+import ProjectSettingsForm from "./projectSettings/ProjectSettingsForm"
 
 const ProjectShow = props => {
   const [project, setProject] = useState ({
@@ -15,6 +16,7 @@ const ProjectShow = props => {
     hours: "",
     selectedWoods: []
   })
+  const [showProjectSettings, setShowProjectSettings] = useState(false)
 
   const getProject = async () => {
     try {
@@ -152,8 +154,21 @@ const ProjectShow = props => {
     return retailPrice.toFixed(2)
   }
 
-  const handleProjectSettingsButtonClick = () => {
-    alert("In the future this will link to your project settings")
+  let projectSettingsForm = null
+  const handleShowProjectSettings = () => {
+    if (showProjectSettings) {
+      setShowProjectSettings(false)
+    } else {
+      setShowProjectSettings(true)
+    }
+  }
+
+  if (showProjectSettings) {
+    projectSettingsForm = 
+      <ProjectSettingsForm 
+        project={project}
+        projectId={props.match.params.id}
+      />
   }
 
   return (
@@ -199,13 +214,12 @@ const ProjectShow = props => {
           <button id="all-buttons">
               Back to Projects
           </button>
-        </Link>
-        <Link to='/projectsettings'> 
-          <button 
-            id="all-buttons">
-              Project Settings
-          </button>
-        </Link>
+        </Link> 
+        <button 
+          id="all-buttons"
+          onClick={handleShowProjectSettings}>
+            Project Settings
+        </button>
         <Link to='/'> 
           <button 
             id="all-buttons"
@@ -214,6 +228,7 @@ const ProjectShow = props => {
           </button>
         </Link>
       </div>
+      {projectSettingsForm}
     </div>
   )
 }

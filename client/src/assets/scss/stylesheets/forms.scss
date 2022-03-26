@@ -14,7 +14,8 @@
 }
 
 .sign-in-form-container,
-.registration-form-container {
+.registration-form-container,
+.project-settings-form {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -154,3 +155,6 @@
 .sign-out {
   max-width: 100px;
 }
+
+// PROJECT SETTINGS FORM
+
