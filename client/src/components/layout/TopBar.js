@@ -17,8 +17,11 @@ const TopBar = ({ user }) => {
   if (user) {
     if (user.admin) {
       loggedInLinks = 
-        <ul className="logged-in-links">
-        </ul>
+        <>
+          <ul className="logged-in-links">
+          </ul>
+          <SignOutButton />
+        </>
     } else {
     loggedInLinks = 
       <>
