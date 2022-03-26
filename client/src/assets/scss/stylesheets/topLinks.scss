@@ -40,6 +40,7 @@ ul {
 
 .logged-in-links {
   display: flex;
+  flex-flow: row wrap;
 }
 
 .logged-in {
