@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { withRouter } from "react-router"
+
 import AddWoodForm from "./AddWoodForm"
 import AddedWoodTile from "./AddedWoodTile"
 import ProjectImageIndex from "./imageUploading/ProjectImageIndex"
@@ -151,14 +152,18 @@ const ProjectShow = props => {
     return retailPrice.toFixed(2)
   }
 
+  const handleProjectSettingsButtonClick = () => {
+    alert("In the future this will link to your project settings")
+  }
+
   return (
     <div className="project-show">
 
       <div className="project-show-headers">
         <h1 className="page-heading">{project.name}</h1>
         <div className="customer-order">
-          <p>Destination: {project.customer}</p>
-          <p>Order Quantity: {project.quantity}</p>
+          <h4>Destination: {project.customer}</h4>
+          <h4>Order Quantity: {project.quantity}</h4>
         </div>
       </div>
 
@@ -195,6 +200,12 @@ const ProjectShow = props => {
               Back to Projects
           </button>
         </Link>
+        <Link to='/projectsettings'> 
+          <button 
+            id="all-buttons">
+              Project Settings
+          </button>
+        </Link>
         <Link to='/'> 
           <button 
             id="all-buttons"
@@ -203,7 +214,6 @@ const ProjectShow = props => {
           </button>
         </Link>
       </div>
-
     </div>
   )
 }

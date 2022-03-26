@@ -76,34 +76,36 @@ const ProjectsIndex = props => {
 
   let userNavigationSection = 
     <>
-      <button 
-        id="all-buttons"
-        onClick={toggleShowNewProjectForm}>
-        New Project
-      </button>
-      <Link to='/settings'>
+      <div>
         <button 
-          id="all-buttons">
-          User Settings
+          id="all-buttons"
+          onClick={toggleShowNewProjectForm}>
+          New Project
         </button>
-      </Link>
-      <Link to='/wood-info'>
-        <button 
-          id="all-buttons">
-          Hardwood Info
-        </button>
-      </Link>
-      <Link to='/dev-info'>
-        <button 
-          id="all-buttons">
-          Developer Info
-        </button>
-      </Link>
+        <Link to='/settings'>
+          <button 
+            id="all-buttons">
+            User Settings
+          </button>
+        </Link>
+        <Link to='/wood-info'>
+          <button 
+            id="all-buttons">
+            Hardwood Info
+          </button>
+        </Link>
+        <Link to='/dev-info'>
+          <button 
+            id="all-buttons">
+            Developer Info
+          </button>
+        </Link>
+      </div>
     </>
 
   if (showNewProjectForm) {
     userNavigationSection =
-    <> 
+    <>
       <ErrorList errors={errors} />
       <NewProjectForm 
         postNewProject={postNewProject} 

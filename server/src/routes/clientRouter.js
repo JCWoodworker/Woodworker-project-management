@@ -11,7 +11,8 @@ const clientRoutes = [
   "/scraper", 
   "/wood-info", 
   "/dev-info",
-  "/settings"
+  "/settings",
+  "/projectsettings"
 ]
 router.get(clientRoutes, (req, res) => {
   res.sendFile(getClientIndexPath())

@@ -8,22 +8,15 @@ import RegistrationForm from "./registration/RegistrationForm"
 import SignInForm from "./authentication/SignInForm"
 import TopBar from "./layout/TopBar"
 import HomePage from "./layout/HomePage"
-import Weather from "./layout/Weather"
 import ProjectShow from "./layout/project-info/ProjectShow"
 import HardwoodsIndex from "./layout/wood-info/HardwoodsIndex"
 import DevInfoPage from "./layout/DevInfoPage"
 import UserSettings from "./layout/userSettings/UserSettings"
+import ProjectSettings from "./layout/project-info/ProjectSettings"
 
 const App = props => {
   const [currentUser, setCurrentUser] = useState(null)
   const [userSettings, setUserSettings] = useState(null)
-  const [forecast, setForecast] = useState({
-      city: "",
-      temp: "",
-      description: "",
-      icon: ""
-  })
-  const [success, setSuccess] = useState(false)
   
   const fetchCurrentUser = async () => {
     try {
@@ -39,48 +32,10 @@ const App = props => {
       setCurrentUser(null)
     }
   }
-  
-  const getYourLocation = () => {
-    window.navigator.geolocation.getCurrentPosition(successfulLookup, unsuccessfulLookup)
-  }
-  
-  const successfulLookup = async yourLocation => {
-    const lat = yourLocation.coords.latitude
-    const long = yourLocation.coords.longitude
-    try {
-      const response = await fetch (`/api/v1/weather/${lat}&${long}`)
-      const body = await response.json()
-      setForecast({
-        city: body.city,
-        temp: body.temp,
-        description: body.description,
-        icon: body.icon
-      })
-      setSuccess(true)
-    } catch(error) {
-      console.error(error)
-    }
-  }
-
-  const unsuccessfulLookup = () => {
-    console.log('Cannot show weather ... location may be blocked, turned off, or you may not have access to the internet')
-  }
-
-  
+    
   useEffect(() => {
     fetchCurrentUser()
-    getYourLocation()
   }, [])
-
-  let weatherHeading = 
-    <div 
-      className = "weather-block"
-      forecast={forecast} >
-      <p className="loading-weather loader">Loading Weather</p>
-      <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>  </div>
-  if (success) {
-    weatherHeading = <Weather forecast={forecast} />
-  } 
 
   const handleUserSettingsFormSubmit = async newSettings => {
     try {
@@ -119,10 +74,17 @@ const App = props => {
     }
     return <HomePage />
   }
+  const showProjectSettingsPage = () => {
+    if (currentUser) {
+      return (
+        <ProjectSettings />
+      )
+    }
+    return <HomePage />
+  }
 
   return (
     <div>
-      {weatherHeading}
       <div className="app-container">
         <Router>
           <TopBar 
@@ -146,13 +108,16 @@ const App = props => {
                 handleUserSettingsFormSubmit={handleUserSettingsFormSubmit}
               />
             </Route>
+            <Route exact path="/projectsettings">
+              {showProjectSettingsPage}
+            </Route>
           </Switch>
         </Router>
       </div>
-      <div className="footer-container"></div>
     </div>
   )
 
 }
+
 
 export default hot(App)

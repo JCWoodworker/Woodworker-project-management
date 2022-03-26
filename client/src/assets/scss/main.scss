@@ -13,7 +13,7 @@
 @import "../scss/stylesheets/popups.scss";
 @import "../scss/stylesheets/signInOutForms.scss";
 @import "../scss/stylesheets/adminPortal.scss";
-@import "../scss/stylesheets/userSettings.scss";
+@import "../scss/stylesheets/settings-user-project.scss";
 
 *,
 *::before,
@@ -28,22 +28,8 @@
 
 body {
   background-color: black;
-  font-family: 'Ubuntu', sans-serif;
-}
-
-.app-container {
-  border-radius: 0.6rem;
-  max-width: 98%;
-  min-width: 300px;
-  margin: 0 auto;
-  margin-bottom: 3rem;
   background-image: url('../../../public/WoodBackground.jpeg');
   background-size: cover;
-  min-height: 820px;
-  box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 30px;
-
-} 
-
-.footer-container {
-  margin-top: 3rem;
+  margin: 146px auto;
+  font-family: 'Ubuntu', sans-serif;
 }
