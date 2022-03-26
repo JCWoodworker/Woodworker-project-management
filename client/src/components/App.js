@@ -12,7 +12,7 @@ import ProjectShow from "./layout/project-info/ProjectShow"
 import HardwoodsIndex from "./layout/wood-info/HardwoodsIndex"
 import DevInfoPage from "./layout/DevInfoPage"
 import UserSettings from "./layout/userSettings/UserSettings"
-import ProjectSettings from "./layout/project-info/ProjectSettings"
+import ProjectSettings from "./layout/project-info/projectSettings/ProjectSettings"
 
 const App = props => {
   const [currentUser, setCurrentUser] = useState(null)
