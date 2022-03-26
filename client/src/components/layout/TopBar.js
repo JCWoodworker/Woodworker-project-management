@@ -12,11 +12,6 @@ const TopBar = ({ user }) => {
       <li><Link to="/users/new" key="sign-up" className="link-item">Register</Link></li>
     </ul>
 
-  const authenticatedListItems = [
-    <p key="sign-out">
-      <SignOutButton />
-    </p>,
-  ]
 
   let loggedInLinks = null
   if (user) {
@@ -26,10 +21,13 @@ const TopBar = ({ user }) => {
         </ul>
     } else {
     loggedInLinks = 
-      <ul className="logged-in-links">
-        <li><Link to="/" className="logged-in link-item">Projects</Link></li>
-        <li><Link to="/settings" className="logged-in link-item">Settings</Link></li>
-      </ul>
+      <>
+        <ul className="logged-in-links">
+          <li><Link to="/" className="logged-in link-item">Projects</Link></li>
+          <li><Link to="/settings" className="logged-in link-item">Settings</Link></li>
+        </ul>
+        <SignOutButton />
+      </>
     }  
   }
   
@@ -39,9 +37,8 @@ const TopBar = ({ user }) => {
         <SponsorTile />
         {loggedInLinks}
       </div>
-      <div className="top-links-right">
-        {user ? authenticatedListItems : unauthenticatedListItems}
-      </div>
+      {/* <div className="top-links-right">
+      </div> */}
     </div>
   )
 }

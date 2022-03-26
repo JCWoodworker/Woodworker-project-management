@@ -5,11 +5,11 @@
 .projects-list-container {
   display: flex;
   flex-flow: column-reverse;
-  margin: 2rem;
+  margin: 0 auto;
   padding: 0.2rem;
   justify-content: center;
   column-gap: 2rem;
-  flex-wrap: wrap;
+  width: 98%
 }
 
 .projects-index-container {
