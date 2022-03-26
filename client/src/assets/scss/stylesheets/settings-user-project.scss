@@ -1,4 +1,5 @@
-.user-settings-container {
+.user-settings-container,
+.project-settings-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -10,7 +11,7 @@
   padding: 1.5rem;
   width: fit-content;
   height: fit-content;
-  margin: 2rem auto;
+  margin: 250px auto;
 }
 
 .user-settings-form-container,

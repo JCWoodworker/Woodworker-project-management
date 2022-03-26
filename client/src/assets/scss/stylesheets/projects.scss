@@ -4,6 +4,8 @@
 
 .projects-list-container {
   display: flex;
+  flex-flow: column-reverse;
+  margin: 2rem;
   padding: 0.2rem;
   justify-content: center;
   column-gap: 2rem;
@@ -11,8 +13,10 @@
 }
 
 .projects-index-container {
-  max-height: 680px;
-  overflow-y: scroll;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 // PROJECT TILES
@@ -24,6 +28,8 @@
   background-color: $dark-gray-transparent-9;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
   color: $medium-beige;
+  width: 420px;
+  height: 200px
 }
 
 .project-name-underline {
@@ -64,13 +70,11 @@
   align-items: center;
   margin: 1rem auto;
   padding: 1.5rem;
-  border-radius: 0.5rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   color: $medium-beige;
   background-color: $beige-transparent;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
-  width: 97%;
-  height: 83%;
-  overflow-y: scroll;
 }
 
 .project-show-headers {
@@ -191,10 +195,12 @@
 
 }
 
-// "BACK TO PROJECTS" and "DELETE THIS PROJECT"
+// "BACK TO PROJECTS", "DELETE THIS PROJECT", "PROJECT SETTINGS"
 
 .bottom-links {
   display: flex;
-  flex-direction: column;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto
 }

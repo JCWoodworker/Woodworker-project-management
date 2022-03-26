@@ -8,14 +8,17 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
+  position: fixed;
+  border-bottom: 1px solid $medium-beige;
+  top: 0;
+  width: 100%
 }
 
 .top-links-right {
   display: flex;
   text-align: right;
   align-items: center;
+  
 }
 
 ul {

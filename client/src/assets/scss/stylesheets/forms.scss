@@ -1,4 +1,18 @@
-.projects-form-container,
+.projects-form-container {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background-color: $dark-gray-transparent-9;
+  color: $medium-beige;
+  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  padding: 1.5rem;
+  height: fit-content;
+  width: fit-content;
+  margin: 1rem auto
+}
+
 .sign-in-form-container,
 .registration-form-container {
   align-items: center;
