@@ -174,6 +174,28 @@ const ProjectShow = props => {
   return (
     <div className="project-show">
 
+      <div className="project-top-links">
+        <Link to='/'> 
+          <button id="all-buttons">
+              Back to Projects
+          </button>
+        </Link> 
+        <button 
+          id="all-buttons"
+          onClick={handleShowProjectSettings}>
+            Project Settings
+        </button>
+        <Link to='/'> 
+          <button 
+            id="all-buttons"
+            onClick={handleDeleteButtonClick}>
+              Delete This Project
+          </button>
+        </Link>
+      </div>
+      {projectSettingsForm}
+
+
       <div className="project-show-headers">
         <h1 className="page-heading">{project.name}</h1>
         <div className="customer-order">
@@ -209,26 +231,6 @@ const ProjectShow = props => {
         projectId={props.match.params.id} 
       />
 
-      <div className="bottom-links">
-        <Link to='/'> 
-          <button id="all-buttons">
-              Back to Projects
-          </button>
-        </Link> 
-        <button 
-          id="all-buttons"
-          onClick={handleShowProjectSettings}>
-            Project Settings
-        </button>
-        <Link to='/'> 
-          <button 
-            id="all-buttons"
-            onClick={handleDeleteButtonClick}>
-              Delete This Project
-          </button>
-        </Link>
-      </div>
-      {projectSettingsForm}
     </div>
   )
 }
