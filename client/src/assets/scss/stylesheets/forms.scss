@@ -93,7 +93,8 @@
 
 #new-hardwood-form-submit,
 #auth-button,
-#all-buttons {
+#all-buttons,
+#highlighted-button {
   height: 50px;
   width: 200px;
   cursor: pointer;
@@ -120,6 +121,12 @@
 #all-buttons:hover {
   color: $red-brown;
   background-color: $beige-transparent;
+}
+
+#highlighted-button {
+  background-color: $medium-beige;
+  color: black;
+  border-radius: 0.5rem;
 }
 
 #subject {
@@ -155,6 +162,4 @@
 .sign-out {
   max-width: 100px;
 }
-
-// PROJECT SETTINGS FORM
 

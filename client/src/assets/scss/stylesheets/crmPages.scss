@@ -1,0 +1,44 @@
+@import "./colors.scss";
+
+.crm-top-container {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background-color: $dark-gray-transparent-9;
+  color: $medium-beige;
+  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  padding:0.5rem;
+  height: auto;
+  width: fit-content;
+  max-width: 98vw;
+  margin: 2rem auto
+}
+
+.crm-top-links {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.crm-main-container,
+.crm-customers-main-container,
+.crm-projects-main-container,
+.crm-analytics-main-container {
+  display: flex;
+  flex-direction: column;
+  color: $medium-beige;
+  width:max-content;
+  margin: 1rem auto;
+  font-weight: bold;
+  text-align: center;
+  width: fit-content;
+  height: auto;
+  max-width: 98vw;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: $dark-gray-transparent-9
+}
