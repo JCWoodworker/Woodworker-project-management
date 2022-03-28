@@ -1,0 +1,14 @@
+@import "./colors.scss";
+
+.crm-container {
+  display: flex;
+  flex-direction: column;
+  color: $medium-beige;
+  width:max-content;
+  margin: 1rem auto;
+  font-weight: bold;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: $dark-gray-transparent-9
+}

@@ -6,7 +6,7 @@
  * @param {Knex} knex
  */
 exports.up = async (knex) => {
-  return knex.schema.createTable("projects", t => {
+  return knex.schema.createTable('projects', t => {
     t.bigIncrements('id')
     t.string('name').notNullable()
     t.text('description')
@@ -18,8 +18,8 @@ exports.up = async (knex) => {
       .unsigned()
       .index()
       .references('users.id')
-    t.timestamp("createdAt").notNullable().defaultTo(knex.fn.now())
-    t.timestamp("updatedAt").notNullable().defaultTo(knex.fn.now())
+    t.timestamp('createdAt').notNullable().defaultTo(knex.fn.now())
+    t.timestamp('updatedAt').notNullable().defaultTo(knex.fn.now())
   })
 }
 
