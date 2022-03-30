@@ -14,8 +14,7 @@
 
 
 Lets get started ..
-## Home Page
-[*Table of Contents*](#table-of-contents)
+## Home Page  [*Back to table of contents*](#table-of-contents)
 ![Home Page](https://i.imgur.com/Xu3dRQe.png)
 
 * You will find a sponsor logo in the top-left of the app.  Clicking it will take you to the sponsor's website.  The app can be configured to any business who wishes to sponsor a version that gets distributed among their customers.
