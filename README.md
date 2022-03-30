@@ -77,49 +77,23 @@ Lets get started ..
 - An error will pop up if you click *Add Selected* and that wood is already in your *To Be Added List*.  Click "OK" to continue adding.
 - A different error will pop up if you click *Save List To Project* and that wood has already been added to your project.  Click "OK" to continue adding.
 
-
-
-
-
-
-### User Settings:
-| Metric | Description |
+## User Settings:
+| Setting | Description |
 | --- | --- |
-| **** |  |
-| **** |  |
-| **** |  |
-  
-  
-  
-  
-  
-  ### OLD README INFO BELOW ... CURRENTLY RE-FACTORING ENTIRE README FILE (A LITTLE BIT AT A TIME)
-  
-  * The dropdown list says "Select Wood" - you can click and scroll through the available woods, or start typing in the dropdown to search for a specific wood.  Try typing "maple" or "walnut" for example.
-  * Once you've selected a wood you'll need to enter how many board-feet you need.  A board-foot is a cubic measurement and represents 12" x 12" x 1" worth of volume.  In the future there will be a board-foot calculator for users to enter the dimensions they need and see how many board-feet it really is (for example: 3' x 6" x 1' is 1.5 board-feet)  Numbers can have two decimal places with 999.99 as the highest number allowed, and 0.01 as the lowest.
+| **Wood Waste** | Wood needs to be milled down to it's final dimensions before assembly of a project.  30% is the typical percentage of wood that is lost in this process.  If you need use 1bdft of wood in your project, you really need to order 1.3bdft.  This settings auto-increases the boardfeet needed for each wood added to a project for a more accurate representation of what you'll need to purchase, |
+| **Retail Markup** | This is a percentage of markup from your total wood cost (excludes labor costs). |
+| **Labor Rate** | This is the hourly rate you charge for your services |
 
-  * Clicking "Add Selected" moves the wood and its board-feet over to the "Selected Woods To Be Added List" on the right (or below if on a mobile screen).
-  * This is sort of like a staging list before you decide to save them to the project.
-  * You can keep adding as many woods as you like, but DO NOT leave the page yet!!  You MUST click "Save List To Project" when you are ready to save the woods you added.  You can click the "x" to the left of each wood you added to remove it from the staging list
-  * The app shows your additions immediately.
-  * The wood list will now update below the gray "Add Woods" box.  Each individual wood will show the name of the wood, how many board-feet you selected, and how much that material will cost.  There is now an updated "Wood Cost" higher up the screen under the "Description" heading.
-  * Each wood tile with have a gray "x" that can be clicked to delete that wood from the project.
-  * Users cannot add the same wood twice to either the persisted database or the staging list.
-  * You can click "Go Back" at very bottom of the page or "Active Projects" in the top-left in order to go back to your list of active projects
+- User settings are universal to all of your projects, but you can adjust the *Estimated Hours* on a project to increase or decrease the price without changing these settings.
 
-7. When you click on "settings" in the top bar you'll be taken to a page to view your wood waste, labor rate, and markup.  From here you can update any or all of them, and all calculations in your project will be instantly updated.
-  - Wood waste is a percentage.  It tells the app to add that to the total boardfeet they need every time they add wood to a project.  Typical wood waste is 30%, so if they add 1 boardfoot of Maple it will persist as 1.3 boardfeet.  This is necessary because wood is milled and cut over and over when making projects, and will give a more accurate dollar output for wood cost.
-  - Labor rate is an hourly rate charged by a woodworker.  Labor cost is found by multiplying your labor rate by the estimated project hours.
-  - Markup is used to increase your wood cost before adding labor.
-  - Every user is automatically has wood waste at 30%, labor at $40, and markup at 80% when they sign up.
+## Adding Pictures To A Project
+![Add Pictures to a Project](https://i.imgur.com/Y7vdSX7.jpg)
+  
+**From here you can sign out, and sign back in under another test user to see different projects for that specific user (or sign up for yourself and start adding your projects!!)**
 
-8. There are links for "Wood Info" and "Dev Info" available whether or not a user is signed in.
+## Admin Portal
 
-9. "Wood Info" shows a list of all the available hardwoods, and hovering over one will display a popup with detailed information on that specific wood.  This feature uses the wood's name to scrape another website and retrieve that wood's information.  If the scrape is unsuccessful you'll instead see a message saying "unable to scrape wood".  Currently only Cherry and Cumaru seem to be able to get data.
 
-10. "Dev Info" has my picture, a heading, and some basic info about me.
-
-11. From here you can sign out, and sign back in under another test user to see different projects for that specific user (or sign up for yourself and start adding your projects!!)
 
 12.  You can now sign in as an admin!  The admin screen has buttons labeled
       - Add Wood
