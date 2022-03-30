@@ -47,7 +47,7 @@ Lets get started ..
 | **Top Links** | Takes you back to projects list, lets you edit this project's settings, or lets you delete this project |
 | **Main Heading** | Shows the project name, destination (either a customer name or "website/store"), and the quantity ordered |
 | **Description** | Your description of the project.  May include dimensions, woods, quotes, engravings, notes, etc... |
-| [**Metrics**](#metrics) | Auto calculations based on user settings (see METRICS table below this one for further detail) |
+| [**Metrics**](#-metrics) | Auto calculations based on user settings (see METRICS table below this one for further detail) |
 | **Added Wood Tiles** | These are individual tiles with woods you've added to your project including the boardfeet you need.  Boardfeet calculations change based on user settings.  Click the "X" on a tile to delete it from your project. |
 | **Add Wood Section** | This is where you can choose from a list of hardwoods, enter the boardfeet you need, and add them to your project |
 | **Project Images Section** | Here you can add images of your project's progress and final product.  Hovering over an image will blow it up by 2x for quick viewing. |
