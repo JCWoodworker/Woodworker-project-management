@@ -10,10 +10,16 @@ const CrmMainPage = props => {
   const [showCustomers, setShowCustomers] = useState(false)
   const [showProjects, setShowProjects] = useState(false)
   const [showAnalytics, setShowAnalytics] = useState(false)
-  const [homeButtonId, setHomeButtonId] = useState("all-buttons")
+  const [homeButtonId, setHomeButtonId] = useState("highlighted-button")
   const [customersButtonId, setCustomersButtonId] = useState("all-buttons")
   const [projectsButtonId, setProjectsButtonId] = useState("all-buttons")
   const [analyticsButtonId, setAlyticsButtonId] = useState("all-buttons")
+
+  const changeButtons = {
+    buttonId: "all-buttons",
+    showContainer: <p>Main Page</p>
+
+  }
 
   const handleHomeClick = () => {
     setShowCrmHome(true)
