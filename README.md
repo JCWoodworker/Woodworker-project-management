@@ -3,12 +3,12 @@
 ### Table of Contents:
 * [Home Page](#home-page)
 * [User Home Page](#user-home-page)
-* - [Top Links](#atop-links)
-* - [Metrics](#metrics)
-* - [Adding New Project & Adjusting User Settings](#adding-a-new-project-and-adjusting-user-settings)
-* - [Adding Wood to a Project](#adding-wood-to-a-project)
-* - [Adding Pictures to a Project](#adding-pictures-to-a-project)
-* - [CRM System](#CRM)
+  - [Top Links](#atop-links)
+  - [Metrics](#metrics)
+  - [Adding New Project & Adjusting User Settings](#adding-a-new-project-and-adjusting-user-settings)
+  - [Adding Wood to a Project](#adding-wood-to-a-project)
+  - [Adding Pictures to a Project](#adding-pictures-to-a-project)
+  - [CRM System](#CRM)
 * [Admin Portal](#admin-portal)
 * [Upcoming Features](#upcoming-features)
 
