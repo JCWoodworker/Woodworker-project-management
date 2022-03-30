@@ -1,27 +1,30 @@
-Welcome to the Woodworking Project Management App!
+# Welcome to the Woodworking Project Management App!
 
-Lets get started ...
+### Lets get started ..
 
+## Home Page
+![Home Page](https://i.imgur.com/Xu3dRQe.png)
 
+* You will find a sponsor logo in the top-left of the app.  Clicking it will take you to the sponsor's website.  The app can be configured to any business who wishes to sponsor a version that gets distributed among their customers.
+* You will also find links for "login" and "register"
 
-1.  when you reach the site for the first time you may be promted to allow your location to be used.  This is for the weather API to display your current weather in the top-left of the screen.  If you do not accept you will just see an infinite loading animation.
+![Login and Register](https://i.imgur.com/FPwOw2z.jpg)
 
-2.  The whole app is contained to one box.  Any excess information can be found by scrolling within that box.  You will never have to scroll down continuously ... everything you will need is within the main box.
-
-3.  You will find a sponsor logo in the top-left of the app.  Clicking it will take you to the sponsor's website.  The app can be configured to any business who wishes to sponsor a version that gets distributed among their customers.
-
-4.  In the top-right you will have links to "sign-in" or "sign-up".  You can use the following test usernames to see a pre-seeded list of projects, or you can sign up and start from scratch on your own:
+* You can use the following test usernames to see a pre-seeded list of projects, or you can sign up and start from scratch on your own:
   username:  user1@test.com -- password: test
   username:  user2@test.com -- password: test
   username:  user3@test.com -- password: test
 
   *** There is also an admin login:
   *** username:  admin@test.com -- password: test
-  *** (skip to step 11 for admin user information)
+  *** (skip to down this page to the admin section for more info)
 
-5.  If using a test user login you will be taken to a page to view their active projects.  There is a form on the same page that can be used to add a new project.  The only required field is "Project Name".
+* If using a test user login you will be taken to a page to view their active projects.
 
-6.  You can click on an active project to go to its "show page".  There you will see more detailed information about the project.  If you scroll down you'll find a gray box with the ability to add woods to the project:
+## User Home Page
+![User Home Page](https://i.imgur.com/BW7abJT.jpg)
+
+* You can click on an active project to go to its "show page".  There you will see more detailed information about the project.  If you scroll down you'll find a gray box with the ability to add woods to the project:
   * The dropdown list says "Select Wood" - you can click and scroll through the available woods, or start typing in the dropdown to search for a specific wood.  Try typing "maple" or "walnut" for example.
   * Once you've selected a wood you'll need to enter how many board-feet you need.  A board-foot is a cubic measurement and represents 12" x 12" x 1" worth of volume.  In the future there will be a board-foot calculator for users to enter the dimensions they need and see how many board-feet it really is (for example: 3' x 6" x 1' is 1.5 board-feet)  Numbers can have two decimal places with 999.99 as the highest number allowed, and 0.01 as the lowest.
 
