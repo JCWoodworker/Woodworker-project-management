@@ -61,6 +61,27 @@ Lets get started ..
 
 > NOTE:  Lumber retailers use "boardfeet" when selling hardwoods.  One boardfoot = 12" x 12" x 4/4.  We describe wood thickness by the quarter, so 1" = 4 quarter (4/4), 1.5" = 6 quarter (6/4), and so on.  Boardfeet is a measure of VOLUME (length x width x height) ... for example; 6" x 12" x 8/4 is also 1bdft (One Boardfoot)
 
+## Adding Wood To A Project
+![Add Wood To A Project](https://i.imgur.com/MtDDPl4.jpg)
+
+1. Choose a hardwood from the dropdown list (you may also type the name of a wood to search for it).
+2. Enter how many boardfeet you need for that specific wood in the **Bdft Needed** field.
+3. Click **Add Selected ->** to add it to the staging list labeled **To Be Added**
+4. You can keep adding woods to this staging list, and you may also delete woods by clicking the "X" next to each one.
+5. Once you are satisfied with your additions click **Save List To Project** and your woods will be added to the project!
+6. You may repeat this process whenever needed.  You cannot edit a hardwood's boardfeet once it has been added ... instead you'll just have to delete it and re-add it with your updated boardfeet.
+
+### Some notes on adding wood:
+- You'll notice that the total boardfeet needed for each wood automatically increases by the *Wood Waste* percentage you set in your *User Settings*.
+- Adding and deleting hardwoods automatically updates the data in your **Metrics** section.
+- An error will pop up if you click *Add Selected* and that wood is already in your *To Be Added List*.  Click "OK" to continue adding.
+- A different error will pop up if you click *Save List To Project* and that wood has already been added to your project.  Click "OK" to continue adding.
+
+
+
+
+
+
 ### User Settings:
 | Metric | Description |
 | --- | --- |
