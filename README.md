@@ -41,21 +41,32 @@ Lets get started ..
 
 * Under the links are all of your active projects - you can click on any one of them to go to their **Project Page**
 
-* Project Page has the following items: 
-
+### Project Page has the following items: 
 | Element | Description |
 | --- | --- |
 | **Top Links** | Takes you back to projects list, lets you edit this project's settings, or lets you delete this project |
 | **Main Heading** | Shows the project name, destination (either a customer name or "website/store"), and the quantity ordered |
 | **Description** | Your description of the project.  May include dimensions, woods, quotes, engravings, notes, etc... |
 | **Metrics** | Auto calculations based on user settings (see METRICS table below this one for further detail) |
-| **Added Wood Tiles** | These are individual tiles with woods you've added to your project including the boardfeet you need.  Boardfeet calculations change based on user settings |
+| **Added Wood Tiles** | These are individual tiles with woods you've added to your project including the boardfeet you need.  Boardfeet calculations change based on user settings.  Click the "X" on a tile to delete it from your project. |
 | **Add Wood Section** | This is where you can choose from a list of hardwoods, enter the boardfeet you need, and add them to your project |
 | **Project Images Section** | Here you can add images of your project's progress and final product |
 
+### Metrics:
+| Metric | Description |
+| --- | --- |
+| **Wood Cost** | Takes the cost of each hardwood, multiplies that by the boardfeet needed, and adds all hardwoods you've added together.  Boardfeet needed is automatically increased on each individual hardwood by the percentage you chose for *Wood Waste* in your *User Settings* |
+| **Labor** | Shows the *Estimated Hours* you entered in the *Project Settings*, and your *Labor Rate* from your *User Settings*.  Estimated Hours is an educated guess at how many hours the entire project will take to complete. |
+| **Suggested Sale Price** | ((*Wood Cost* times your *Markup*) plus (*Estimated Hours* times *Labor Rate*)) divided by the *Quantity*.  This gives you a suggested sale price for each item within the entirety of the project. |
 
+> NOTE:  Lumber retailers use "boardfeet" when selling hardwoods.  One boardfoot = 12" x 12" x 4/4.  We describe wood thickness by the quarter, so 1" = 4 quarter (4/4), 1.5" = 6 quarter (6/4), and so on.  Boardfeet is a measure of VOLUME (length x width x height) ... for example; 6" x 12" x 8/4 is also 1bdft (One Boardfoot)
 
-  
+### User Settings:
+| Metric | Description |
+| --- | --- |
+| **** |  |
+| **** |  |
+| **** |  |
   
   
   
