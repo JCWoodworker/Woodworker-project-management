@@ -1,6 +1,6 @@
 # Welcome to the Woodworking Project Management App!
 
-### Lets get started ..
+Lets get started ..
 
 ## Home Page
 ![Home Page](https://i.imgur.com/Xu3dRQe.png)
@@ -11,9 +11,12 @@
 ![Login and Register](https://i.imgur.com/FPwOw2z.jpg)
 
 * You can use the following test usernames to see a pre-seeded list of projects, or you can sign up and start from scratch on your own:
-  username:  user1@test.com -- password: test
-  username:  user2@test.com -- password: test
-  username:  user3@test.com -- password: test
+
+  | username | password |
+  | --- | --- |
+  | user1@test.com | test |
+  | user2@test.com | test |
+  | user3@test.com | test |
 
   *** There is also an admin login:
   *** username:  admin@test.com -- password: test
