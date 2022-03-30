@@ -15,8 +15,6 @@
 
 Lets get started ..
 ## Home Page  
-[*Back to table of contents*](#table-of-contents)
-
 ![Home Page](https://i.imgur.com/Xu3dRQe.png)
 
 * You will find a sponsor logo in the top-left of the app.  Clicking it will take you to the sponsor's website.  The app can be configured to any business who wishes to sponsor a version that gets distributed among their customers.
@@ -42,9 +40,9 @@ Lets get started ..
 
 * After loggin in you will be taken to the **User Home Page**
 
-## User Home Page
 [*Back to table of contents*](#table-of-contents)
 
+## User Home Page
 ![User Home Page](https://i.imgur.com/BW7abJT.jpg)
 ### Here's what you'll see:
 | Element | Description |
@@ -57,8 +55,9 @@ Lets get started ..
 | **Add Wood Section** | This is where you can choose from a list of hardwoods, enter the boardfeet you need, and add them to your project |
 | **Project Images Section** | Here you can add images of your project's progress and final product.  Hovering over an image will blow it up by 2x for quick viewing. |
 
-### Top Links:
 [*Back to table of contents*](#table-of-contents)
+
+### Top Links:
 
 | User Home Page Links | Description |
 | --- | --- |
@@ -68,8 +67,10 @@ Lets get started ..
 | **Developer Info** | Links to page with info on the developer ... that's me!! |
 
 * Under the links are all of your active projects - you can click on any one of them to go to their **Project Page**
-### Metrics:
+
 [*Back to table of contents*](#table-of-contents)
+
+### Metrics:
 
 | Metric | Description |
 | --- | --- |
@@ -79,14 +80,11 @@ Lets get started ..
 
 > NOTE:  Lumber retailers use "boardfeet" when selling hardwoods.  One boardfoot = 12" x 12" x 4/4.  We describe wood thickness by the quarter, so 1" = 4 quarter (4/4), 1.5" = 6 quarter (6/4), and so on.  Boardfeet is a measure of VOLUME (length x width x height) ... for example; 6" x 12" x 8/4 is also 1bdft (One Boardfoot)
 
+[*Back to table of contents*](#table-of-contents)
+
 ## Adding a new Project and Adjusting User Settings
-[*Back to table of contents*](#table-of-contents)
-
 ![Add Project, Adjust User Settings](https://i.imgur.com/6UPaVX5.jpg)
-
-## New Project Form Elements:
-[*Back to table of contents*](#table-of-contents)
-
+### New Project Form Elements:
 | Element | Required? | Description |
 | --- | --- | --- |
 | **Name** | Y | Give your project a name |
@@ -95,9 +93,9 @@ Lets get started ..
 | **Quantity** | N | How many of this particular item need to be made |
 | **Estimated Hours** | Y | The total hours you estimate it will take to complete this project (for total quantity of items, not per item) |
 
-## User Settings:
 [*Back to table of contents*](#table-of-contents)
 
+## User Settings:
 | Setting | Default| Description |
 | --- | --- | --- |
 | **Wood Waste** | 30% | Wood needs to be milled down to it's final dimensions before assembly of a project.  30% is the typical percentage of wood that is lost in this process.  If you need 1bdft of a particular wood in your project, you really need to order 1.3bdft.  This setting auto-increases the boardfeet needed for each wood you've already added to a project for a more accurate representation of what you'll need to purchase. |
@@ -106,9 +104,9 @@ Lets get started ..
 
 - User settings are universal to all of your projects, but you can adjust the *Estimated Hours* on a project to increase or decrease the price without changing these settings.
 
-## Adding Wood To A Project
 [*Back to table of contents*](#table-of-contents)
 
+## Adding Wood To A Project
 ![Add Wood To A Project](https://i.imgur.com/MtDDPl4.jpg)
 
 1. Choose a hardwood from the dropdown list (you may also type the name of a wood to search for it).
@@ -124,20 +122,19 @@ Lets get started ..
 - An error will pop up if you click *Add Selected* and that wood is already in your *To Be Added List*.  Click "OK" to continue adding.
 - A different error will pop up if you click *Save List To Project* and that wood has already been added to your project.  Click "OK" to continue adding.
 
-
-## Adding Pictures To A Project
 [*Back to table of contents*](#table-of-contents)
 
+## Adding Pictures To A Project
 ![Add Pictures to a Project](https://i.imgur.com/Y7vdSX7.jpg)
 
+[*Back to table of contents*](#table-of-contents)
 ## CRM
+
 [*Back to table of contents*](#table-of-contents)
 
 ### Customer Relationship Management Coming Soon!!!
 
 ## Admin Portal
-[*Back to table of contents*](#table-of-contents)
-
 ![Admin Portal](https://i.imgur.com/PhXytCV.jpg)
 
 ### Admin Features
@@ -149,10 +146,9 @@ Lets get started ..
 | **Show Metrics** | This shows the total number of users, total number of active projects between all users, and a bar graph of the top 10 woods that users have added to their projects.  Each bar is a cumulative total of all boardfeet for that specific wood from every active project. |
 | **Email Campaign** | Admin can type a subject and message to send.  Clicking "Send Message" will send their message to EVERY users' email. |
 
-  
+[*Back to table of contents*](#table-of-contents)
 
 ## UPCOMING FEATURES!!!
-[*Back to table of contents*](#table-of-contents)
 
 * Admin will be able to do the following:
   - View a weekly chart of woods added to projects to better predict ordering needs (rather than the current chart which shows woods added from all-time data)
@@ -166,4 +162,5 @@ Lets get started ..
  - Send correspondence via email, text, or phone call
  - View analytics such as: all active projects, sales funnel (how many customers in each stage), total sales closed and delivered, revenue, profits, costs, and much much more!!
 
+[*Back to table of contents*](#table-of-contents)
 
