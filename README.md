@@ -10,13 +10,12 @@
 * [Adding Pictures to a Project](#adding-pictures-to-a-project)
 * [CRM System](#CRM)
 * [Admin Portal](#admin-portal)
-
-
-
+* [Upcoming Features](#upcoming-features)
 
 
 Lets get started ..
 ## Home Page
+[*Table of Contents*](#table-of-contents)
 ![Home Page](https://i.imgur.com/Xu3dRQe.png)
 
 * You will find a sponsor logo in the top-left of the app.  Clicking it will take you to the sponsor's website.  The app can be configured to any business who wishes to sponsor a version that gets distributed among their customers.
@@ -43,6 +42,7 @@ Lets get started ..
 * After loggin in you will be taken to the **User Home Page**
 
 ## User Home Page
+[*Table of Contents*](#table-of-contents)
 ![User Home Page](https://i.imgur.com/BW7abJT.jpg)
 ### Here's what you'll see:
 | Element | Description |
@@ -56,6 +56,7 @@ Lets get started ..
 | **Project Images Section** | Here you can add images of your project's progress and final product.  Hovering over an image will blow it up by 2x for quick viewing. |
 
 ### Top Links:
+[*Table of Contents*](#table-of-contents)
 | User Home Page Links | Description |
 | --- | --- |
 | **New Project** | Opens a form for adding a new project |
@@ -65,6 +66,7 @@ Lets get started ..
 
 * Under the links are all of your active projects - you can click on any one of them to go to their **Project Page**
 ### Metrics:
+[*Table of Contents*](#table-of-contents)
 | Metric | Description |
 | --- | --- |
 | **Wood Cost** | Takes the cost of each hardwood, multiplies that by the boardfeet needed, and adds all hardwoods you've added together.  Boardfeet needed is automatically increased on each individual hardwood by the percentage you chose for *Wood Waste* in your *User Settings* |
@@ -74,9 +76,11 @@ Lets get started ..
 > NOTE:  Lumber retailers use "boardfeet" when selling hardwoods.  One boardfoot = 12" x 12" x 4/4.  We describe wood thickness by the quarter, so 1" = 4 quarter (4/4), 1.5" = 6 quarter (6/4), and so on.  Boardfeet is a measure of VOLUME (length x width x height) ... for example; 6" x 12" x 8/4 is also 1bdft (One Boardfoot)
 
 ## Adding a new Project and Adjusting User Settings
+[*Table of Contents*](#table-of-contents)
 ![Add Project, Adjust User Settings](https://i.imgur.com/6UPaVX5.jpg)
 
 ## New Project Form Elements:
+[*Table of Contents*](#table-of-contents)
 | Element | Required? | Description |
 | --- | --- | --- |
 | **Name** | Y | Give your project a name |
@@ -86,6 +90,7 @@ Lets get started ..
 | **Estimated Hours** | Y | The total hours you estimate it will take to complete this project (for total quantity of items, not per item) |
 
 ## User Settings:
+[*Table of Contents*](#table-of-contents)
 | Setting | Default| Description |
 | --- | --- | --- |
 | **Wood Waste** | 30% | Wood needs to be milled down to it's final dimensions before assembly of a project.  30% is the typical percentage of wood that is lost in this process.  If you need 1bdft of a particular wood in your project, you really need to order 1.3bdft.  This setting auto-increases the boardfeet needed for each wood you've already added to a project for a more accurate representation of what you'll need to purchase. |
@@ -95,6 +100,7 @@ Lets get started ..
 - User settings are universal to all of your projects, but you can adjust the *Estimated Hours* on a project to increase or decrease the price without changing these settings.
 
 ## Adding Wood To A Project
+[*Table of Contents*](#table-of-contents)
 ![Add Wood To A Project](https://i.imgur.com/MtDDPl4.jpg)
 
 1. Choose a hardwood from the dropdown list (you may also type the name of a wood to search for it).
@@ -112,12 +118,15 @@ Lets get started ..
 
 
 ## Adding Pictures To A Project
+[*Table of Contents*](#table-of-contents)
 ![Add Pictures to a Project](https://i.imgur.com/Y7vdSX7.jpg)
 
 ## CRM
+[*Table of Contents*](#table-of-contents)
 ### Customer Relationship Management Coming Soon!!!
 
 ## Admin Portal
+[*Table of Contents*](#table-of-contents)
 ![Admin Portal](https://i.imgur.com/PhXytCV.jpg)
 
 ### Admin Features
@@ -132,6 +141,7 @@ Lets get started ..
   
 
 ## UPCOMING FEATURES!!!
+[*Table of Contents*](#table-of-contents)
 * Admin will be able to do the following:
   - View a weekly chart of woods added to projects to better predict ordering needs (rather than the current chart which shows woods added from all-time data)
   - Instant message with online users who have questions
