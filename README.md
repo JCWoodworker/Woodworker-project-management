@@ -18,16 +18,19 @@ Lets get started ..
   | user2@test.com | test |
   | user3@test.com | test |
 
-  *** There is also an admin login:
-    | username | password |
+  * There is also an admin login:
+
+  | username | password |
   | --- | --- |
   | admin@test.com | test |
-  *** (skip to down this page to the admin section for more info)
 
-* If using a test user login you will be taken to a page to view their active projects.
+  * (skip to down this page to the admin section for more info)
+
+* After loggin in you will be taken to a page to the **User Home Page**
 
 ## User Home Page
 ![User Home Page](https://i.imgur.com/BW7abJT.jpg)
+### Here's what you'll see:
 
 | User Home Page Links | Description |
 | --- | --- |
@@ -36,7 +39,30 @@ Lets get started ..
 | **Hardwood Info** | Links to page with information on all different hardwoods |
 | **Developer Info** | Links to page with info on the developer ... that's me!! |
 
-* You can click on an active project to go to its "show page".  There you will see more detailed information about the project.
+* Under the links are all of your active projects - you can click on any one of them to go to their **Project Page**
+
+* Project Page has the following items: 
+
+| Element | Description |
+| --- | --- |
+| **Top Links** | Takes you back to projects list, lets you edit this project's settings, or lets you delete this project |
+| **Main Heading** | Shows the project name, destination (either a customer name or "website/store"), and the quantity ordered |
+| **Description** | Your description of the project.  May include dimensions, woods, quotes, engravings, notes, etc... |
+| **Metrics** | Auto calculations based on user settings (see METRICS table below this one for further detail) |
+| **Added Wood Tiles** | These are individual tiles with woods you've added to your project including the boardfeet you need.  Boardfeet calculations change based on user settings |
+| **Add Wood Section** | This is where you can choose from a list of hardwoods, enter the boardfeet you need, and add them to your project |
+| **Project Images Section** | Here you can add images of your project's progress and final product |
+
+
+
+  
+  
+  
+  
+  
+  
+  ### OLD README INFO BELOW ... CURRENTLY RE-FACTORING ENTIRE README FILE (A LITTLE BIT AT A TIME)
+  
   * The dropdown list says "Select Wood" - you can click and scroll through the available woods, or start typing in the dropdown to search for a specific wood.  Try typing "maple" or "walnut" for example.
   * Once you've selected a wood you'll need to enter how many board-feet you need.  A board-foot is a cubic measurement and represents 12" x 12" x 1" worth of volume.  In the future there will be a board-foot calculator for users to enter the dimensions they need and see how many board-feet it really is (for example: 3' x 6" x 1' is 1.5 board-feet)  Numbers can have two decimal places with 999.99 as the highest number allowed, and 0.01 as the lowest.
 
