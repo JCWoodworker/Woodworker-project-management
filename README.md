@@ -117,8 +117,17 @@ Lets get started ..
 
   
 
-UPCOMING FEATURES!!!
+## UPCOMING FEATURES!!!
 * Admin will be able to do the following:
   - View a weekly chart of woods added to projects to better predict ordering needs (rather than the current chart which shows woods added from all-time data)
   - Instant message with online users who have questions
   - Post messages to their users' home page.  This can be used for updated on pricing, deliveries, events, etc...  It will also save money since emailing lots of users constantly will be costly.
+* Users are going to get a FULL CRM SYSTEM!!!
+ - Add new customers
+ - Track their status from prospect, to negotiating, to commissioned, to delivered
+ - Track a customer's total sales
+ - Add notes and to-do's to each customer's profile
+ - Send correspondence via email, text, or phone call
+ - View analytics such as: all active projects, sales funnel (how many customers in each stage), total sales closed and delivered, revenue, profits, costs, and much much more!!
+
+
