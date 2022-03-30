@@ -1,7 +1,21 @@
 # Welcome to the Woodworking Project Management App!
 
-Lets get started ..
+### Table of Contents:
+[Home Page](#-home-page)
+[User Home Page](#-user-home-page)
+  * [Top Links](#-atop-links)
+  * [Metrics](#-metrics)
+  * [Adding New Project & Adjusting User Settings](#-adding-a-new-project-and-adjusting-user-settings)
+  * [Adding Wood to a Project](#-adding-wood-to-a-project)
+  * [Adding Pictures to a Project](#-adding-pictures-to-a-project)
+  * [CRM System](#-CRM)
+  * [Admin Portal](#-admin-portal)
 
+
+
+
+
+Lets get started ..
 ## Home Page
 ![Home Page](https://i.imgur.com/Xu3dRQe.png)
 
@@ -65,12 +79,11 @@ Lets get started ..
 ## New Project Form Elements:
 | Element | Required? | Description |
 | --- | --- | --- |
-| **** |  |
-| **** |  |
-| **** |  |
-| **** |  |
-| **** |  |
-| **** |  |
+| **Name** | Y | Give your project a name |
+| **Description** | N | Description can include things like dimensions, features, engraving quotes, additions, woods to use, etc. |
+| **Destination** | N | This is either a customr's name or a place like your retail store or web store |
+| **Quantity** | N | How many of this particular item need to be made |
+| **Estimated Hours** | Y | The total hours you estimate it will take to complete this project (for total quantity of items, not per item) |
 
 ## User Settings:
 | Setting | Default| Description |
@@ -100,8 +113,9 @@ Lets get started ..
 
 ## Adding Pictures To A Project
 ![Add Pictures to a Project](https://i.imgur.com/Y7vdSX7.jpg)
-  
-**From here you can sign out, and sign back in under another test user to see different projects for that specific user (or sign up for yourself and start adding your projects!!)**
+
+## CRM
+### Customer Relationship Management Coming Soon!!!
 
 ## Admin Portal
 ![Admin Portal](https://i.imgur.com/PhXytCV.jpg)
