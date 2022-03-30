@@ -8,7 +8,7 @@ Lets get started ..
 * You will find a sponsor logo in the top-left of the app.  Clicking it will take you to the sponsor's website.  The app can be configured to any business who wishes to sponsor a version that gets distributed among their customers.
 * You will also find links for "login" and "register"
 
-![Login and Register](https://i.imgur.com/6UPaVX5.jpg)
+![Login and Register](https://i.imgur.com/FPwOw2z.jpg)
 
 * You can use the following test usernames to see a pre-seeded list of projects, or you can sign up and start from scratch on your own:
 
@@ -59,6 +59,28 @@ Lets get started ..
 
 > NOTE:  Lumber retailers use "boardfeet" when selling hardwoods.  One boardfoot = 12" x 12" x 4/4.  We describe wood thickness by the quarter, so 1" = 4 quarter (4/4), 1.5" = 6 quarter (6/4), and so on.  Boardfeet is a measure of VOLUME (length x width x height) ... for example; 6" x 12" x 8/4 is also 1bdft (One Boardfoot)
 
+## Adding a new Project and Adjusting User Settings
+![Add Project, Adjust User Settings](https://i.imgur.com/6UPaVX5.jpg)
+
+## New Project Form Elements:
+| Element | Required? | Description |
+| --- | --- | --- |
+| **** |  |
+| **** |  |
+| **** |  |
+| **** |  |
+| **** |  |
+| **** |  |
+
+## User Settings:
+| Setting | Description |
+| --- | --- |
+| **Wood Waste** | Wood needs to be milled down to it's final dimensions before assembly of a project.  30% is the typical percentage of wood that is lost in this process.  If you need use 1bdft of wood in your project, you really need to order 1.3bdft.  This settings auto-increases the boardfeet needed for each wood added to a project for a more accurate representation of what you'll need to purchase, |
+| **Retail Markup** | This is a percentage of markup from your total wood cost (excludes labor costs). |
+| **Labor Rate** | This is the hourly rate you charge for your services |
+
+- User settings are universal to all of your projects, but you can adjust the *Estimated Hours* on a project to increase or decrease the price without changing these settings.
+
 ## Adding Wood To A Project
 ![Add Wood To A Project](https://i.imgur.com/MtDDPl4.jpg)
 
@@ -75,14 +97,6 @@ Lets get started ..
 - An error will pop up if you click *Add Selected* and that wood is already in your *To Be Added List*.  Click "OK" to continue adding.
 - A different error will pop up if you click *Save List To Project* and that wood has already been added to your project.  Click "OK" to continue adding.
 
-## User Settings:
-| Setting | Description |
-| --- | --- |
-| **Wood Waste** | Wood needs to be milled down to it's final dimensions before assembly of a project.  30% is the typical percentage of wood that is lost in this process.  If you need use 1bdft of wood in your project, you really need to order 1.3bdft.  This settings auto-increases the boardfeet needed for each wood added to a project for a more accurate representation of what you'll need to purchase, |
-| **Retail Markup** | This is a percentage of markup from your total wood cost (excludes labor costs). |
-| **Labor Rate** | This is the hourly rate you charge for your services |
-
-- User settings are universal to all of your projects, but you can adjust the *Estimated Hours* on a project to increase or decrease the price without changing these settings.
 
 ## Adding Pictures To A Project
 ![Add Pictures to a Project](https://i.imgur.com/Y7vdSX7.jpg)
