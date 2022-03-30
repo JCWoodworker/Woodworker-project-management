@@ -73,11 +73,11 @@ Lets get started ..
 | **** |  |
 
 ## User Settings:
-| Setting | Description |
-| --- | --- |
-| **Wood Waste** | Wood needs to be milled down to it's final dimensions before assembly of a project.  30% is the typical percentage of wood that is lost in this process.  If you need use 1bdft of wood in your project, you really need to order 1.3bdft.  This settings auto-increases the boardfeet needed for each wood added to a project for a more accurate representation of what you'll need to purchase, |
-| **Retail Markup** | This is a percentage of markup from your total wood cost (excludes labor costs). |
-| **Labor Rate** | This is the hourly rate you charge for your services |
+| Setting | Default| Description |
+| --- | --- | --- |
+| **Wood Waste** | 30% | Wood needs to be milled down to it's final dimensions before assembly of a project.  30% is the typical percentage of wood that is lost in this process.  If you need use 1bdft of wood in your project, you really need to order 1.3bdft.  This settings auto-increases the boardfeet needed for each wood added to a project for a more accurate representation of what you'll need to purchase, |
+| **Retail Markup** | 75% | This is a percentage of markup from your total wood cost (excludes labor costs). |
+| **Labor Rate** | $35/hr | This is the hourly rate you charge for your services |
 
 - User settings are universal to all of your projects, but you can adjust the *Estimated Hours* on a project to increase or decrease the price without changing these settings.
 
