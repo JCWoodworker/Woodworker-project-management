@@ -3,6 +3,20 @@ Welcome to the Woodworking Project Management App!
 Lets get started ...
 
 
+[Imgur](https://i.imgur.com/Xu3dRQe.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 1.  when you reach the site for the first time you may be promted to allow your location to be used.  This is for the weather API to display your current weather in the top-left of the screen.  If you do not accept you will just see an infinite loading animation.
 
