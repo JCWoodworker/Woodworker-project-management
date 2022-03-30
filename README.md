@@ -130,9 +130,14 @@ Lets get started ..
 [*Back to table of contents*](#table-of-contents)
 ## CRM
 
-[*Back to table of contents*](#table-of-contents)
-
 ### Customer Relationship Management Coming Soon!!!
+### Here are some sketches and pics so far:
+![Main Page](https://i.imgur.com/3TQk0nq.jpg)
+![Customer Page](https://i.imgur.com/hbK1kIP.jpg)
+![New CRM Link](https://i.imgur.com/ewPvrbu.png)
+![CRM Home Page](https://i.imgur.com/WXZlgdz.jpg)
+
+[*Back to table of contents*](#table-of-contents)
 
 ## Admin Portal
 ![Admin Portal](https://i.imgur.com/PhXytCV.jpg)
