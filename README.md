@@ -19,7 +19,9 @@ Lets get started ..
   | user3@test.com | test |
 
   *** There is also an admin login:
-  *** username:  admin@test.com -- password: test
+    | username | password |
+  | --- | --- |
+  | admin@test.com | test |
   *** (skip to down this page to the admin section for more info)
 
 * If using a test user login you will be taken to a page to view their active projects.
@@ -27,7 +29,14 @@ Lets get started ..
 ## User Home Page
 ![User Home Page](https://i.imgur.com/BW7abJT.jpg)
 
-* You can click on an active project to go to its "show page".  There you will see more detailed information about the project.  If you scroll down you'll find a gray box with the ability to add woods to the project:
+| User Home Page Links | Description |
+| --- | --- |
+| **New Project** | Opens a form for adding a new project |
+| **User Settings** | Links to "User Settings" page |
+| **Hardwood Info** | Links to page with information on all different hardwoods |
+| **Developer Info** | Links to page with info on the developer ... that's me!! |
+
+* You can click on an active project to go to its "show page".  There you will see more detailed information about the project.
   * The dropdown list says "Select Wood" - you can click and scroll through the available woods, or start typing in the dropdown to search for a specific wood.  Try typing "maple" or "walnut" for example.
   * Once you've selected a wood you'll need to enter how many board-feet you need.  A board-foot is a cubic measurement and represents 12" x 12" x 1" worth of volume.  In the future there will be a board-foot calculator for users to enter the dimensions they need and see how many board-feet it really is (for example: 3' x 6" x 1' is 1.5 board-feet)  Numbers can have two decimal places with 999.99 as the highest number allowed, and 0.01 as the lowest.
 
