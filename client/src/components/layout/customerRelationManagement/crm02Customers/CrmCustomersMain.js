@@ -3,11 +3,14 @@ import translateServerErrors from '../../../../services/translateServerErrors'
 
 import AddCustomerForm from './AddCustomerForm'
 import CustomerTile from './CustomerTile'
+import CustomerShow from './CustomerShow'
 
 const CrmCustomerMain = props => {
   const [errors, setErrors] = useState([])
   const [customers, setCustomers] = useState([])
   const [showCustomerFormSection, setShowCustomerFormSection] = useState(false)
+  const [showCustomerShow, setShowCustomerShow] = useState(false)
+  const [selectedCustomerId, setSelectedCustomerId] = useState(null)
 
   const fetchCustomers = async () => {
     try {
@@ -26,7 +29,7 @@ const CrmCustomerMain = props => {
     fetchCustomers()
   }, [])
 
-  const postNewCustomer = async (newCustomerData) => {
+  const postNewCustomer = async newCustomerData => {
     try {
       const response = await fetch("/api/v1/customers", { 
         method: 'POST',
@@ -46,6 +49,7 @@ const CrmCustomerMain = props => {
         const body = await response.json()
         setErrors([])
         setCustomers([...customers, body.newCustomer])
+        setShowCustomerFormSection(false)
         return true
         }
       } catch (error) {
@@ -53,11 +57,40 @@ const CrmCustomerMain = props => {
       }
   }
 
+  const deleteCustomer = async (customerId) => {    
+    try {
+      const response = await fetch(`/api/v1/customers`, {
+        method: "DELETE",
+        headers: new Headers ({
+          "Content-Type": "application/json"
+        }),
+        body: JSON.stringify({customerId: customerId})
+      })
+      if (!response.ok) {
+        const errorMessage = `${response.status} (${response.statusText})`
+        const error = new Error(errorMessage)
+        throw error
+      } else {
+        const newCustomerList = customers.filter(customer => {
+          return customer.id != customerId
+        })
+        setCustomers(newCustomerList)
+        console.log(`Customer deleted!`)
+      }
+    } catch (error) {
+      console.error(`Error in DELETE: ${error.message}`)
+    }
+  }
+
   const customerList = customers.map(customer => {
     return (
-    <CustomerTile 
-      customer={customer}
-    />
+      <CustomerTile
+        key={customer.id}
+        customer={customer}
+        deleteCustomer={deleteCustomer}
+        setShowCustomerShow={setShowCustomerShow}
+        setSelectedCustomerId={setSelectedCustomerId}
+      />
     )
   })
 
@@ -68,26 +101,26 @@ const CrmCustomerMain = props => {
   }
 
   if (showCustomerFormSection) {
-    formSymbol = "Hide Form"
+    formSymbol = "-"
     addCustomerFormSection = 
     <AddCustomerForm
       postNewCustomer={postNewCustomer}
       user={props.user}
       errors={errors}
       setErrors={setErrors}
+      setShowCustomerFormSection={setShowCustomerFormSection}
     />
-
   }
 
-  return (
+  let customerSection = (
     <>
       <h1>Customers</h1>
-      <button id="all-buttons" className='add-customer-button' onClick={showForm}>{formSymbol}</button>
       {addCustomerFormSection}
       <div className='customer-table'>
         <table>
           <thead>
             <tr>
+              <th><button id="add-customer" onClick={showForm}>{formSymbol}</button></th>
               <th>First Name</th>
               <th>Last Name</th>
               <th>Email</th>
@@ -100,6 +133,26 @@ const CrmCustomerMain = props => {
           </tbody>
         </table>
       </div>
+    </>
+  )
+
+  if (showCustomerShow) {
+    const clickedCustomer = customers.filter(customer => customer.id == selectedCustomerId)
+    customerSection = (
+      <>
+        <CustomerShow
+          clickedCustomer={clickedCustomer}
+          setShowCustomerShow={setShowCustomerShow}
+        />
+      </>
+    )
+  }
+
+
+
+  return (
+    <>
+      {customerSection}
     </>
   )
 

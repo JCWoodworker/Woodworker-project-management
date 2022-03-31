@@ -20,11 +20,21 @@ crmCustomersRouter.post('/', async (req, res) => {
   try {
     const newCustomer = await Customer.query().insertAndFetch(formInput)
     const serializedCustomer = await CustomerSerializer.getSummary(newCustomer)
-    return res.status(201).json({ serializedCustomer })
+    return res.status(201).json({ newCustomer: serializedCustomer })
   } catch (error) {
     if (error instanceof ValidationError) {
       return res.status(422).json({ errors: error.data })
     }
+    return res.status(500).json({ error: error })
+  }
+})
+
+crmCustomersRouter.delete('/', async (req, res) => {
+  const id = parseInt(req.body.customerId)
+  try {
+    const CustomerToDelete = await Customer.query().findById(id).delete()
+    return res.status(201).json({ message: "Successfully Deleted" })
+  } catch (error) {
     return res.status(500).json({ error: error })
   }
 })

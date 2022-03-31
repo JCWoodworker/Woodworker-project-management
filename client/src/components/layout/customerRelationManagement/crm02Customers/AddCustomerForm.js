@@ -37,7 +37,10 @@ const AddCustomerForm = props => {
   }
 
   const handleCancel = event => {
-    return <Redirect push to='/crm' />
+    event.preventDefault()
+    props.setShowCustomerFormSection(false)
+    clearForm()
+    
   }
 
   return (
