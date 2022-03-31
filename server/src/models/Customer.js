@@ -1,4 +1,3 @@
-const { EmailJSResponseStatus } = require("emailjs-com")
 const Model = require("./Model.js")
 
 class Customer extends Model {
@@ -33,10 +32,11 @@ class Customer extends Model {
   static get jsonSchema() {
     return {
       type: 'object',
-      required: ['firstName', 'email', 'userId', 'prospect', 'negotiation', 'commissioned', 'cancelled', 'delivered'],
+      required: ['firstName', 'email', 'userId'],
       properties: {
         firstName: { type: 'string' },
         email: { type: 'string' },
+        cellPhone: { type: 'string', minLength: 10, maxLength: 10 },
         userId: { type: ['integer', 'string'] },
         prospect: { type: 'boolean' },
         negotiation: { type: 'boolean' },

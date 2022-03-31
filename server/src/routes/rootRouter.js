@@ -8,6 +8,7 @@ import hardwoodsRouter from "./api/v1/hardwoodsRouter.js"
 import scraperRouter from "./api/v1/scraperRouter.js"
 import adminRouter from "./api/v1/adminRouter.js"
 import projectImagesRouter from "./api/v1/projectImagesRouter.js"
+import crmCustomersRouter from "./api/v1/crmCustomerRouter.js"
 
 const rootRouter = new express.Router()
 
@@ -20,5 +21,6 @@ rootRouter.use("/api/v1/hardwoods", hardwoodsRouter)
 rootRouter.use("/api/v1/scraper", scraperRouter)
 rootRouter.use("/api/v1/admin", adminRouter)
 rootRouter.use("/api/v1/projectImages", projectImagesRouter)
+rootRouter.use("/api/v1/customers", crmCustomersRouter)
 
 export default rootRouter

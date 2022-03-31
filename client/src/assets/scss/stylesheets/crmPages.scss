@@ -30,15 +30,54 @@
 .crm-analytics-main-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   color: $medium-beige;
-  width:max-content;
+  width: min-content;
   margin: 1rem auto;
   font-weight: bold;
-  text-align: center;
   width: fit-content;
   height: auto;
   max-width: 98vw;
   padding: 2rem;
   border-radius: 0.5rem;
   background-color: $dark-gray-transparent-9
+}
+// CUSTOMER PAGE
+
+.new-customer-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background-color: $dark-gray-transparent-9;
+  color: $medium-beige;
+  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  padding: 1.5rem;
+  height: fit-content;
+  max-width: 98vw;
+  margin: 1rem auto;
+}
+
+#firstName,
+#lastName,
+#email,
+#cellPhone {
+  min-width: 275px;
+}
+
+table, th, td {
+  border: 2px solid $medium-beige;
+  color: $dark-gray-transparent-9;
+}
+
+.customer-table {
+  max-height: 600px;
+  width: 60vw;
+  overflow-y: scroll;
+  border-radius: 0.5rem;
+}
+
+th {
+  font-size: 1.25rem;
 }

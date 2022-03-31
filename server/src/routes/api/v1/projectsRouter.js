@@ -92,7 +92,6 @@ projectsRouter.delete('/delete-woods', async (req, res) => {
 projectsRouter.post('/edit-project', async (req, res) => {
   const { name, description, customer, hours, quantity, id} = req.body
   try {
-    debugger
     const projectToEdit = 
       await Project
         .query()
@@ -104,7 +103,6 @@ projectsRouter.post('/edit-project', async (req, res) => {
               hours: hours,
               quantity: quantity
             })
-    debugger
     return res.status(201).json({ project: projectToEdit })
   } catch (error) {
     if (error instanceof ValidationError) {

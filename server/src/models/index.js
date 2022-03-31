@@ -3,5 +3,6 @@ const User = require("./User.js")
 const Hardwood = require("./Hardwood.js")
 const ProjectWood = require("./ProjectWood.js")
 const ProjectImage = require("./ProjectImage")
+const Customer = require("./Customer.js")
 
-module.exports = { Hardwood, Project, User, ProjectWood, ProjectImage }
+module.exports = { Hardwood, Project, User, ProjectWood, ProjectImage, Customer }

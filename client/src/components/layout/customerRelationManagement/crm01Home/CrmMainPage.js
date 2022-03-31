@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react"
 import { Link } from 'react-router-dom'
 
-import CrmCustomerMain from "./crm02Customers/CrmCustomersMain"
-import CrmProjectsMain from "./crm03Projects/CrmProjectsMain"
-import CrmAnalyticsMain from "./crm04Analytics/CrmAnalyticsMain"
+import CrmCustomerMain from "../crm02Customers/CrmCustomersMain"
+import CrmProjectsMain from "../crm03Projects/CrmProjectsMain"
+import CrmAnalyticsMain from "../crm04Analytics/CrmAnalyticsMain"
 
 const CrmMainPage = props => {
   const [showCrmHome, setShowCrmHome] = useState(true)
@@ -98,7 +98,7 @@ const CrmMainPage = props => {
         </>
       )
     } else if (showCustomers) {
-      mainContainer = <CrmCustomerMain />
+      mainContainer = <CrmCustomerMain user={props.user} />
     } else if (showProjects) {
       mainContainer = <CrmProjectsMain />
     } else if (showAnalytics) {
