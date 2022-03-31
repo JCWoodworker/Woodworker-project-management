@@ -134,8 +134,11 @@ Lets get started ..
 ### Here are some sketches and pics so far:
 ![Main Page](https://i.imgur.com/3TQk0nq.jpg)
 ![Customer Page](https://i.imgur.com/hbK1kIP.jpg)
+### Links are up and and working:
 ![New CRM Link](https://i.imgur.com/ewPvrbu.png)
 ![CRM Home Page](https://i.imgur.com/WXZlgdz.jpg)
+### 03/30 - User can add/delete customers:
+![Customer CRUD added!!](https://i.imgur.com/95Pkh0h.png)
 
 [*Back to table of contents*](#table-of-contents)
 
