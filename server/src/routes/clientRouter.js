@@ -12,7 +12,7 @@ const clientRoutes = [
   "/wood-info", 
   "/dev-info",
   "/settings",
-  "/projectsettings"
+  "/crm"
 ]
 router.get(clientRoutes, (req, res) => {
   res.sendFile(getClientIndexPath())

@@ -58,6 +58,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.2",
     "express-handlebars": "^5.2.0",
+    "formik": "^2.2.9",
     "got": "^11.8.0",
     "knex": "^0.21.12",
     "morgan": "^1.10.0",

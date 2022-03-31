@@ -38,10 +38,8 @@ const NewProjectForm = props => {
     }
   }
 
-  if (newProjectId) {
-    if (shouldRedirect) {
-      return <Redirect push to={`/projects/${newProjectId}`} />
-    }
+  if (shouldRedirect) {
+    return <Redirect push to={`/projects/${newProjectId}`} />
   }
 
   return (

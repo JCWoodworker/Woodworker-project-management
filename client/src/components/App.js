@@ -13,6 +13,7 @@ import HardwoodsIndex from "./layout/wood-info/HardwoodsIndex"
 import DevInfoPage from "./layout/DevInfoPage"
 import UserSettings from "./layout/userSettings/UserSettings"
 import ProjectSettings from "./layout/project-info/projectSettings/ProjectSettings"
+import CrmMainPage from "./layout/customerRelationManagement/crm01Home/CrmMainPage"
 
 const App = props => {
   const [currentUser, setCurrentUser] = useState(null)
@@ -110,6 +111,11 @@ const App = props => {
             </Route>
             <Route exact path="/projectsettings">
               {showProjectSettingsPage}
+            </Route>
+            <Route exact path="/crm">
+              <CrmMainPage
+                user={currentUser}
+              />
             </Route>
           </Switch>
         </Router>

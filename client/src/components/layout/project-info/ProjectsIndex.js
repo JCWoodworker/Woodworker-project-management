@@ -100,6 +100,12 @@ const ProjectsIndex = props => {
             Developer Info
           </button>
         </Link>
+        <Link to='/crm'> 
+          <button 
+            id="all-buttons">
+              CRM
+          </button>
+        </Link>
       </div>
     </>
 

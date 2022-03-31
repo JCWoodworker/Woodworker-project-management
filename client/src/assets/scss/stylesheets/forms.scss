@@ -60,7 +60,11 @@
 .message,
 .subject,
 .auth-email,
-.auth-password {
+.auth-password,
+.firstName,
+.lastName,
+.email,
+.cellPhone {
   color: $medium-beige;
   font-size: 1.1rem;
 }
@@ -82,7 +86,14 @@
 #auth-email,
 #auth-password,
 #auth-button,
-#all-buttons {
+#all-buttons,
+#firstName,
+#lastName,
+#email,
+#cellPhone,
+#prospect,
+#negotiating,
+#commissioned {
   border-radius: 0.5rem;
   border: 2px solid $medium-beige;
   background-color: $dark-gray;
@@ -93,7 +104,8 @@
 
 #new-hardwood-form-submit,
 #auth-button,
-#all-buttons {
+#all-buttons,
+#highlighted-button {
   height: 50px;
   width: 200px;
   cursor: pointer;
@@ -122,6 +134,12 @@
   background-color: $beige-transparent;
 }
 
+#highlighted-button {
+  background-color: $medium-beige;
+  color: black;
+  border-radius: 0.5rem;
+}
+
 #subject {
   min-width: 330px
 }
@@ -136,6 +154,7 @@
   border-radius: 0.5rem;
   background-color: rgba(255, 0, 0, 0.07);
   text-align: center;
+  padding: 1rem
 }
 .errors ul,
 .errors p {
@@ -155,6 +174,4 @@
 .sign-out {
   max-width: 100px;
 }
-
-// PROJECT SETTINGS FORM
 
