@@ -1,8 +1,11 @@
+// UNFINISHED
+// WILL BE USED IN FUTURE TO DRY UP CODE WITHIN COMPONENTS
+
 class FetchRequests {
   constructor ( html )
 
 
-  getRequest = async (html) => {
+  getRequest = async () => {
     try {
       const response = await fetch(`${html}`)
       if (!response) {

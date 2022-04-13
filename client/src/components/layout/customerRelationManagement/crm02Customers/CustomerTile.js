@@ -11,7 +11,10 @@ const CustomerTile = ({ customer, deleteCustomer, setShowCustomerShow, setSelect
   customer.delivered? customerStatus = "Delivered" : null
   customer.cancelled? customerStatus = "Cancelled" : null
 
-  const convertedPhone = convertPhoneNumber(customer.cellPhone)
+  let convertedPhone = null
+  if (customer.cellPhone) {
+    convertedPhone = convertPhoneNumber(customer.cellPhone)
+  }
 
   const handleDeleteCustomer = event => {
     event.preventDefault()

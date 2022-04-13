@@ -8,7 +8,10 @@ const CustomerShow = ({ clickedCustomer, setShowCustomerShow }) => {
     setShowCustomerShow(false)
   }
   
-  const convertedPhone = convertPhoneNumber(clickedCustomer[0].cellPhone)
+  let convertedPhone = null
+  if (clickedCustomer[0].cellPhone) {
+    convertPhoneNumber(clickedCustomer[0].cellPhone)
+  }
 
   return (
     <>
