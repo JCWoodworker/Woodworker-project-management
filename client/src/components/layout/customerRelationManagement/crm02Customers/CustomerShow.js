@@ -18,6 +18,9 @@ const CustomerShow = ({ clickedCustomer, setShowCustomerShow }) => {
       <h2>{clickedCustomer[0].firstName} {clickedCustomer[0].lastName}</h2>
       <p>{clickedCustomer[0].email}</p>
       <p>Cell: {convertedPhone}</p>
+      <p>Coming Soon:</p>
+      <p>Customer Notes</p>
+      <p>Customer To-Do's</p>
       <button id="all-buttons" onClick={handleGoBackClick}>Back to Customers</button>
     </>
   )
