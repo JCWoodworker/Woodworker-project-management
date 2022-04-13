@@ -8,9 +8,9 @@ const CustomerShow = ({ clickedCustomer, setShowCustomerShow }) => {
     setShowCustomerShow(false)
   }
   
-  let convertedPhone = null
+  let convertedPhone = "N/A"
   if (clickedCustomer[0].cellPhone) {
-    convertPhoneNumber(clickedCustomer[0].cellPhone)
+    convertedPhone = convertPhoneNumber(clickedCustomer[0].cellPhone)
   }
 
   return (

@@ -11,7 +11,7 @@ const CustomerTile = ({ customer, deleteCustomer, setShowCustomerShow, setSelect
   customer.delivered? customerStatus = "Delivered" : null
   customer.cancelled? customerStatus = "Cancelled" : null
 
-  let convertedPhone = null
+  let convertedPhone = "N/A"
   if (customer.cellPhone) {
     convertedPhone = convertPhoneNumber(customer.cellPhone)
   }
@@ -32,10 +32,10 @@ const CustomerTile = ({ customer, deleteCustomer, setShowCustomerShow, setSelect
   }
 
   return (
-    <tr onClick={handleClickCustomer}>
+    <tr>
       <td><button id="delete-customer" onClick={handleDeleteCustomer}>X</button></td>
-      <td id="clickable-row">{customer.firstName}</td>
-      <td id="clickable-row">{customer.lastName}</td>
+      <td onClick={handleClickCustomer} id="clickable-row">{customer.firstName}</td>
+      <td onClick={handleClickCustomer} id="clickable-row">{customer.lastName}</td>
       <td id="clickable-row">{customer.email}</td>
       <td id="clickable-row">{convertedPhone}</td>
       <td id="clickable-row">{customerStatus}</td>
