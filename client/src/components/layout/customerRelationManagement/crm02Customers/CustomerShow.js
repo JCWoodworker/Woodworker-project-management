@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { convertPhoneNumber } from '../../../../services/convertPhoneNumber'
 
+import CustomerNotesIndex from './CustomerNotesIndex'
+
 const CustomerShow = ({ clickedCustomer, setShowCustomerShow }) => {
   
   const handleGoBackClick = event => {
@@ -18,9 +20,7 @@ const CustomerShow = ({ clickedCustomer, setShowCustomerShow }) => {
       <h2>{clickedCustomer[0].firstName} {clickedCustomer[0].lastName}</h2>
       <p>{clickedCustomer[0].email}</p>
       <p>Cell: {convertedPhone}</p>
-      <p>Coming Soon:</p>
-      <p>Customer Notes</p>
-      <p>Customer To-Do's</p>
+      <CustomerNotesIndex />
       <button id="all-buttons" onClick={handleGoBackClick}>Back to Customers</button>
     </>
   )

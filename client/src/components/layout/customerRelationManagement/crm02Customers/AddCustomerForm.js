@@ -74,7 +74,7 @@ const AddCustomerForm = props => {
           value={newCustomer.email}
         />
       </label>
-      <label htmlFor="cellPhone" className="cellPhone">Cell Phone
+      <label htmlFor="cellPhone" className="cellPhone">Cell Phone (10 digits, no dashes)
         <input
           type="text"
           id="cellPhone"

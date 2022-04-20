@@ -62,16 +62,18 @@
 #firstName,
 #lastName,
 #email,
-#cellPhone {
+#cellPhone,
+#addNote,
+#note {
   min-width: 275px;
 }
 
-.customer-table {
+.customer-table,
+.customer-notes-table {
   max-height: 600px;
-  max-width: 98%;
+  width: 98%;
   overflow-y: scroll;
   border-radius: 0.5rem;
-
 }
 
 table, th, td {
@@ -85,35 +87,38 @@ th {
   cursor: pointer
 }
 
-
 #add-customer,
-#delete-customer {
+#delete-customer,
+#add-note {
   border-radius: 0.5rem;
   border: 1px solid $medium-beige;
   height: 30px;
-  width: 30px;
+  min-width: 30px;
   cursor: pointer;
-  color: $medium-beige;
   background-color: $dark-gray;
   font-weight: bolder;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
 }
-#add-customer {
+#add-customer,
+#add-note {
   color: green
 }
 #delete-customer {
-  color: red
+  color: gray; 
 }
 #add-customer:link,
-#delete-customer:link {
+#delete-customer:link,
+#add-note:link {
   color: $red-brown;
 }
 #add-customer:visited,
-#delete-customer:visited {
+#delete-customer:visited,
+#add-note:visited {
   color: $red-brown;
 }
 #add-customer:hover,
-#delete-customer:hover {
+#delete-customer:hover,
+#add-note:hover {
   color: $red-brown;
   background-color: $beige-transparent;
 }

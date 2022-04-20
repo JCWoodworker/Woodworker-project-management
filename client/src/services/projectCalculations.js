@@ -1,9 +1,4 @@
 export const calculations = (woodCost, projectHours, labor, markup) => {
-  // console.log(`*********`)
-  // console.log(`LABOR: ${labor}`)
-  // console.log(`MARKUP: ${markup}%`)
-  // console.log(`WOOD COST: $${woodCost}`)
-  // console.log(`PROJECT HOURS: ${projectHours}`)
 
   woodCost = parseInt(woodCost)
   projectHours = parseInt(projectHours)
@@ -13,12 +8,6 @@ export const calculations = (woodCost, projectHours, labor, markup) => {
   const projectCost = parseInt(laborCost + woodCost).toFixed(2)
   const retailPrice = parseInt(projectCost) * markup
   
-  // console.log(`*********`)
-  // console.log(`LABOR: $${laborCost}`)
-  // console.log(`TOTAL PROJECT COST: $${projectCost}`)
-  // console.log(`RETAIL PRICE: $${retailPrice}`)
-  // console.log(`*********`)
-
   return retailPrice
 
 }
