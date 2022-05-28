@@ -44,7 +44,7 @@ const CustomerNotesIndex = props => {
         <thead>
           <tr>
             <td><button id="add-note" onClick={addNote}>{formSymbol}</button></td>
-            <td id="note">Note</td>
+            <td id="note">Prospect Notes</td>
           </tr>
         </thead>
         <tbody>

@@ -8,6 +8,7 @@ class Customer extends Model {
   static get relationMappings() {
     const User = require("./User")
     const Project = require("./Project")
+    const CustomerNote = require("./CustomerNote.js")
 
     return {
       user: {
@@ -24,6 +25,14 @@ class Customer extends Model {
         join: {
           from: 'customers.projectId',
           to: 'projects.id'
+        }
+      },
+      customerNotes: {
+        relation: Model.HasManyRelation,
+        modelClass: CustomerNote,
+        join: {
+          from: "customers.id",
+          to: "customerNotes.customerId"
         }
       }
     }
