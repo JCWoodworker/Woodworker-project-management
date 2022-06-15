@@ -1,11 +1,10 @@
 import React from "react"
 
-const CustomerNoteTile = props => {
-
+const CustomerNoteTile = ({ note }) => {
   return (
     <tr>
-      <td>{props.note.dateAndTime}</td>
-      <td>{props.note.newNote}</td>
+      <td>{note.date}</td>
+      <td>{note.note}</td>
     </tr>
   )
 }

@@ -11,14 +11,14 @@ const CustomerNoteForm = props => {
   }
 
   const [addedNote, setAddedNote] = useState ({
-    newNote: "",
-    dateAndTime: getCurrentDateAndTime()
+    note: "",
+    date: getCurrentDateAndTime()
   })
 
   const clearForm = () => {
     setAddedNote({
-      newNote: "",
-      dateAndTime: ""
+      note: "",
+      date: ""
     })
   }
 
@@ -28,6 +28,7 @@ const CustomerNoteForm = props => {
       [event.currentTarget.name]: event.currentTarget.value
     })
   }
+  console.log(addedNote)
   
   const submitNoteForm = () => {
     props.saveNewNote(addedNote)
@@ -47,7 +48,7 @@ const CustomerNoteForm = props => {
         <textarea 
           rows="3"
           cols="30"
-          name="newNote"
+          name="note"
           onChange={handleInputChange}
         />
       </td>
