@@ -25,10 +25,11 @@ class CustomerNote extends Model {
   static get jsonSchema() {
     return {
       type: 'object',
-      required: ['date', 'note'],
+      required: ['date', 'note', 'customerId'],
       properties: {
         date: { type: "string" },
         note: { type: "string" },
+        note: { type: ["integer", "string"] },
         customerId: { type: ['integer', 'string'] }
       }
     }  
