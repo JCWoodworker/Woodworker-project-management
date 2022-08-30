@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import ErrorList from '../..//ErrorList'
 
 const CustomerNoteForm = props => {
   const getCurrentDateAndTime = () => {
@@ -12,13 +13,15 @@ const CustomerNoteForm = props => {
 
   const [addedNote, setAddedNote] = useState ({
     note: "",
-    date: getCurrentDateAndTime()
+    date: getCurrentDateAndTime(),
+    customerId: props.customerId
   })
 
   const clearForm = () => {
     setAddedNote({
       note: "",
-      date: ""
+      date: "",
+      customerId: props.customerId
     })
   }
 
@@ -31,6 +34,7 @@ const CustomerNoteForm = props => {
   console.log(addedNote)
   
   const submitNoteForm = () => {
+    props.postNewNote(addedNote)
     props.saveNewNote(addedNote)
     clearForm()
     props.setShowNoteForm(false)
@@ -39,6 +43,7 @@ const CustomerNoteForm = props => {
   return (
     <tr>
       <td>  
+        <ErrorList errors={props.errors} />
         <input 
           type="submit"
           onClick={submitNoteForm}
