@@ -38,7 +38,8 @@ projectsRouter.get('/:id', async (req, res) => {
 projectsRouter.delete('/', async (req, res) => {
   const id = parseInt(req.body.projectId)
   try {
-    const projectToDelete = await Project.query().findById(id).delete()
+    debugger
+    await Project.query().deleteById(id)
     return res.status(201).json({ message: "Successfully Deleted" })
   } catch (error) {
     return res.status(500).json({ error: error })
