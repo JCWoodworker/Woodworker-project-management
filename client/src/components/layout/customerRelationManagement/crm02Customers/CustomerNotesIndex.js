@@ -25,7 +25,6 @@ const CustomerNotesIndex = props => {
 
   const postNewNote = async newNoteData => {
     try {
-      debugger
       const response = await fetch(`/api/v1/customerNotes`, {
         method: "POST",
         headers: new Headers ({
@@ -33,7 +32,6 @@ const CustomerNotesIndex = props => {
         }),
         body: JSON.stringify(newNoteData)
       })
-      debugger
       if (!response.ok) {
         if (response.status === 422) {
           const body = await response.json()
@@ -47,7 +45,6 @@ const CustomerNotesIndex = props => {
       } else {
         const body = await response.json()
         setErrors([])
-        debugger
         // setNotes([...notes, body.note])
         return true
       }
