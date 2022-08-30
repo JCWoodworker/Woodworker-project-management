@@ -22,7 +22,7 @@ projectImagesRouter.post("/", uploadImage.single("image"), async (req, res) => {
     const { body } = req
     const data = {
       ...body,
-      image: req.file.location,f
+      image: req.file.location
     }
     const projectImage = await ProjectImage.query().insertAndFetch(data)
     return res.status(201).json({ projectImage })
