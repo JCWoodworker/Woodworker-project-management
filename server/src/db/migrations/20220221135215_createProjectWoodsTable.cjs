@@ -15,6 +15,7 @@ exports.up = async (knex) => {
       .unsigned()
       .index()
       .references("hardwoods.id")
+      .onDelete('CASCADE')
     t
       .bigInteger("projectId")
       .notNullable()

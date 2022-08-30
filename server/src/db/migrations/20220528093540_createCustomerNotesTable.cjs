@@ -15,6 +15,7 @@ exports.up = async (knex) => {
       .unsigned()
       .index()
       .references("customers.id")
+      .onDelete('CASCADE')
     t.timestamp("createdAt").notNullable().defaultTo(knex.fn.now())
     t.timestamp("updatedAt").notNullable().defaultTo(knex.fn.now())
   })
