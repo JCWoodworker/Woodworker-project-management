@@ -1,4 +1,4 @@
-const Model = require("./Model")
+const Model = require("./Model.js")
 
 class ProjectImage extends Model {
   static get tableName() {
@@ -6,7 +6,7 @@ class ProjectImage extends Model {
   }
 
   static get relationMappings() {
-    const Project = require("./Project")
+    const Project = require("./Project.js")
 
     return {
       project: {

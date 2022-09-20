@@ -6,8 +6,8 @@ class ProjectWood extends Model {
   }
 
   static get relationMappings() {
-    const Project = require("./Project")
-    const Hardwood = require("./Hardwood")
+    const Project = require("./Project.js")
+    const Hardwood = require("./Hardwood.js")
 
     return {
       project: {

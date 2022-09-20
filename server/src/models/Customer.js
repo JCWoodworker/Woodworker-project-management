@@ -6,8 +6,8 @@ class Customer extends Model {
   }
 
   static get relationMappings() {
-    const User = require("./User")
-    const Project = require("./Project")
+    const User = require("./User.js")
+    const Project = require("./Project.js")
     const CustomerNote = require("./CustomerNote.js")
 
     return {

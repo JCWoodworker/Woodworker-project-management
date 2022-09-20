@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const Bcrypt = require("bcrypt");
 const unique = require("objection-unique");
-const Model = require("./Model");
+const Model = require("./Model.js");
 
 const saltRounds = 10;
 
@@ -24,7 +24,7 @@ class User extends uniqueFunc(Model) {
   }
 
   static get relationMappings() {
-    const Project = require('./Project')
+    const Project = require('./Project.js')
     
     return {
       projects: {
