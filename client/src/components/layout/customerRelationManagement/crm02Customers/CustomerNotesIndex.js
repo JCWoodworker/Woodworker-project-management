@@ -43,9 +43,9 @@ const CustomerNotesIndex = props => {
         const error = new Error(errorMessage)
         throw error
       } else {
-        const body = await response.json()
-        setErrors([])
-        // setNotes([...notes, body.note])
+        const resBody = await response.json()
+        debugger
+        setNotes([...notes, resBody.note])
         return true
       }
     } catch (error) {
@@ -57,19 +57,17 @@ const CustomerNotesIndex = props => {
     fetchCustomerNotes()
   }, [])
 
-  const saveNewNote = (noteToSave) => {
-
-    setNotes([
-      ...notes,
-      noteToSave
-    ])
-  }
-  const notesList = notes.map(note => {
-    return (
-      <CustomerNoteTile 
-        note={note}
-      />
-    )
+  const notesList = notes
+    .sort((a, b) => {
+      return a.createdAt < b.createdAt ? 1 : -1
+    })
+    .map(note => {
+      return (
+        <CustomerNoteTile
+          key={note.id} 
+          note={note}
+        />
+      )
   })
 
   const addNote = () => {
@@ -81,7 +79,6 @@ const CustomerNotesIndex = props => {
   if (showNoteForm) {
     notesForm = 
       <CustomerNoteForm
-        saveNewNote={saveNewNote}
         setShowNoteForm={setShowNoteForm}
         postNewNote={postNewNote}
         customerId={customerId}

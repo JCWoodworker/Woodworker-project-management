@@ -2,17 +2,14 @@ import React, { useState, useEffect } from "react"
 import { Link } from 'react-router-dom'
 
 import CrmCustomerMain from "../crm02Customers/CrmCustomersMain"
-import CrmProjectsMain from "../crm03Projects/CrmProjectsMain"
 import CrmAnalyticsMain from "../crm04Analytics/CrmAnalyticsMain"
 
 const CrmMainPage = props => {
   const [showCrmHome, setShowCrmHome] = useState(true)
   const [showCustomers, setShowCustomers] = useState(false)
-  const [showProjects, setShowProjects] = useState(false)
   const [showAnalytics, setShowAnalytics] = useState(false)
   const [homeButtonId, setHomeButtonId] = useState("highlighted-button")
   const [customersButtonId, setCustomersButtonId] = useState("all-buttons")
-  const [projectsButtonId, setProjectsButtonId] = useState("all-buttons")
   const [analyticsButtonId, setAlyticsButtonId] = useState("all-buttons")
 
   const changeButtons = {
@@ -24,41 +21,25 @@ const CrmMainPage = props => {
   const handleHomeClick = () => {
     setShowCrmHome(true)
     setShowCustomers(false)
-    setShowProjects(false)
     setShowAnalytics(false)
     setHomeButtonId("highlighted-button")
     setCustomersButtonId("all-buttons")
-    setProjectsButtonId("all-buttons")
     setAlyticsButtonId("all-buttons")
   }
   const handleCustomersClick = () => {
     setShowCrmHome(false)
     setShowCustomers(true)
-    setShowProjects(false)
     setShowAnalytics(false)
     setHomeButtonId("all-buttons")
     setCustomersButtonId("highlighted-button")
-    setProjectsButtonId("all-buttons")
-    setAlyticsButtonId("all-buttons")
-  }
-  const handleProjectsClick = () => {
-    setShowCrmHome(false)
-    setShowCustomers(false)
-    setShowProjects(true)
-    setShowAnalytics(false)
-    setHomeButtonId("all-buttons")
-    setCustomersButtonId("all-buttons")
-    setProjectsButtonId("highlighted-button")
     setAlyticsButtonId("all-buttons")
   }
   const handleAnalyticsClick = () => {
     setShowCrmHome(false)
     setShowCustomers(false)
-    setShowProjects(false)
     setShowAnalytics(true)
     setHomeButtonId("all-buttons")
     setCustomersButtonId("all-buttons")
-    setProjectsButtonId("all-buttons")
     setAlyticsButtonId("highlighted-button")
   }
 
@@ -78,15 +59,10 @@ const CrmMainPage = props => {
         Customers
       </button>
       <button 
-        id={projectsButtonId}
-        onClick={handleProjectsClick}>
-        Projects
+        id={analyticsButtonId}
+        onClick={handleAnalyticsClick}>
+        Analytics
       </button>
-        <button 
-          id={analyticsButtonId}
-          onClick={handleAnalyticsClick}>
-          Analytics
-        </button>
     </div>
     
     let mainContainer = null

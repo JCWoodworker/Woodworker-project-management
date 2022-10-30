@@ -11,6 +11,7 @@ crmCustomerNotesRouter.get("/:id", async (req, res) => {
   try {
     const customer = await Customer.query().findById(id)
     customer.notes = await customer.$relatedQuery("customerNotes")
+    customer.notes.sort((a, b) => (a.updatedAt < b.updatedAt) ? 1: -1);
     return res.status(200).json({ notes: customer.notes })
   } catch(error) {
     return res.status(500).json({ error: error.message })
@@ -21,7 +22,7 @@ crmCustomerNotesRouter.post("/", async (req,res) => {
   const formInput = cleanUserInput(req.body)
   try {
     const newNote = await CustomerNote.query().insertAndFetch(formInput)
-    return res.status(201).json({ newNote: newNote })
+    return res.status(200).json({ note: newNote })
   } catch(error) {
     if (error instanceof ValidationError) {
       return res.status(422).json({ errors: error.data })
