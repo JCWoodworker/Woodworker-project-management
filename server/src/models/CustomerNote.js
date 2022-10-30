@@ -28,7 +28,6 @@ class CustomerNote extends Model {
       required: ['date', 'note', 'customerId'],
       properties: {
         date: { type: "string" },
-        note: { type: "string" },
         note: { type: ["integer", "string"] },
         customerId: { type: ['integer', 'string'] }
       }
