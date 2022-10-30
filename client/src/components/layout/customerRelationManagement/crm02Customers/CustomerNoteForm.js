@@ -35,7 +35,6 @@ const CustomerNoteForm = props => {
   
   const submitNoteForm = () => {
     props.postNewNote(addedNote)
-    props.saveNewNote(addedNote)
     clearForm()
     props.setShowNoteForm(false)
   }
