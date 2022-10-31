@@ -78,10 +78,15 @@
 
 table, th, td {
   border: 2px solid $medium-beige;
-  color: $dark-gray-transparent-9;
+  color: $medium-beige;
+  background-color: $dark-gray-transparent-9;
 }
 th {
   font-size: 1.25rem;
+}
+td {
+  color: white;
+  cursor: pointer;
 }
 #clickable-cell {
   cursor: pointer
