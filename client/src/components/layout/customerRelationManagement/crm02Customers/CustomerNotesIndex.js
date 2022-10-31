@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react"
+import axios from "axios"
 import translateServerErrors from '../../../../services/translateServerErrors'
 
 import CustomerNoteTile from "./CustomerNoteTile"
@@ -44,9 +45,22 @@ const CustomerNotesIndex = props => {
         throw error
       } else {
         const resBody = await response.json()
-        debugger
         setNotes([...notes, resBody.note])
         return true
+      }
+    } catch (error) {
+      console.error(`Error in fetch: ${error.message}`)
+    }
+  }
+
+  const deleteNote = async (noteToDelete) => {
+    try {
+      const response = await axios.delete(`/api/v1/customerNotes`, {data: {noteToDelete} })
+      if (!response) {
+        console.log("Error deleting note")
+      } else {
+        console.log(response.data.message)
+        setNotes(notes.filter(note => note.id !== noteToDelete))
       }
     } catch (error) {
       console.error(`Error in fetch: ${error.message}`)
@@ -66,6 +80,7 @@ const CustomerNotesIndex = props => {
         <CustomerNoteTile
           key={note.id} 
           note={note}
+          deleteNote={deleteNote}
         />
       )
   })
@@ -93,7 +108,8 @@ const CustomerNotesIndex = props => {
         <thead>
           <tr>
             <td><button id="add-note" onClick={addNote}>{formSymbol}</button></td>
-            <td id="note">Prospect Notes</td>
+            <td>Date</td>
+            <td id="note">Note</td>
           </tr>
         </thead>
         <tbody>

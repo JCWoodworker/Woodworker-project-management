@@ -31,4 +31,15 @@ crmCustomerNotesRouter.post("/", async (req,res) => {
   }
 })
 
+crmCustomerNotesRouter.delete("/", async (req, res) => {
+  const id = parseInt(req.body.noteToDelete)
+  try {
+    const deletedNote = await CustomerNote.query().deleteById(id)
+    return res.status(200).json({ message: true })
+  } catch(error) {
+    return res.status(500).json({ error: error })
+  }
+})
+
+
 export default crmCustomerNotesRouter
