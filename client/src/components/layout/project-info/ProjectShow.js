@@ -176,20 +176,21 @@ const ProjectShow = props => {
 
       <div className="project-top-links">
         <Link to='/'> 
-          <button id="all-buttons">
-              Back to Projects
+          <button 
+            id="all-buttons">
+              Back
           </button>
         </Link> 
         <button 
           id="all-buttons"
           onClick={handleShowProjectSettings}>
-            Project Settings
+            Update Project
         </button>
         <Link to='/'> 
-          <button 
+          <button
             id="all-buttons"
             onClick={handleDeleteButtonClick}>
-              Delete This Project
+              Delete
           </button>
         </Link>
       </div>
@@ -208,12 +209,9 @@ const ProjectShow = props => {
 
       <div className="woods-metrics-container">
         <div className="show-metrics-container">
-          <h4><strong>METRICS:</strong></h4>
           <p>WOOD COST: ${totalWoodCost}</p>
           <p>LABOR: {project.hours} Hours @ ${props.userSettings.laborRate}/hr</p>
           <p>SUGGESTED SALE PRICE: ${getRetailPrice()} {theWordEach}</p>
-          <p>* When saving woods to your project your boardfoot selections will automatically be adjusted based on your wood waste setting</p>
-          <p>* Suggested sale price is WOOD COST x MARKUP + LABOR COST</p>
         </div>
         <div className="added-wood-tile-container">
           {selectedWoodList}

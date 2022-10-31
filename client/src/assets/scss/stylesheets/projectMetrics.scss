@@ -14,10 +14,11 @@
   flex-flow: column wrap;
   margin-bottom: 2rem;
   padding: 2rem;
-  border-radius: 0.5rem;;
+  border: 1px solid white;
+  border-radius: 0.5rem;
   width: 40%;
   min-width: 300px;
-  color: $dark-gray;
+  color: white;
   font-weight: bold;
 }
 
@@ -35,15 +36,15 @@
   display: flex;
   flex-flow: row-wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: $dark-gray-transparent-9;
   color: $medium-beige;
   margin: 0.25rem;
-  padding: 1rem;
+  padding: 0.25rem;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
   border-radius: 0.5rem;
   width: 40%;
-  min-width: 280px;
+  min-width: 250px;
   max-height: 120px;
   font-weight: bold;
   

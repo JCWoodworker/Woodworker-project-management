@@ -66,7 +66,8 @@ const UserSettingsForm = props => {
         </button>
 
       </form>
-
+      <p>* When saving woods to your project your boardfoot selections will automatically be adjusted based on your wood waste setting</p>
+      <p>* Suggested sale price is (WOOD COST x MARKUP) + TOTAL LABOR COST</p>
     </div>
   )
 }

@@ -95,7 +95,7 @@
 #negotiating,
 #commissioned {
   border-radius: 0.5rem;
-  border: 2px solid $medium-beige;
+  border: 1px solid $medium-beige;
   background-color: $dark-gray;
   color: $medium-beige;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
@@ -113,7 +113,7 @@
   background-color: $dark-gray;
   font-weight: bolder;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
-  margin: 1.5rem
+  margin: 0.25rem
 }
 
 
@@ -174,4 +174,3 @@
 .sign-out {
   max-width: 100px;
 }
-
