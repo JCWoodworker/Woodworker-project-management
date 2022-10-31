@@ -11,10 +11,11 @@ const ProjectImageIndex = props => {
     image: {}
   })
   const [imageAddedToUpload, setImageAddedToUpload] = useState({
-    message: "no added image",
+    message: "Click Here to Add an Image!",
     added: false,
     jsx: null
   })
+
   
   const getProjectImages = async () => {
     try {
@@ -51,7 +52,7 @@ const ProjectImageIndex = props => {
 
   const handleImageUpload = (acceptedImage) => {
     setImageAddedToUpload({
-      message: "image loaded",
+      message: "Image Loaded ... ",
       added: true
     })
     setNewProjectImageData({
@@ -85,7 +86,7 @@ const ProjectImageIndex = props => {
       ])
       clearForm()
       setImageAddedToUpload({
-        message: "no added image",
+        message: "Click Here to Add an Image!",
         added: false,
         jsx: null
       })
@@ -129,7 +130,7 @@ const ProjectImageIndex = props => {
     imageAddedToUpload.jsx = 
       <form onSubmit={addProjectImage} className="dropzone-form">
         <div className="label-input-submit">
-          <label htmlFor="title" className="title">Image Caption:</label>
+          <label htmlFor="title" className="title">Add a Caption?</label>
           <input 
             id="title"
             name="title"
@@ -148,25 +149,22 @@ const ProjectImageIndex = props => {
   return (
     <div className="image-uploader-container">
       <h1>Project Images</h1>
-      
       <div className="dropzone-drop-container">
         <div className="drop-button-and-message">
           <Dropzone onDrop={handleImageUpload} >
             {({getRootProps, getInputProps}) => (
                 <button {...getRootProps()} id="all-buttons" className="dropzone-button">
                   <input {...getInputProps()} />
-                  Click here to add an image
+                  {imageAddedToUpload.message}
                 </button>
             )}
           </Dropzone>
-          <p>{imageAddedToUpload.message}</p>
         </div>
         {imageAddedToUpload.jsx}
       </div>
       <div className="dropzone-images-container">
         {projectImageTiles}
       </div>
-
     </div>
   )
 }

@@ -72,11 +72,16 @@ const AddWoodForm = props => {
   const handleSaveHardwoods = event => {
     props.postWoodsToProject(hardwoods)
     clearSelectedWoodsList()
+    props.setToggleShowAddWoodForm(false)
+  }
+
+  const handleCancelClick = event => {
+    event.preventDefault()
+    props.setToggleShowAddWoodForm(false)
   }
 
   const handleWoodSubmit = event => {
     event.preventDefault()
-
     let duplicatePersistedWood = false
     props.selectedWoodArray.forEach(wood => {
       if (wood.id === selectedWood.hardwoodId) {
@@ -111,7 +116,7 @@ const AddWoodForm = props => {
     }))
   }
   
-  let yourWoodList = <p>Add some wood!</p>
+  let yourWoodList = <p>(List Empty)</p>
 
   if (hardwoods.length > 0) {
     yourWoodList = hardwoods.map(wood => {
@@ -121,7 +126,7 @@ const AddWoodForm = props => {
       
       return (
         <li key={woodName.value} id="added-wood-list-item">
-          {`${woodName.value}: ${wood.boardFeet} board-ft`}
+          {`${woodName.value}: ${wood.boardFeet} bdft`}
           <button 
             className="remove-wood-x"
             value={wood.hardwoodId}
@@ -176,20 +181,26 @@ const AddWoodForm = props => {
 
       <div className='show-added-wood'>
 
+        <h4><strong>
+          Wood(s) To Be Added:
+        </strong></h4>
         <ul className="staged-woods">
-          <h4><strong>
-            To Be Added:
-          </strong></h4>
           {yourWoodList}
-          <button 
-            type="button"
-            id="save-button"
-            className="save-button"
-            onClick={handleSaveHardwoods}
-            >Save List To Project
-          </button>
         </ul>
-
+        <button 
+          type="button"
+          id="save-button"
+          className="save-button"
+          onClick={handleSaveHardwoods}
+          >Save wood(s) To Project
+        </button>
+        <button
+          id="save-button"
+          className="save-button"
+          onClick={handleCancelClick}
+        >
+          Cancel
+        </button>
       </div>
             
     </div>
