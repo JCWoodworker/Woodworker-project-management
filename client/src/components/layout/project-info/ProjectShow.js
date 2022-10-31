@@ -124,21 +124,23 @@ const ProjectShow = props => {
 
   let totalWoodCost = 0.00
   
-  const selectedWoodList = project.selectedWoods.map(wood => {
-    const adjustedBoardfeet = (wood.bf * ((props.userSettings.woodWaste / 100) + 1)).toFixed(1)
-    const woodCost = ((adjustedBoardfeet * wood.price)).toFixed(2)
-    totalWoodCost += parseFloat(woodCost)
-    
-    return (
-      <AddedWoodTile 
-        key={wood.name} 
-        adjustedBoardfeet={adjustedBoardfeet}
-        woodCost={woodCost} 
-        wood={wood} 
-        deleteWoodFromProject={deleteWoodFromProject}
-      />
-    )
-  })
+  const selectedWoodList = project.selectedWoods
+    .sort((a, b) => parseInt(a.bf * a.price) < parseInt(b.bf * b.price) ? 1 : -1)
+    .map(wood => {
+      const adjustedBoardfeet = (wood.bf * ((props.userSettings.woodWaste / 100) + 1)).toFixed(1)
+      const woodCost = ((adjustedBoardfeet * wood.price)).toFixed(2)
+      totalWoodCost += parseFloat(woodCost)
+      
+      return (
+        <AddedWoodTile 
+          key={wood.name} 
+          adjustedBoardfeet={adjustedBoardfeet}
+          woodCost={woodCost} 
+          wood={wood} 
+          deleteWoodFromProject={deleteWoodFromProject}
+        />
+      )
+    })
 
   totalWoodCost = totalWoodCost.toFixed(2)
   

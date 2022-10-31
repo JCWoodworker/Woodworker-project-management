@@ -22,6 +22,22 @@ const UserSettings = props => {
     
   }
   
+  let editSettingsButton = (
+    <>
+      <button
+        id="all-buttons"
+        className="all-buttons"
+        onClick={handleShowFormButtonClick}
+      >
+        Edit Settings
+      </button>
+    </>
+  )
+
+  if (toggleShowEditForm) {
+    editSettingsButton = null
+  }
+  
   let showUserSettings = <SignInForm />
   if (props.userSettings) {
     showUserSettings = 
@@ -30,13 +46,7 @@ const UserSettings = props => {
       <p>Wood Waste = {props.userSettings.woodWaste}%</p>
       <p>Retail Markup = {props.userSettings.markup}%</p>
       <p>Labor Rate = ${props.userSettings.laborRate}/hr</p>
-      <button
-        id="all-buttons"
-        className="all-buttons"
-        onClick={handleShowFormButtonClick}
-      >
-          Edit Settings
-      </button>
+      {editSettingsButton}
       <Link to='/'>
         <button 
           id="all-buttons">

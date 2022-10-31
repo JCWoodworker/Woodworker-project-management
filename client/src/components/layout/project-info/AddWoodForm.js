@@ -43,7 +43,7 @@ const AddWoodForm = props => {
       colors: {
         ...theme.colors,
         // primary: 'rgb(255, 190, 141)',
-        primary25: 'green',
+        primary25: 'white',
         neutral0: 'rgb(255, 190, 141)',
         neutral5: 'rgb(35, 34, 34)',
         neutral10: 'rgb(35, 34, 34)',

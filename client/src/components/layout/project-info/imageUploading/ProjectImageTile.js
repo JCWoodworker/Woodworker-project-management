@@ -13,7 +13,7 @@ const ProjectImageTile = props => {
       <button 
         id="delete-image-button"
         onClick={handleDeleteImage}>
-          ✖️
+          ❌
       </button>
     </div>
   )
