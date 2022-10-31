@@ -9,10 +9,10 @@ const HomePage = props => {
   let display = (
     <div className="home-page-container unauthenticated-home-page">
       <h1 className="page-heading">Welcome to the Woodworker's Project Management App</h1>
-      <h4>Use this app to create projects, add different woods by the boardfoot, estimate costs, and receive suggested retail pricing</h4>
+      <h4>Use this app to create projects, add hardwoods by the board foot with local pricing, estimate retail pricing, and more!!</h4>
       <p></p>
-      <p>The app is FREE for woodworkers, and sponsored by a local lumber yard!</p>
-      <p>Sign up and start managing your projects!</p>
+      <p>The app is FREE and sponsored by RI Local Woodworks, LLC!</p>
+      <p>Click REGISTER in the top bar to get started!</p>
       <div className="home-link-list">
         <Link to="/wood-info">
           <p className = "home-page-link">Wood Info</p>

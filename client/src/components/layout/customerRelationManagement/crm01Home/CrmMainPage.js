@@ -44,7 +44,6 @@ const CrmMainPage = props => {
   }
 
   let userNavigationSection =
-    
     <div className="crm-top-links">
       <Link to='/crm'> 
         <button
@@ -65,21 +64,19 @@ const CrmMainPage = props => {
       </button>
     </div>
     
-    let mainContainer = null
-    if (showCrmHome) {
-      mainContainer = (
-        <>
-          <h1>CRM Home</h1>
-          <p>Click the "customers" or "analytics"</p>
-        </>
-      )
-    } else if (showCustomers) {
-      mainContainer = <CrmCustomerMain user={props.user} />
-    } else if (showAnalytics) {
-      mainContainer = <CrmAnalyticsMain />
-    }
-
-  
+  let mainContainer = null
+  if (showCrmHome) {
+    mainContainer = (
+      <>
+        <h1>CRM Home</h1>
+        <p>Manage your customers here!</p>
+      </>
+    )
+  } else if (showCustomers) {
+    mainContainer = <CrmCustomerMain user={props.user} />
+  } else if (showAnalytics) {
+    mainContainer = <CrmAnalyticsMain />
+  }
 
   return (
     <>

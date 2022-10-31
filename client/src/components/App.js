@@ -14,6 +14,7 @@ import DevInfoPage from "./layout/DevInfoPage"
 import UserSettings from "./layout/userSettings/UserSettings"
 import ProjectSettings from "./layout/project-info/projectSettings/ProjectSettings"
 import CrmMainPage from "./layout/customerRelationManagement/crm01Home/CrmMainPage"
+import SponsorTile from "./layout/SponsorTile"
 
 const App = props => {
   const [currentUser, setCurrentUser] = useState(null)
@@ -118,6 +119,7 @@ const App = props => {
               />
             </Route>
           </Switch>
+          <SponsorTile />
         </Router>
       </div>
     </div>

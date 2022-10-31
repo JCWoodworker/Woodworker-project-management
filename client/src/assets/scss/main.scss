@@ -34,3 +34,16 @@ body {
   margin: 146px auto;
   font-family: 'Ubuntu', sans-serif;
 }
+
+.sponsor-tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sponsor-logo {
+  border-radius: 50%;
+  max-width: 10rem;
+  margin-top: 1rem;
+}
+
