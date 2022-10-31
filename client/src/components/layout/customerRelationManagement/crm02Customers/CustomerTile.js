@@ -49,7 +49,7 @@ const CustomerTile = ({ customer, deleteCustomer, setShowCustomerShow, setSelect
 
   return (
     <tr>
-      <td><button id="delete-customer" onClick={handleDeleteCustomer}>X</button></td>
+      <td><button id="delete-customer" onClick={handleDeleteCustomer}>❌</button></td>
       <td onClick={handleClickCustomer} id="clickable-row">{customer.firstName}</td>
       <td onClick={handleClickCustomer} id="clickable-row">{customer.lastName}</td>
       <td onClick={handleClickEmail} id="clickable-row">{customer.email}</td>

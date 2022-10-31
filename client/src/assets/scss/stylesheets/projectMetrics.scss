@@ -3,48 +3,52 @@
 .woods-metrics-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-flow: row wrap;
-  padding: 1rem;
-  margin-bottom: 2rem;
-  min-width: 90%;
+  margin: 1rem auto;
 }
 
 .show-metrics-container {
+  text-align: center;
   display: flex;
-  flex-flow: column wrap;
-  margin-bottom: 2rem;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
   padding: 2rem;
-  border-radius: 0.5rem;;
-  width: 40%;
+  border: 2px solid $light-gray;
+  border-radius: 0.2rem;
   min-width: 300px;
-  color: $dark-gray;
+  color: $light-gray;
   font-weight: bold;
+}
+
+.metrics-container-child {
+  display: flex;
+  flex-flow: row;
+  gap: 1rem
+}
+
+.metrics-label {
+  color: $medium-beige
 }
 
 .added-wood-tile-container {
   display: flex;
+  flex-flow: column;
+  align-items: center;
   justify-content: center;
-  flex-flow: row wrap;
-  color: $medium-beige;
-  border-radius: 0.5rem;
-  width: 60%;
-  min-width: 240px;
+  margin: 1rem auto;
 }
 
 .added-wood-tile {
   display: flex;
-  flex-flow: row-wrap;
+  flex-flow: row;
   align-items: center;
   justify-content: space-between;
-  background-color: $dark-gray-transparent-9;
-  color: $medium-beige;
-  margin: 0.25rem;
-  padding: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
-  border-radius: 0.5rem;
-  width: 40%;
-  min-width: 280px;
-  max-height: 120px;
+  color: $light-gray;
+  min-width: 350px;
+  height: auto;
   font-weight: bold;
   
 }
@@ -68,12 +72,12 @@
 #delete-persisted-wood-button:hover,
 #delete-image-button:hover {
   cursor: pointer;
-  background-color: $medium-beige;
+  background-color: white;
 }
 
 .add-woods-container {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
@@ -81,7 +85,7 @@
   padding: 2rem;
   min-width:70%;
   background-color: $dark-gray-transparent-9;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
   color: $medium-beige;
 }
@@ -115,14 +119,14 @@
   border: 0.2rem solid $medium-beige;
   background-color: $dark-gray;
   color: white;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   width: 80px;
   height: 30px;
 }
 
 .show-added-wood {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
   padding: 2px;
@@ -139,7 +143,7 @@
   color: $medium-beige;
   border: 3px solid $medium-beige;
   background-color: $dark-gray;
-  border-radius: 1rem;
+  border-radius: 0.2rem;
   padding: 0.5rem;
   width: 150px;
   height: 55px;
@@ -163,7 +167,7 @@
   color: $medium-beige;
   border: 3px solid $medium-beige;
   background-color: $dark-gray;
-  border-radius: 1rem;
+  border-radius: 0.2rem;
   margin-top: 1rem;
   padding: 0.5rem;
   width: 150px;
@@ -190,7 +194,7 @@
 
 .remove-wood-x { 
   color: $medium-beige;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   padding: 0.18rem;
   margin-left: 1.5rem;
 }

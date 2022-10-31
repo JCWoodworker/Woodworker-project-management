@@ -66,7 +66,6 @@ const UserSettingsForm = props => {
         </button>
 
       </form>
-
     </div>
   )
 }

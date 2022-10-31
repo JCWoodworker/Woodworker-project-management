@@ -5,7 +5,7 @@ import SignOutButton from "../authentication/SignOutButton"
 const TopBar = ({ user }) => {
 
   const unauthenticatedListItems =
-    <ul className="logged-in-links">
+    <ul className="non-logged-in-links">
       <li><Link to="/" key="home" className="link-item home-link">Home</Link></li>
       <li><Link to="/user-sessions/new" key="sign-in" className="link-item">Login</Link></li>
       <li><Link to="/users/new" key="sign-up" className="link-item">Register</Link></li>
@@ -18,8 +18,8 @@ const TopBar = ({ user }) => {
       loggedInLinks = 
         <>
           <ul className="logged-in-links">
+            <SignOutButton />
           </ul>
-          <SignOutButton />
         </>
     } else {
     loggedInLinks = 
@@ -27,8 +27,8 @@ const TopBar = ({ user }) => {
         <ul className="logged-in-links">
           <li><Link to="/" className="logged-in link-item">Home</Link></li>
           <li><Link to="/settings" className="logged-in link-item">Settings</Link></li>
+          <SignOutButton />
         </ul>
-        <SignOutButton />
       </>
     }  
   }

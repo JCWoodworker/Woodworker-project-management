@@ -8,18 +8,14 @@ const AddedWoodTile = props => {
   
   return (
     <div className="added-wood-tile">
-      
-      <p id="wood-name">{props.wood.name}:</p>     
-      <ul className="persisted-woods-list">
-        <li id="wood-tile-p">Bdft: {props.adjustedBoardfeet}</li>
-        <li id="wood-tile-p">${props.woodCost}</li>
-      </ul>
-      <button 
-        id="delete-persisted-wood-button"
-        onClick={handleDeleteWood}>
-          ✖️
-      </button> 
-
+      <p>{props.wood.name} : </p>
+      <p> {props.adjustedBoardfeet} bdft - ${props.woodCost}    
+        <button 
+          id="delete-persisted-wood-button"
+          onClick={handleDeleteWood}>
+            ❌
+        </button>
+      </p>  
     </div>
   )
 }

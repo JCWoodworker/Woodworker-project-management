@@ -17,6 +17,7 @@ const ProjectShow = props => {
     selectedWoods: []
   })
   const [showProjectSettings, setShowProjectSettings] = useState(false)
+  const [toggleShowAddWoodForm, setToggleShowAddWoodForm] = useState(false)
 
   const getProject = async () => {
     try {
@@ -124,21 +125,23 @@ const ProjectShow = props => {
 
   let totalWoodCost = 0.00
   
-  const selectedWoodList = project.selectedWoods.map(wood => {
-    const adjustedBoardfeet = (wood.bf * ((props.userSettings.woodWaste / 100) + 1)).toFixed(1)
-    const woodCost = ((adjustedBoardfeet * wood.price)).toFixed(2)
-    totalWoodCost += parseFloat(woodCost)
-    
-    return (
-      <AddedWoodTile 
-        key={wood.name} 
-        adjustedBoardfeet={adjustedBoardfeet}
-        woodCost={woodCost} 
-        wood={wood} 
-        deleteWoodFromProject={deleteWoodFromProject}
-      />
-    )
-  })
+  const selectedWoodList = project.selectedWoods
+    .sort((a, b) => parseInt(a.bf * a.price) < parseInt(b.bf * b.price) ? 1 : -1)
+    .map(wood => {
+      const adjustedBoardfeet = (wood.bf * ((props.userSettings.woodWaste / 100) + 1)).toFixed(1)
+      const woodCost = ((adjustedBoardfeet * wood.price)).toFixed(2)
+      totalWoodCost += parseFloat(woodCost)
+      
+      return (
+        <AddedWoodTile 
+          key={wood.name} 
+          adjustedBoardfeet={adjustedBoardfeet}
+          woodCost={woodCost} 
+          wood={wood} 
+          deleteWoodFromProject={deleteWoodFromProject}
+        />
+      )
+    })
 
   totalWoodCost = totalWoodCost.toFixed(2)
   
@@ -171,66 +174,87 @@ const ProjectShow = props => {
       />
   }
 
+  let addWoodButton =
+    <>
+      <button 
+        id="all-buttons"
+        onClick={() => setToggleShowAddWoodForm(true)}
+      >
+        Add Wood
+      </button>
+    </>
+
+  let viewAddWoodForm = null
+  if (toggleShowAddWoodForm) {
+    viewAddWoodForm = 
+      <>
+        <AddWoodForm 
+          projectId={props.match.params.id} 
+          selectedWoodArray={project.selectedWoods}
+          postWoodsToProject={postWoodsToProject}
+          woodWastePercentage={props.userSettings.woodWaste}
+          setToggleShowAddWoodForm={setToggleShowAddWoodForm}
+        />
+      </>
+    addWoodButton = null
+  }
+
   return (
     <div className="project-show">
-
+      <div className="project-show-headers">
+        <h1 className="page-heading">{project.name}</h1>
+        <div className="customer-order">
+          <h4>Destination/Customer: {project.customer}</h4>
+          <h4>Order Quantity: {project.quantity}</h4>
+          <h4>Description: {project.description}</h4>
+        </div>
+      </div>
+      <div className="woods-metrics-container">
+        <div className="show-metrics-container">
+          <div className="metrics-container-child">
+            <p className="metrics-label">WOOD COST: </p>
+            <p>${totalWoodCost}</p>
+          </div>
+          <div className="metrics-container-child">
+            <p className="metrics-label">LABOR: </p>
+            <p>{project.hours} Hours @ ${props.userSettings.laborRate}/hr</p>
+          </div>
+          <div className="metrics-container-child">
+            <p className="metrics-label">SUGGESTED SALE PRICE: </p>
+            <p>${getRetailPrice()} {theWordEach}</p>
+          </div>
+        </div>
+        <div className="added-wood-tile-container">
+          <h3>Wood List</h3>
+          {selectedWoodList}
+          {addWoodButton}
+        </div>
+      </div>
+      {viewAddWoodForm}
+      <ProjectImageIndex
+        projectId={props.match.params.id} 
+      />
       <div className="project-top-links">
         <Link to='/'> 
-          <button id="all-buttons">
-              Back to Projects
+          <button 
+            id="all-buttons">
+              Back
           </button>
         </Link> 
         <button 
           id="all-buttons"
           onClick={handleShowProjectSettings}>
-            Project Settings
+            Update Project
         </button>
         <Link to='/'> 
-          <button 
+          <button
             id="all-buttons"
             onClick={handleDeleteButtonClick}>
-              Delete This Project
+              ❌ Delete Project
           </button>
         </Link>
       </div>
       {projectSettingsForm}
-
-
-      <div className="project-show-headers">
-        <h1 className="page-heading">{project.name}</h1>
-        <div className="customer-order">
-          <h4>Destination: {project.customer}</h4>
-          <h4>Order Quantity: {project.quantity}</h4>
-        </div>
-      </div>
-
-      <h3 className="project-description">{project.description}</h3>
-
-      <div className="woods-metrics-container">
-        <div className="show-metrics-container">
-          <h4><strong>METRICS:</strong></h4>
-          <p>WOOD COST: ${totalWoodCost}</p>
-          <p>LABOR: {project.hours} Hours @ ${props.userSettings.laborRate}/hr</p>
-          <p>SUGGESTED SALE PRICE: ${getRetailPrice()} {theWordEach}</p>
-          <p>* When saving woods to your project your boardfoot selections will automatically be adjusted based on your wood waste setting</p>
-          <p>* Suggested sale price is WOOD COST x MARKUP + LABOR COST</p>
-        </div>
-        <div className="added-wood-tile-container">
-          {selectedWoodList}
-        </div>
-      </div>
-
-      <AddWoodForm 
-        projectId={props.match.params.id} 
-        selectedWoodArray={project.selectedWoods}
-        postWoodsToProject={postWoodsToProject}
-        woodWastePercentage={props.userSettings.woodWaste}
-      />
-      
-      <ProjectImageIndex
-        projectId={props.match.params.id} 
-      />
-
     </div>
   )
 }
