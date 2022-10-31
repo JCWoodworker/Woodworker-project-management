@@ -31,14 +31,30 @@ const CustomerTile = ({ customer, deleteCustomer, setShowCustomerShow, setSelect
     setSelectedCustomerId(`${customer.id}`)
   }
 
+  const handleClickEmail = event => {
+    event.preventDefault()
+    alert("Email not yet implemented")
+  }
+
+  const handleClickPhone = event => {
+    event.preventDefault()
+    alert("Phone not yet implemented")
+  }
+
+  const handleClickStatus = event => {
+    event.preventDefault()
+    alert("Status not yet implemented")
+  }
+  
+
   return (
     <tr>
       <td><button id="delete-customer" onClick={handleDeleteCustomer}>X</button></td>
       <td onClick={handleClickCustomer} id="clickable-row">{customer.firstName}</td>
       <td onClick={handleClickCustomer} id="clickable-row">{customer.lastName}</td>
-      <td id="clickable-row">{customer.email}</td>
-      <td id="clickable-row">{convertedPhone}</td>
-      <td id="clickable-row">{customerStatus}</td>
+      <td onClick={handleClickEmail} id="clickable-row">{customer.email}</td>
+      <td onClick={handleClickPhone}id="clickable-row">{convertedPhone}</td>
+      <td onClick={handleClickStatus}id="clickable-row">{customerStatus}</td>
     </tr>
   )
 }

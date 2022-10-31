@@ -12,6 +12,7 @@ const ProjectsIndex = props => {
   const [errors, setErrors] = useState([])
 
   const [showNewProjectForm, setShowNewProjectForm] = useState(false)
+  const [showMenu, setShowMenu] = useState(false)
 
   const userId = props.user.id
   const fetchProjects = async () => {
@@ -73,42 +74,58 @@ const ProjectsIndex = props => {
   const toggleShowNewProjectForm = (event) => {
     !showNewProjectForm? setShowNewProjectForm(true) : setShowNewProjectForm(false)
   }
+  
+let userMenuButtons = 
+  <>
+  <div>
+    <button 
+      id="all-buttons"
+      onClick={toggleShowNewProjectForm}>
+      New Project
+    </button>
+    <Link to='/settings'>
+      <button 
+        id="all-buttons">
+        User Settings
+      </button>
+    </Link>
+    <Link to='/wood-info'>
+      <button 
+        id="all-buttons">
+        Hardwood Info
+      </button>
+    </Link>
+    <Link to='/dev-info'>
+      <button 
+        id="all-buttons">
+        Developer Info
+      </button>
+    </Link>
+    <Link to='/crm'> 
+      <button 
+        id="all-buttons">
+          CRM
+      </button>
+    </Link>
+    <button 
+      id="all-buttons"
+      onClick={() => setShowMenu(!showMenu)}>
+      Close Menu
+    </button>
+  </div>
+  </>
 
   let userNavigationSection = 
-    <>
-      <div>
-        <button 
-          id="all-buttons"
-          onClick={toggleShowNewProjectForm}>
-          New Project
-        </button>
-        <Link to='/settings'>
-          <button 
-            id="all-buttons">
-            User Settings
-          </button>
-        </Link>
-        <Link to='/wood-info'>
-          <button 
-            id="all-buttons">
-            Hardwood Info
-          </button>
-        </Link>
-        <Link to='/dev-info'>
-          <button 
-            id="all-buttons">
-            Developer Info
-          </button>
-        </Link>
-        <Link to='/crm'> 
-          <button 
-            id="all-buttons">
-              CRM
-          </button>
-        </Link>
-      </div>
-    </>
+    <button 
+      id="all-buttons"
+      onClick={() => setShowMenu(!showMenu)}>
+      Menu
+    </button>
 
+  if (showMenu) {
+    userNavigationSection = userMenuButtons
+  }
+    
   if (showNewProjectForm) {
     userNavigationSection =
     <>
