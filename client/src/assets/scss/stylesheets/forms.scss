@@ -3,7 +3,7 @@
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   background-color: $dark-gray-transparent-9;
   color: $medium-beige;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   background-color: $dark-gray-transparent-9;
   color: $medium-beige;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
@@ -94,7 +94,7 @@
 #prospect,
 #negotiating,
 #commissioned {
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   border: 1px solid $medium-beige;
   background-color: $dark-gray;
   color: $medium-beige;
@@ -130,14 +130,14 @@
 #new-hardwood-form-submit:hover,
 #auth-button:hover,
 #all-buttons:hover {
-  color: $red-brown;
+  color: black;
   background-color: $beige-transparent;
 }
 
 #highlighted-button {
   background-color: $medium-beige;
   color: black;
-  border-radius: 0.5rem;
+  border-ra2ius: 0.5rem;
 }
 
 #subject {
@@ -151,7 +151,7 @@
 
 .errors {
   border: 3px solid red;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   background-color: rgba(255, 0, 0, 0.07);
   text-align: center;
   padding: 1rem
@@ -168,9 +168,5 @@
 }
 
 .button {
-  border-radius: 0.5rem;
-}
-
-.sign-out {
-  max-width: 100px;
+  bo2der-radius: 0.5rem;
 }

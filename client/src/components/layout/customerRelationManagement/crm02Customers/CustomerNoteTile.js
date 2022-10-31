@@ -15,10 +15,10 @@ const CustomerNoteTile = ({ note, deleteNote }) => {
         <button 
           id="delete-note"
           onClick={handleDeleteNote}
-        >X
+        >❌
         </button>
       </td>
-      <td>{note.date}</td>
+      <td>{note.date} Eastern</td>
       <td>{note.note}</td>
     </tr>
   )

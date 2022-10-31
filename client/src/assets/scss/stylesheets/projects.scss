@@ -22,9 +22,13 @@
 // PROJECT TILES
 
 .project-tile-container {
-  margin: 1rem;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0.3rem;
+  padding: 1rem;
+  border-radius: 0.2rem;
   background-color: $dark-gray-transparent-9;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
   color: $medium-beige;
@@ -85,7 +89,7 @@
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
   color: $medium-beige;
   padding: 1rem 3rem;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   width:fit-content;
 }
 
@@ -100,7 +104,7 @@
   font-weight: bolder;
   margin: 2rem 0;
   padding: 2rem;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   color: white;
 }
 
@@ -114,7 +118,7 @@
   margin-bottom: 2rem;
   padding: 2rem;
   background-color: $dark-gray-transparent-9;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
   color: $medium-beige;
 }
@@ -129,7 +133,7 @@
   margin: 1rem;
   margin-bottom: 2rem;
   padding: 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
 }
 
 .drop-button-and-message {
@@ -163,7 +167,7 @@
 }
 
 .dropzone-images-container {
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -182,7 +186,7 @@
   height: auto;
   width: 200px;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
 }
 
 .dropzone-image:hover {
@@ -191,8 +195,6 @@
   transform: scale(2);
 
 }
-
-// "BACK TO PROJECTS", "DELETE THIS PROJECT", "PROJECT SETTINGS"
 
 .project-top-links {
   display: flex;

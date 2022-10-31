@@ -6,7 +6,7 @@
   background-color: $dark-gray;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 1rem;
   position: fixed;
   border-bottom: 1px solid $medium-beige;
@@ -38,7 +38,8 @@ ul {
   color: white;
 }
 
-.logged-in-links {
+.logged-in-links,
+.non-logged-in-links {
   display: flex;
   flex-flow: row wrap;
   margin-top: 1rem;
@@ -51,4 +52,23 @@ ul {
 
 .home-link {
   align-self: left;
+}
+
+.sign-out-button {
+  color: $medium-beige;
+  font-weight: bold;
+  max-width: 100px;
+  margin-left: 1rem;
+}
+
+.sign-out-button:link {
+  color: $red-brown;
+}
+.sign-out-button:visited {
+  color: $red-brown;
+}
+.sign-out-button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: $dark-gray-transparent;
 }

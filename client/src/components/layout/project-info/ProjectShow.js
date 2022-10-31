@@ -190,7 +190,7 @@ const ProjectShow = props => {
           <button
             id="all-buttons"
             onClick={handleDeleteButtonClick}>
-              Delete
+              ❌ Delete
           </button>
         </Link>
       </div>

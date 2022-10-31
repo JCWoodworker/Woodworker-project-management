@@ -5,7 +5,7 @@
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   background-color: $dark-gray-transparent-9;
   color: $medium-beige;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
@@ -39,7 +39,7 @@
   height: auto;
   max-width: 98vw;
   padding: 2rem;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   background-color: $dark-gray-transparent-9
 }
 // CUSTOMER PAGE
@@ -49,7 +49,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   background-color: $dark-gray-transparent-9;
   color: $medium-beige;
   box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
@@ -73,7 +73,7 @@
   max-height: 600px;
   width: 98%;
   overflow-y: scroll;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
 }
 
 table, th, td {
@@ -96,7 +96,7 @@ td {
 #delete-customer,
 #delete-note,
 #add-note {
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   border: 1px solid $medium-beige;
   height: 30px;
   min-width: 30px;
