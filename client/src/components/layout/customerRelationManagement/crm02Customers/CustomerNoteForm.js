@@ -41,6 +41,7 @@ const CustomerNoteForm = props => {
 
   return (
     <tr>
+      <td></td>
       <td>  
         <ErrorList errors={props.errors} />
         <input 

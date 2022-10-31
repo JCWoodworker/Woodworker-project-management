@@ -95,7 +95,6 @@ const ProjectShow = props => {
 
   const deleteProject = async (projectId) => {    
     try {
-      debugger
       const response = await fetch(`/api/v1/projects`, {
         method: "DELETE",
         headers: new Headers ({
@@ -103,7 +102,6 @@ const ProjectShow = props => {
         }),
         body: JSON.stringify({projectId: projectId})
       })
-      debugger
       if (!response.ok) {
         const errorMessage = `${response.status} (${response.statusText})`
         const error = new Error(errorMessage)

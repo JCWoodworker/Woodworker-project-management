@@ -89,6 +89,7 @@ th {
 
 #add-customer,
 #delete-customer,
+#delete-note,
 #add-note {
   border-radius: 0.5rem;
   border: 1px solid $medium-beige;
@@ -103,22 +104,26 @@ th {
 #add-note {
   color: green
 }
-#delete-customer {
+#delete-customer,
+#delete-note {
   color: gray; 
 }
 #add-customer:link,
 #delete-customer:link,
-#add-note:link {
+#add-note:link,
+#delete-note:link {
   color: $red-brown;
 }
 #add-customer:visited,
 #delete-customer:visited,
-#add-note:visited {
+#add-note:visited,
+#delete-note:visited {
   color: $red-brown;
 }
 #add-customer:hover,
 #delete-customer:hover,
-#add-note:hover {
+#add-note:hover,
+#delete-note:hover {
   color: $red-brown;
   background-color: $beige-transparent;
 }
