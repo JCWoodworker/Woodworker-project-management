@@ -47,11 +47,7 @@ class Customer extends Model {
         email: { type: 'string' },
         cellPhone: { type: 'string', minLength: 10, maxLength: 10 },
         userId: { type: ['integer', 'string'] },
-        prospect: { type: 'boolean' },
-        negotiation: { type: 'boolean' },
-        commissioned: { type: 'boolean' },
-        cancelled: { type: 'boolean' },
-        delivered: { type: 'boolean' },
+        status: { type: 'string' }
       } 
     }
   }

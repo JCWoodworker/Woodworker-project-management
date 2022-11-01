@@ -3,14 +3,6 @@ import { convertPhoneNumber } from '../../../../services/convertPhoneNumber'
 
 const CustomerTile = ({ customer, deleteCustomer, setShowCustomerShow, setSelectedCustomerId }) => {
 
-  let customerStatus
-  
-  customer.prospect? customerStatus = "Prospect" : null
-  customer.negotiating? customerStatus = "Negotiating" : null
-  customer.commissioned? customerStatus = "Commissioned" : null
-  customer.delivered? customerStatus = "Delivered" : null
-  customer.cancelled? customerStatus = "Cancelled" : null
-
   let convertedPhone = "N/A"
   if (customer.cellPhone) {
     convertedPhone = convertPhoneNumber(customer.cellPhone)
@@ -54,7 +46,7 @@ const CustomerTile = ({ customer, deleteCustomer, setShowCustomerShow, setSelect
       <td onClick={handleClickCustomer} id="clickable-row">{customer.lastName}</td>
       <td onClick={handleClickEmail} id="clickable-row">{customer.email}</td>
       <td onClick={handleClickPhone}id="clickable-row">{convertedPhone}</td>
-      <td onClick={handleClickStatus}id="clickable-row">{customerStatus}</td>
+      <td onClick={handleClickStatus}id="clickable-row">{customer.status}</td>
     </tr>
   )
 }
