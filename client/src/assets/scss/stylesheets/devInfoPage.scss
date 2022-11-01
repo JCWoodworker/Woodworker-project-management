@@ -1,20 +1,18 @@
 @import "./colors.scss";
 
 .dev-info-container {
-  height: 650px;
-  overflow-y: scroll;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-flow: row wrap;
-  gap: 0.5rem
+  gap: 1rem;
 }
 
 .dev-image {
-  max-width: 300px;
-  min-width: 150px;
-  border-radius: 50%;
-  border: 0.5rem solid $red-brown;
+  width: 250px;
+  height: auto;
+  border-radius: 0.2rem;
+  border: 4px solid $medium-beige;
 }
 
 .dev-details {
@@ -22,6 +20,6 @@
   flex-direction: column;
   background-color: $dark-gray-transparent-9;
   color: $medium-beige;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 0.2rem;
 }
