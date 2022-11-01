@@ -27,7 +27,20 @@
 }
 
 .page-heading {
+  border-bottom: 2px solid white;
+  color: white;
   font-weight: bolder;
+}
+
+.project-show-header-details {
+  display: flex;
+  flex-flow: row;
+  gap: 0.5rem;
+}
+
+.project-show-header-details-child {
+  color: white;
+  font-weight: normal;
 }
 
 .home-link-list {

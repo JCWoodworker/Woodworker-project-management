@@ -204,9 +204,9 @@ const ProjectShow = props => {
       <div className="project-show-headers">
         <h1 className="page-heading">{project.name}</h1>
         <div className="customer-order">
-          <h4>Destination/Customer: {project.customer}</h4>
-          <h4>Order Quantity: {project.quantity}</h4>
-          <h4>Description: {project.description}</h4>
+          <h4 className="project-show-header-details">Destination/Customer: <h4 className="project-show-header-details-child">{project.customer}</h4></h4>
+          <h4 className="project-show-header-details">Order Quantity: <h4 className="project-show-header-details-child">{project.quantity}</h4></h4>
+          <h4 className="project-show-header-details">Description: <h4 className="project-show-header-details-child">{project.description}</h4></h4>
         </div>
       </div>
       <div className="woods-metrics-container">
