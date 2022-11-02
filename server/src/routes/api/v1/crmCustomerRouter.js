@@ -39,4 +39,22 @@ crmCustomersRouter.delete('/', async (req, res) => {
   }
 })
 
+crmCustomersRouter.patch('/', async (req, res) => {
+  const customerId = parseInt(req.body.customerId)
+  const belongsToUserId = parseInt(req.body.belongsToUserId)
+  const loggedInUserId = parseInt(req.user.id)
+  const status = req.body.status
+  debugger
+  try {
+    if (belongsToUserId === loggedInUserId) {
+      const updatedCustomer = await Customer.query().findById(customerId).patch({ status: status })
+      return res.status(201).json({ updatedCustomer: updatedCustomer })
+    } else {
+      return res.status(401).json({ error: "Unauthorized" })
+    }
+  } catch (error) {
+    return res.status(500).json({ error: error })
+  }
+})
+
 export default crmCustomersRouter
