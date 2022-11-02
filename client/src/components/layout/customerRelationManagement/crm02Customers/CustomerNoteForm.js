@@ -31,7 +31,6 @@ const CustomerNoteForm = props => {
       [event.currentTarget.name]: event.currentTarget.value
     })
   }
-  console.log(addedNote)
   
   const submitNoteForm = () => {
     props.postNewNote(addedNote)
