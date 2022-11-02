@@ -97,7 +97,21 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: space-evenly;
+}
+
+.project-show-header-details {
+  display: flex;
+  flex-flow: row;
   align-items: center;
+  gap: 1.5rem;
+}
+
+.project-show-header-details-child {
+  display: flex;
+  color: white;
+  font-weight: normal;
+  margin-bottom: 0;
 }
 
 .project-description {
