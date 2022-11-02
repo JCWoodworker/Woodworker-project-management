@@ -44,7 +44,6 @@ crmCustomersRouter.patch('/', async (req, res) => {
   const belongsToUserId = parseInt(req.body.belongsToUserId)
   const loggedInUserId = parseInt(req.user.id)
   const status = req.body.status
-  debugger
   try {
     if (belongsToUserId === loggedInUserId) {
       const updatedCustomer = await Customer.query().findById(customerId).patch({ status: status })
