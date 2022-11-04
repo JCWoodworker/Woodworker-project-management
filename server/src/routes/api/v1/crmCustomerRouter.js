@@ -1,7 +1,7 @@
 import express from 'express'
 import { ValidationError } from 'objection'
 import cleanUserInput from '../../../../services/cleanUserInput.js'
-import { User, Project, Customer } from '../../../models/index.js'
+import { Customer } from '../../../models/index.js'
 import CustomerSerializer from '../../../../serializers/CustomerSerializer.js'
 
 const crmCustomersRouter = new express.Router()

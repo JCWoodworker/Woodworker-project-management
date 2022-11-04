@@ -5,7 +5,7 @@ import ProjectSeeder from "./seeders/ProjectSeeder.js"
 import UserSeeder from "./seeders/UserSeeder.js"
 import ProjectWoodsSeeder from "./seeders/ProjectWoodsSeeder.js"
 import CustomerSeeder from "./seeders/CustomerSeeder.js"
-
+import CustomerNotesSeeder from "./seeders/CustomerNotesSeeder.js"
 class Seeder {
   static async seed() {
     console.log("Seeding Users...")
@@ -22,6 +22,9 @@ class Seeder {
 
     console.log("Seeding Customers...")
     await CustomerSeeder.seed()
+
+    console.log("Seeding Customer Notes...")
+    await CustomerNotesSeeder.seed()
 
     console.log("Done!")
     await connection.destroy()
