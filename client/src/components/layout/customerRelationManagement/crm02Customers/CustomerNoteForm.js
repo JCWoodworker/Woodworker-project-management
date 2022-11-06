@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import ErrorList from '../..//ErrorList'
+import ErrorList from '../../ErrorList'
 
 const CustomerNoteForm = props => {
   const getCurrentDateAndTime = () => {
@@ -32,10 +32,13 @@ const CustomerNoteForm = props => {
     })
   }
   
-  const submitNoteForm = () => {
+  const submitNoteForm = (event) => {
+    event.preventDefault()
     props.postNewNote(addedNote)
     clearForm()
-    props.setShowNoteForm(false)
+    if (addedNote.note !== "") {
+      props.setShowNoteForm(false)
+    }
   }
 
   return (
@@ -50,7 +53,7 @@ const CustomerNoteForm = props => {
       </td>
       <td>
         <textarea 
-          rows="3"
+          rows="4"
           cols="30"
           name="note"
           onChange={handleInputChange}
