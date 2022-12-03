@@ -5,7 +5,7 @@ import translateServerErrors from '../../../../services/translateServerErrors'
 import CustomerNoteTile from "./CustomerNoteTile"
 import CustomerNoteForm from "./CustomerNoteForm"
 
-const  Index = props => {
+const  CustomerNotesIndex = props => {
   const [showNoteForm, setShowNoteForm] = useState(false)
   const [notes, setNotes] = useState ([])
   const [errors, setErrors] = useState([])
