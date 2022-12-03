@@ -5,7 +5,7 @@ import translateServerErrors from '../../../../services/translateServerErrors'
 import CustomerNoteTile from "./CustomerNoteTile"
 import CustomerNoteForm from "./CustomerNoteForm"
 
-const CustomerNotesIndex = props => {
+const  Index = props => {
   const [showNoteForm, setShowNoteForm] = useState(false)
   const [notes, setNotes] = useState ([])
   const [errors, setErrors] = useState([])
@@ -26,6 +26,7 @@ const CustomerNotesIndex = props => {
 
   const postNewNote = async newNoteData => {
     try {
+      debugger
       const response = await fetch(`/api/v1/customerNotes`, {
         method: "POST",
         headers: new Headers ({
@@ -44,7 +45,9 @@ const CustomerNotesIndex = props => {
         const error = new Error(errorMessage)
         throw error
       } else {
+        debugger
         const resBody = await response.json()
+        debugger
         setNotes([...notes, resBody.note])
         return true
       }

@@ -17,7 +17,7 @@ const ProjectsIndex = props => {
   const userId = props.user.id
   const fetchProjects = async () => {
     try {
-    const response = await fetch(`/api/v1/projects/users/${userId}`)
+    const response = await fetch(`/api/v1/projects`)
       if (!response) {
         throw new Error(`${response.status} (${response.statusText})`)
       }

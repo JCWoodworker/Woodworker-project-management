@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { withRouter } from "react-router"
+import axios from "axios"
 
 import AddWoodForm from "./AddWoodForm"
 import AddedWoodTile from "./AddedWoodTile"
@@ -21,6 +22,7 @@ const ProjectShow = props => {
 
   const getProject = async () => {
     try {
+      debugger
       const response = await fetch(`/api/v1/projects/${props.match.params.id}`)
       if (!response.ok) {
         throw new Error(`${response.status} (${response.statusText})`)

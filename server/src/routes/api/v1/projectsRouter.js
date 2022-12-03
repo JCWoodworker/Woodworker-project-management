@@ -8,9 +8,9 @@ import ProjectSerializer from '../../../../serializers/ProjectSerializer.js'
 const projectsRouter = new express.Router()
 
 
-projectsRouter.get('/users/:user', async (req, res) => {
+projectsRouter.get('/', async (req, res) => {
   try {
-    const currentUser = req.params.user
+    const currentUser = req.user.id
     const user = await User.query().findById(currentUser)
     user.projects = await user.$relatedQuery("projects")
     const serializedProjects = await Promise.all(
@@ -27,6 +27,7 @@ projectsRouter.get('/users/:user', async (req, res) => {
 projectsRouter.get('/:id', async (req, res) => {
   const id = req.params.id
   try {
+    debugger
     const project = await Project.query().findById(id)
     const serializedProject = await ProjectSerializer.getSummary(project)
     return res.status(200).json({ project: serializedProject})
