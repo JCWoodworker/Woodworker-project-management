@@ -27,7 +27,6 @@ projectsRouter.get('/', async (req, res) => {
 projectsRouter.get('/:id', async (req, res) => {
   const id = req.params.id
   try {
-    debugger
     const project = await Project.query().findById(id)
     const serializedProject = await ProjectSerializer.getSummary(project)
     return res.status(200).json({ project: serializedProject})

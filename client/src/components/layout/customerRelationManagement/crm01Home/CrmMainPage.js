@@ -12,11 +12,31 @@ const CrmMainPage = props => {
   const [customersButtonId, setCustomersButtonId] = useState("all-buttons")
   const [analyticsButtonId, setAlyticsButtonId] = useState("all-buttons")
 
+  const [customers, setCustomers] = useState([])
+
   const changeButtons = {
     buttonId: "all-buttons",
     showContainer: <p>Main Page</p>
 
   }
+
+  const fetchCustomers = async () => {
+    try {
+    const response = await fetch("/api/v1/customers")
+    if (!response.ok) {
+      throw new Error(`${response.status} (${response.statusText})`)
+    }
+    const body = await response.json()
+    setCustomers(body.customers)
+    } catch (error) {
+      console.error(`Error in fetch: (${error.message})`)
+    }
+  }
+
+  useEffect(() => {
+    fetchCustomers()
+  }, [])
+
 
   const handleHomeClick = () => {
     setShowCrmHome(true)
@@ -63,17 +83,23 @@ const CrmMainPage = props => {
         Analytics
       </button>
     </div>
+  
+  let customerCount = customers.length
     
   let mainContainer = null
   if (showCrmHome) {
     mainContainer = (
       <>
         <h1>CRM Home</h1>
-        <p>Manage your customers here!</p>
+        <p>CRM Customer Count: {customerCount}</p>
       </>
     )
   } else if (showCustomers) {
-    mainContainer = <CrmCustomerMain user={props.user} />
+    mainContainer = <CrmCustomerMain 
+      user={props.user} 
+      customers={customers} 
+      setCustomers={setCustomers} 
+    />
   } else if (showAnalytics) {
     mainContainer = <CrmAnalyticsMain />
   }

@@ -89,18 +89,6 @@ let userMenuButtons =
         User Settings
       </button>
     </Link>
-    <Link to='/wood-info'>
-      <button 
-        id="all-buttons">
-        Hardwood Info
-      </button>
-    </Link>
-    <Link to='/dev-info'>
-      <button 
-        id="all-buttons">
-        Developer Info
-      </button>
-    </Link>
     <Link to='/crm'> 
       <button 
         id="all-buttons">
