@@ -5,29 +5,11 @@ import AddCustomerForm from './AddCustomerForm'
 import CustomerTile from './CustomerTile'
 import CustomerShow from './CustomerShow'
 
-const CrmCustomerMain = props => {
+const CrmCustomerMain = (props) => {
   const [errors, setErrors] = useState([])
-  const [customers, setCustomers] = useState([])
   const [showCustomerFormSection, setShowCustomerFormSection] = useState(false)
   const [showCustomerShow, setShowCustomerShow] = useState(false)
   const [selectedCustomerId, setSelectedCustomerId] = useState(null)
-
-  const fetchCustomers = async () => {
-    try {
-    const response = await fetch("/api/v1/customers")
-    if (!response.ok) {
-      throw new Error(`${response.status} (${response.statusText})`)
-    }
-    const body = await response.json()
-    setCustomers(body.customers)
-    } catch (error) {
-      console.error(`Error in fetch: (${error.message})`)
-    }
-  }
-
-  useEffect(() => {
-    fetchCustomers()
-  }, [])
 
   const postNewCustomer = async newCustomerData => {
     try {
@@ -48,7 +30,7 @@ const CrmCustomerMain = props => {
       } else {
         const body = await response.json()
         setErrors([])
-        setCustomers([...customers, body.newCustomer])
+        props.setCustomers([...props.customers, body.newCustomer])
         setShowCustomerFormSection(false)
         return true
         }
@@ -71,10 +53,10 @@ const CrmCustomerMain = props => {
         const error = new Error(errorMessage)
         throw error
       } else {
-        const newCustomerList = customers.filter(customer => {
+        const newCustomerList = props.customers.filter(customer => {
           return customer.id != customerId
         })
-        setCustomers(newCustomerList)
+        props.setCustomers(newCustomerList)
         console.log(`Customer deleted!`)
       }
     } catch (error) {
@@ -82,7 +64,7 @@ const CrmCustomerMain = props => {
     }
   }
 
-  const customerList = customers.map(customer => {
+  const customerList = props.customers.map(customer => {
     return (
       <CustomerTile
         key={customer.id}
@@ -137,7 +119,7 @@ const CrmCustomerMain = props => {
   )
 
   if (showCustomerShow) {
-    const clickedCustomer = customers.filter(customer => customer.id == selectedCustomerId)
+    const clickedCustomer = props.customers.filter(customer => customer.id == selectedCustomerId)
     customerSection = (
       <>
         <CustomerShow

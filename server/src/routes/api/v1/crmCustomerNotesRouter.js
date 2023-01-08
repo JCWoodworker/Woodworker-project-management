@@ -20,10 +20,8 @@ crmCustomerNotesRouter.get("/:id", async (req, res) => {
 
 crmCustomerNotesRouter.post("/", async (req,res) => {
   const formInput = cleanUserInput(req.body)
-  debugger
   try {
     const newNote = await CustomerNote.query().insertAndFetch(formInput)
-    debugger
     return res.status(200).json({ note: newNote })
   } catch(error) {
     if (error instanceof ValidationError) {

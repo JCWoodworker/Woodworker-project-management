@@ -22,7 +22,6 @@ const ProjectShow = props => {
 
   const getProject = async () => {
     try {
-      debugger
       const response = await fetch(`/api/v1/projects/${props.match.params.id}`)
       if (!response.ok) {
         throw new Error(`${response.status} (${response.statusText})`)

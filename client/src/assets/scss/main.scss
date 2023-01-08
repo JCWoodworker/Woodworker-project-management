@@ -1,6 +1,7 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
+@import "../scss/stylesheets/popups.scss";
 @import "../scss/stylesheets/colors.scss";
 @import "../scss/stylesheets/homePages.scss";
 @import "../scss/stylesheets/topLinks.scss";
@@ -10,7 +11,6 @@
 @import "../scss//stylesheets/forms.scss";
 @import "../scss/stylesheets/devInfoPage.scss";
 @import "../scss/stylesheets/hardwoodIndexPage.scss";
-@import "../scss/stylesheets/popups.scss";
 @import "../scss/stylesheets/signInOutForms.scss";
 @import "../scss/stylesheets/adminPortal.scss";
 @import "../scss/stylesheets/settings-user-project.scss";
