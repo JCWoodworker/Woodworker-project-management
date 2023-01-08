@@ -91,7 +91,7 @@ const CrmMainPage = props => {
     mainContainer = (
       <>
         <h1>CRM Home</h1>
-        <p>CRM Customer Count: {customerCount}</p>
+        <p>Customer Count: {customerCount}</p>
       </>
     )
   } else if (showCustomers) {
