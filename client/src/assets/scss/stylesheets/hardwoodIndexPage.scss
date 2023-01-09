@@ -1,5 +1,3 @@
-@import "../stylesheets/colors.scss";
-
 h4 {
   font-weight: bold;
 }
@@ -19,13 +17,18 @@ h4 {
   align-items: center;
   justify-content: center;
   border-radius: 0.2rem;
-  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  box-shadow: $box-shadow;
   background-color: $dark-gray-transparent-9;
   color: $medium-beige;
   padding: 1rem;
   width: 300px;
   height: 150px;
-  gap: 0.5rem
+  gap: 0.5rem;
+  &:hover {
+    cursor: pointer;
+    color: white;
+    background-color: $dark-gray-transparent;
+  }
 }
 
 .hardwood-tile-wood-name {
@@ -39,17 +42,4 @@ h4 {
   height:120px;
   width: 120px;
   border-radius: 0.2rem;
-}
-
-.hardwood-tile:link {
-  color: $red-brown;
-}
-.hardwood-tile:visited {
-  color: $red-brown;
-}
-.hardwood-tile:hover {
-  cursor: pointer;
-  color: white;
-  background-color: $dark-gray-transparent;
-
 }

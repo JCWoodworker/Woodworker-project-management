@@ -1,5 +1,3 @@
-@import "./colors.scss";
-
 //PROJECT LIST/FORM CONTAINER
 
 .projects-list-container {
@@ -31,10 +29,15 @@
   padding: 1rem;
   border-radius: 0.2rem;
   background-color: $dark-gray-transparent-9;
-  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  box-shadow: $box-shadow;
   color: $medium-beige;
   width: 330px;
-  height: 200px
+  height: 200px;
+  &:hover {
+    cursor: pointer;
+    color: white;
+    background-color: $dark-gray-transparent;
+  }
 }
 
 .project-name-underline {
@@ -43,18 +46,6 @@
   margin: 0 auto;
   margin-bottom: 0.3rem;
   background-color: $red-brown;
-}
-
-.project-tile-container:link {
-  color: $red-brown;
-}
-.project-tile-container:visited {
-  color: $red-brown;
-}
-.project-tile-container:hover {
-  cursor: pointer;
-  color: white;
-  background-color: $dark-gray-transparent;
 }
 
 .project-name {
@@ -79,11 +70,8 @@
 }
 
 .project-show-headers {
+  @include flex-col-center;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: column;
   gap: 1rem;
   background-color: $dark-gray-transparent-9;
   color: $medium-beige;
@@ -126,23 +114,17 @@
 // IMAGE UPLOAD ELEMENTS
 
 .image-uploader-container {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-col-center;
   margin-bottom: 2rem;
   width: 100%;
   padding: 1rem;
-  background-color: $dark-gray-transparent-9;
+  background-image: url('../../../public/WoodBackground.jpeg');
   border-radius: 0.2rem;
   color: $medium-beige;
 }
 
 .dropzone-drop-container {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-col-center;
   height: auto;
   margin: 1rem;
   margin-bottom: 2rem;
@@ -150,10 +132,7 @@
 }
 
 .drop-button-and-message {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-col-center;
 }
 
 .dropzone-button {
@@ -185,28 +164,23 @@
   justify-content: center;
   align-items: center;
   flex-flow: row wrap;
-  gap: 2rem
+  gap: 2rem;
 }
 
 .dropzone-image-block {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-col-center;
 }
 
 .dropzone-image {
   height: auto;
   width: 150px;
-  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  box-shadow: $box-shadow;
   border-radius: 0.2rem;
-}
-
-.dropzone-image:hover {
-  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
-  border: 2px solid $medium-beige;
-  transform: scale(2);
-
+  &:hover {
+    box-shadow: $box-shadow;
+    border: 2px solid $medium-beige;
+    transform: scale(2);
+  }
 }
 
 .project-top-links {

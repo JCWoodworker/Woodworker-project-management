@@ -1,6 +1,3 @@
-@import "./colors.scss";
-
-
 .popup {
   display: flex;
   justify-content: center;
@@ -13,7 +10,7 @@
   max-height: min-content;
   background-color: $medium-beige;
   border: 0.25rem solid $red-brown;
-  box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 50px;
+  box-shadow: $box-shadow;
 }
 
 .wood-popup {
