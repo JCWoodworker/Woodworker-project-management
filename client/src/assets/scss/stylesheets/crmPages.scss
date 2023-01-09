@@ -1,5 +1,3 @@
-@import "./colors.scss";
-
 .crm-top-container {
   display: flex;
   flex-flow: column wrap;
@@ -7,7 +5,7 @@
   justify-content: center;
   border-radius: 0.2rem;
   color: $medium-beige;
-  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  box-shadow: $box-shadow;
   padding:0.5rem;
   height: auto;
   width: fit-content;
@@ -51,7 +49,7 @@
   border-radius: 0.2rem;
   background-color: $dark-gray-transparent-9;
   color: $medium-beige;
-  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  box-shadow: $box-shadow; 
   padding: 1.5rem;
   height: fit-content;
   max-width: 98vw;
@@ -92,19 +90,6 @@ td {
 }
 
 #add-customer,
-#delete-customer,
-#delete-note,
-#add-note {
-  border-radius: 0.2rem;
-  border: 1px solid $medium-beige;
-  height: 30px;
-  min-width: 30px;
-  cursor: pointer;
-  background-color: $dark-gray;
-  font-weight: bolder;
-  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
-}
-#add-customer,
 #add-note {
   color: green
 }
@@ -112,22 +97,9 @@ td {
 #delete-note {
   color: gray; 
 }
-#add-customer:link,
-#delete-customer:link,
-#add-note:link,
-#delete-note:link {
-  color: $red-brown;
-}
-#add-customer:visited,
-#delete-customer:visited,
-#add-note:visited,
-#delete-note:visited {
-  color: $red-brown;
-}
-#add-customer:hover,
-#delete-customer:hover,
-#add-note:hover,
-#delete-note:hover {
-  color: $red-brown;
-  background-color: $beige-transparent;
+#add-customer,
+#delete-customer,
+#add-note,
+#delete-note {
+  @include crm-button-actions()
 }

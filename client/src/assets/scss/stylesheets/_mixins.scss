@@ -1,0 +1,21 @@
+@mixin flex-col-center {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin crm-button-actions {
+  border-radius: 0.2rem;
+  border: 1px solid $medium-beige;
+  height: 30px;
+  min-width: 30px;
+  cursor: pointer;
+  background-color: $dark-gray;
+  font-weight: bolder;
+  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  &:hover {
+    color: $red-brown;
+    background-color: $beige-transparent;
+  }
+}

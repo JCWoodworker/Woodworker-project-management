@@ -16,7 +16,7 @@
 .unauthenticated-home-page {
   margin-top: 1rem;
   background-color: $dark-gray-transparent-9;
-  box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 50px;
+  box-shadow: $box-shadow;
 }
 
 .auth-page-container {

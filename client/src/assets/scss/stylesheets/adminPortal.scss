@@ -14,7 +14,7 @@
   border-radius: 0.2rem;
   margin-top: 2rem;
   background-color: $dark-gray-transparent-9;
-  box-shadow: rgba(67, 67, 67, 0.5) 0px 0px 50px;
+  box-shadow: $box-shadow;
 }
 
 .admin-option-buttons {
@@ -27,16 +27,13 @@
 }
 
 .add-a-new-hardwood-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-col-center;
   border: 3px solid $medium-beige;
   width: fit-content;
   margin: 2rem;
   padding: 1rem;
   border-radius: 0.2rem;
-  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  box-shadow: $box-shadow;
 }
 .add-hardwood-form {
   display: flex;
@@ -63,11 +60,8 @@
 }
 
 .wood-price-tile-container {
-  display: flex;
-  flex-direction: column;
+  @include flex-col-center;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 0.5rem;
 }
 
@@ -96,10 +90,7 @@
 }
 
 .edited-hardwood-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-col-center;
 }
 
 .edit-button {
@@ -107,19 +98,12 @@
   color: $dark-gray;
   border-radius: 0.2rem;
   padding: 0 0.2rem;
-}
-
-.edit-button:link {
-  color: $red-brown;
-}
-.edit-button:visited {
-  color: $red-brown;
-}
-.edit-button:hover {
-  cursor: pointer;
-  color: $beige-transparent;
-  background-color: $dark-gray;
-  border: 2px solid $medium-beige;
+  &:hover {
+    cursor: pointer;
+    color: $beige-transparent;
+    background-color: $dark-gray;
+    border: 2px solid $medium-beige;
+  }
 }
 
 .edit-wood-name,
@@ -166,12 +150,10 @@
   border-radius: 0.2rem;
 }
 
-
-
 #hardwoodChart {
   border: 3px solid $medium-beige;
   border-radius: 0.2rem;
-  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  box-shadow: $box-shadow;
   padding: 0.5rem;
   min-width: 300px;
   max-width: 600px;

@@ -31,7 +31,7 @@
   padding: 1rem;
   border-radius: 0.2rem;
   background-color: $dark-gray-transparent-9;
-  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  box-shadow: $box-shadow;
   color: $medium-beige;
   width: 330px;
   height: 200px
@@ -198,12 +198,12 @@
 .dropzone-image {
   height: auto;
   width: 150px;
-  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  box-shadow: $box-shadow;
   border-radius: 0.2rem;
 }
 
 .dropzone-image:hover {
-  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  box-shadow: $box-shadow;
   border: 2px solid $medium-beige;
   transform: scale(2);
 

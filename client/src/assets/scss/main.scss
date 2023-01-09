@@ -1,8 +1,10 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
-@import "../scss/stylesheets/popups.scss";
+@import "../scss/stylesheets/mixins.scss";
 @import "../scss/stylesheets/colors.scss";
+@import "../scss/stylesheets/popups.scss";
+@import "../scss/stylesheets/crmPages.scss";
 @import "../scss/stylesheets/homePages.scss";
 @import "../scss/stylesheets/topLinks.scss";
 @import "../scss/stylesheets/weather.scss";
@@ -14,7 +16,6 @@
 @import "../scss/stylesheets/signInOutForms.scss";
 @import "../scss/stylesheets/adminPortal.scss";
 @import "../scss/stylesheets/settings-user-project.scss";
-@import "../scss/stylesheets/crmPages.scss";
 
 *,
 *::before,

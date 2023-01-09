@@ -5,7 +5,7 @@
   justify-content: center;
   border-radius: 0.2rem;
   color: $medium-beige;
-  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  box-shadow: $box-shadow;
   padding: 1.5rem;
   height: fit-content;
   width: fit-content;
@@ -22,7 +22,7 @@
   border-radius: 0.2rem;
   background-color: $dark-gray-transparent-9;
   color: $medium-beige;
-  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  box-shadow: $box-shadow;
   padding: 1.5rem;
   height: fit-content;
   width: fit-content;
@@ -97,7 +97,7 @@
   border: 1px solid $medium-beige;
   background-color: $dark-gray;
   color: $medium-beige;
-  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  box-shadow: $box-shadow;
   font-size: 1.1rem;
 }
 
@@ -111,7 +111,7 @@
   color: $medium-beige;
   background-color: $dark-gray;
   font-weight: bolder;
-  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  box-shadow: $box-shadow;
   margin: 0.25rem
 }
 

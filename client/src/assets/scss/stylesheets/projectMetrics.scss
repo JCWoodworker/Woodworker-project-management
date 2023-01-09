@@ -1,4 +1,9 @@
-@import "./colors.scss";
+@mixin flex-col-center {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
 
 .woods-metrics-container {
   display: flex;
@@ -10,11 +15,8 @@
 }
 
 .show-metrics-container {
+  @include flex-col-center;
   text-align: center;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 1rem;
   padding: 2rem;
   border: 2px solid $light-gray;
@@ -35,10 +37,7 @@
 }
 
 .added-wood-tile-container {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
+  @include flex-col-center;
   margin: 1rem auto;
 }
 
@@ -60,20 +59,10 @@
   border-radius: 50%;
   padding: 0.18rem;
   margin-left: 1.5rem;
-}
-
-#delete-persisted-wood-button:link,
-#delete-image-button:link {
-  color: $medium-beige;
-}
-#delete-persisted-wood-button:visited,
-#delete-image-button:visited {
-  color: $medium-beige;
-}
-#delete-persisted-wood-button:hover,
-#delete-image-button:hover {
-  cursor: pointer;
-  background-color: white;
+  &:hover {
+    cursor: pointer;
+    background-color: white;
+  };
 }
 
 .add-woods-container {
@@ -87,15 +76,12 @@
   min-width:70%;
   background-color: $dark-gray-transparent-9;
   border-radius: 0.2rem;
-  box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 30px;
+  box-shadow: $box-shadow;
   color: $medium-beige;
 }
 
 .add-wood-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-col-center;
   color: $medium-beige
 }
 
@@ -126,10 +112,7 @@
 }
 
 .show-added-wood {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-col-center;
   padding: 2px;
 }
 
@@ -149,18 +132,11 @@
   width: 150px;
   height: 55px;
   margin-bottom: 1rem;
-}
-
-.add-selected-button:link {
-  color: white;
-}
-.add-selected-button:visited {
-  color: white;
-}
-.add-selected-button:hover {
-  cursor: pointer;
-  color: $red-brown;
-  background-color: $beige-transparent;
+  &:hover {
+    cursor: pointer;
+    color: $red-brown;
+    background-color: $beige-transparent;
+  }
 }
 
 .save-button {
@@ -173,18 +149,11 @@
   padding: 0.5rem;
   width: 150px;
   height: 55px;
-}
-
-.save-button:link {
-  color: $medium-beige;
-}
-.save-button:visited {
-  color: $medium-beige;
-}
-.save-button:hover {
-  cursor: pointer;
-  color: $red-brown;
-  background-color: $beige-transparent;
+  &:hover {
+    cursor: pointer;
+    color: $red-brown;
+    background-color: $beige-transparent;
+  }
 }
 
 #added-wood-list-item {
@@ -198,24 +167,15 @@
   border-radius: 0.2rem;
   padding: 0.18rem;
   margin-left: 1.5rem;
+  &:hover {
+    cursor: pointer;
+    background-color: $medium-beige;
+    color: red;
+  }
 }
-
-.remove-wood-x:link {
-  color: $medium-beige;
-}
-.remove-wood-x:visited {
-  color: $medium-beige;
-}
-.remove-wood-x:hover {
-  cursor: pointer;
-  background-color: $medium-beige;
-  color: red;
-}
-
 
 .h3-woods-needed {
   color: $dark-gray;
   font-weight: bold;
   margin-bottom: 1rem;
 }
-
