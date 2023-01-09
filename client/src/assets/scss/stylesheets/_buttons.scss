@@ -1,0 +1,121 @@
+// admin pages
+
+.admin-option-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 90%;
+  margin-bottom: 1rem
+}
+
+.edit-button {
+  background-color: $medium-beige;
+  color: $dark-gray;
+  border-radius: 0.2rem;
+  padding: 0 0.2rem;
+  &:hover {
+    cursor: pointer;
+    color: $beige-transparent;
+    background-color: $dark-gray;
+    border: 2px solid $medium-beige;
+  }
+}
+
+.edit-hardwood-form-submit {
+  width: 90px;
+  height: 45px;
+}
+
+.admin-remove-wood-x {
+  color: $medium-beige;
+  padding-right: 0.2rem;
+  &:hover {
+    cursor: pointer;
+    background-color: $medium-beige;
+    border-radius: 0.2rem;
+  }
+}
+
+// crm pages
+
+#add-customer,
+#add-note {
+  color: green
+}
+#delete-customer,
+#delete-note {
+  color: gray; 
+}
+#add-customer,
+#delete-customer,
+#add-note,
+#delete-note {
+  @include crm-button-actions()
+}
+
+// project metrics
+
+.add-selected-button {
+  background-color: none;
+  color: $medium-beige;
+  border: 3px solid $medium-beige;
+  background-color: $dark-gray;
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+  width: 150px;
+  height: 55px;
+  margin-bottom: 1rem;
+  &:hover {
+    cursor: pointer;
+    color: $red-brown;
+    background-color: $beige-transparent;
+  }
+}
+
+.save-button {
+  background-color: none;
+  color: $medium-beige;
+  border: 3px solid $medium-beige;
+  background-color: $dark-gray;
+  border-radius: 0.2rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  width: 150px;
+  height: 55px;
+  &:hover {
+    cursor: pointer;
+    color: $red-brown;
+    background-color: $beige-transparent;
+  }
+}
+
+.remove-wood-x { 
+  color: $medium-beige;
+  border-radius: 0.2rem;
+  padding: 0.18rem;
+  margin-left: 1.5rem;
+  &:hover {
+    cursor: pointer;
+    background-color: $medium-beige;
+    color: red;
+  }
+}
+
+// Sign In and Out  
+
+.sign-out-button {
+  color: $medium-beige;
+  font-weight: bold;
+  max-width: 100px;
+  margin-left: 1rem;
+  &:hover {
+    cursor: pointer;
+    color: white;
+    background-color: $dark-gray-transparent;
+  }
+}
+
+
+
+

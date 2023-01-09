@@ -88,18 +88,3 @@ td {
 #clickable-cell {
   cursor: pointer
 }
-
-#add-customer,
-#add-note {
-  color: green
-}
-#delete-customer,
-#delete-note {
-  color: gray; 
-}
-#add-customer,
-#delete-customer,
-#add-note,
-#delete-note {
-  @include crm-button-actions()
-}

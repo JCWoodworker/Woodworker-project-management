@@ -57,8 +57,9 @@
 #delete-image-button {
   color: $medium-beige;
   border-radius: 50%;
-  padding: 0.18rem;
+  padding: 0.25rem;
   margin-left: 1.5rem;
+  background-color: black;
   &:hover {
     cursor: pointer;
     background-color: white;
@@ -122,56 +123,10 @@
   justify-content: space-between;
 }
 
-.add-selected-button {
-  background-color: none;
-  color: $medium-beige;
-  border: 3px solid $medium-beige;
-  background-color: $dark-gray;
-  border-radius: 0.2rem;
-  padding: 0.5rem;
-  width: 150px;
-  height: 55px;
-  margin-bottom: 1rem;
-  &:hover {
-    cursor: pointer;
-    color: $red-brown;
-    background-color: $beige-transparent;
-  }
-}
-
-.save-button {
-  background-color: none;
-  color: $medium-beige;
-  border: 3px solid $medium-beige;
-  background-color: $dark-gray;
-  border-radius: 0.2rem;
-  margin-top: 1rem;
-  padding: 0.5rem;
-  width: 150px;
-  height: 55px;
-  &:hover {
-    cursor: pointer;
-    color: $red-brown;
-    background-color: $beige-transparent;
-  }
-}
-
 #added-wood-list-item {
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.3rem;;
-}
-
-.remove-wood-x { 
-  color: $medium-beige;
-  border-radius: 0.2rem;
-  padding: 0.18rem;
-  margin-left: 1.5rem;
-  &:hover {
-    cursor: pointer;
-    background-color: $medium-beige;
-    color: red;
-  }
 }
 
 .h3-woods-needed {

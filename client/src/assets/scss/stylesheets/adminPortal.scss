@@ -17,15 +17,6 @@
   box-shadow: $box-shadow;
 }
 
-.admin-option-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  max-width: 90%;
-  margin-bottom: 1rem
-}
-
 .add-a-new-hardwood-container {
   @include flex-col-center;
   border: 3px solid $medium-beige;
@@ -93,19 +84,6 @@
   @include flex-col-center;
 }
 
-.edit-button {
-  background-color: $medium-beige;
-  color: $dark-gray;
-  border-radius: 0.2rem;
-  padding: 0 0.2rem;
-  &:hover {
-    cursor: pointer;
-    color: $beige-transparent;
-    background-color: $dark-gray;
-    border: 2px solid $medium-beige;
-  }
-}
-
 .edit-wood-name,
 .edit-wood-price {
   color: $medium-beige;
@@ -121,32 +99,10 @@
   text-align: center;
 }
 
-.edit-hardwood-form-submit {
-  width: 90px;
-  height: 45px;
-}
-
 .tiny-image {
   margin-top: 0.1rem;
   width: 21px;
   height: 21px;
-  border-radius: 0.2rem;
-}
-
-.admin-remove-wood-x {
-  color: $medium-beige;
-  padding-right: 0.2rem;
-}
-
-.admin-remove-wood-x:link {
-  color: $medium-beige;
-}
-.admin-remove-wood-x:visited {
-  color: $medium-beige;
-}
-.admin-remove-wood-x:hover {
-  cursor: pointer;
-  background-color: $medium-beige;
   border-radius: 0.2rem;
 }
 

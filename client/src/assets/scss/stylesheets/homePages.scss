@@ -1,5 +1,3 @@
-@import "./colors.scss";
-
 .home-page-container {
   display: flex;
   flex-direction: column;
@@ -46,17 +44,11 @@
   width: 150px;
   border: 2px solid $medium-beige;
   border-radius: 0.2rem;
-}
-
-.home-page-link:link {
-  color: $medium-beige;
-}
-.home-page-link:visited {
-  color: $medium-beige;
-}
-.home-page-link:hover {
-  color: $red-brown;
-  background-color: $beige-transparent;
+  &:hover {
+    cursor: pointer;
+    color: $red-brown;
+    background-color: $beige-transparent;
+  }
 }
 
 ul {
