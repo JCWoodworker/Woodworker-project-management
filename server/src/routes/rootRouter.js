@@ -10,6 +10,7 @@ import adminRouter from "./api/v1/adminRouter.js"
 import projectImagesRouter from "./api/v1/projectImagesRouter.js"
 import crmCustomersRouter from "./api/v1/crmCustomerRouter.js"
 import crmCustomerNotesRouter from "./api/v1/crmCustomerNotesRouter.js"
+import twilioRouter from "./api/v1/twilioRouter.js"
 
 const rootRouter = new express.Router()
 
@@ -24,5 +25,6 @@ rootRouter.use("/api/v1/admin", adminRouter)
 rootRouter.use("/api/v1/projectImages", projectImagesRouter)
 rootRouter.use("/api/v1/customers", crmCustomersRouter)
 rootRouter.use("/api/v1/customerNotes", crmCustomerNotesRouter)
+rootRouter.use("/api/v1/twilio", twilioRouter)
 
 export default rootRouter
