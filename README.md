@@ -1,5 +1,7 @@
 # Welcome to the Woodworking Project Management App!
 
+# WARNING!!!!  MANY NEW FEATURES ADDED ALONG WITH NEW UI/UX.  PLEASE DISREGARD THIS ENTIRE README WHILE I RE-CONSTRUCT IT WITH UP-TO-DATE IMAGES AND VIDEOS.  THANK YOU!!
+
 ### Table of Contents:
 * [Home Page](#home-page)
 * [User Home Page](#user-home-page)
