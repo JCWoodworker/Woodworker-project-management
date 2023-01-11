@@ -1,14 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { convertPhoneNumber } from '../../../../services/convertPhoneNumber'
 import axios from 'axios'
+
+import Twilio from './Twilio'
 
 const CustomerTile = ({ customer, deleteCustomer, setShowCustomerShow, setSelectedCustomerId }) => {
   const [showStatusMenu, setShowStatusMenu] = useState(false)
   const [customerCurrentStatus, setCustomerCurrentStatus] = useState(customer.status)
+  const [convertedPhone, setConvertedPhone] = useState("N/A")
 
-  let convertedPhone = "N/A"
-  if (customer.cellPhone) {
-    convertedPhone = convertPhoneNumber(customer.cellPhone)
+  const convertCellPhone = () => {
+    if (customer.cellPhone) {
+      setConvertedPhone(convertPhoneNumber(customer.cellPhone))
+    }
   }
 
   const handleDeleteCustomer = event => {
@@ -48,7 +52,8 @@ const CustomerTile = ({ customer, deleteCustomer, setShowCustomerShow, setSelect
 
   const handleClickPhone = event => {
     event.preventDefault()
-    alert("Phone not yet implemented")
+    // alert("Phone not yet implemented")
+    const smsMessage = window.prompt("Type your message and click OK to send it.")
   }
 
   const handleClickStatusCell = event => {
@@ -97,13 +102,17 @@ const CustomerTile = ({ customer, deleteCustomer, setShowCustomerShow, setSelect
     )
   }
 
+  useEffect(() => {
+    convertCellPhone()
+  }, [])
+
   return (
     <tr>
       <td><button id="delete-customer" onClick={handleDeleteCustomer}>❌</button></td>
       <td onClick={handleClickCustomer} id="clickable-row">{customer.firstName}</td>
       <td onClick={handleClickCustomer} id="clickable-row">{customer.lastName}</td>
       <td onClick={handleClickEmail} id="clickable-row">{customer.email}</td>
-      <td onClick={handleClickPhone} id="clickable-row">{convertedPhone}</td>
+      <td id="clickable-row"><Twilio convertedPhone={convertedPhone}/></td>
       <td onClick={handleClickStatusCell} id="clickable-row">{customerStatus}</td>
     </tr>
   )

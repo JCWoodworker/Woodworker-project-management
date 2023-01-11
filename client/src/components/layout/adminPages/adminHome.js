@@ -236,7 +236,7 @@ const AdminHome = props => {
       <div className="admin-feature-section">
         {adminFeatureSection}
       </div>
-      
+
     </div>
   )
 }

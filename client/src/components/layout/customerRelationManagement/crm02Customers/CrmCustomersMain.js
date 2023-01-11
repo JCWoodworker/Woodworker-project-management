@@ -135,6 +135,8 @@ const CrmCustomerMain = (props) => {
   return (
     <>
       {customerSection}
+      <p>Click a customer's cell number to send SMS</p>
+      <p>Click a customer's email address to send them an email</p>
     </>
   )
 
