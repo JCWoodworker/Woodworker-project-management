@@ -1,5 +1,6 @@
 import express from "express"
 import twilio from "twilio"
+
 const accountSid = process.env.TWILIO_ACCOUNT_SID
 const authToken = process.env.TWILIO_AUTH_TOKEN
 
@@ -20,8 +21,8 @@ twilioRouter.post("/outgoingMessages", async (req, res) => {
         from: '+14012102221',
         to: `+1${body.sendPhone}`
       })
-    console.log(message.sid)
-    return res.status(200).json({ message: "Successful POST Request" })
+    console.log(message)
+    return res.status(200).json({ message: "Message sent successfully" })
   } catch (error) {
     return res.status(500).json({ error: error })
   }
