@@ -1,6 +1,6 @@
 # Welcome to the Woodworking Project Management App!
 
-# WARNING!!!!  MANY NEW FEATURES ADDED ALONG WITH NEW UI/UX.  PLEASE DISREGARD THIS ENTIRE README WHILE I RE-CONSTRUCT IT WITH UP-TO-DATE IMAGES AND VIDEOS.  THANK YOU!!  *** MESSAGE DATED 1/12/2023 ***
+# WARNING!!!!  AS OF 67/4/2024 There will be NO MORE MAINTENANCE done on this repo.  I will be building a NEW woodworker's project manager from scratch using all the skills I've developed over the years since I originally started this one.  I'm WICKED excited for it ... please be on the lookout by end of August for the basic framework to appear on my github!!
 
 ### Table of Contents:
 * [Home Page](#home-page)
